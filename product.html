@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xem tranh 289k - BookShelf</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-main">
+            <div class="container">
+                <div class="brand-section">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="BookShelf Logo">
+                        <span class="brand-name">BookShelf</span>
+                    </a>
+                </div>
+
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html"><span>Trang Chủ</span></a></li>
+                        <li><a href="category.html?type=new"><span>Sách Mới</span></a></li>
+                        <li><a href="about.html"><span>Về Chúng Tôi</span></a></li>
+                    </ul>
+                </nav>
+
+                <div class="search-bar">
+                    <button class="filter-btn"><i class="fa-solid fa-filter"></i></button>
+                    <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+
+                <div class="header-right">
+                    <div class="opening-hours">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>
+                            <strong>THỜI GIAN MỞ CỬA</strong><br>
+                            8H - 22H T2 - CN
+                        </span>
+                    </div>
+                    <div class="user-actions">
+                        <a href="#"><i class="fa-regular fa-user"></i> Tài khoản</a>
+                        <a href="#"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng <span class="cart-count">2</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-bar">
+            <div class="container">
+                <div class="category-menu-horizontal">
+                    <div class="category-toggle">
+                        <i class="fa-solid fa-bars"></i>
+                        <span>DANH MỤC SẢN PHẨM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="product-detail-page">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="index.html">Trang chủ</a>
+                <span>/</span>
+                <a href="category.html?type=vietnamese">Nhi Sưt</a>
+                <span>/</span>
+                <span>Xem tranh 289k</span>
+            </nav>
+
+            <div class="product-detail-container">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="images/book-tlch-1.jpg" alt="Xem tranh 289k" id="mainProductImage">
+                    </div>
+                    <div class="thumbnail-images">
+                        <img src="images/book-tlch-1.jpg" alt="Thumbnail 1" class="thumbnail active" onclick="changeMainImage(this)">
+                        <img src="images/book-global-class.jpg" alt="Thumbnail 2" class="thumbnail" onclick="changeMainImage(this)">
+                        <img src="images/book-cam-go.jpg" alt="Thumbnail 3" class="thumbnail" onclick="changeMainImage(this)">
+                        <img src="images/book-my-thuat.jpg" alt="Thumbnail 4" class="thumbnail" onclick="changeMainImage(this)">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h1 class="product-title">Xem tranh 289k</h1>
+                    <div class="product-meta">
+                        <span class="brand">Thương hiệu: <strong>Omega Books</strong></span>
+                        <span class="sku">Mã sản phẩm: <strong>#935270704186</strong></span>
+                    </div>
+
+                    <div class="product-price">
+                        <span class="current-price">289.000đ</span>
+                    </div>
+
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button class="qty-btn minus" onclick="changeQuantity(-1)">-</button>
+                            <input type="number" value="1" min="1" id="quantity">
+                            <button class="qty-btn plus" onclick="changeQuantity(1)">+</button>
+                        </div>
+                        <button class="btn-add-cart">Cho vào giỏ</button>
+                        <button class="btn-buy-now">Mua ngay</button>
+                    </div>
+
+                    <div class="product-features">
+                        <div class="feature-item">
+                            <i class="fa-solid fa-truck"></i>
+                            <div>
+                                <strong>Hoàn tiền 111%</strong>
+                                <span>nếu hàng giả</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-shield-alt"></i>
+                            <div>
+                                <strong>Mở hộp kiểm tra</strong>
+                                <span>nhận hàng</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-clock"></i>
+                            <div>
+                                <strong>Đổi trả trong 30 ngày</strong>
+                                <span>nếu có lỗi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seller Info -->
+                <div class="seller-info">
+                    <div class="seller-badge">
+                        <img src="images/logo.png" alt="Omega Books" class="seller-logo">
+                        <div class="seller-details">
+                            <h4>OMEGA BOOKS</h4>
+                            <span>Chính hãng</span>
+                        </div>
+                    </div>
+                    <div class="seller-actions">
+                        <button class="btn-chat">Chat</button>
+                        <button class="btn-view-shop">Xem shop</button>
+                    </div>
+                    
+                    <div class="related-products">
+                        <h4>Sản phẩm khác cùa từ 289.000đ</h4>
+                        <div class="related-items">
+                            <div class="related-item">
+                                <img src="images/book-foreign-1.jpg" alt="Nexus - Lược sử của những liên kết">
+                                <div class="item-info">
+                                    <span class="item-name">Nexus - Lược sử của những liên kết</span>
+                                    <span class="item-price">325.000đ</span>
+                                </div>
+                            </div>
+                            <div class="related-item">
+                                <img src="images/book-foreign-2.jpg" alt="Hiểu pháp Mỹ 299k">
+                                <div class="item-info">
+                                    <span class="item-name">Hiểu pháp Mỹ 299k</span>
+                                    <span class="item-price">299.000đ</span>
+                                </div>
+                            </div>
+                            <div class="related-item">
+                                <img src="images/book-foreign-3.jpg" alt="Thế giới cho đến ngày hôm qua">
+                                <div class="item-info">
+                                    <span class="item-name">Thế giới cho đến ngày hôm qua</span>
+                                    <span class="item-price">299.000đ</span>
+                                </div>
+                            </div>
+                            <div class="related-item">
+                                <img src="images/book-foreign-4.jpg" alt="Á Đao 299k">
+                                <div class="item-info">
+                                    <span class="item-name">Á Đao 299k</span>
+                                    <span class="item-price">299.000đ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-view-more">Xem thêm</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details Tabs -->
+            <div class="product-details-tabs">
+                <div class="tab-headers">
+                    <button class="tab-btn active" onclick="showTab('details')">Chi tiết</button>
+                    <button class="tab-btn" onclick="showTab('guide')">Hướng dẫn mua hàng</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div id="details" class="tab-pane active">
+                        <h3>THÔNG TIN SẢN PHẨM</h3>
+                        <table class="product-specs">
+                            <tr><td>Công ty phát hành:</td><td>Công ty Cổ phần Sách Omega Việt Nam</td></tr>
+                            <tr><td>Ngày xuất bản:</td><td>2023-09-29 10:09:06</td></tr>
+                            <tr><td>Dịch giả:</td><td>Phạm Minh Quân</td></tr>
+                            <tr><td>Loại bìa:</td><td>Bìa mềm</td></tr>
+                            <tr><td>Số trang:</td><td>180</td></tr>
+                            <tr><td>Nhà xuất bản:</td><td>Nhà Xuất Bản Thế Giới</td></tr>
+                        </table>
+
+                        <div class="product-description">
+                            <h4>NỘI DUNG CUỐN SÁCH</h4>
+                            <p>"Xem tranh" của tác giả Susan Woodford năm trong bộ sách công cụ giúp hiểu nghệ thuật trong tầm tay của Omega+, được mua bản quyền từ nhà xuất bản Thames & Hudson, một trong những nhà xuất bản nghệ thuật có danh tiếng thể giới.</p>
+                            <p>Bộ sách bao gồm 5 cuốn: "Những nét khác biện phía của nghệ thuật", Lee Crestling; "Để hiểu nghệ thuật" - Janetta Rebold Bentor; và "Xem tranh" - Susan Woodford.</p>
+                        </div>
+                    </div>
+                    
+                    <div id="guide" class="tab-pane">
+                        <h3>HƯỚNG DẪN MUA HÀNG</h3>
+                        <div class="guide-content">
+                            <h4>Các bước đặt hàng:</h4>
+                            <ol>
+                                <li>Chọn sản phẩm và thêm vào giỏ hàng</li>
+                                <li>Kiểm tra thông tin và số lượng</li>
+                                <li>Điền thông tin giao hàng</li>
+                                <li>Chọn phương thức thanh toán</li>
+                                <li>Xác nhận đơn hàng</li>
+                            </ol>
+                            
+                            <h4>Chính sách đổi trả:</h4>
+                            <p>Sản phẩm được đổi trả trong vòng 30 ngày kể từ ngày nhận hàng nếu có lỗi từ nhà sản xuất.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products-section">
+                <h2>Sản phẩm liên quan</h2>
+                <div class="product-grid">
+                    <div class="product-item" onclick="window.location.href='product.html?id=1'">
+                        <img src="images/book-tlch-1.jpg" alt="Tâm trí chữa lành cơ thể như thế nào">
+                        <h4>Tâm trí chữa lành cơ thể như thế nào</h4>
+                        <p class="price">239.000đ</p>
+                    </div>
+                    <div class="product-item" onclick="window.location.href='product.html?id=2'">
+                        <img src="images/book-global-class.jpg" alt="Global Class - Doanh nghiệp vươn tầm thế giới">
+                        <h4>Global Class - Doanh nghiệp vươn tầm thế giới</h4>
+                        <p class="price">249.000đ</p>
+                    </div>
+                    <div class="product-item" onclick="window.location.href='product.html?id=3'">
+                        <img src="images/book-cam-go.jpg" alt="Khác hoa học tranh lịch sử Nam Kỳ">
+                        <h4>Khác hoa học tranh lịch sử Nam Kỳ</h4>
+                        <p class="price">199.000đ</p>
+                    </div>
+                    <div class="product-item" onclick="window.location.href='product.html?id=4'">
+                        <img src="images/book-my-thuat.jpg" alt="Để hiểu nghệ thuật 28%">
+                        <h4>Để hiểu nghệ thuật 28%</h4>
+                        <p class="price">289.000đ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="images/logo.png" alt="BookShelf Logo" class="footer-logo">
+                    <p>Công ty cổ phần truyền thông Trạm Đọc, tụt đúng chém của chính quyền về ngành</p>
+                    <p><strong>Bạn cần hỗ trợ? Gọi chúng tôi 24/7</strong></p>
+                    <p class="phone">0866836004</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#">Hướng dẫn thanh toán</a></li>
+                        <li><a href="#">Hướng dẫn giao nhận</a></li>
+                        <li><a href="#">Điều khoản dịch vụ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Chính sách</h4>
+                    <ul>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Quy định sử dụng</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Nhận tin khuyến mãi</h4>
+                    <p>Hỗ trợ khách hàng 24/7</p>
+                    <p>Nhập email của bạn</p>
+                    <button class="newsletter-btn">Đăng ký</button>
+                    
+                    <h5>Theo dõi chúng tôi</h5>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Product detail specific functions
+        function changeMainImage(thumbnail) {
+            const mainImage = document.getElementById('mainProductImage');
+            mainImage.src = thumbnail.src;
+            
+            // Update active thumbnail
+            document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
+            thumbnail.classList.add('active');
+        }
+
+        function changeQuantity(delta) {
+            const quantityInput = document.getElementById('quantity');
+            let currentValue = parseInt(quantityInput.value);
+            let newValue = currentValue + delta;
+            
+            if (newValue >= 1) {
+                quantityInput.value = newValue;
+            }
+        }
+
+        function showTab(tabName) {
+            // Hide all tab panes
+            document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Add to cart functionality
+        document.querySelector('.btn-add-cart').addEventListener('click', function() {
+            const quantity = document.getElementById('quantity').value;
+            alert(`Đã thêm ${quantity} sản phẩm vào giỏ hàng!`);
+            
+            // Update cart count
+            const cartCount = document.querySelector('.cart-count');
+            const currentCount = parseInt(cartCount.textContent);
+            cartCount.textContent = currentCount + parseInt(quantity);
+        });
+
+        // Buy now functionality
+        document.querySelector('.btn-buy-now').addEventListener('click', function() {
+            alert('Chuyển đến trang thanh toán...');
+        });
+    </script>
+</body>
+</html>

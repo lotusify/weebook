@@ -82,4 +82,85 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // --- 4. CHỨC NĂNG CLICK VÀO SẢN PHẨM ---
+    function goToProduct(productId) {
+        window.location.href = `product.html?id=${productId}`;
+    }
+
+    // Thêm event listener cho tất cả sản phẩm
+    function addProductClickEvents() {
+        const productItems = document.querySelectorAll('.product-item');
+        productItems.forEach((item, index) => {
+            if (!item.onclick) {
+                item.style.cursor = 'pointer';
+                item.addEventListener('click', () => {
+                    goToProduct(index + 1);
+                });
+            }
+        });
+    }
+
+    // Gọi hàm sau khi DOM load xong
+    addProductClickEvents();
+
+    // --- 5. SEARCH FUNCTIONALITY ---
+    function searchProducts() {
+        const searchInput = document.querySelector('.search-bar input');
+        const searchTerm = searchInput.value.trim();
+        
+        if (searchTerm) {
+            // Redirect to category page with search parameter
+            window.location.href = `category.html?search=${encodeURIComponent(searchTerm)}`;
+        }
+    }
+
+    // Thêm search khi nhấn Enter
+    const searchInput = document.querySelector('.search-bar input');
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchProducts();
+            }
+        });
+    }
+
+    // Thêm search khi click button
+    const searchBtn = document.querySelector('.search-btn');
+    if (searchBtn) {
+        searchBtn.addEventListener('click', searchProducts);
+    }
+
+    // --- 6. SIDEBAR CATEGORY LINKS ---
+    const categoryLinks = document.querySelectorAll('.category-list a');
+    categoryLinks.forEach(link => {
+        if (link.getAttribute('href') === '#') {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Extract category from text content
+                const categoryText = this.textContent.trim();
+                if (categoryText.includes('Sách Tiếng Việt')) {
+                    window.location.href = 'category.html?type=vietnamese';
+                } else if (categoryText.includes('Sách Ngoại Văn')) {
+                    window.location.href = 'category.html?type=foreign';
+                } else if (categoryText.includes('chữ ký')) {
+                    window.location.href = 'category.html?type=signed';
+                }
+            });
+        }
+    });
+
+    // --- 7. BRAND LOGO LINKS ---
+    function addBrandLogoLinks() {
+        const brandLogos = document.querySelectorAll('.product-brand-logos img');
+        brandLogos.forEach(logo => {
+            logo.style.cursor = 'pointer';
+            logo.addEventListener('click', function() {
+                // Redirect to a specific category or publisher page
+                window.location.href = 'category.html?type=vietnamese';
+            });
+        });
+    }
+
+    addBrandLogoLinks();
+
 });
