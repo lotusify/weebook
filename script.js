@@ -190,7 +190,9 @@ function initializeNavigation() {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const subcategory = link.dataset.subcategory;
-                window.location.href = `category.html?subcategory=${subcategory}`;
+                const parentCategoryLink = item.querySelector('a[data-category]');
+                const category = parentCategoryLink ? parentCategoryLink.dataset.category : '';
+                window.location.href = `category.html?category=${category}&subcategory=${subcategory}`;
             });
         });
     });
@@ -198,18 +200,25 @@ function initializeNavigation() {
 
 function setActiveNavigationItem() {
     const currentPage = getCurrentPage();
+    console.log('Setting active nav for page:', currentPage);
+    
     const navLinks = document.querySelectorAll('.nav-links a');
+    console.log('Found nav links:', navLinks.length);
     
     navLinks.forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href');
+        console.log('Checking link:', href, 'for page:', currentPage);
         
-        if (currentPage === 'index' && href === 'index.html') {
+        if (currentPage === 'index' && href.includes('index.html')) {
             link.classList.add('active');
+            console.log('Set active for index page');
         } else if (currentPage === 'category' && href.includes('category.html')) {
             link.classList.add('active');
-        } else if (currentPage === 'about' && href === 'about.html') {
+            console.log('Set active for category page');
+        } else if (currentPage === 'about' && href.includes('about.html')) {
             link.classList.add('active');
+            console.log('Set active for about page');
         }
     });
 }
@@ -312,12 +321,41 @@ function initializeProductGrid() {
     productCards.forEach(card => {
         card.addEventListener('click', handleProductClick);
         
+        // Quick view button
+        const quickViewBtn = card.querySelector('.quick-view-btn');
+        if (quickViewBtn) {
+            quickViewBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const productId = card.dataset.productId || '1';
+                
+                // Add visual feedback
+                quickViewBtn.style.transform = 'scale(0.9)';
+                quickViewBtn.style.backgroundColor = '#007bff';
+                setTimeout(() => {
+                    quickViewBtn.style.transform = 'scale(1)';
+                    quickViewBtn.style.backgroundColor = '';
+                }, 200);
+                
+                // Navigate to product page
+                window.location.href = `product.html?id=${productId}`;
+            });
+        }
+        
         // Add to cart button
         const addToCartBtn = card.querySelector('.add-to-cart-btn');
         if (addToCartBtn) {
             addToCartBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const productId = card.dataset.productId || '1';
+                
+                // Add visual feedback
+                addToCartBtn.style.transform = 'scale(0.9)';
+                addToCartBtn.style.backgroundColor = '#28a745';
+                setTimeout(() => {
+                    addToCartBtn.style.transform = 'scale(1)';
+                    addToCartBtn.style.backgroundColor = '';
+                }, 200);
+                
                 addToCart(productId);
             });
         }
@@ -328,6 +366,13 @@ function initializeProductGrid() {
             wishlistBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const productId = card.dataset.productId || '1';
+                
+                // Add visual feedback
+                wishlistBtn.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    wishlistBtn.style.transform = 'scale(1)';
+                }, 150);
+                
                 toggleWishlist(productId);
             });
         }
@@ -755,7 +800,9 @@ function loadHomePageContent() {
             featuredContainer.innerHTML = featuredBooks.map(book => renderProductCard(book)).join('');
             
             // Re-initialize product grid after loading content
-            initializeProductGrid();
+            setTimeout(() => {
+                initializeProductGrid();
+            }, 100);
         } else {
             featuredContainer.innerHTML = '<p>Không có sản phẩm nổi bật</p>';
         }
@@ -773,7 +820,9 @@ function loadHomePageContent() {
             newReleasesContainer.innerHTML = newBooks.map(book => renderProductCard(book)).join('');
             
             // Re-initialize product grid after loading content
-            initializeProductGrid();
+            setTimeout(() => {
+                initializeProductGrid();
+            }, 100);
         } else {
             newReleasesContainer.innerHTML = '<p>Không có sách mới</p>';
         }
@@ -1009,7 +1058,15 @@ function initializeCategoryPage() {
 }
 
 function loadCategoryContent() {
-    if (!window.BookDatabase) return;
+    console.log('loadCategoryContent called');
+    
+    if (!window.BookDatabase) {
+        console.log('BookDatabase not available');
+        return;
+    }
+    
+    console.log('BookDatabase is available:', typeof window.BookDatabase);
+    console.log('getAllBooks method:', typeof window.BookDatabase.getAllBooks);
     
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category');
@@ -1017,28 +1074,46 @@ function loadCategoryContent() {
     const search = urlParams.get('search');
     const type = urlParams.get('type');
     
-    let books = [];
-    let pageTitle = 'Tất cả sách';
+    console.log('URL params:', { category, subcategory, search, type });
+    console.log('Current URL:', window.location.href);
     
-    // Mặc định hiển thị tất cả sách
-    books = window.BookDatabase.getAllBooks();
+    let books = [];
+    let pageTitle = 'Tất cả sản phẩm';
+    
+    try {
+        // Mặc định hiển thị tất cả sách
+        books = window.BookDatabase.getAllBooks();
+        console.log('Got', books.length, 'books from database');
+        console.log('First book:', books[0]);
+    } catch (error) {
+        console.error('Error getting books:', error);
+        return;
+    }
     
     if (type === 'featured') {
+        console.log('Loading featured books...');
         books = window.BookDatabase.getFeaturedBooks();
         pageTitle = 'Sản phẩm nổi bật';
     } else if (type === 'new') {
+        console.log('Loading new books...');
         books = window.BookDatabase.getNewBooks();
         pageTitle = 'Sách mới phát hành';
     } else if (search) {
+        console.log('Searching books for:', search);
         books = window.BookDatabase.searchBooks(search);
         pageTitle = `Kết quả tìm kiếm: "${search}"`;
     } else if (subcategory) {
-        books = window.BookDatabase.getBooksBySubcategory(subcategory);
-        pageTitle = window.BookDatabase.getSubcategoryName(subcategory);
+        console.log('Loading subcategory:', category, subcategory);
+        books = window.BookDatabase.getBooksBySubcategory(category, subcategory);
+        pageTitle = window.BookDatabase.getSubcategoryName(category, subcategory);
     } else if (category) {
+        console.log('Loading category:', category);
         books = window.BookDatabase.getBooksByCategory(category);
         pageTitle = window.BookDatabase.getCategoryName(category);
+        console.log('Category books found:', books.length);
+        console.log('Page title:', pageTitle);
     } else {
+        console.log('Loading all books...');
         books = window.BookDatabase.getAllBooks();
     }
     
@@ -1061,10 +1136,18 @@ function loadCategoryContent() {
 }
 
 function renderCategoryProducts(books) {
+    console.log('renderCategoryProducts called with', books.length, 'books');
+    
     const productsGrid = document.querySelector('#productGrid');
-    if (!productsGrid) return;
+    if (!productsGrid) {
+        console.log('ProductGrid not found in DOM');
+        return;
+    }
+    
+    console.log('ProductGrid found:', productsGrid);
     
     if (books.length === 0) {
+        console.log('No books to render');
         productsGrid.innerHTML = `
             <div class="no-products">
                 <i class="fas fa-search"></i>
@@ -1075,13 +1158,29 @@ function renderCategoryProducts(books) {
         return;
     }
     
-    productsGrid.innerHTML = books.map(book => renderProductCard(book)).join('');
+    console.log('Rendering', books.length, 'products');
+    console.log('First book:', books[0]);
     
-    // Re-initialize product grid
-    initializeProductGrid();
+    try {
+        // Clear loading placeholder and render products
+        const productHTML = books.map(book => renderProductCard(book)).join('');
+        console.log('Generated HTML length:', productHTML.length);
+        
+        productsGrid.innerHTML = productHTML;
+        
+        console.log('Products rendered successfully');
+        console.log('ProductGrid children count:', productsGrid.children.length);
+    } catch (error) {
+        console.error('Error rendering products:', error);
+        productsGrid.innerHTML = '<div class="error">Lỗi khi tải sản phẩm</div>';
+    }
     
     // Store current books for filtering/sorting
     window.currentBooks = books;
+    
+    // Initialize product grid and update pagination
+    initializeProductGrid();
+    updateProductDisplay(currentPage);
 }
 
 function initializeAboutPage() {
@@ -1204,11 +1303,251 @@ function updateBreadcrumb(book) {
 }
 
 // ========== CATEGORY PAGE FEATURES ========== //
+
+
+function initializeProductPage() {
+    console.log('Product page initialized');
+    
+    // Get product ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+    
+    if (!productId) {
+        console.log('No product ID found in URL');
+        return;
+    }
+    
+    console.log('Loading product with ID:', productId);
+    
+    // Load product details
+    loadProductDetails(productId);
+}
+
+function loadProductDetails(productId) {
+    if (!window.BookDatabase) {
+        console.log('BookDatabase not available');
+        return;
+    }
+    
+    const product = window.BookDatabase.getBookById(productId);
+    
+    if (!product) {
+        console.log('Product not found with ID:', productId);
+        document.getElementById('productTitle').textContent = 'Sản phẩm không tồn tại';
+        return;
+    }
+    
+    console.log('Product found:', product);
+    
+    // Update page title
+    document.title = `${product.title} - BookSelf`;
+    
+    // Update breadcrumb
+    document.getElementById('breadcrumb-product').textContent = product.title;
+    
+    // Update main image
+    const mainImage = document.getElementById('mainProductImage');
+    mainImage.src = product.images[0];
+    mainImage.alt = product.title;
+    
+    // Update thumbnails
+    const thumbnailsContainer = document.getElementById('imageThumbnails');
+    thumbnailsContainer.innerHTML = '';
+    product.images.forEach((image, index) => {
+        const thumbnail = document.createElement('img');
+        thumbnail.src = image;
+        thumbnail.alt = product.title;
+        thumbnail.className = `thumbnail ${index === 0 ? 'active' : ''}`;
+        thumbnail.onclick = () => changeMainImage(thumbnail);
+        thumbnailsContainer.appendChild(thumbnail);
+    });
+    
+    // Update product info
+    document.getElementById('productTitle').textContent = product.title;
+    document.getElementById('productAuthor').textContent = product.author;
+    document.getElementById('productSku').textContent = product.id;
+    
+    // Update brand (use publisher if available, otherwise default to BookSelf)
+    const brandElement = document.getElementById('productBrand');
+    if (brandElement && product.publisher) {
+        brandElement.textContent = product.publisher;
+    }
+    
+    // Update shop name to match brand
+    const shopNameElement = document.getElementById('shopName');
+    if (shopNameElement && product.publisher) {
+        shopNameElement.textContent = product.publisher.toUpperCase();
+    }
+    
+    // Update rating
+    const ratingContainer = document.getElementById('productRating');
+    ratingContainer.innerHTML = `
+        <div class="stars">${renderStars(product.rating)}</div>
+        <span class="rating-text">(${product.reviewCount})</span>
+    `;
+    
+    // Update price
+    document.getElementById('currentPrice').textContent = formatPrice(product.price);
+    if (product.originalPrice > product.price) {
+        const originalPriceEl = document.getElementById('originalPrice');
+        originalPriceEl.textContent = formatPrice(product.originalPrice);
+        originalPriceEl.style.display = 'inline';
+    }
+    
+    // Update badges
+    if (product.discount > 0) {
+        const discountBadge = document.getElementById('discountBadge');
+        discountBadge.textContent = `-${product.discount}%`;
+        discountBadge.style.display = 'block';
+    }
+    
+    if (product.newRelease) {
+        document.getElementById('newBadge').style.display = 'block';
+    }
+    
+    // Update stock status
+    const stockStatus = document.getElementById('stockStatus');
+    if (product.stock > 0) {
+        stockStatus.innerHTML = `<span class="in-stock">Còn hàng (${product.stock} sản phẩm)</span>`;
+    } else {
+        stockStatus.innerHTML = `<span class="out-of-stock">Hết hàng</span>`;
+    }
+    
+    // Update description
+    document.getElementById('productDescription').innerHTML = `
+        <p>${product.description}</p>
+        <div class="product-tags">
+            <strong>Tags:</strong>
+            ${product.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+        </div>
+    `;
+    
+    // Update specifications
+    document.getElementById('productSpecifications').innerHTML = `
+        <table class="specs-table">
+            <tr><td>ISBN:</td><td>${product.isbn}</td></tr>
+            <tr><td>Số trang:</td><td>${product.pages}</td></tr>
+            <tr><td>Ngôn ngữ:</td><td>${product.language}</td></tr>
+            <tr><td>Định dạng:</td><td>${product.format}</td></tr>
+            <tr><td>Trọng lượng:</td><td>${product.weight}</td></tr>
+            <tr><td>Kích thước:</td><td>${product.dimensions}</td></tr>
+            <tr><td>Nhà xuất bản:</td><td>${product.publisher}</td></tr>
+            <tr><td>Ngày phát hành:</td><td>${product.publishDate}</td></tr>
+        </table>
+    `;
+    
+    // Update reviews (placeholder)
+    document.getElementById('productReviews').innerHTML = `
+        <div class="reviews-summary">
+            <div class="rating-overview">
+                <span class="rating-number">${product.rating}</span>
+                <div class="stars">${renderStars(product.rating)}</div>
+                <span class="review-count">${product.reviewCount} đánh giá</span>
+            </div>
+        </div>
+        <p>Chức năng đánh giá sẽ được phát triển trong phiên bản tiếp theo.</p>
+    `;
+    
+    // Load related products
+    loadRelatedProducts(productId);
+    
+    // Initialize wishlist button
+    initializeWishlistButton(productId);
+    
+    // Initialize add to cart functionality
+    initializeAddToCart(productId);
+}
+
+function loadRelatedProducts(productId) {
+    if (!window.BookDatabase) {
+        console.log('BookDatabase not available for related products');
+        return;
+    }
+    
+    const currentProduct = window.BookDatabase.getBookById(productId);
+    if (!currentProduct) {
+        console.log('Current product not found for related products');
+        return;
+    }
+    
+    // Get products from the same category
+    const relatedProducts = window.BookDatabase.getBooksByCategory(currentProduct.category)
+        .filter(product => product.id !== currentProduct.id)
+        .slice(0, 4); // Show max 4 related products
+    
+    console.log('Found', relatedProducts.length, 'related products');
+    
+    const relatedGrid = document.getElementById('relatedProductsGrid');
+    if (relatedGrid && relatedProducts.length > 0) {
+        relatedGrid.innerHTML = relatedProducts.map(book => renderProductCard(book)).join('');
+        
+        // Initialize product grid for related products
+        setTimeout(() => {
+            initializeProductGrid();
+        }, 100);
+    } else if (relatedGrid) {
+        relatedGrid.innerHTML = '<p>Không có sản phẩm liên quan.</p>';
+    }
+}
+
+function initializeWishlistButton(productId) {
+    const wishlistBtn = document.getElementById('wishlistBtn');
+    if (wishlistBtn) {
+        wishlistBtn.onclick = (e) => {
+            e.preventDefault();
+            toggleWishlist(productId);
+            
+            // Visual feedback
+            wishlistBtn.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                wishlistBtn.style.transform = 'scale(1)';
+            }, 150);
+        };
+        
+        // Update button state
+        updateWishlistButtons();
+    }
+}
+
+function initializeAddToCart(productId) {
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const buyNowBtn = document.getElementById('buyNowBtn');
+    
+    if (addToCartBtn) {
+        addToCartBtn.onclick = (e) => {
+            e.preventDefault();
+            const quantity = parseInt(document.getElementById('quantity').value);
+            addToCart(productId, quantity);
+            
+            // Visual feedback
+            addToCartBtn.style.transform = 'scale(0.9)';
+            addToCartBtn.style.backgroundColor = '#28a745';
+            setTimeout(() => {
+                addToCartBtn.style.transform = 'scale(1)';
+                addToCartBtn.style.backgroundColor = '';
+            }, 200);
+        };
+    }
+    
+    if (buyNowBtn) {
+        buyNowBtn.onclick = (e) => {
+            e.preventDefault();
+            const quantity = parseInt(document.getElementById('quantity').value);
+            addToCart(productId, quantity);
+            
+            // Redirect to checkout
+            setTimeout(() => {
+                window.location.href = 'checkout.html';
+            }, 500);
+        };
+    }
+}
+
 function initializeFilters() {
     // Sort dropdown
     const sortSelect = document.querySelector('#sortSelect');
     if (sortSelect) {
-        sortSelect.addEventListener('change', applySorting);
+        sortSelect.addEventListener('change', sortProducts);
     }
     
     // Price filter buttons
@@ -1223,7 +1562,14 @@ function initializeFilters() {
             // Add active to clicked
             btn.classList.add('active');
             
-            applyFilters();
+            // Get the price range from onclick attribute
+            const onclick = btn.getAttribute('onclick');
+            if (onclick) {
+                const match = onclick.match(/filterByPrice\('([^']+)'\)/);
+                if (match) {
+                    filterByPrice(match[1]);
+                }
+            }
         });
     });
     
@@ -1713,6 +2059,11 @@ function filterByPrice(priceRange) {
             product.classList.add('hidden');
         }
     });
+    
+    // Update pagination after filtering
+    setTimeout(() => {
+        updateProductDisplay(currentPage);
+    }, 100);
 }
 
 // Set view mode (grid or list)
@@ -1771,12 +2122,130 @@ function sortProducts() {
     
     // Re-append sorted products
     products.forEach(product => productGrid.appendChild(product));
+    
+    // Update pagination after sorting
+    setTimeout(() => {
+        updateProductDisplay(currentPage);
+    }, 100);
 }
 
 // Change page (pagination)
 function changePage(direction) {
     console.log('Changing page:', direction);
-    // TODO: Implement pagination logic
+    
+    const totalPages = Math.ceil(totalProducts / currentProductsPerPage);
+    let newPage = currentPage + direction;
+    
+    // Validate page bounds
+    if (newPage < 1) newPage = 1;
+    if (newPage > totalPages) newPage = totalPages;
+    
+    if (newPage === currentPage) return; // No change needed
+    
+    currentPage = newPage;
+    updateProductDisplay(currentPage);
+}
+
+// Global variables for pagination
+let currentProductsPerPage = 30; // Fixed at 30 items per page
+let currentPage = 1;
+let totalProducts = 0;
+
+function updateProductDisplay(page) {
+    const productGrid = document.getElementById('productGrid');
+    if (!productGrid) {
+        console.log('ProductGrid not found');
+        return;
+    }
+    
+    const products = productGrid.querySelectorAll('.product-card');
+    totalProducts = products.length;
+    
+    console.log(`Total products found: ${totalProducts}`);
+    
+    if (totalProducts === 0) {
+        console.log('No products to display');
+        return;
+    }
+    
+    // Calculate pagination
+    const totalPages = Math.ceil(totalProducts / currentProductsPerPage);
+    const startIndex = (page - 1) * currentProductsPerPage;
+    const endIndex = startIndex + currentProductsPerPage;
+    
+    // Show/hide products based on pagination
+    products.forEach((product, index) => {
+        if (index >= startIndex && index < endIndex) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
+    });
+    
+    // Update pagination controls
+    updatePaginationControls();
+    
+    console.log(`Showing products ${startIndex + 1}-${Math.min(endIndex, totalProducts)} of ${totalProducts} (Page ${page}/${totalPages})`);
+}
+
+function updatePaginationControls() {
+    const totalPages = Math.ceil(totalProducts / currentProductsPerPage);
+    const paginationContainer = document.querySelector('.pagination');
+    
+    console.log('Updating pagination controls:', { totalProducts, currentProductsPerPage, totalPages, currentPage });
+    
+    if (!paginationContainer) {
+        console.log('Pagination container not found');
+        return;
+    }
+    
+    // Update page numbers
+    const pageNumbers = paginationContainer.querySelector('.page-numbers');
+    if (pageNumbers) {
+        pageNumbers.innerHTML = '';
+        
+        // Show max 5 pages
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(totalPages, startPage + 4);
+        
+        if (endPage - startPage < 4) {
+            startPage = Math.max(1, endPage - 4);
+        }
+        
+        for (let i = startPage; i <= endPage; i++) {
+            const pageBtn = document.createElement('button');
+            pageBtn.className = `page-num ${i === currentPage ? 'active' : ''}`;
+            pageBtn.textContent = i;
+            pageBtn.onclick = () => goToPage(i);
+            pageNumbers.appendChild(pageBtn);
+        }
+    }
+    
+    // Update prev/next buttons
+    const prevBtn = paginationContainer.querySelector('.page-btn:first-child');
+    const nextBtn = paginationContainer.querySelector('.page-btn:last-child');
+    
+    if (prevBtn) {
+        prevBtn.disabled = currentPage === 1;
+    }
+    if (nextBtn) {
+        nextBtn.disabled = currentPage === totalPages;
+    }
+}
+
+
+function goToPage(page) {
+    if (page === currentPage) return; // Already on this page
+    
+    currentPage = page;
+    updateProductDisplay(currentPage);
+}
+
+// Function to change items per page
+function changeItemsPerPage(itemsPerPage) {
+    currentProductsPerPage = itemsPerPage;
+    currentPage = 1; // Reset to first page
+    updateProductDisplay(currentPage);
 }
 
 // Export category functions to global scope
@@ -1784,3 +2253,5 @@ window.filterByPrice = filterByPrice;
 window.setView = setView;
 window.sortProducts = sortProducts;
 window.changePage = changePage;
+window.goToPage = goToPage;
+window.changeItemsPerPage = changeItemsPerPage;

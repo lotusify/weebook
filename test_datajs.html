@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test data.js</title>
+</head>
+<body>
+    <h1>Testing data.js</h1>
+    <div id="result"></div>
+    
+    <script src="data.js"></script>
+    <script>
+        try {
+            console.log('Testing data.js...');
+            
+            if (typeof window.BookDatabase !== 'undefined') {
+                console.log('✅ BookDatabase is available');
+                
+                const allBooks = window.BookDatabase.getAllBooks();
+                console.log('✅ Got', allBooks.length, 'books');
+                
+                const vietnameseBooks = window.BookDatabase.getBooksByCategory('vietnamese');
+                console.log('✅ Vietnamese books:', vietnameseBooks.length);
+                
+                const literatureBooks = window.BookDatabase.getBooksBySubcategory('vietnamese', 'literature');
+                console.log('✅ Literature books:', literatureBooks.length);
+                
+                document.getElementById('result').innerHTML = `
+                    <p>✅ BookDatabase loaded successfully!</p>
+                    <p>Total books: ${allBooks.length}</p>
+                    <p>Vietnamese books: ${vietnameseBooks.length}</p>
+                    <p>Literature books: ${literatureBooks.length}</p>
+                `;
+            } else {
+                console.log('❌ BookDatabase not available');
+                document.getElementById('result').innerHTML = '<p>❌ BookDatabase not available</p>';
+            }
+        } catch (error) {
+            console.error('❌ Error:', error);
+            document.getElementById('result').innerHTML = `<p>❌ Error: ${error.message}</p>`;
+        }
+    </script>
+</body>
+</html>

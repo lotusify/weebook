@@ -136,6 +136,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const headerPlaceholder = document.getElementById('header-placeholder');
     if (headerPlaceholder) {
         headerPlaceholder.innerHTML = headerHTML;
+        
+        // Set active navigation after header is loaded
+        setTimeout(() => {
+            if (typeof setActiveNavigationItem === 'function') {
+                setActiveNavigationItem();
+            }
+        }, 100);
     }
 
     // Load footer

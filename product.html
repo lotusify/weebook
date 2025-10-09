@@ -3,56 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiết sản phẩm - BookShelf</title>
+    <title>Chi tiết sản phẩm - BookSelf</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <script src="data.js"></script>
-    <script src="script.js"></script>
-    <header>
-        <div class="header-main">
-            <div class="container">
-                <div class="brand-section">
-                    <a href="index.html" class="logo">
-                        <img src="images/logo.png" alt="BookShelf Logo">
-                        <span class="brand-name">BookShelf</span>
-                    </a>
-                </div>
-
-                <nav class="main-nav">
-                    <ul class="nav-links">
-                        <li><a href="index.html"><span>Trang Chủ</span></a></li>
-                        <li><a href="category.html?type=new"><span>Sách Mới</span></a></li>
-                        <li><a href="about.html"><span>Về Chúng Tôi</span></a></li>
-                    </ul>
-                </nav>
-
-                <div class="search-container">
-                    <div class="search-bar">
-                        <button class="filter-btn"><i class="fa-solid fa-filter"></i></button>
-                        <input type="text" class="search-input" placeholder="Tìm kiếm sản phẩm...">
-                        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-                </div>
-
-                <div class="header-right">
-                    <div class="opening-hours">
-                        <i class="fa-regular fa-clock"></i>
-                        <span>
-                            <strong>THỜI GIAN MỞ CỬA</strong><br>
-                            8H - 22H T2 - CN
-                        </span>
-                    </div>
-                    <div class="user-actions">
-                        <a href="auth.html"><i class="fa-regular fa-user"></i> <span>Tài khoản</span></a>
-                        <a href="#" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i> <span>Giỏ hàng</span> <span class="cart-count">0</span></a>
-                        <a href="admin.html" class="admin-link" style="display: none;"><i class="fa-solid fa-cog"></i> <span>Admin</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Dynamic Header -->
+    <div id="header-placeholder"></div>
 
     <main class="product-detail-page">
         <div class="container">
@@ -60,20 +17,20 @@
             <nav class="breadcrumb">
                 <a href="index.html">Trang chủ</a>
                 <span>/</span>
-                <a href="category.html?type=vietnamese">Nhi Sưt</a>
+                <a href="category.html">Sản phẩm</a>
                 <span>/</span>
-                <span>Xem tranh 289k</span>
+                <span id="breadcrumb-product">Loading...</span>
             </nav>
 
             <div class="product-detail-container">
                 <!-- Product Images -->
                 <div class="product-images">
                     <div class="main-image">
-                        <img src="" alt="Product Image">
-                        <span class="discount-badge" style="display: none;"></span>
-                        <span class="new-badge" style="display: none;"></span>
+                        <img id="mainProductImage" src="" alt="Product Image">
+                        <span class="discount-badge" id="discountBadge" style="display: none;"></span>
+                        <span class="new-badge" id="newBadge" style="display: none;"></span>
                     </div>
-                    <div class="image-thumbnails">
+                    <div class="image-thumbnails" id="imageThumbnails">
                         <!-- Dynamic thumbnails will be loaded here -->
                     </div>
                 </div>
@@ -81,29 +38,29 @@
                 <!-- Product Info -->
                 <div class="product-info">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
-                        <h1 class="product-title" style="margin: 0; flex: 1;">Loading...</h1>
-                        <button class="wishlist-btn" style="position: static; margin-left: 15px;" title="Thêm vào yêu thích">
+                        <h1 class="product-title" id="productTitle" style="margin: 0; flex: 1;">Loading...</h1>
+                        <button class="wishlist-btn" id="wishlistBtn" style="position: static; margin-left: 15px;" title="Thêm vào yêu thích">
                             <i class="fas fa-heart"></i>
                         </button>
                     </div>
-                    <p class="product-author">Loading...</p>
-                    <div class="product-rating">
+                    <p class="product-author" id="productAuthor">Loading...</p>
+                    <div class="product-rating" id="productRating">
                         <div class="stars"></div>
                         <span class="rating-text"></span>
                     </div>
                     <div class="product-meta">
-                        <span class="brand">Thương hiệu: <strong>BookShelf</strong></span>
-                        <span class="sku">Mã sản phẩm: <strong class="product-sku"></strong></span>
+                        <span class="brand">Thương hiệu: <strong id="productBrand">BookSelf</strong></span>
+                        <span class="sku">Mã sản phẩm: <strong class="product-sku" id="productSku"></strong></span>
                     </div>
 
                     <div class="product-price">
-                        <span class="current-price">Loading...</span>
-                        <span class="original-price" style="display: none;"></span>
+                        <span class="current-price" id="currentPrice">Loading...</span>
+                        <span class="original-price" id="originalPrice" style="display: none;"></span>
                     </div>
                     
-                    <div class="stock-status"></div>
+                    <div class="stock-status" id="stockStatus"></div>
                     
-                    <div class="discount-badge" style="display: none;"></div>
+                    <div class="discount-badge" id="productDiscountBadge" style="display: none;"></div>
 
                     <div class="product-actions">
                         <div class="quantity-selector">
@@ -112,8 +69,8 @@
                             <button class="qty-btn plus" onclick="changeQuantity(1)">+</button>
                         </div>
                         <div class="action-buttons">
-                            <button class="btn-add-cart">Cho vào giỏ</button>
-                            <button class="btn-buy-now">Mua ngay</button>
+                            <button class="btn-add-cart" id="addToCartBtn">Cho vào giỏ</button>
+                            <button class="btn-buy-now" id="buyNowBtn">Mua ngay</button>
                         </div>
                     </div>
 
@@ -145,23 +102,15 @@
                 <!-- Seller Info -->
                 <div class="seller-info">
                     <div class="seller-badge">
-                        <img src="images/logo.png" alt="Omega Books" class="seller-logo">
+                        <img src="images/logo.png" alt="BookSelf" class="seller-logo">
                         <div class="seller-details">
-                            <h4>OMEGA BOOKS</h4>
+                            <h4 id="shopName">BOOKSELF</h4>
                             <span>Chính hãng</span>
                         </div>
                     </div>
                     <div class="seller-actions">
                         <button class="btn-chat" onclick="openChat()">Chat</button>
                         <button class="btn-view-shop" onclick="viewShop()">Xem shop</button>
-                    </div>
-                    
-                    <div class="related-products">
-                        <h4>Sản phẩm liên quan</h4>
-                        <div class="related-items">
-                            <!-- Dynamic related products will be loaded here -->
-                        </div>
-                        <button class="btn-view-more">Xem thêm</button>
                     </div>
                 </div>
             </div>
@@ -176,32 +125,15 @@
                 
                 <div class="tab-content">
                     <div id="description" class="tab-pane active">
-                        <!-- Dynamic product description will be loaded here -->
+                        <div id="productDescription">Loading...</div>
                     </div>
                     
                     <div id="specifications" class="tab-pane">
-                        <!-- Dynamic product specifications will be loaded here -->
+                        <div id="productSpecifications">Loading...</div>
                     </div>
                     
                     <div id="reviews" class="tab-pane">
-                        <!-- Dynamic product reviews will be loaded here -->
-                    </div>
-                    
-                    <div id="guide" class="tab-pane">
-                        <h3>HƯỚNG DẪN MUA HÀNG</h3>
-                        <div class="guide-content">
-                            <h4>Các bước đặt hàng:</h4>
-                            <ol>
-                                <li>Chọn sản phẩm và thêm vào giỏ hàng</li>
-                                <li>Kiểm tra thông tin và số lượng</li>
-                                <li>Điền thông tin giao hàng</li>
-                                <li>Chọn phương thức thanh toán</li>
-                                <li>Xác nhận đơn hàng</li>
-                            </ol>
-                            
-                            <h4>Chính sách đổi trả:</h4>
-                            <p>Sản phẩm được đổi trả trong vòng 30 ngày kể từ ngày nhận hàng nếu có lỗi từ nhà sản xuất.</p>
-                        </div>
+                        <div id="productReviews">Loading...</div>
                     </div>
                 </div>
             </div>
@@ -209,58 +141,24 @@
             <!-- Related Products -->
             <div class="related-products-section">
                 <h2>Sản phẩm liên quan</h2>
-                <div class="product-grid">
+                <div class="product-grid" id="relatedProductsGrid">
                     <!-- Dynamic related products will be loaded here -->
                 </div>
             </div>
         </div>
     </main>
 
-    <footer>
-        <div class="footer-main container">
-            <div class="footer-col about-us">
-                <img src="images/logo.png" alt="Read Station Logo" class="footer-logo">
-                <p>Công ty cổ phần sách BlackCat</p>
-                <p><strong>Bạn cần hỗ trợ? Gọi chúng tôi 24/7</strong></p>
-                <p class="phone-number">0902 147 258</p>
-                <p class="address-title">Thông tin địa chỉ</p>
-                <p class="address-detail">Số 125 Đường Trần Hưng Đạo, Phường Cầu Kho, Quận 1, TP. Hồ Chí Minh</p>
-            </div>
-            <div class="footer-col">
-                <h3>Hỗ trợ</h3>
-                <ul>
-                    <li><a href="#">Hướng dẫn mua hàng</a></li>
-                    <li><a href="#">Hướng dẫn thanh toán</a></li>
-                    <li><a href="#">Hướng dẫn giao nhận</a></li>
-                    <li><a href="#">Điều khoản dịch vụ</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Chính sách</h3>
-                <ul>
-                    <li><a href="#">Chính sách bảo mật</a></li>
-                    <li><a href="#">Chính sách vận chuyển</a></li>
-                    <li><a href="#">Chính sách đổi trả</a></li>
-                    <li><a href="#">Quy định sử dụng</a></li>
-                </ul>
-            </div>
-            <div class="footer-col newsletter">
-                <h3>Nhận tin khuyến mãi</h3>
-                <p>Hỗ trợ khách hàng 24/7</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Nhập email của bạn">
-                    <button type="submit">Đăng ký</button>
-                </form>
-                <p class="social-title">Theo dõi chúng tôi</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Dynamic Footer -->
+    <div id="footer-placeholder"></div>
 
+    <!-- Dynamic Chatbot -->
+    <div id="chatbot-placeholder"></div>
+
+    <script src="load-components.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    
     <script>
         // Product detail specific functions
         function changeMainImage(thumbnail) {
@@ -292,56 +190,29 @@
             event.target.classList.add('active');
         }
 
-        // Add to cart functionality
-        document.querySelector('.btn-add-cart').addEventListener('click', function() {
-            const quantity = document.getElementById('quantity').value;
-            alert(`Đã thêm ${quantity} sản phẩm vào giỏ hàng!`);
-            
-            // Update cart count
-            const cartCount = document.querySelector('.cart-count');
-            const currentCount = parseInt(cartCount.textContent);
-            cartCount.textContent = currentCount + parseInt(quantity);
-        });
+        function openChat() {
+            alert('Mở chat với shop...');
+        }
 
-        // Buy now functionality
-        document.querySelector('.btn-buy-now').addEventListener('click', function() {
-            alert('Chuyển đến trang thanh toán...');
+        function viewShop() {
+            alert('Xem shop...');
+        }
+
+        // Initialize product page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for BookDatabase to be available
+            const waitForData = () => {
+                if (window.BookDatabase) {
+                    console.log('BookDatabase loaded, initializing product page...');
+                    initializeProductPage();
+                } else {
+                    console.log('BookDatabase not ready, retrying...');
+                    setTimeout(waitForData, 50);
+                }
+            };
+            
+            setTimeout(waitForData, 10);
         });
     </script>
-
-    <!-- Floating Chatbot -->
-    <div class="floating-chatbot" id="floatingChatbot">
-        <div class="chatbot-toggle" onclick="toggleChatbot()">
-            <i class="fas fa-comments"></i>
-        </div>
-        <div class="chatbot-window" id="chatbotWindow">
-            <div class="chatbot-header">
-                <h4>AI Assistant</h4>
-                <button class="chatbot-close" onclick="toggleChatbot()">&times;</button>
-            </div>
-            <div class="chatbot-messages" id="chatbotMessages">
-                <div class="message bot-message">
-                    <div class="message-content">
-                        <p>Xin chào! Tôi là AI Assistant của BookShelf. Tôi có thể giúp bạn tìm sách, trả lời câu hỏi về sản phẩm, hoặc hỗ trợ đặt hàng. Bạn cần gì?</p>
-                        <span class="message-time" id="initialMessageTime"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="chatbot-input">
-                <input type="text" id="chatbotInput" placeholder="Nhập câu hỏi...">
-                <button onclick="sendChatbotMessage()">Gửi</button>
-            </div>
-            <div class="chatbot-actions">
-                <button class="btn-customer-service" onclick="chatWithCustomerService()">
-                    <i class="fas fa-headset"></i>
-                    Tôi muốn chat với CSKH
-                </button>
-            </div>
-        </div>
-    </div>
-    
-    <script src="data.js"></script>
-    <script src="script.js"></script>
-    <script src="auth.js"></script>
 </body>
 </html>

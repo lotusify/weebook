@@ -95,7 +95,8 @@
                     </aside>
                     <div class="main-content-area">
                         <div class="category-header">
-                            <h1 id="categoryTitle">Tất cả sách</h1>
+                            <h1 id="categoryTitle">Tất cả sản phẩm</h1>
+                            <div class="header-controls">
                             <div class="sort-options">
                                 <select id="sortSelect" onchange="sortProducts()">
                                     <option value="default">Sắp xếp mặc định</option>
@@ -104,6 +105,7 @@
                                     <option value="name">Tên A-Z</option>
                                     <option value="newest">Mới nhất</option>
                                 </select>
+                                </div>
                             </div>
                         </div>
 
@@ -129,11 +131,11 @@
                         <div class="pagination">
                             <button class="page-btn" onclick="changePage(-1)">‹ Trước</button>
                             <span class="page-numbers">
-                                <button class="page-num active">1</button>
-                                <button class="page-num">2</button>
-                                <button class="page-num">3</button>
-                                <button class="page-num">4</button>
-                                <button class="page-num">5</button>
+                                <button class="page-num active" onclick="goToPage(1)">1</button>
+                                <button class="page-num" onclick="goToPage(2)">2</button>
+                                <button class="page-num" onclick="goToPage(3)">3</button>
+                                <button class="page-num" onclick="goToPage(4)">4</button>
+                                <button class="page-num" onclick="goToPage(5)">5</button>
                             </span>
                             <button class="page-btn" onclick="changePage(1)">Sau ›</button>
                         </div>
