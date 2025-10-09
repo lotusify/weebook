@@ -5,6 +5,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, BookDatabase available:', !!window.BookDatabase);
     
+    // Initialize chatbot timestamp
+    initializeChatbotTimestamp();
+    
     // Initialize basic features first
     initializeNavigation();
     initializeSearch();
@@ -103,6 +106,14 @@ function showLoading(container) {
             <p>Đang tải...</p>
         </div>
     `;
+}
+
+// ========== CHATBOT INITIALIZATION ========== //
+function initializeChatbotTimestamp() {
+    const initialMessageTime = document.getElementById('initialMessageTime');
+    if (initialMessageTime) {
+        initialMessageTime.textContent = new Date().toLocaleTimeString();
+    }
 }
 
 // ========== NAVIGATION ========== //
@@ -886,6 +897,9 @@ function updateProductInfo(book) {
     
     // Update product details
     updateProductTabs(book);
+    
+    // Load related products
+    loadRelatedProducts(book);
 }
 
 function updateProductTabs(book) {
@@ -1001,11 +1015,21 @@ function loadCategoryContent() {
     const category = urlParams.get('category');
     const subcategory = urlParams.get('subcategory');
     const search = urlParams.get('search');
+    const type = urlParams.get('type');
     
     let books = [];
     let pageTitle = 'Tất cả sách';
     
-    if (search) {
+    // Mặc định hiển thị tất cả sách
+    books = window.BookDatabase.getAllBooks();
+    
+    if (type === 'featured') {
+        books = window.BookDatabase.getFeaturedBooks();
+        pageTitle = 'Sản phẩm nổi bật';
+    } else if (type === 'new') {
+        books = window.BookDatabase.getNewBooks();
+        pageTitle = 'Sách mới phát hành';
+    } else if (search) {
         books = window.BookDatabase.searchBooks(search);
         pageTitle = `Kết quả tìm kiếm: "${search}"`;
     } else if (subcategory) {
@@ -1097,6 +1121,32 @@ function initializeProductDetails() {
         });
     }
     
+    // Add to cart button for product page (different class name)
+    const addToCartBtnProduct = document.querySelector('.btn-add-cart');
+    if (addToCartBtnProduct) {
+        addToCartBtnProduct.addEventListener('click', () => {
+            const productId = getProductIdFromUrl();
+            const quantityInput = document.getElementById('quantity');
+            const quantity = parseInt(quantityInput?.value || 1);
+            addToCart(productId, quantity);
+        });
+    }
+    
+    // Buy now button
+    const buyNowBtn = document.querySelector('.btn-buy-now');
+    if (buyNowBtn) {
+        buyNowBtn.addEventListener('click', () => {
+            const productId = getProductIdFromUrl();
+            const quantityInput = document.getElementById('quantity');
+            const quantity = parseInt(quantityInput?.value || 1);
+            addToCart(productId, quantity);
+            // Redirect to checkout
+            setTimeout(() => {
+                window.location.href = 'checkout.html';
+            }, 500);
+        });
+    }
+    
     // Tab switching
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
@@ -1124,6 +1174,15 @@ function getProductIdFromUrl() {
     const id = urlParams.get('id');
     console.log('Product ID from URL:', id);
     return id || '1';
+}
+
+function changeQuantity(delta) {
+    const quantityInput = document.getElementById('quantity');
+    if (quantityInput) {
+        const currentValue = parseInt(quantityInput.value) || 1;
+        const newValue = Math.max(1, currentValue + delta);
+        quantityInput.value = newValue;
+    }
 }
 
 function updateBreadcrumb(book) {
@@ -1283,15 +1342,34 @@ function logout() {
 }
 
 function updateUserInterface() {
-    // For front-end demo, always show "Tài khoản" link
-    const userAccountLink = document.querySelector('.user-actions a[href="#"]');
+    const user = getCurrentUser();
+    const userAccountLink = document.querySelector('.user-actions a[href="auth.html"]');
+    const adminLink = document.querySelector('.admin-link');
     
     if (userAccountLink) {
-        userAccountLink.innerHTML = `
-            <i class="fa-regular fa-user"></i> 
-            <span>Tài khoản</span>
-        `;
-        userAccountLink.href = 'auth.html';
+        if (user) {
+            userAccountLink.innerHTML = `
+                <i class="fa-regular fa-user"></i> 
+                <span>${user.name}</span>
+            `;
+            userAccountLink.href = 'profile.html';
+            
+            // Show admin link if user is admin
+            if (user.role === 'admin' && adminLink) {
+                adminLink.style.display = 'inline-flex';
+            }
+        } else {
+            userAccountLink.innerHTML = `
+                <i class="fa-regular fa-user"></i> 
+                <span>Tài khoản</span>
+            `;
+            userAccountLink.href = 'auth.html';
+            
+            // Hide admin link
+            if (adminLink) {
+                adminLink.style.display = 'none';
+            }
+        }
     }
 }
 
@@ -1326,3 +1404,383 @@ function addLogoutOption() {
         userActions.appendChild(logoutOption);
     }
 }
+
+function loadRelatedProducts(currentBook) {
+    const relatedProductsSection = document.querySelector('.related-products-section .product-grid');
+    if (!relatedProductsSection) return;
+    
+    // Get related books from same category, excluding current book
+    const relatedBooks = window.BookDatabase.getBooksByCategory(currentBook.category)
+        .filter(book => book.id !== currentBook.id)
+        .slice(0, 4); // Show 4 related products
+    
+    if (relatedBooks.length === 0) {
+        relatedProductsSection.innerHTML = '<p>Không có sản phẩm liên quan.</p>';
+        return;
+    }
+    
+    relatedProductsSection.innerHTML = relatedBooks.map(book => `
+        <div class="product-card" onclick="window.location.href='product.html?id=${book.id}'">
+            <div class="product-image">
+                <img src="${book.images[0]}" alt="${book.title}">
+                ${book.discount > 0 ? `<div class="discount-badge">-${book.discount}%</div>` : ''}
+                ${book.newRelease ? '<div class="new-badge">Mới</div>' : ''}
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">${book.title}</h3>
+                <p class="product-author">${book.author}</p>
+                <div class="product-rating">
+                    ${renderStars(book.rating)}
+                    <span class="rating-count">(${book.reviewCount})</span>
+                </div>
+                <div class="product-price">
+                    <span class="current-price">${formatPrice(book.price)}</span>
+                    ${book.originalPrice > book.price ? `<span class="original-price">${formatPrice(book.originalPrice)}</span>` : ''}
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function openChat() {
+    // Check if user is logged in
+    const user = getCurrentUser();
+    if (!user) {
+        showNotification('Vui lòng đăng nhập để sử dụng tính năng chat!', 'error');
+        setTimeout(() => {
+            window.location.href = 'auth.html';
+        }, 1500);
+        return;
+    }
+    
+    // Open chat modal
+    const chatModal = document.getElementById('chatModal');
+    if (chatModal) {
+        chatModal.style.display = 'flex';
+    } else {
+        createChatModal();
+    }
+}
+
+function viewShop() {
+    // Redirect to shop page (demo)
+    showNotification('Tính năng xem shop đang được phát triển!', 'info');
+}
+
+function createChatModal() {
+    const modal = document.createElement('div');
+    modal.id = 'chatModal';
+    modal.className = 'chat-modal';
+    modal.innerHTML = `
+        <div class="chat-modal-content">
+            <div class="chat-header">
+                <h3>Chat với OMEGA BOOKS</h3>
+                <button class="close-chat" onclick="closeChat()">&times;</button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Xin chào! Tôi có thể giúp gì cho bạn?</p>
+                        <span class="message-time">${new Date().toLocaleTimeString()}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Nhập tin nhắn...">
+                <button onclick="sendMessage()">Gửi</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    modal.style.display = 'flex';
+}
+
+function closeChat() {
+    const chatModal = document.getElementById('chatModal');
+    if (chatModal) {
+        chatModal.style.display = 'none';
+    }
+}
+
+function sendMessage() {
+    const input = document.getElementById('chatInput');
+    const messages = document.getElementById('chatMessages');
+    const message = input.value.trim();
+    
+    if (!message) return;
+    
+    // Add user message
+    const userMessage = document.createElement('div');
+    userMessage.className = 'message user-message';
+    userMessage.innerHTML = `
+        <div class="message-content">
+            <p>${message}</p>
+            <span class="message-time">${new Date().toLocaleTimeString()}</span>
+        </div>
+    `;
+    messages.appendChild(userMessage);
+    
+    // Clear input
+    input.value = '';
+    
+    // Simulate bot response
+    setTimeout(() => {
+        const botMessage = document.createElement('div');
+        botMessage.className = 'message bot-message';
+        botMessage.innerHTML = `
+            <div class="message-content">
+                <p>Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.</p>
+                <span class="message-time">${new Date().toLocaleTimeString()}</span>
+            </div>
+        `;
+        messages.appendChild(botMessage);
+        messages.scrollTop = messages.scrollHeight;
+    }, 1000);
+    
+    messages.scrollTop = messages.scrollHeight;
+}
+
+function toggleChatbot() {
+    const chatbotWindow = document.getElementById('chatbotWindow');
+    const chatbotToggle = document.querySelector('.chatbot-toggle');
+    
+    if (chatbotWindow.style.display === 'block') {
+        chatbotWindow.style.display = 'none';
+        chatbotToggle.innerHTML = '<i class="fas fa-comments"></i>';
+    } else {
+        chatbotWindow.style.display = 'block';
+        chatbotToggle.innerHTML = '<i class="fas fa-times"></i>';
+    }
+}
+
+function sendChatbotMessage() {
+    const input = document.getElementById('chatbotInput');
+    const messages = document.getElementById('chatbotMessages');
+    const message = input.value.trim();
+    
+    if (!message) return;
+    
+    // Add user message
+    const userMessage = document.createElement('div');
+    userMessage.className = 'message user-message';
+    userMessage.innerHTML = `
+        <div class="message-content">
+            <p>${message}</p>
+            <span class="message-time">${new Date().toLocaleTimeString()}</span>
+        </div>
+    `;
+    messages.appendChild(userMessage);
+    
+    // Clear input
+    input.value = '';
+    
+    // Simulate AI response
+    setTimeout(() => {
+        const botMessage = document.createElement('div');
+        botMessage.className = 'message bot-message';
+        
+        let response = getAIResponse(message);
+        
+        botMessage.innerHTML = `
+            <div class="message-content">
+                <p>${response}</p>
+                <span class="message-time">${new Date().toLocaleTimeString()}</span>
+            </div>
+        `;
+        messages.appendChild(botMessage);
+        messages.scrollTop = messages.scrollHeight;
+    }, 1000);
+    
+    messages.scrollTop = messages.scrollHeight;
+}
+
+function getAIResponse(message) {
+    const lowerMessage = message.toLowerCase();
+    
+    if (lowerMessage.includes('sách') || lowerMessage.includes('book')) {
+        return 'Tôi có thể giúp bạn tìm sách theo thể loại. Bạn muốn tìm sách gì? Ví dụ: sách kinh tế, sách văn học, sách thiếu nhi...';
+    } else if (lowerMessage.includes('giá') || lowerMessage.includes('price')) {
+        return 'Giá sách được hiển thị trên từng sản phẩm. Bạn có thể xem chi tiết giá và các chương trình khuyến mãi khi click vào sản phẩm.';
+    } else if (lowerMessage.includes('đặt hàng') || lowerMessage.includes('mua')) {
+        return 'Để đặt hàng, bạn cần đăng nhập tài khoản và thêm sản phẩm vào giỏ hàng. Sau đó tiến hành thanh toán.';
+    } else if (lowerMessage.includes('giao hàng') || lowerMessage.includes('ship')) {
+        return 'Chúng tôi giao hàng toàn quốc. Thời gian giao hàng từ 1-3 ngày làm việc tùy theo địa điểm.';
+    } else if (lowerMessage.includes('đổi trả') || lowerMessage.includes('return')) {
+        return 'Bạn có thể đổi trả sản phẩm trong vòng 30 ngày nếu sản phẩm còn nguyên vẹn và có hóa đơn mua hàng.';
+    } else {
+        return 'Cảm ơn bạn đã liên hệ! Tôi có thể giúp bạn tìm sách, hỗ trợ đặt hàng, hoặc trả lời các câu hỏi về sản phẩm. Bạn cần hỗ trợ gì thêm?';
+    }
+}
+
+function chatWithCustomerService() {
+    const messages = document.getElementById('chatbotMessages');
+    
+    // Add bot message
+    const botMessage = document.createElement('div');
+    botMessage.className = 'message bot-message';
+    botMessage.innerHTML = `
+        <div class="message-content">
+            <p>Chuyển bạn đến chat với nhân viên CSKH. Vui lòng đợi trong giây lát...</p>
+            <span class="message-time">${new Date().toLocaleTimeString()}</span>
+        </div>
+    `;
+    messages.appendChild(botMessage);
+    
+    // Simulate connecting to customer service
+    setTimeout(() => {
+        const csMessage = document.createElement('div');
+        csMessage.className = 'message bot-message';
+        csMessage.innerHTML = `
+            <div class="message-content">
+                <p>Xin chào! Tôi là nhân viên CSKH của BookShelf. Tôi có thể hỗ trợ bạn về đơn hàng, thanh toán, giao hàng và các vấn đề khác. Bạn cần hỗ trợ gì?</p>
+                <span class="message-time">${new Date().toLocaleTimeString()}</span>
+            </div>
+        `;
+        messages.appendChild(csMessage);
+        messages.scrollTop = messages.scrollHeight;
+    }, 2000);
+    
+    messages.scrollTop = messages.scrollHeight;
+}
+
+// Export functions for global access
+if (typeof window !== 'undefined') {
+    window.changeQuantity = changeQuantity;
+    window.openChat = openChat;
+    window.viewShop = viewShop;
+    window.closeChat = closeChat;
+    window.sendMessage = sendMessage;
+    window.toggleChatbot = toggleChatbot;
+    window.sendChatbotMessage = sendChatbotMessage;
+    window.chatWithCustomerService = chatWithCustomerService;
+}
+
+// ========== CATEGORY PAGE FUNCTIONS ========== //
+
+// Filter products by price range
+function filterByPrice(priceRange) {
+    // Update active filter button
+    document.querySelectorAll('.filter-tag').forEach(btn => {
+        btn.classList.remove('active');
+        // Check if this button's onclick matches the priceRange
+        const onclick = btn.getAttribute('onclick');
+        if (onclick && onclick.includes(`'${priceRange}'`)) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Get current products
+    const productGrid = document.getElementById('productGrid');
+    if (!productGrid) return;
+    
+    const products = productGrid.querySelectorAll('.product-card');
+    
+    products.forEach(product => {
+        const priceElement = product.querySelector('.current-price');
+        if (!priceElement) return;
+        
+        const priceText = priceElement.textContent;
+        // Remove all non-digit characters and convert to number
+        const price = parseFloat(priceText.replace(/[^\d]/g, ''));
+        
+        let show = true;
+        
+        switch(priceRange) {
+            case 'under-200':
+                show = price < 200000;
+                break;
+            case '200-300':
+                show = price >= 200000 && price <= 300000;
+                break;
+            case '300-500':
+                show = price >= 300000 && price <= 500000;
+                break;
+            case '500-1000':
+                show = price >= 500000 && price <= 1000000;
+                break;
+            case 'over-1000':
+                show = price > 1000000;
+                break;
+            case 'all':
+            default:
+                show = true;
+                break;
+        }
+        
+        if (show) {
+            product.classList.remove('hidden');
+        } else {
+            product.classList.add('hidden');
+        }
+    });
+}
+
+// Set view mode (grid or list)
+function setView(viewMode) {
+    console.log('Setting view mode:', viewMode);
+    
+    // Update active view button
+    document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.${viewMode}-view`).classList.add('active');
+    
+    // Get products container
+    const productGrid = document.getElementById('productGrid');
+    if (!productGrid) return;
+    
+    if (viewMode === 'list') {
+        productGrid.classList.add('list-view');
+        productGrid.classList.remove('grid-view');
+    } else {
+        productGrid.classList.add('grid-view');
+        productGrid.classList.remove('list-view');
+    }
+}
+
+// Sort products
+function sortProducts() {
+    const sortSelect = document.getElementById('sortSelect');
+    const sortValue = sortSelect.value;
+    
+    console.log('Sorting products by:', sortValue);
+    
+    const productGrid = document.getElementById('productGrid');
+    if (!productGrid) return;
+    
+    const products = Array.from(productGrid.querySelectorAll('.product-card'));
+    
+    products.sort((a, b) => {
+        switch(sortValue) {
+            case 'price-low':
+                const priceA = parseFloat(a.querySelector('.current-price')?.textContent.replace(/[^\d]/g, '') || '0');
+                const priceB = parseFloat(b.querySelector('.current-price')?.textContent.replace(/[^\d]/g, '') || '0');
+                return priceA - priceB;
+            case 'price-high':
+                const priceA2 = parseFloat(a.querySelector('.current-price')?.textContent.replace(/[^\d]/g, '') || '0');
+                const priceB2 = parseFloat(b.querySelector('.current-price')?.textContent.replace(/[^\d]/g, '') || '0');
+                return priceB2 - priceA2;
+            case 'name':
+                const nameA = a.querySelector('.product-title')?.textContent || '';
+                const nameB = b.querySelector('.product-title')?.textContent || '';
+                return nameA.localeCompare(nameB);
+            case 'newest':
+                return 0; // Keep original order for newest
+            default:
+                return 0;
+        }
+    });
+    
+    // Re-append sorted products
+    products.forEach(product => productGrid.appendChild(product));
+}
+
+// Change page (pagination)
+function changePage(direction) {
+    console.log('Changing page:', direction);
+    // TODO: Implement pagination logic
+}
+
+// Export category functions to global scope
+window.filterByPrice = filterByPrice;
+window.setView = setView;
+window.sortProducts = sortProducts;
+window.changePage = changePage;

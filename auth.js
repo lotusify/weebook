@@ -79,26 +79,82 @@ function handleLogin(e) {
         return;
     }
 
-    // For front-end demo, allow any email/password combination
-    // const users = getUsers();
-    // const user = users.find(u => u.email === email);
+    // Check for admin login
+    if (email === 'admin@bookself.com' && password === 'admin@bookself.com') {
+        const adminSession = {
+            id: 'admin',
+            name: 'Administrator',
+            email: email,
+            role: 'admin',
+            loginTime: new Date().toISOString(),
+            rememberMe: rememberMe
+        };
 
-    // if (!user) {
-    //     showNotification('Email không tồn tại!', 'error');
-    //     return;
-    // }
+        // Store admin session
+        if (rememberMe) {
+            localStorage.setItem('bookshelf-user', JSON.stringify(adminSession));
+        } else {
+            sessionStorage.setItem('bookshelf-user', JSON.stringify(adminSession));
+        }
 
-    // if (user.password !== password) {
-    //     showNotification('Mật khẩu không đúng!', 'error');
-    //     return;
-    // }
+        showNotification('Chào mừng Administrator!', 'success');
+        
+        // Redirect to admin dashboard
+        setTimeout(() => {
+            window.location.href = 'admin.html';
+        }, 1500);
+        return;
+    }
 
-    // Login successful - create demo session
+    // Check for default user login
+    if (email === 'user@bookself.com' && password === 'user@bookself.com') {
+        const userSession = {
+            id: 'user',
+            name: 'Người dùng',
+            email: email,
+            phone: '0123456789',
+            role: 'user',
+            loginTime: new Date().toISOString(),
+            rememberMe: rememberMe
+        };
+
+        // Store user session
+        if (rememberMe) {
+            localStorage.setItem('bookshelf-user', JSON.stringify(userSession));
+        } else {
+            sessionStorage.setItem('bookshelf-user', JSON.stringify(userSession));
+        }
+
+        showNotification(`Chào mừng ${userSession.name}!`, 'success');
+        
+        // Redirect to home page
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 1500);
+        return;
+    }
+
+    // Check for regular user login
+    const users = getUsers();
+    const user = users.find(u => u.email === email);
+
+    if (!user) {
+        showNotification('Email không tồn tại!', 'error');
+        return;
+    }
+
+    if (user.password !== password) {
+        showNotification('Mật khẩu không đúng!', 'error');
+        return;
+    }
+
+    // Regular user login successful
     const userSession = {
-        id: Date.now(), // Generate unique ID
-        name: email.split('@')[0], // Use email prefix as name
-        email: email,
-        phone: '0123456789', // Demo phone
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        phone: user.phone,
+        role: 'user',
         loginTime: new Date().toISOString(),
         rememberMe: rememberMe
     };
@@ -309,10 +365,28 @@ function isLoggedIn() {
     return getCurrentUser() !== null;
 }
 
+function isAdmin() {
+    const user = getCurrentUser();
+    return user && user.role === 'admin';
+}
+
+function requireAdmin() {
+    if (!isAdmin()) {
+        showNotification('Bạn không có quyền truy cập trang này!', 'error');
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 1500);
+        return false;
+    }
+    return true;
+}
+
 // Export functions for use in other files
 if (typeof window !== 'undefined') {
     window.getCurrentUser = getCurrentUser;
     window.logout = logout;
     window.isLoggedIn = isLoggedIn;
+    window.isAdmin = isAdmin;
+    window.requireAdmin = requireAdmin;
     window.getUsers = getUsers;
 }

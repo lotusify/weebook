@@ -477,6 +477,11 @@ const BookDatabase = {
         return this.getAllBooks().filter(book => book.newRelease);
     },
 
+    // Get new books (alias for getNewReleases)
+    getNewBooks() {
+        return this.getNewReleases();
+    },
+
     // Get related books (same category, different book)
     getRelatedBooks(bookId, limit = 4) {
         const book = this.getBookById(bookId);

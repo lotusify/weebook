@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - BookSelf</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.css">
+</head>
+<body class="admin-body">
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="admin-header-content">
+            <div class="admin-logo">
+                <img src="images/logo.png" alt="BookSelf Logo">
+                <span>Admin Dashboard</span>
+            </div>
+            <div class="admin-user-info">
+                <a href="index.html" class="btn-home">
+                    <i class="fas fa-home"></i>
+                    Trang chủ
+                </a>
+                <span>Xin chào, Administrator</span>
+                <button class="btn-logout" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Đăng xuất
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <!-- Admin Sidebar -->
+        <aside class="admin-sidebar">
+            <nav class="admin-nav">
+                <ul class="admin-nav-list">
+                    <li class="nav-item active" data-section="dashboard">
+                        <a href="#dashboard">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="books">
+                        <a href="#books">
+                            <i class="fas fa-book"></i>
+                            <span>Quản lý sách</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="orders">
+                        <a href="#orders">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Quản lý đơn hàng</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="users">
+                        <a href="#users">
+                            <i class="fas fa-users"></i>
+                            <span>Quản lý người dùng</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="revenue">
+                        <a href="#revenue">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Doanh thu</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="promotions">
+                        <a href="#promotions">
+                            <i class="fas fa-percentage"></i>
+                            <span>Ưu đãi</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Admin Main Content -->
+        <main class="admin-main">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="admin-section active">
+                <div class="admin-section-header">
+                    <h1>Dashboard</h1>
+                    <p>Tổng quan hệ thống</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="totalBooks">0</h3>
+                            <p>Tổng số sách</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="totalOrders">0</h3>
+                            <p>Tổng đơn hàng</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="totalUsers">0</h3>
+                            <p>Người dùng</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="totalRevenue">0₫</h3>
+                            <p>Doanh thu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3>Doanh thu theo tháng</h3>
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Top sách bán chạy</h3>
+                        <canvas id="topBooksChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="recent-section">
+                    <h3>Đơn hàng gần đây</h3>
+                    <div class="table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Khách hàng</th>
+                                    <th>Sản phẩm</th>
+                                    <th>Tổng tiền</th>
+                                    <th>Trạng thái</th>
+                                    <th>Ngày</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentOrdersTable">
+                                <!-- Dynamic content -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Books Management Section -->
+            <section id="books" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Quản lý sách</h1>
+                    <button class="btn btn-primary" onclick="showAddBookModal()">
+                        <i class="fas fa-plus"></i>
+                        Thêm sách mới
+                    </button>
+                </div>
+
+                <!-- Books Filter -->
+                <div class="admin-filters">
+                    <div class="filter-group">
+                        <input type="text" id="bookSearch" placeholder="Tìm kiếm sách..." class="filter-input">
+                        <select id="bookCategory" class="filter-select">
+                            <option value="">Tất cả danh mục</option>
+                            <option value="vietnamese">Sách Tiếng Việt</option>
+                            <option value="foreign">Sách Ngoại Văn</option>
+                            <option value="signed">Sách có chữ ký</option>
+                        </select>
+                        <button class="btn btn-secondary" onclick="filterBooks()">
+                            <i class="fas fa-filter"></i>
+                            Lọc
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Books Table -->
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Hình ảnh</th>
+                                <th>Tên sách</th>
+                                <th>Tác giả</th>
+                                <th>Danh mục</th>
+                                <th>Giá</th>
+                                <th>Tồn kho</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="booksTable">
+                            <!-- Dynamic content -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Orders Management Section -->
+            <section id="orders" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Quản lý đơn hàng</h1>
+                </div>
+
+                <!-- Orders Filter -->
+                <div class="admin-filters">
+                    <div class="filter-group">
+                        <select id="orderStatus" class="filter-select">
+                            <option value="">Tất cả trạng thái</option>
+                            <option value="pending">Chờ xử lý</option>
+                            <option value="processing">Đang xử lý</option>
+                            <option value="shipped">Đã giao</option>
+                            <option value="delivered">Hoàn thành</option>
+                            <option value="cancelled">Đã hủy</option>
+                        </select>
+                        <input type="date" id="orderDateFrom" class="filter-input">
+                        <input type="date" id="orderDateTo" class="filter-input">
+                        <button class="btn btn-secondary" onclick="filterOrders()">
+                            <i class="fas fa-filter"></i>
+                            Lọc
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Orders Table -->
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Khách hàng</th>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                                <th>Ngày đặt</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTable">
+                            <!-- Dynamic content -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Users Management Section -->
+            <section id="users" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Quản lý người dùng</h1>
+                </div>
+
+                <!-- Users Filter -->
+                <div class="admin-filters">
+                    <div class="filter-group">
+                        <input type="text" id="userSearch" placeholder="Tìm kiếm người dùng..." class="filter-input">
+                        <button class="btn btn-secondary" onclick="filterUsers()">
+                            <i class="fas fa-filter"></i>
+                            Lọc
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Users Table -->
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên</th>
+                                <th>Email</th>
+                                <th>Số điện thoại</th>
+                                <th>Ngày đăng ký</th>
+                                <th>Số đơn hàng</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTable">
+                            <!-- Dynamic content -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Revenue Management Section -->
+            <section id="revenue" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Quản lý doanh thu</h1>
+                </div>
+
+                <!-- Revenue Stats -->
+                <div class="revenue-stats">
+                    <div class="revenue-card">
+                        <h3>Doanh thu hôm nay</h3>
+                        <p id="todayRevenue">0₫</p>
+                    </div>
+                    <div class="revenue-card">
+                        <h3>Doanh thu tháng này</h3>
+                        <p id="monthRevenue">0₫</p>
+                    </div>
+                    <div class="revenue-card">
+                        <h3>Doanh thu năm nay</h3>
+                        <p id="yearRevenue">0₫</p>
+                    </div>
+                </div>
+
+                <!-- Revenue Chart -->
+                <div class="chart-card">
+                    <h3>Biểu đồ doanh thu</h3>
+                    <canvas id="detailedRevenueChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Promotions Management Section -->
+            <section id="promotions" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Quản lý ưu đãi</h1>
+                    <button class="btn btn-primary" onclick="showAddPromotionModal()">
+                        <i class="fas fa-plus"></i>
+                        Thêm ưu đãi mới
+                    </button>
+                </div>
+
+                <!-- Promotions Table -->
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên ưu đãi</th>
+                                <th>Loại</th>
+                                <th>Giá trị</th>
+                                <th>Ngày bắt đầu</th>
+                                <th>Ngày kết thúc</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="promotionsTable">
+                            <!-- Dynamic content -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Book Modal -->
+    <div id="addBookModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Thêm sách mới</h2>
+                <button class="modal-close" onclick="closeModal('addBookModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addBookForm">
+                    <div class="form-group">
+                        <label for="bookTitle">Tên sách *</label>
+                        <input type="text" id="bookTitle" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookAuthor">Tác giả *</label>
+                        <input type="text" id="bookAuthor" name="author" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookPublisher">Nhà xuất bản *</label>
+                        <input type="text" id="bookPublisher" name="publisher" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookCategory">Danh mục *</label>
+                        <select id="bookCategory" name="category" required>
+                            <option value="">Chọn danh mục</option>
+                            <option value="vietnamese">Sách Tiếng Việt</option>
+                            <option value="foreign">Sách Ngoại Văn</option>
+                            <option value="signed">Sách có chữ ký</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookSubcategory">Thể loại *</label>
+                        <select id="bookSubcategory" name="subcategory" required>
+                            <option value="">Chọn thể loại</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookPrice">Giá *</label>
+                        <input type="number" id="bookPrice" name="price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookOriginalPrice">Giá gốc</label>
+                        <input type="number" id="bookOriginalPrice" name="originalPrice">
+                    </div>
+                    <div class="form-group">
+                        <label for="bookStock">Số lượng tồn kho *</label>
+                        <input type="number" id="bookStock" name="stock" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookDescription">Mô tả</label>
+                        <textarea id="bookDescription" name="description" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookImages">Hình ảnh (URL, cách nhau bởi dấu phẩy)</label>
+                        <textarea id="bookImages" name="images" rows="2"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('addBookModal')">Hủy</button>
+                <button class="btn btn-primary" onclick="addBook()">Thêm sách</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Promotion Modal -->
+    <div id="addPromotionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Thêm ưu đãi mới</h2>
+                <button class="modal-close" onclick="closeModal('addPromotionModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addPromotionForm">
+                    <div class="form-group">
+                        <label for="promotionName">Tên ưu đãi *</label>
+                        <input type="text" id="promotionName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="promotionType">Loại ưu đãi *</label>
+                        <select id="promotionType" name="type" required>
+                            <option value="">Chọn loại</option>
+                            <option value="percentage">Phần trăm</option>
+                            <option value="fixed">Giá cố định</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="promotionValue">Giá trị *</label>
+                        <input type="number" id="promotionValue" name="value" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="promotionStartDate">Ngày bắt đầu *</label>
+                        <input type="date" id="promotionStartDate" name="startDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="promotionEndDate">Ngày kết thúc *</label>
+                        <input type="date" id="promotionEndDate" name="endDate" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('addPromotionModal')">Hủy</button>
+                <button class="btn btn-primary" onclick="addPromotion()">Thêm ưu đãi</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</body>
+</html>

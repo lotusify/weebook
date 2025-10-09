@@ -45,8 +45,9 @@
                         </span>
                     </div>
                     <div class="user-actions">
-                        <a href="#"><i class="fa-regular fa-user"></i> <span>Tài khoản</span></a>
+                        <a href="auth.html"><i class="fa-regular fa-user"></i> <span>Tài khoản</span></a>
                         <a href="#" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i> <span>Giỏ hàng</span> <span class="cart-count">0</span></a>
+                        <a href="admin.html" class="admin-link" style="display: none;"><i class="fa-solid fa-cog"></i> <span>Admin</span></a>
                     </div>
                 </div>
             </div>
@@ -79,7 +80,12 @@
 
                 <!-- Product Info -->
                 <div class="product-info">
-                    <h1 class="product-title">Loading...</h1>
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                        <h1 class="product-title" style="margin: 0; flex: 1;">Loading...</h1>
+                        <button class="wishlist-btn" style="position: static; margin-left: 15px;" title="Thêm vào yêu thích">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
                     <p class="product-author">Loading...</p>
                     <div class="product-rating">
                         <div class="stars"></div>
@@ -105,8 +111,10 @@
                             <input type="number" value="1" min="1" id="quantity">
                             <button class="qty-btn plus" onclick="changeQuantity(1)">+</button>
                         </div>
-                        <button class="btn-add-cart">Cho vào giỏ</button>
-                        <button class="btn-buy-now">Mua ngay</button>
+                        <div class="action-buttons">
+                            <button class="btn-add-cart">Cho vào giỏ</button>
+                            <button class="btn-buy-now">Mua ngay</button>
+                        </div>
                     </div>
 
                     <div class="product-features">
@@ -144,8 +152,8 @@
                         </div>
                     </div>
                     <div class="seller-actions">
-                        <button class="btn-chat">Chat</button>
-                        <button class="btn-view-shop">Xem shop</button>
+                        <button class="btn-chat" onclick="openChat()">Chat</button>
+                        <button class="btn-view-shop" onclick="viewShop()">Xem shop</button>
                     </div>
                     
                     <div class="related-products">
@@ -214,9 +222,9 @@
                 <img src="images/logo.png" alt="Read Station Logo" class="footer-logo">
                 <p>Công ty cổ phần sách BlackCat</p>
                 <p><strong>Bạn cần hỗ trợ? Gọi chúng tôi 24/7</strong></p>
-                <p class="phone-number">0866836004</p>
+                <p class="phone-number">0902 147 258</p>
                 <p class="address-title">Thông tin địa chỉ</p>
-                <p class="address-detail">Earth, Phố Huỳnh Thúc Kháng Kéo Dài, Đống Đa, Hà Nội (đối diện tòa Hateco Laroma)</p>
+                <p class="address-detail">Số 125 Đường Trần Hưng Đạo, Phường Cầu Kho, Quận 1, TP. Hồ Chí Minh</p>
             </div>
             <div class="footer-col">
                 <h3>Hỗ trợ</h3>
@@ -300,6 +308,37 @@
             alert('Chuyển đến trang thanh toán...');
         });
     </script>
+
+    <!-- Floating Chatbot -->
+    <div class="floating-chatbot" id="floatingChatbot">
+        <div class="chatbot-toggle" onclick="toggleChatbot()">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h4>AI Assistant</h4>
+                <button class="chatbot-close" onclick="toggleChatbot()">&times;</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Xin chào! Tôi là AI Assistant của BookShelf. Tôi có thể giúp bạn tìm sách, trả lời câu hỏi về sản phẩm, hoặc hỗ trợ đặt hàng. Bạn cần gì?</p>
+                        <span class="message-time" id="initialMessageTime"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Nhập câu hỏi...">
+                <button onclick="sendChatbotMessage()">Gửi</button>
+            </div>
+            <div class="chatbot-actions">
+                <button class="btn-customer-service" onclick="chatWithCustomerService()">
+                    <i class="fas fa-headset"></i>
+                    Tôi muốn chat với CSKH
+                </button>
+            </div>
+        </div>
+    </div>
     
     <script src="data.js"></script>
     <script src="script.js"></script>

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hồ sơ cá nhân - BookShelf</title>
+    <title>Thông tin tài khoản - BookSelf</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body class="profile-page">
+<body>
     <script src="data.js"></script>
     <script src="script.js"></script>
     <script src="auth.js"></script>
@@ -15,218 +15,319 @@
     <header>
         <div class="header-main">
             <div class="container">
+                <!-- Logo + Brand Name -->
                 <div class="brand-section">
                     <a href="index.html" class="logo">
                         <img src="images/logo.png" alt="BookShelf Logo">
-                        <span class="brand-name">BookShelf</span>
+                        <span class="brand-name">BookSelf</span>
                     </a>
                 </div>
-                
+
+                <!-- Main Navigation -->
                 <nav class="main-nav">
-                    <a href="index.html">Trang chủ</a>
-                    <a href="category.html">Danh mục</a>
-                    <a href="about.html">Giới thiệu</a>
+                    <ul class="nav-links">
+                        <li><a href="index.html"><span>Trang Chủ</span></a></li>
+                        <li><a href="category.html?type=new"><span>Sách Mới</span></a></li>
+                        <li><a href="about.html"><span>Về Chúng Tôi</span></a></li>
+                    </ul>
                 </nav>
-                
-                <div class="user-actions">
-                    <a href="#" class="cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </a>
-                    <a href="#" class="user-account">
-                        <i class="fa-regular fa-user"></i>
-                        <span>Tài khoản</span>
-                    </a>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-bar">
+                        <button class="filter-btn"><i class="fa-solid fa-filter"></i></button>
+                        <input type="text" class="search-input" placeholder="Tìm kiếm sản phẩm...">
+                        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div class="autocomplete-dropdown" style="display: none;"></div>
+                </div>
+
+                <!-- Header Right Section -->
+                <div class="header-right">
+                    <div class="opening-hours">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>
+                            <strong>THỜI GIAN MỞ CỬA</strong><br>
+                            8H - 22H T2 - CN
+                        </span>
+                    </div>
+                    <div class="user-actions">
+                        <a href="profile.html"><i class="fa-regular fa-user"></i> <span>Tài khoản</span></a>
+                        <a href="#" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i> <span>Giỏ hàng</span> <span class="cart-count">0</span></a>
+                        <a href="admin.html" class="admin-link" style="display: none;"><i class="fa-solid fa-cog"></i> <span>Admin</span></a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <main class="profile-main">
+    <main>
         <div class="container">
-            <div class="profile-layout">
-                <!-- Profile Sidebar -->
-                <div class="profile-sidebar">
-                    <div class="profile-card">
-                        <div class="profile-avatar">
-                            <img src="https://via.placeholder.com/100x100/00B4A6/FFFFFF?text=U" alt="Avatar" id="profileAvatar">
-                            <button class="avatar-edit-btn" onclick="editAvatar()">
-                                <i class="fas fa-camera"></i>
-                            </button>
-                        </div>
-                        <h3 id="profileName">Tên người dùng</h3>
-                        <p id="profileEmail">email@example.com</p>
-                        <p id="profilePhone">0123456789</p>
-                    </div>
-                    
-                    <nav class="profile-nav">
-                        <a href="#personal-info" class="nav-item active" data-section="personal-info">
-                            <i class="fas fa-user"></i>
-                            <span>Thông tin cá nhân</span>
-                        </a>
-                        <a href="#orders" class="nav-item" data-section="orders">
-                            <i class="fas fa-shopping-bag"></i>
-                            <span>Đơn hàng</span>
-                        </a>
-                        <a href="#wishlist" class="nav-item" data-section="wishlist">
-                            <i class="fas fa-heart"></i>
-                            <span>Danh sách yêu thích</span>
-                        </a>
-                        <a href="#reviews" class="nav-item" data-section="reviews">
-                            <i class="fas fa-star"></i>
-                            <span>Đánh giá</span>
-                        </a>
-                        <a href="#settings" class="nav-item" data-section="settings">
-                            <i class="fas fa-cog"></i>
-                            <span>Cài đặt</span>
-                        </a>
-                    </nav>
-                </div>
+            <div class="profile-page">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <a href="index.html">Trang chủ</a>
+                    <span>/</span>
+                    <span>Thông tin tài khoản</span>
+                </nav>
 
-                <!-- Profile Content -->
                 <div class="profile-content">
-                    <!-- Personal Information Section -->
-                    <div class="profile-section active" id="personal-info">
-                        <div class="section-header">
-                            <h2>Thông tin cá nhân</h2>
-                            <button class="edit-btn" onclick="toggleEditMode('personal-info')">
-                                <i class="fas fa-edit"></i>
-                                Chỉnh sửa
-                            </button>
-                        </div>
-                        
-                        <div class="profile-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="editName">Họ và tên</label>
-                                    <input type="text" id="editName" name="name" readonly>
+                    <!-- Profile Sidebar -->
+                    <aside class="profile-sidebar">
+                        <div class="profile-menu">
+                            <div class="profile-info">
+                                <div class="profile-avatar">
+                                    <i class="fas fa-user"></i>
                                 </div>
-                                <div class="form-group">
-                                    <label for="editPhone">Số điện thoại</label>
-                                    <input type="tel" id="editPhone" name="phone" readonly>
-                                </div>
+                                <h3 id="profileName">Tên người dùng</h3>
+                                <p id="profileEmail">email@example.com</p>
                             </div>
-                            
-                            <div class="form-group">
-                                <label for="editEmail">Email</label>
-                                <input type="email" id="editEmail" name="email" readonly>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="editAddress">Địa chỉ</label>
-                                <textarea id="editAddress" name="address" rows="3" readonly></textarea>
-                            </div>
-                            
-                            <div class="form-actions">
-                                <button class="btn btn-primary" onclick="saveProfile()" style="display: none;">
-                                    <i class="fas fa-save"></i>
-                                    Lưu thay đổi
+                            <ul class="profile-nav">
+                                <li class="profile-nav-item active" data-section="info">
+                                    <a href="#info">
+                                        <i class="fas fa-user"></i>
+                                        <span>Thông tin cá nhân</span>
+                                    </a>
+                                </li>
+                                <li class="profile-nav-item" data-section="orders">
+                                    <a href="#orders">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span>Đơn hàng của tôi</span>
+                                    </a>
+                                </li>
+                                <li class="profile-nav-item" data-section="wishlist">
+                                    <a href="#wishlist">
+                                        <i class="fas fa-heart"></i>
+                                        <span>Danh sách yêu thích</span>
+                                    </a>
+                                </li>
+                                <li class="profile-nav-item" data-section="reviews">
+                                    <a href="#reviews">
+                                        <i class="fas fa-star"></i>
+                                        <span>Đánh giá của tôi</span>
+                                    </a>
+                                </li>
+                                <li class="profile-nav-item" data-section="chat">
+                                    <a href="#chat">
+                                        <i class="fas fa-comments"></i>
+                                        <span>Chat với nhân viên</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <!-- Profile Main Content -->
+                    <div class="profile-main">
+                        <!-- Personal Info Section -->
+                        <section id="info" class="profile-section active">
+                            <div class="section-header">
+                                <h2>Thông tin cá nhân</h2>
+                                <button class="btn btn-primary" onclick="toggleEditMode()">
+                                    <i class="fas fa-edit"></i>
+                                    Chỉnh sửa
                                 </button>
-                                <button class="btn btn-secondary" onclick="cancelEdit()" style="display: none;">
-                                    <i class="fas fa-times"></i>
-                                    Hủy
-                                </button>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- Orders Section -->
-                    <div class="profile-section" id="orders">
-                        <div class="section-header">
-                            <h2>Đơn hàng của tôi</h2>
-                        </div>
-                        
-                        <div class="orders-list" id="ordersList">
-                            <!-- Orders will be loaded here -->
-                        </div>
-                    </div>
-
-                    <!-- Wishlist Section -->
-                    <div class="profile-section" id="wishlist">
-                        <div class="section-header">
-                            <h2>Danh sách yêu thích</h2>
-                        </div>
-                        
-                        <div class="wishlist-grid" id="wishlistGrid">
-                            <!-- Wishlist items will be loaded here -->
-                        </div>
-                    </div>
-
-                    <!-- Reviews Section -->
-                    <div class="profile-section" id="reviews">
-                        <div class="section-header">
-                            <h2>Đánh giá của tôi</h2>
-                        </div>
-                        
-                        <div class="reviews-list" id="reviewsList">
-                            <!-- Reviews will be loaded here -->
-                        </div>
-                    </div>
-
-                    <!-- Settings Section -->
-                    <div class="profile-section" id="settings">
-                        <div class="section-header">
-                            <h2>Cài đặt tài khoản</h2>
-                        </div>
-                        
-                        <div class="settings-content">
-                            <div class="setting-group">
-                                <h3>Bảo mật</h3>
-                                <div class="setting-item">
-                                    <div class="setting-info">
-                                        <h4>Đổi mật khẩu</h4>
-                                        <p>Thay đổi mật khẩu để bảo mật tài khoản</p>
+                            <div class="profile-form">
+                                <form id="profileForm">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="profileNameInput">Họ và tên *</label>
+                                            <input type="text" id="profileNameInput" name="name" required readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="profileEmailInput">Email *</label>
+                                            <input type="email" id="profileEmailInput" name="email" required readonly>
+                                        </div>
                                     </div>
-                                    <button class="btn btn-secondary" onclick="changePassword()">
-                                        Đổi mật khẩu
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="profilePhoneInput">Số điện thoại *</label>
+                                            <input type="tel" id="profilePhoneInput" name="phone" required readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="profileBirthdayInput">Ngày sinh</label>
+                                            <input type="date" id="profileBirthdayInput" name="birthday" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="profileAddressInput">Địa chỉ</label>
+                                        <textarea id="profileAddressInput" name="address" rows="3" readonly></textarea>
+                                    </div>
+                                    <div class="form-actions" style="display: none;">
+                                        <button type="button" class="btn btn-secondary" onclick="cancelEdit()">Hủy</button>
+                                        <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- Change Password Section -->
+                            <div class="password-section">
+                                <h3>Đổi mật khẩu</h3>
+                                <form id="changePasswordForm">
+                                    <div class="form-group">
+                                        <label for="currentPassword">Mật khẩu hiện tại *</label>
+                                        <input type="password" id="currentPassword" name="currentPassword" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="newPassword">Mật khẩu mới *</label>
+                                        <input type="password" id="newPassword" name="newPassword" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirmNewPassword">Xác nhận mật khẩu mới *</label>
+                                        <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Đổi mật khẩu</button>
+                                </form>
+                            </div>
+                        </section>
+
+                        <!-- Orders Section -->
+                        <section id="orders" class="profile-section">
+                            <div class="section-header">
+                                <h2>Đơn hàng của tôi</h2>
+                            </div>
+                            <div class="orders-list" id="ordersList">
+                                <!-- Dynamic content -->
+                            </div>
+                        </section>
+
+                        <!-- Wishlist Section -->
+                        <section id="wishlist" class="profile-section">
+                            <div class="section-header">
+                                <h2>Danh sách yêu thích</h2>
+                            </div>
+                            <div class="wishlist-grid" id="wishlistGrid">
+                                <!-- Dynamic content -->
+                            </div>
+                        </section>
+
+                        <!-- Reviews Section -->
+                        <section id="reviews" class="profile-section">
+                            <div class="section-header">
+                                <h2>Đánh giá của tôi</h2>
+                            </div>
+                            <div class="reviews-list" id="reviewsList">
+                                <div class="empty-state">
+                                    <i class="fas fa-star"></i>
+                                    <h3>Chưa có đánh giá nào</h3>
+                                    <p>Bạn chưa đánh giá sản phẩm nào. Hãy mua sắm và chia sẻ trải nghiệm của bạn!</p>
+                                    <a href="index.html" class="btn btn-primary">Mua sắm ngay</a>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Chat Section -->
+                        <section id="chat" class="profile-section">
+                            <div class="section-header">
+                                <h2>Chat với nhân viên</h2>
+                            </div>
+                            <div class="chat-container">
+                                <div class="chat-messages" id="chatMessages">
+                                    <div class="chat-message bot-message">
+                                        <div class="message-avatar">
+                                            <i class="fas fa-robot"></i>
+                                        </div>
+                                        <div class="message-content">
+                                            <p>Xin chào! Tôi là trợ lý AI của BookSelf. Tôi có thể giúp bạn tìm sách, giải đáp thắc mắc về đơn hàng, hoặc hỗ trợ các vấn đề khác. Bạn cần hỗ trợ gì?</p>
+                                            <span class="message-time">Vừa xong</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-input">
+                                    <input type="text" id="chatInput" placeholder="Nhập tin nhắn của bạn...">
+                                    <button id="sendMessageBtn">
+                                        <i class="fas fa-paper-plane"></i>
                                     </button>
                                 </div>
                             </div>
-                            
-                            <div class="setting-group">
-                                <h3>Thông báo</h3>
-                                <div class="setting-item">
-                                    <div class="setting-info">
-                                        <h4>Email thông báo</h4>
-                                        <p>Nhận thông báo về đơn hàng và khuyến mãi</p>
-                                    </div>
-                                    <label class="toggle-switch">
-                                        <input type="checkbox" id="emailNotifications" checked>
-                                        <span class="toggle-slider"></span>
-                                    </label>
-                                </div>
-                                
-                                <div class="setting-item">
-                                    <div class="setting-info">
-                                        <h4>SMS thông báo</h4>
-                                        <p>Nhận SMS về trạng thái đơn hàng</p>
-                                    </div>
-                                    <label class="toggle-switch">
-                                        <input type="checkbox" id="smsNotifications">
-                                        <span class="toggle-slider"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <div class="setting-group">
-                                <h3>Tài khoản</h3>
-                                <div class="setting-item">
-                                    <div class="setting-info">
-                                        <h4>Xóa tài khoản</h4>
-                                        <p>Xóa vĩnh viễn tài khoản và dữ liệu</p>
-                                    </div>
-                                    <button class="btn btn-danger" onclick="deleteAccount()">
-                                        Xóa tài khoản
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        </section>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
+    <footer>
+        <div class="footer-main container">
+            <div class="footer-col about-us">
+                <img src="images/logo.png" alt="Read Station Logo" class="footer-logo">
+                <p>Công ty cổ phần sách BlackCat</p>
+                <p><strong>Bạn cần hỗ trợ? Gọi chúng tôi 24/7</strong></p>
+                <p class="phone-number">0866836004</p>
+                <p class="address-title">Thông tin địa chỉ</p>
+                <p class="address-detail">Earth, Phố Huỳnh Thúc Kháng Kéo Dài, Đống Đa, Hà Nội (đối diện tòa Hateco Laroma)</p>
+            </div>
+            <div class="footer-col">
+                <h3>Hỗ trợ</h3>
+                <ul>
+                    <li><a href="#">Hướng dẫn mua hàng</a></li>
+                    <li><a href="#">Hướng dẫn thanh toán</a></li>
+                    <li><a href="#">Hướng dẫn giao nhận</a></li>
+                    <li><a href="#">Điều khoản dịch vụ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Chính sách</h3>
+                <ul>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Chính sách vận chuyển</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Quy định sử dụng</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter">
+                <h3>Nhận tin khuyến mãi</h3>
+                <p>Hỗ trợ khách hàng 24/7</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Nhập email của bạn">
+                    <button type="submit">Đăng ký</button>
+                </form>
+                <p class="social-title">Theo dõi chúng tôi</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chatbot -->
+    <div class="floating-chatbot" id="floatingChatbot">
+        <div class="chatbot-toggle" onclick="toggleChatbot()">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h4>AI Assistant</h4>
+                <button class="chatbot-close" onclick="toggleChatbot()">&times;</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Xin chào! Tôi là AI Assistant của BookShelf. Tôi có thể giúp bạn tìm sách, trả lời câu hỏi về sản phẩm, hoặc hỗ trợ đặt hàng. Bạn cần gì?</p>
+                        <span class="message-time" id="initialMessageTime"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Nhập câu hỏi...">
+                <button onclick="sendChatbotMessage()">Gửi</button>
+            </div>
+            <div class="chatbot-actions">
+                <button class="btn-customer-service" onclick="chatWithCustomerService()">
+                    <i class="fas fa-headset"></i>
+                    Tôi muốn chat với CSKH
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
     <script src="profile.js"></script>
 </body>
 </html>

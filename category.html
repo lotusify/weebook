@@ -8,54 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body class="category-page">
-    <script src="data.js"></script>
-    <script src="script.js"></script>
-    <header>
-        <div class="header-main">
-            <div class="container">
-                <!-- Logo + Brand Name -->
-                <div class="brand-section">
-                    <a href="#" class="logo">
-                        <img src="images/logo.png" alt="BookShelf Logo">
-                        <span class="brand-name">BookSelf</span>
-                    </a>
-                </div>
-
-                <!-- Main Navigation -->
-                <nav class="main-nav">
-                    <ul class="nav-links">
-                        <li><a href="index.html"><span>Trang Chủ</span></a></li>
-                        <li><a href="category.html?type=new"><span>Sách Mới</span></a></li>
-                        <li><a href="about.html"><span>Về Chúng Tôi</span></a></li>
-                    </ul>
-                </nav>
-
-                <!-- Search Bar -->
-                <div class="search-container">
-                    <div class="search-bar">
-                        <button class="filter-btn"><i class="fa-solid fa-filter"></i></button>
-                        <input type="text" class="search-input" placeholder="Tìm kiếm sản phẩm...">
-                        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-                    <div class="autocomplete-dropdown" style="display: none;"></div>
-                </div>
-
-                <!-- Header Right Section -->
-                <div class="header-right">
-                    <div class="opening-hours">
-                        <i class="fa-regular fa-clock"></i>
-                        <span>
-                            <strong>THỜI GIAN MỞ CỬA</strong><br>
-                            8H - 22H T2 - CN
-                        </span>
-                    </div>
-                    <div class="user-actions">
-                        <a href="#"><i class="fa-regular fa-user"></i> <span>Tài khoản</span></a>
-                        <a href="#" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i> <span>Giỏ hàng</span> <span class="cart-count">0</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="header-placeholder"></div>
 
     <main>
         <section class="main-content">
@@ -97,7 +50,46 @@
                                         <li><a href="#" data-subcategory="children-en">Children's Books</a></li>
                                     </ul>
                                 </li>
-                                <li class="category-item"><a href="#" data-category="signed"><i class="fa-solid fa-signature"></i> Sách có chữ ký <i class="fa-solid fa-angle-right"></i></a></li>
+                                <li class="has-submenu category-item">
+                                    <a href="#" data-category="office-supplies"><i class="fa-solid fa-pen"></i> Văn Phòng Phẩm <i class="fa-solid fa-angle-right"></i></a>
+                                    <ul class="submenu category-submenu">
+                                        <li><a href="#" data-subcategory="pens">Bút - Viết</a></li>
+                                        <li><a href="#" data-subcategory="student-tools">Dụng Cụ Học Sinh</a></li>
+                                        <li><a href="#" data-subcategory="paper-products">Sản Phẩm Về Giấy</a></li>
+                                        <li><a href="#" data-subcategory="office-tools">Dụng Cụ Văn Phòng</a></li>
+                                        <li><a href="#" data-subcategory="drawing-tools">Dụng Cụ Vẽ</a></li>
+                                        <li><a href="#" data-subcategory="electronic-products">Sản Phẩm Điện Tử</a></li>
+                                        <li><a href="#" data-subcategory="other-office">Văn Phòng Phẩm Khác</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu category-item">
+                                    <a href="#" data-category="comics"><i class="fa-solid fa-images"></i> Truyện Tranh - Tiểu Thuyết <i class="fa-solid fa-angle-right"></i></a>
+                                    <ul class="submenu category-submenu">
+                                        <li><a href="#" data-subcategory="manga">Manga</a></li>
+                                        <li><a href="#" data-subcategory="comic-books">Truyện Tranh</a></li>
+                                        <li><a href="#" data-subcategory="light-novels">Tiểu Thuyết Nhẹ</a></li>
+                                        <li><a href="#" data-subcategory="graphic-novels">Tiểu Thuyết Đồ Họa</a></li>
+                                        <li><a href="#" data-subcategory="webtoons">Webtoon</a></li>
+                                        <li><a href="#" data-subcategory="manhwa">Manhwa</a></li>
+                                        <li><a href="#" data-subcategory="comic-series">Series Truyện Tranh</a></li>
+                                        <li><a href="#" data-subcategory="superhero-comics">Siêu Anh Hùng</a></li>
+                                        <li><a href="#" data-subcategory="indie-comics">Truyện Tranh Độc Lập</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu category-item">
+                                    <a href="#" data-category="toys"><i class="fa-solid fa-gamepad"></i> Đồ Chơi <i class="fa-solid fa-angle-right"></i></a>
+                                    <ul class="submenu category-submenu">
+                                        <li><a href="#" data-subcategory="action-figures">Mô Hình Nhân Vật</a></li>
+                                        <li><a href="#" data-subcategory="board-games">Cờ Bàn</a></li>
+                                        <li><a href="#" data-subcategory="puzzles">Xếp Hình</a></li>
+                                        <li><a href="#" data-subcategory="building-blocks">Khối Lắp Ghép</a></li>
+                                        <li><a href="#" data-subcategory="dolls">Búp Bê</a></li>
+                                        <li><a href="#" data-subcategory="educational-toys">Đồ Chơi Giáo Dục</a></li>
+                                        <li><a href="#" data-subcategory="electronic-toys">Đồ Chơi Điện Tử</a></li>
+                                        <li><a href="#" data-subcategory="collectibles">Đồ Sưu Tầm</a></li>
+                                        <li><a href="#" data-subcategory="outdoor-toys">Đồ Chơi Ngoài Trời</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </aside>
@@ -120,11 +112,9 @@
                                 <button class="filter-tag active" onclick="filterByPrice('all')">Tất cả</button>
                                 <button class="filter-tag" onclick="filterByPrice('under-200')">Dưới 200k</button>
                                 <button class="filter-tag" onclick="filterByPrice('200-300')">200k - 300k</button>
-                                <button class="filter-tag" onclick="filterByPrice('over-300')">Trên 300k</button>
-                            </div>
-                            <div class="view-options">
-                                <button class="view-btn grid-view active" onclick="setView('grid')"><i class="fa-solid fa-grid"></i></button>
-                                <button class="view-btn list-view" onclick="setView('list')"><i class="fa-solid fa-list"></i></button>
+                                <button class="filter-tag" onclick="filterByPrice('300-500')">300k - 500k</button>
+                                <button class="filter-tag" onclick="filterByPrice('500-1000')">500k - 1 triệu</button>
+                                <button class="filter-tag" onclick="filterByPrice('over-1000')">Trên 1 triệu</button>
                             </div>
                         </div>
 
@@ -158,53 +148,12 @@
         </div> -->
     </main>
 
-    <footer>
-        <div class="footer-main container">
-            <div class="footer-col about-us">
-                <img src="images/logo.png" alt="Read Station Logo" class="footer-logo">
-                <p>Công ty cổ phần sách BlackCat</p>
-                <p><strong>Bạn cần hỗ trợ? Gọi chúng tôi 24/7</strong></p>
-                <p class="phone-number">0866836004</p>
-                <p class="address-title">Thông tin địa chỉ</p>
-                <p class="address-detail">Earth, Phố Huỳnh Thúc Kháng Kéo Dài, Đống Đa, Hà Nội (đối diện tòa Hateco Laroma)</p>
-            </div>
-            <div class="footer-col">
-                <h3>Hỗ trợ</h3>
-                <ul>
-                    <li><a href="#">Hướng dẫn mua hàng</a></li>
-                    <li><a href="#">Hướng dẫn thanh toán</a></li>
-                    <li><a href="#">Hướng dẫn giao nhận</a></li>
-                    <li><a href="#">Điều khoản dịch vụ</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Chính sách</h3>
-                <ul>
-                    <li><a href="#">Chính sách bảo mật</a></li>
-                    <li><a href="#">Chính sách vận chuyển</a></li>
-                    <li><a href="#">Chính sách đổi trả</a></li>
-                    <li><a href="#">Quy định sử dụng</a></li>
-                </ul>
-            </div>
-            <div class="footer-col newsletter">
-                <h3>Nhận tin khuyến mãi</h3>
-                <p>Hỗ trợ khách hàng 24/7</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Nhập email của bạn">
-                    <button type="submit">Đăng ký</button>
-                </form>
-                <p class="social-title">Theo dõi chúng tôi</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
+    <div id="chatbot-placeholder"></div>
 
     <script src="data.js"></script>
     <script src="script.js"></script>
     <script src="auth.js"></script>
+    <script src="load-components.js"></script>
 </body>
 </html>

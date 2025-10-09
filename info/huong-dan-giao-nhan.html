@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn giao nhận - BookShelf</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <script src="../data.js"></script>
+    <script src="../script.js"></script>
+    <header>
+        <div class="header-main">
+            <div class="container">
+                <div class="brand-section">
+                    <a href="../index.html" class="logo">
+                        <img src="../images/logo.png" alt="BookShelf Logo">
+                        <span class="brand-name">BookSelf</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="../index.html"><span>Trang Chủ</span></a></li>
+                        <li><a href="../category.html?type=new"><span>Sách Mới</span></a></li>
+                        <li><a href="../about.html"><span>Về Chúng Tôi</span></a></li>
+                    </ul>
+                </nav>
+                <div class="search-container">
+                    <div class="search-bar">
+                        <button class="filter-btn"><i class="fa-solid fa-filter"></i></button>
+                        <input type="text" class="search-input" placeholder="Tìm kiếm sản phẩm...">
+                        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="opening-hours">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>
+                            <strong>THỜI GIAN MỞ CỬA</strong><br>
+                            8H - 22H T2 - CN
+                        </span>
+                    </div>
+                    <div class="user-actions">
+                        <a href="../auth.html"><i class="fa-regular fa-user"></i> <span>Tài khoản</span></a>
+                        <a href="#" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i> <span>Giỏ hàng</span> <span class="cart-count">0</span></a>
+                        <a href="../admin.html" class="admin-link" style="display: none;"><i class="fa-solid fa-cog"></i> <span>Admin</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="info-page">
+                <div class="breadcrumb">
+                    <a href="../index.html">Trang chủ</a>
+                    <span>/</span>
+                    <span>Hướng dẫn giao nhận</span>
+                </div>
+                
+                <div class="info-content">
+                    <h1>Hướng dẫn giao nhận</h1>
+                    <div class="content-body">
+                        
+                        <h3>Phạm vi giao hàng</h3>
+                        <p>Chúng tôi giao hàng trên toàn quốc:</p>
+                        <ul>
+                            <li><strong>TP. Hồ Chí Minh:</strong> Nội thành và ngoại thành</li>
+                            <li><strong>Hà Nội:</strong> Nội thành và các quận/huyện lân cận</li>
+                            <li><strong>Các tỉnh thành khác:</strong> Tất cả 63 tỉnh thành</li>
+                            <li><strong>Vùng sâu vùng xa:</strong> Liên hệ trực tiếp để được tư vấn</li>
+                        </ul>
+
+                        <h3>Thời gian giao hàng</h3>
+                        <p>Thời gian giao hàng theo từng khu vực:</p>
+                        <ul>
+                            <li><strong>TP. Hồ Chí Minh:</strong> 1-2 ngày làm việc</li>
+                            <li><strong>Hà Nội:</strong> 2-3 ngày làm việc</li>
+                            <li><strong>Các tỉnh thành khác:</strong> 3-5 ngày làm việc</li>
+                            <li><strong>Vùng sâu vùng xa:</strong> 5-7 ngày làm việc</li>
+                        </ul>
+
+                        <h3>Phí giao hàng</h3>
+                        <p>Bảng phí giao hàng:</p>
+                        <ul>
+                            <li><strong>Miễn phí:</strong> Đơn hàng từ 500.000đ trở lên</li>
+                            <li><strong>TP. Hồ Chí Minh:</strong> 30.000đ</li>
+                            <li><strong>Hà Nội:</strong> 35.000đ</li>
+                            <li><strong>Các tỉnh thành khác:</strong> 50.000đ</li>
+                            <li><strong>Vùng sâu vùng xa:</strong> Liên hệ để được báo giá</li>
+                        </ul>
+
+                        
+                        <h3>Bước 1: Xử lý đơn hàng</h3>
+                        <p>Sau khi đặt hàng thành công:</p>
+                        <ul>
+                            <li>Đơn hàng được xử lý trong 24 giờ</li>
+                            <li>Kiểm tra tồn kho và đóng gói</li>
+                            <li>Gửi thông tin vận chuyển cho khách hàng</li>
+                        </ul>
+
+                        <h3>Bước 2: Vận chuyển</h3>
+                        <p>Đơn hàng được giao cho đối tác vận chuyển:</p>
+                        <ul>
+                            <li>Viettel Post, J&T Express, Giao Hàng Nhanh</li>
+                            <li>Theo dõi đơn hàng qua mã vận đơn</li>
+                            <li>Cập nhật trạng thái giao hàng</li>
+                        </ul>
+
+                        <h3>Bước 3: Giao hàng</h3>
+                        <p>Nhân viên giao hàng sẽ:</p>
+                        <ul>
+                            <li>Liên hệ trước khi giao hàng</li>
+                            <li>Giao hàng tại địa chỉ đã đăng ký</li>
+                            <li>Cho phép kiểm tra hàng trước khi thanh toán</li>
+                            <li>Hỗ trợ đổi trả ngay tại chỗ nếu có lỗi</li>
+                        </ul>
+
+                        
+                        <h3>Kiểm tra hàng hóa</h3>
+                        <p>Khi nhận hàng, vui lòng:</p>
+                        <ul>
+                            <li>Kiểm tra số lượng sách</li>
+                            <li>Kiểm tra tình trạng sách (không bị rách, ướt)</li>
+                            <li>Kiểm tra đúng tên sách và tác giả</li>
+                            <li>Kiểm tra hóa đơn và phiếu giao hàng</li>
+                        </ul>
+
+                        <h3>Thanh toán</h3>
+                        <p>Phương thức thanh toán khi nhận hàng:</p>
+                        <ul>
+                            <li>Thanh toán bằng tiền mặt</li>
+                            <li>Quẹt thẻ qua máy POS</li>
+                            <li>Chuyển khoản qua ứng dụng ngân hàng</li>
+                            <li>Thanh toán qua ví điện tử</li>
+                        </ul>
+
+                        <div class="contact-info">
+                            <h3>Hỗ trợ giao hàng</h3>
+                            <p>Nếu có vấn đề về giao hàng:</p>
+                            <ul>
+                                <li><strong>Hotline:</strong> 0902 147 258</li>
+                                <li><strong>Email:</strong> shipping@bookshelf.com</li>
+                                <li><strong>Zalo:</strong> 0902 147 258</li>
+                                <li><strong>Facebook:</strong> BookShelf Official</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-main container">
+            <div class="footer-col about-us">
+                <img src="../images/logo.png" alt="Read Station Logo" class="footer-logo">
+                <p>Công ty cổ phần sách BlackCat</p>
+                <p><strong>Bạn cần hỗ trợ? Gọi chúng tôi 24/7</strong></p>
+                <p class="phone-number">0902 147 258</p>
+                <p class="address-title">Thông tin địa chỉ</p>
+                <p class="address-detail">Số 125 Đường Trần Hưng Đạo, Phường Cầu Kho, Quận 1, TP. Hồ Chí Minh</p>
+            </div>
+            <div class="footer-col">
+                <h3>Hỗ trợ</h3>
+                <ul>
+                    <li><a href="huong-dan-mua-hang.html">Hướng dẫn mua hàng</a></li>
+                    <li><a href="huong-dan-thanh-toan.html">Hướng dẫn thanh toán</a></li>
+                    <li><a href="huong-dan-giao-nhan.html">Hướng dẫn giao nhận</a></li>
+                    <li><a href="dieu-khoan-dich-vu.html">Điều khoản dịch vụ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Chính sách</h3>
+                <ul>
+                    <li><a href="chinh-sach-bao-mat.html">Chính sách bảo mật</a></li>
+                    <li><a href="chinh-sach-van-chuyen.html">Chính sách vận chuyển</a></li>
+                    <li><a href="chinh-sach-doi-tra.html">Chính sách đổi trả</a></li>
+                    <li><a href="quy-dinh-su-dung.html">Quy định sử dụng</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter">
+                <h3>Nhận tin khuyến mãi</h3>
+                <p>Hỗ trợ khách hàng 24/7</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Nhập email của bạn">
+                    <button type="submit">Đăng ký</button>
+                </form>
+                <p class="social-title">Theo dõi chúng tôi</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-chatbot" id="floatingChatbot">
+        <div class="chatbot-toggle" onclick="toggleChatbot()">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h4>AI Assistant</h4>
+                <button class="chatbot-close" onclick="toggleChatbot()">&times;</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Xin chào! Tôi là AI Assistant của BookShelf. Tôi có thể giúp bạn tìm sách, trả lời câu hỏi về sản phẩm, hoặc hỗ trợ đặt hàng. Bạn cần gì?</p>
+                        <span class="message-time">${new Date().toLocaleTimeString()}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Nhập câu hỏi...">
+                <button onclick="sendChatbotMessage()">Gửi</button>
+            </div>
+            <div class="chatbot-actions">
+                <button class="btn-customer-service" onclick="chatWithCustomerService()">
+                    <i class="fas fa-headset"></i>
+                    Tôi muốn chat với CSKH
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../data.js"></script>
+    <script src="../script.js"></script>
+    <script src="../auth.js"></script>
+</body>
+</html>

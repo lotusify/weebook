@@ -1,479 +1,463 @@
-// ========== PROFILE PAGE ========== //
+// ========== PROFILE PAGE FUNCTIONALITY ========== //
 // User profile management system
 
 document.addEventListener('DOMContentLoaded', function() {
-    initializeProfile();
-});
-
-function initializeProfile() {
     // Check if user is logged in
     if (!isLoggedIn()) {
-        showNotification('Vui lòng đăng nhập để xem hồ sơ!', 'error');
+        showNotification('Vui lòng đăng nhập để truy cập trang này!', 'error');
         setTimeout(() => {
             window.location.href = 'auth.html';
         }, 1500);
         return;
     }
+    
+    console.log('Profile page loaded');
+    initializeProfilePage();
+});
 
-    // Load user profile
+// ========== PROFILE PAGE INITIALIZATION ========== //
+function initializeProfilePage() {
+    // Load user data
     loadUserProfile();
     
     // Initialize navigation
     initializeProfileNavigation();
     
     // Load initial section
-    loadSection('personal-info');
+    showProfileSection('info');
+    
+    // Initialize forms
+    initializeForms();
+    
+    // Initialize chat
+    initializeChat();
 }
 
-function loadUserProfile() {
-    const currentUser = getCurrentUser();
-    if (!currentUser) return;
-
-    // Update profile card
-    document.getElementById('profileName').textContent = currentUser.name;
-    document.getElementById('profileEmail').textContent = currentUser.email;
-    document.getElementById('profilePhone').textContent = currentUser.phone;
-
-    // Update form fields
-    document.getElementById('editName').value = currentUser.name || '';
-    document.getElementById('editPhone').value = currentUser.phone || '';
-    document.getElementById('editEmail').value = currentUser.email || '';
-    document.getElementById('editAddress').value = currentUser.address || '';
-}
-
+// ========== PROFILE NAVIGATION ========== //
 function initializeProfileNavigation() {
-    const navItems = document.querySelectorAll('.nav-item');
+    const navItems = document.querySelectorAll('.profile-nav-item');
     
     navItems.forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
+            const section = item.dataset.section;
+            showProfileSection(section);
             
             // Update active nav item
             navItems.forEach(nav => nav.classList.remove('active'));
             item.classList.add('active');
-            
-            // Load section
-            const section = item.dataset.section;
-            loadSection(section);
         });
     });
 }
 
-function loadSection(sectionId) {
+function showProfileSection(sectionId) {
     // Hide all sections
     const sections = document.querySelectorAll('.profile-section');
     sections.forEach(section => section.classList.remove('active'));
     
-    // Show selected section
+    // Show target section
     const targetSection = document.getElementById(sectionId);
     if (targetSection) {
         targetSection.classList.add('active');
         
-        // Load section-specific content
+        // Load section-specific data
         switch(sectionId) {
+            case 'info':
+                loadUserProfile();
+                break;
             case 'orders':
-                loadOrders();
+                loadUserOrders();
                 break;
             case 'wishlist':
-                loadWishlist();
+                loadUserWishlist();
                 break;
             case 'reviews':
-                loadReviews();
+                loadUserReviews();
+                break;
+            case 'chat':
+                // Chat is already initialized
                 break;
         }
     }
 }
 
-function loadOrders() {
-    const ordersContainer = document.getElementById('ordersList');
-    const currentUser = getCurrentUser();
+// ========== USER PROFILE DATA ========== //
+function loadUserProfile() {
+    const user = getCurrentUser();
+    if (!user) return;
     
-    if (!currentUser) return;
+    // Update profile info in sidebar
+    document.getElementById('profileName').textContent = user.name;
+    document.getElementById('profileEmail').textContent = user.email;
+    
+    // Update form fields
+    document.getElementById('profileNameInput').value = user.name;
+    document.getElementById('profileEmailInput').value = user.email;
+    document.getElementById('profilePhoneInput').value = user.phone || '';
+    document.getElementById('profileBirthdayInput').value = user.birthday || '';
+    document.getElementById('profileAddressInput').value = user.address || '';
+}
 
-    const orders = JSON.parse(localStorage.getItem('bookshelf-orders')) || [];
-    const userOrders = orders.filter(order => order.userId === currentUser.id);
+function loadUserOrders() {
+    const orders = getOrders();
+    const user = getCurrentUser();
+    const userOrders = orders.filter(order => order.customerEmail === user.email);
+    
+    const ordersList = document.getElementById('ordersList');
+    if (!ordersList) return;
     
     if (userOrders.length === 0) {
-        ordersContainer.innerHTML = `
+        ordersList.innerHTML = `
             <div class="empty-state">
                 <i class="fas fa-shopping-bag"></i>
                 <h3>Chưa có đơn hàng nào</h3>
-                <p>Bạn chưa có đơn hàng nào. Hãy mua sắm ngay!</p>
+                <p>Bạn chưa có đơn hàng nào. Hãy bắt đầu mua sắm!</p>
                 <a href="index.html" class="btn btn-primary">Mua sắm ngay</a>
             </div>
         `;
         return;
     }
-
-    let ordersHtml = '';
-    userOrders.forEach(order => {
-        const statusClass = `status-${order.status}`;
-        const statusText = getStatusText(order.status);
+    
+    ordersList.innerHTML = userOrders.map(order => {
+        const book = window.BookDatabase ? window.BookDatabase.getBookById(order.bookId) : null;
+        const bookTitle = book ? book.title : 'Sách không tồn tại';
         
-        ordersHtml += `
-            <div class="order-card">
+        return `
+            <div class="order-item">
                 <div class="order-header">
                     <div class="order-info">
-                        <h4>Đơn hàng #${order.id.toString().padStart(6, '0')}</h4>
-                        <p class="order-date">${formatDate(order.createdAt)}</p>
+                        <h4>Đơn hàng #${order.id}</h4>
+                        <p>Ngày đặt: ${new Date(order.date).toLocaleDateString('vi-VN')}</p>
                     </div>
                     <div class="order-status">
-                        <span class="status ${statusClass}">${statusText}</span>
+                        <span class="status-badge status-${order.status}">${getStatusText(order.status)}</span>
                     </div>
                 </div>
-                
-                <div class="order-items">
-                    ${order.items.map(item => `
-                        <div class="order-item">
-                            <img src="${item.image}" alt="${item.title}" class="item-image">
-                            <div class="item-details">
-                                <h5>${item.title}</h5>
-                                <p>${item.author}</p>
-                                <span class="item-quantity">Số lượng: ${item.quantity}</span>
-                            </div>
-                            <div class="item-price">${formatPrice(item.total)}</div>
+                <div class="order-content">
+                    <div class="order-product">
+                        <img src="${book ? book.images[0] : 'images/book-tlch-1.jpg'}" alt="${bookTitle}" class="order-product-image">
+                        <div class="order-product-info">
+                            <h5>${bookTitle}</h5>
+                            <p>Số lượng: ${order.quantity}</p>
+                            <p>Giá: ${formatPrice(order.total)}</p>
                         </div>
-                    `).join('')}
-                </div>
-                
-                <div class="order-footer">
-                    <div class="order-total">
-                        <span>Tổng cộng:</span>
-                        <span class="total-price">${formatPrice(order.total)}</span>
                     </div>
                     <div class="order-actions">
-                        <button class="btn btn-secondary" onclick="viewOrderDetails(${order.id})">
+                        <button class="btn btn-sm btn-primary" onclick="viewOrderDetails(${order.id})">
                             <i class="fas fa-eye"></i>
                             Xem chi tiết
                         </button>
-                        ${order.status === 'pending' ? `
-                            <button class="btn btn-danger" onclick="cancelOrder(${order.id})">
-                                <i class="fas fa-times"></i>
-                                Hủy đơn
+                        ${order.status === 'delivered' ? `
+                            <button class="btn btn-sm btn-secondary" onclick="rateOrder(${order.id})">
+                                <i class="fas fa-star"></i>
+                                Đánh giá
                             </button>
                         ` : ''}
                     </div>
                 </div>
             </div>
         `;
-    });
-
-    ordersContainer.innerHTML = ordersHtml;
+    }).join('');
 }
 
-function loadWishlist() {
-    const wishlistContainer = document.getElementById('wishlistGrid');
-    const currentUser = getCurrentUser();
+function loadUserWishlist() {
+    const wishlist = JSON.parse(localStorage.getItem('bookshelf-wishlist')) || [];
+    const wishlistGrid = document.getElementById('wishlistGrid');
     
-    if (!currentUser) return;
-
-    const users = getUsers();
-    const user = users.find(u => u.id === currentUser.id);
-    const wishlist = user ? user.wishlist : [];
+    if (!wishlistGrid) return;
     
     if (wishlist.length === 0) {
-        wishlistContainer.innerHTML = `
+        wishlistGrid.innerHTML = `
             <div class="empty-state">
                 <i class="fas fa-heart"></i>
                 <h3>Danh sách yêu thích trống</h3>
                 <p>Bạn chưa thêm sách nào vào danh sách yêu thích.</p>
-                <a href="index.html" class="btn btn-primary">Khám phá sách</a>
+                <a href="index.html" class="btn btn-primary">Mua sắm ngay</a>
             </div>
         `;
         return;
     }
-
-    let wishlistHtml = '';
-    wishlist.forEach(bookId => {
-        const book = window.BookDatabase.getBookById(bookId);
-        if (book) {
-            wishlistHtml += `
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="${book.images[0]}" alt="${book.title}" loading="lazy">
-                        <div class="product-overlay">
-                            <button class="btn-icon" onclick="removeFromWishlist(${book.id})" title="Xóa khỏi yêu thích">
-                                <i class="fas fa-heart-broken"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">${book.title}</h3>
-                        <p class="product-author">${book.author}</p>
-                        <div class="product-rating">
-                            <div class="stars">
-                                ${generateStars(book.rating)}
-                            </div>
-                            <span class="rating-text">(${book.reviews})</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="current-price">${formatPrice(book.price)}</span>
-                            ${book.originalPrice ? `<span class="original-price">${formatPrice(book.originalPrice)}</span>` : ''}
-                        </div>
-                        <button class="btn btn-primary" onclick="addToCart(${book.id})">
-                            <i class="fas fa-shopping-cart"></i>
-                            Thêm vào giỏ
-                        </button>
-                    </div>
-                </div>
-            `;
-        }
-    });
-
-    wishlistContainer.innerHTML = wishlistHtml;
-}
-
-function loadReviews() {
-    const reviewsContainer = document.getElementById('reviewsList');
-    const currentUser = getCurrentUser();
     
-    if (!currentUser) return;
-
-    const users = getUsers();
-    const user = users.find(u => u.id === currentUser.id);
-    const reviews = user ? user.reviews : [];
-    
-    if (reviews.length === 0) {
-        reviewsContainer.innerHTML = `
-            <div class="empty-state">
-                <i class="fas fa-star"></i>
-                <h3>Chưa có đánh giá nào</h3>
-                <p>Bạn chưa đánh giá sách nào. Hãy mua sách và đánh giá!</p>
-                <a href="index.html" class="btn btn-primary">Mua sách ngay</a>
-            </div>
-        `;
+    if (!window.BookDatabase) {
+        wishlistGrid.innerHTML = '<p>Đang tải danh sách yêu thích...</p>';
         return;
     }
-
-    let reviewsHtml = '';
-    reviews.forEach(review => {
-        const book = window.BookDatabase.getBookById(review.bookId);
-        if (book) {
-            reviewsHtml += `
-                <div class="review-card">
-                    <div class="review-header">
-                        <img src="${book.images[0]}" alt="${book.title}" class="review-book-image">
-                        <div class="review-book-info">
-                            <h4>${book.title}</h4>
-                            <p>${book.author}</p>
-                        </div>
-                        <div class="review-rating">
-                            ${generateStars(review.rating)}
-                        </div>
-                    </div>
-                    <div class="review-content">
-                        <p>${review.comment}</p>
-                        <div class="review-meta">
-                            <span class="review-date">${formatDate(review.date)}</span>
-                            <div class="review-actions">
-                                <button class="btn-icon" onclick="editReview(${review.id})" title="Chỉnh sửa">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="btn-icon" onclick="deleteReview(${review.id})" title="Xóa">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-    });
-
-    reviewsContainer.innerHTML = reviewsHtml;
+    
+    const wishlistBooks = wishlist.map(id => window.BookDatabase.getBookById(id)).filter(book => book);
+    
+    wishlistGrid.innerHTML = wishlistBooks.map(book => `
+        <div class="wishlist-item">
+            <div class="wishlist-image">
+                <img src="${book.images[0]}" alt="${book.title}">
+                <button class="remove-wishlist-btn" onclick="removeFromWishlist(${book.id})">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="wishlist-info">
+                <h4>${book.title}</h4>
+                <p>${book.author}</p>
+                <div class="wishlist-price">${formatPrice(book.price)}</div>
+                <button class="btn btn-primary btn-sm" onclick="addToCart(${book.id})">
+                    <i class="fas fa-shopping-cart"></i>
+                    Thêm vào giỏ
+                </button>
+            </div>
+        </div>
+    `).join('');
 }
 
-function toggleEditMode(section) {
-    const form = document.querySelector(`#${section} .profile-form`);
-    const inputs = form.querySelectorAll('input, textarea');
-    const editBtn = form.querySelector('.edit-btn');
-    const saveBtn = form.querySelector('.btn-primary');
-    const cancelBtn = form.querySelector('.btn-secondary');
+function loadUserReviews() {
+    // For demo purposes, show empty state
+    // In a real app, this would load user's reviews from database
+}
+
+// ========== FORM HANDLING ========== //
+function initializeForms() {
+    // Profile form
+    const profileForm = document.getElementById('profileForm');
+    if (profileForm) {
+        profileForm.addEventListener('submit', handleProfileUpdate);
+    }
     
-    const isEditing = !inputs[0].readOnly;
+    // Change password form
+    const changePasswordForm = document.getElementById('changePasswordForm');
+    if (changePasswordForm) {
+        changePasswordForm.addEventListener('submit', handlePasswordChange);
+    }
+}
+
+function toggleEditMode() {
+    const inputs = document.querySelectorAll('#profileForm input, #profileForm textarea');
+    const formActions = document.querySelector('.form-actions');
+    const editBtn = document.querySelector('.section-header .btn');
     
-    if (isEditing) {
-        // Save changes
-        saveProfile();
+    const isReadonly = inputs[0].readOnly;
+    
+    inputs.forEach(input => {
+        input.readOnly = !isReadonly;
+    });
+    
+    if (isReadonly) {
+        formActions.style.display = 'flex';
+        editBtn.innerHTML = '<i class="fas fa-times"></i> Hủy';
+        editBtn.onclick = cancelEdit;
     } else {
-        // Enter edit mode
-        inputs.forEach(input => {
-            input.readOnly = false;
-            input.style.backgroundColor = 'var(--background-primary)';
-        });
-        
-        editBtn.style.display = 'none';
-        saveBtn.style.display = 'inline-flex';
-        cancelBtn.style.display = 'inline-flex';
-    }
-}
-
-function saveProfile() {
-    const currentUser = getCurrentUser();
-    if (!currentUser) return;
-
-    const name = document.getElementById('editName').value;
-    const phone = document.getElementById('editPhone').value;
-    const email = document.getElementById('editEmail').value;
-    const address = document.getElementById('editAddress').value;
-
-    // Update user data
-    const users = getUsers();
-    const userIndex = users.findIndex(u => u.id === currentUser.id);
-    
-    if (userIndex !== -1) {
-        users[userIndex].name = name;
-        users[userIndex].phone = phone;
-        users[userIndex].email = email;
-        users[userIndex].address = address;
-        
-        localStorage.setItem('bookshelf-users', JSON.stringify(users));
-        
-        // Update session
-        const updatedUser = {
-            ...currentUser,
-            name: name,
-            phone: phone,
-            email: email,
-            address: address
-        };
-        
-        if (localStorage.getItem('bookshelf-user')) {
-            localStorage.setItem('bookshelf-user', JSON.stringify(updatedUser));
-        } else {
-            sessionStorage.setItem('bookshelf-user', JSON.stringify(updatedUser));
-        }
-        
-        // Update UI
-        loadUserProfile();
-        cancelEdit();
-        
-        showNotification('Cập nhật thông tin thành công!', 'success');
+        formActions.style.display = 'none';
+        editBtn.innerHTML = '<i class="fas fa-edit"></i> Chỉnh sửa';
+        editBtn.onclick = toggleEditMode;
     }
 }
 
 function cancelEdit() {
-    const form = document.querySelector('#personal-info .profile-form');
-    const inputs = form.querySelectorAll('input, textarea');
-    const editBtn = form.querySelector('.edit-btn');
-    const saveBtn = form.querySelector('.btn-primary');
-    const cancelBtn = form.querySelector('.btn-secondary');
-    
-    // Reset form
+    // Reload user data to reset form
     loadUserProfile();
-    
-    inputs.forEach(input => {
-        input.readOnly = true;
-        input.style.backgroundColor = 'var(--background-light)';
-    });
-    
-    editBtn.style.display = 'inline-flex';
-    saveBtn.style.display = 'none';
-    cancelBtn.style.display = 'none';
+    toggleEditMode();
 }
 
-function editAvatar() {
-    showNotification('Chức năng đổi avatar sẽ được phát triển!', 'info');
+function handleProfileUpdate(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+    const user = getCurrentUser();
+    
+    // Update user data
+    const updatedUser = {
+        ...user,
+        name: formData.get('name'),
+        phone: formData.get('phone'),
+        birthday: formData.get('birthday'),
+        address: formData.get('address')
+    };
+    
+    // Save updated user data
+    if (user.rememberMe) {
+        localStorage.setItem('bookshelf-user', JSON.stringify(updatedUser));
+    } else {
+        sessionStorage.setItem('bookshelf-user', JSON.stringify(updatedUser));
+    }
+    
+    showNotification('Cập nhật thông tin thành công!', 'success');
+    toggleEditMode();
+    loadUserProfile();
 }
 
+function handlePasswordChange(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+    const currentPassword = formData.get('currentPassword');
+    const newPassword = formData.get('newPassword');
+    const confirmPassword = formData.get('confirmNewPassword');
+    
+    if (newPassword !== confirmPassword) {
+        showNotification('Mật khẩu xác nhận không khớp!', 'error');
+        return;
+    }
+    
+    if (newPassword.length < 6) {
+        showNotification('Mật khẩu mới phải có ít nhất 6 ký tự!', 'error');
+        return;
+    }
+    
+    // For demo purposes, just show success message
+    // In a real app, this would verify current password and update it
+    showNotification('Đổi mật khẩu thành công!', 'success');
+    e.target.reset();
+}
+
+// ========== CHAT FUNCTIONALITY ========== //
+function initializeChat() {
+    const chatInput = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('sendMessageBtn');
+    
+    if (chatInput && sendBtn) {
+        sendBtn.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    }
+}
+
+function sendMessage() {
+    const chatInput = document.getElementById('chatInput');
+    const chatMessages = document.getElementById('chatMessages');
+    const message = chatInput.value.trim();
+    
+    if (!message) return;
+    
+    // Add user message
+    addChatMessage(message, 'user');
+    chatInput.value = '';
+    
+    // Simulate bot response
+    setTimeout(() => {
+        const botResponse = generateBotResponse(message);
+        addChatMessage(botResponse, 'bot');
+    }, 1000);
+}
+
+function addChatMessage(message, sender) {
+    const chatMessages = document.getElementById('chatMessages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chat-message ${sender}-message`;
+    
+    const avatar = sender === 'user' ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+    const time = new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' });
+    
+    messageDiv.innerHTML = `
+        <div class="message-avatar">
+            ${avatar}
+        </div>
+        <div class="message-content">
+            <p>${message}</p>
+            <span class="message-time">${time}</span>
+        </div>
+    `;
+    
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function generateBotResponse(userMessage) {
+    const responses = [
+        "Cảm ơn bạn đã liên hệ! Tôi sẽ hỗ trợ bạn ngay.",
+        "Bạn có thể tìm sách theo danh mục hoặc sử dụng công cụ tìm kiếm.",
+        "Để kiểm tra trạng thái đơn hàng, vui lòng cung cấp mã đơn hàng.",
+        "Chúng tôi có chính sách đổi trả trong vòng 7 ngày.",
+        "Bạn có thể thanh toán bằng thẻ tín dụng, chuyển khoản hoặc COD.",
+        "Thời gian giao hàng thường là 2-3 ngày làm việc.",
+        "Nếu bạn cần hỗ trợ thêm, vui lòng gọi hotline: 0866836004"
+    ];
+    
+    // Simple keyword matching
+    if (userMessage.toLowerCase().includes('đơn hàng') || userMessage.toLowerCase().includes('order')) {
+        return "Để kiểm tra đơn hàng, vui lòng cung cấp mã đơn hàng hoặc email đã đăng ký.";
+    }
+    
+    if (userMessage.toLowerCase().includes('sách') || userMessage.toLowerCase().includes('book')) {
+        return "Bạn có thể tìm sách theo danh mục hoặc sử dụng công cụ tìm kiếm ở trang chủ.";
+    }
+    
+    if (userMessage.toLowerCase().includes('giá') || userMessage.toLowerCase().includes('price')) {
+        return "Giá sách được hiển thị trên trang sản phẩm. Chúng tôi thường có các chương trình khuyến mãi.";
+    }
+    
+    if (userMessage.toLowerCase().includes('giao hàng') || userMessage.toLowerCase().includes('delivery')) {
+        return "Thời gian giao hàng thường là 2-3 ngày làm việc. Phí giao hàng tùy thuộc vào địa điểm.";
+    }
+    
+    // Default response
+    return responses[Math.floor(Math.random() * responses.length)];
+}
+
+// ========== ORDER ACTIONS ========== //
 function viewOrderDetails(orderId) {
-    window.location.href = `order-success.html?id=${orderId}`;
+    showNotification('Chức năng xem chi tiết đơn hàng sẽ được phát triển trong phiên bản tiếp theo!', 'info');
 }
 
-function cancelOrder(orderId) {
-    if (confirm('Bạn có chắc chắn muốn hủy đơn hàng này?')) {
-        const orders = JSON.parse(localStorage.getItem('bookshelf-orders')) || [];
-        const orderIndex = orders.findIndex(o => o.id === orderId);
-        
-        if (orderIndex !== -1) {
-            orders[orderIndex].status = 'cancelled';
-            localStorage.setItem('bookshelf-orders', JSON.stringify(orders));
-            
-            showNotification('Đã hủy đơn hàng thành công!', 'success');
-            loadOrders();
-        }
-    }
+function rateOrder(orderId) {
+    showNotification('Chức năng đánh giá đơn hàng sẽ được phát triển trong phiên bản tiếp theo!', 'info');
 }
 
-function removeFromWishlist(bookId) {
-    const currentUser = getCurrentUser();
-    if (!currentUser) return;
-
-    const users = getUsers();
-    const userIndex = users.findIndex(u => u.id === currentUser.id);
-    
-    if (userIndex !== -1) {
-        users[userIndex].wishlist = users[userIndex].wishlist.filter(id => id !== bookId);
-        localStorage.setItem('bookshelf-users', JSON.stringify(users));
-        
-        showNotification('Đã xóa khỏi danh sách yêu thích!', 'success');
-        loadWishlist();
-    }
+// ========== UTILITY FUNCTIONS ========== //
+function getOrders() {
+    return JSON.parse(localStorage.getItem('bookshelf-orders')) || [];
 }
 
-function editReview(reviewId) {
-    showNotification('Chức năng chỉnh sửa đánh giá sẽ được phát triển!', 'info');
-}
-
-function deleteReview(reviewId) {
-    if (confirm('Bạn có chắc chắn muốn xóa đánh giá này?')) {
-        const currentUser = getCurrentUser();
-        if (!currentUser) return;
-
-        const users = getUsers();
-        const userIndex = users.findIndex(u => u.id === currentUser.id);
-        
-        if (userIndex !== -1) {
-            users[userIndex].reviews = users[userIndex].reviews.filter(r => r.id !== reviewId);
-            localStorage.setItem('bookshelf-users', JSON.stringify(users));
-            
-            showNotification('Đã xóa đánh giá thành công!', 'success');
-            loadReviews();
-        }
-    }
-}
-
-function changePassword() {
-    showNotification('Chức năng đổi mật khẩu sẽ được phát triển!', 'info');
-}
-
-function deleteAccount() {
-    if (confirm('Bạn có chắc chắn muốn xóa tài khoản? Hành động này không thể hoàn tác!')) {
-        const currentUser = getCurrentUser();
-        if (!currentUser) return;
-
-        // Remove user from users list
-        const users = getUsers();
-        const updatedUsers = users.filter(u => u.id !== currentUser.id);
-        localStorage.setItem('bookshelf-users', JSON.stringify(updatedUsers));
-        
-        // Clear user session
-        localStorage.removeItem('bookshelf-user');
-        sessionStorage.removeItem('bookshelf-user');
-        
-        showNotification('Đã xóa tài khoản thành công!', 'success');
-        setTimeout(() => {
-            window.location.href = 'index.html';
-        }, 1500);
-    }
+function formatPrice(price) {
+    return new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND',
+        minimumFractionDigits: 0
+    }).format(price);
 }
 
 function getStatusText(status) {
     const statusMap = {
         'pending': 'Chờ xử lý',
         'processing': 'Đang xử lý',
-        'shipped': 'Đã giao hàng',
-        'delivered': 'Đã nhận hàng',
+        'shipped': 'Đã giao',
+        'delivered': 'Hoàn thành',
         'cancelled': 'Đã hủy'
     };
     return statusMap[status] || status;
 }
 
-function formatDate(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('vi-VN', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
+function showNotification(message, type = 'success') {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+        <span>${message}</span>
+        <button class="notification-close">&times;</button>
+    `;
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Auto remove after 3 seconds
+    setTimeout(() => {
+        notification.classList.add('fade-out');
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+    
+    // Manual close
+    notification.querySelector('.notification-close').addEventListener('click', () => {
+        notification.classList.add('fade-out');
+        setTimeout(() => notification.remove(), 300);
     });
+}
+
+// Export functions for global access
+if (typeof window !== 'undefined') {
+    window.showProfileSection = showProfileSection;
+    window.toggleEditMode = toggleEditMode;
+    window.cancelEdit = cancelEdit;
+    window.viewOrderDetails = viewOrderDetails;
+    window.rateOrder = rateOrder;
+    window.removeFromWishlist = removeFromWishlist;
+    window.addToCart = addToCart;
 }
