@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xem tranh 289k - BookShelf</title>
+    <title>Chi tiết sản phẩm - BookShelf</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
     <header>
         <div class="header-main">
             <div class="container">
@@ -26,10 +28,12 @@
                     </ul>
                 </nav>
 
-                <div class="search-bar">
-                    <button class="filter-btn"><i class="fa-solid fa-filter"></i></button>
-                    <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="search-container">
+                    <div class="search-bar">
+                        <button class="filter-btn"><i class="fa-solid fa-filter"></i></button>
+                        <input type="text" class="search-input" placeholder="Tìm kiếm sản phẩm...">
+                        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
                 </div>
 
                 <div class="header-right">
@@ -41,19 +45,8 @@
                         </span>
                     </div>
                     <div class="user-actions">
-                        <a href="#"><i class="fa-regular fa-user"></i> Tài khoản</a>
-                        <a href="#"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng <span class="cart-count">2</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="category-bar">
-            <div class="container">
-                <div class="category-menu-horizontal">
-                    <div class="category-toggle">
-                        <i class="fa-solid fa-bars"></i>
-                        <span>DANH MỤC SẢN PHẨM</span>
+                        <a href="#"><i class="fa-regular fa-user"></i> <span>Tài khoản</span></a>
+                        <a href="#" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i> <span>Giỏ hàng</span> <span class="cart-count">0</span></a>
                     </div>
                 </div>
             </div>
@@ -75,27 +68,36 @@
                 <!-- Product Images -->
                 <div class="product-images">
                     <div class="main-image">
-                        <img src="images/book-tlch-1.jpg" alt="Xem tranh 289k" id="mainProductImage">
+                        <img src="" alt="Product Image">
+                        <span class="discount-badge" style="display: none;"></span>
+                        <span class="new-badge" style="display: none;"></span>
                     </div>
-                    <div class="thumbnail-images">
-                        <img src="images/book-tlch-1.jpg" alt="Thumbnail 1" class="thumbnail active" onclick="changeMainImage(this)">
-                        <img src="images/book-global-class.jpg" alt="Thumbnail 2" class="thumbnail" onclick="changeMainImage(this)">
-                        <img src="images/book-cam-go.jpg" alt="Thumbnail 3" class="thumbnail" onclick="changeMainImage(this)">
-                        <img src="images/book-my-thuat.jpg" alt="Thumbnail 4" class="thumbnail" onclick="changeMainImage(this)">
+                    <div class="image-thumbnails">
+                        <!-- Dynamic thumbnails will be loaded here -->
                     </div>
                 </div>
 
                 <!-- Product Info -->
                 <div class="product-info">
-                    <h1 class="product-title">Xem tranh 289k</h1>
+                    <h1 class="product-title">Loading...</h1>
+                    <p class="product-author">Loading...</p>
+                    <div class="product-rating">
+                        <div class="stars"></div>
+                        <span class="rating-text"></span>
+                    </div>
                     <div class="product-meta">
-                        <span class="brand">Thương hiệu: <strong>Omega Books</strong></span>
-                        <span class="sku">Mã sản phẩm: <strong>#935270704186</strong></span>
+                        <span class="brand">Thương hiệu: <strong>BookShelf</strong></span>
+                        <span class="sku">Mã sản phẩm: <strong class="product-sku"></strong></span>
                     </div>
 
                     <div class="product-price">
-                        <span class="current-price">289.000đ</span>
+                        <span class="current-price">Loading...</span>
+                        <span class="original-price" style="display: none;"></span>
                     </div>
+                    
+                    <div class="stock-status"></div>
+                    
+                    <div class="discount-badge" style="display: none;"></div>
 
                     <div class="product-actions">
                         <div class="quantity-selector">
@@ -147,36 +149,9 @@
                     </div>
                     
                     <div class="related-products">
-                        <h4>Sản phẩm khác cùa từ 289.000đ</h4>
+                        <h4>Sản phẩm liên quan</h4>
                         <div class="related-items">
-                            <div class="related-item">
-                                <img src="images/book-foreign-1.jpg" alt="Nexus - Lược sử của những liên kết">
-                                <div class="item-info">
-                                    <span class="item-name">Nexus - Lược sử của những liên kết</span>
-                                    <span class="item-price">325.000đ</span>
-                                </div>
-                            </div>
-                            <div class="related-item">
-                                <img src="images/book-foreign-2.jpg" alt="Hiểu pháp Mỹ 299k">
-                                <div class="item-info">
-                                    <span class="item-name">Hiểu pháp Mỹ 299k</span>
-                                    <span class="item-price">299.000đ</span>
-                                </div>
-                            </div>
-                            <div class="related-item">
-                                <img src="images/book-foreign-3.jpg" alt="Thế giới cho đến ngày hôm qua">
-                                <div class="item-info">
-                                    <span class="item-name">Thế giới cho đến ngày hôm qua</span>
-                                    <span class="item-price">299.000đ</span>
-                                </div>
-                            </div>
-                            <div class="related-item">
-                                <img src="images/book-foreign-4.jpg" alt="Á Đao 299k">
-                                <div class="item-info">
-                                    <span class="item-name">Á Đao 299k</span>
-                                    <span class="item-price">299.000đ</span>
-                                </div>
-                            </div>
+                            <!-- Dynamic related products will be loaded here -->
                         </div>
                         <button class="btn-view-more">Xem thêm</button>
                     </div>
@@ -186,27 +161,22 @@
             <!-- Product Details Tabs -->
             <div class="product-details-tabs">
                 <div class="tab-headers">
-                    <button class="tab-btn active" onclick="showTab('details')">Chi tiết</button>
-                    <button class="tab-btn" onclick="showTab('guide')">Hướng dẫn mua hàng</button>
+                    <button class="tab-btn active" onclick="showTab('description')">Mô tả</button>
+                    <button class="tab-btn" onclick="showTab('specifications')">Thông số</button>
+                    <button class="tab-btn" onclick="showTab('reviews')">Đánh giá</button>
                 </div>
                 
                 <div class="tab-content">
-                    <div id="details" class="tab-pane active">
-                        <h3>THÔNG TIN SẢN PHẨM</h3>
-                        <table class="product-specs">
-                            <tr><td>Công ty phát hành:</td><td>Công ty Cổ phần Sách Omega Việt Nam</td></tr>
-                            <tr><td>Ngày xuất bản:</td><td>2023-09-29 10:09:06</td></tr>
-                            <tr><td>Dịch giả:</td><td>Phạm Minh Quân</td></tr>
-                            <tr><td>Loại bìa:</td><td>Bìa mềm</td></tr>
-                            <tr><td>Số trang:</td><td>180</td></tr>
-                            <tr><td>Nhà xuất bản:</td><td>Nhà Xuất Bản Thế Giới</td></tr>
-                        </table>
-
-                        <div class="product-description">
-                            <h4>NỘI DUNG CUỐN SÁCH</h4>
-                            <p>"Xem tranh" của tác giả Susan Woodford năm trong bộ sách công cụ giúp hiểu nghệ thuật trong tầm tay của Omega+, được mua bản quyền từ nhà xuất bản Thames & Hudson, một trong những nhà xuất bản nghệ thuật có danh tiếng thể giới.</p>
-                            <p>Bộ sách bao gồm 5 cuốn: "Những nét khác biện phía của nghệ thuật", Lee Crestling; "Để hiểu nghệ thuật" - Janetta Rebold Bentor; và "Xem tranh" - Susan Woodford.</p>
-                        </div>
+                    <div id="description" class="tab-pane active">
+                        <!-- Dynamic product description will be loaded here -->
+                    </div>
+                    
+                    <div id="specifications" class="tab-pane">
+                        <!-- Dynamic product specifications will be loaded here -->
+                    </div>
+                    
+                    <div id="reviews" class="tab-pane">
+                        <!-- Dynamic product reviews will be loaded here -->
                     </div>
                     
                     <div id="guide" class="tab-pane">
@@ -232,26 +202,7 @@
             <div class="related-products-section">
                 <h2>Sản phẩm liên quan</h2>
                 <div class="product-grid">
-                    <div class="product-item" onclick="window.location.href='product.html?id=1'">
-                        <img src="images/book-tlch-1.jpg" alt="Tâm trí chữa lành cơ thể như thế nào">
-                        <h4>Tâm trí chữa lành cơ thể như thế nào</h4>
-                        <p class="price">239.000đ</p>
-                    </div>
-                    <div class="product-item" onclick="window.location.href='product.html?id=2'">
-                        <img src="images/book-global-class.jpg" alt="Global Class - Doanh nghiệp vươn tầm thế giới">
-                        <h4>Global Class - Doanh nghiệp vươn tầm thế giới</h4>
-                        <p class="price">249.000đ</p>
-                    </div>
-                    <div class="product-item" onclick="window.location.href='product.html?id=3'">
-                        <img src="images/book-cam-go.jpg" alt="Khác hoa học tranh lịch sử Nam Kỳ">
-                        <h4>Khác hoa học tranh lịch sử Nam Kỳ</h4>
-                        <p class="price">199.000đ</p>
-                    </div>
-                    <div class="product-item" onclick="window.location.href='product.html?id=4'">
-                        <img src="images/book-my-thuat.jpg" alt="Để hiểu nghệ thuật 28%">
-                        <h4>Để hiểu nghệ thuật 28%</h4>
-                        <p class="price">289.000đ</p>
-                    </div>
+                    <!-- Dynamic related products will be loaded here -->
                 </div>
             </div>
         </div>
@@ -302,7 +253,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
     <script>
         // Product detail specific functions
         function changeMainImage(thumbnail) {
@@ -350,5 +300,9 @@
             alert('Chuyển đến trang thanh toán...');
         });
     </script>
+    
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
 </body>
 </html>

@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh mục sách - BookShelf</title>
+    <title>BookSelf - Danh mục sách</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body>
+<body class="category-page">
+    <script src="data.js"></script>
+    <script src="script.js"></script>
     <header>
         <div class="header-main">
             <div class="container">
+                <!-- Logo + Brand Name -->
                 <div class="brand-section">
-                    <a href="index.html" class="logo">
+                    <a href="#" class="logo">
                         <img src="images/logo.png" alt="BookShelf Logo">
-                        <span class="brand-name">BookShelf</span>
+                        <span class="brand-name">BookSelf</span>
                     </a>
                 </div>
 
+                <!-- Main Navigation -->
                 <nav class="main-nav">
                     <ul class="nav-links">
                         <li><a href="index.html"><span>Trang Chủ</span></a></li>
@@ -26,12 +30,17 @@
                     </ul>
                 </nav>
 
-                <div class="search-bar">
-                    <button class="filter-btn"><i class="fa-solid fa-filter"></i></button>
-                    <input type="text" placeholder="Tìm kiếm sản phẩm..." id="searchInput">
-                    <button class="search-btn" onclick="searchProducts()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-bar">
+                        <button class="filter-btn"><i class="fa-solid fa-filter"></i></button>
+                        <input type="text" class="search-input" placeholder="Tìm kiếm sản phẩm...">
+                        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div class="autocomplete-dropdown" style="display: none;"></div>
                 </div>
 
+                <!-- Header Right Section -->
                 <div class="header-right">
                     <div class="opening-hours">
                         <i class="fa-regular fa-clock"></i>
@@ -41,103 +50,112 @@
                         </span>
                     </div>
                     <div class="user-actions">
-                        <a href="#"><i class="fa-regular fa-user"></i> Tài khoản</a>
-                        <a href="#"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng <span class="cart-count">2</span></a>
+                        <a href="#"><i class="fa-regular fa-user"></i> <span>Tài khoản</span></a>
+                        <a href="#" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i> <span>Giỏ hàng</span> <span class="cart-count">0</span></a>
                     </div>
                 </div>
             </div>
         </div>
 
-    <main class="category-page">
-        <div class="container">
-            <div class="content-layout">
-                <aside class="sidebar">
-                    <div class="category-menu">
-                        <h3 class="category-title">DANH MỤC SẢN PHẨM</h3>
-                        <ul class="category-list">
-                            <li class="has-submenu">
-                                <a href="category.html?type=vietnamese"><i class="fa-solid fa-book"></i> Sách Tiếng Việt <i class="fa-solid fa-angle-right"></i></a>
-                                <ul class="submenu">
-                                    <li><a href="category.html?type=literature">Văn Học</a></li>
-                                    <li><a href="category.html?type=parenting">Nuôi Dạy Con</a></li>
-                                    <li><a href="category.html?type=history">Lịch Sử - Địa Lý - Tôn Giáo</a></li>
-                                    <li><a href="category.html?type=culture">Văn Hóa - Nghệ Thuật - Du Lịch</a></li>
-                                    <li><a href="category.html?type=children">Thiếu Nhi</a></li>
-                                    <li><a href="category.html?type=biography">Tiếu Sử - Hồi Ký</a></li>
-                                    <li><a href="category.html?type=science">Khoa Học Kỹ Thuật</a></li>
-                                    <li><a href="category.html?type=art">Âm Nhạc - Mỹ Thuật - Thời Trang</a></li>
-                                    <li><a href="category.html?type=economics">Kinh Tế</a></li>
-                                    <li><a href="category.html?type=education">Giáo Khoa - Tham Khảo</a></li>
-                                    <li><a href="category.html?type=politics">Chính Trị - Pháp Lý - Triết Học</a></li>
-                                    <li><a href="category.html?type=health">Sức Khỏe - Dinh Dưỡng</a></li>
-                                    <li><a href="category.html?type=psychology">Tâm Lý - Kỹ Năng Sống</a></li>
-                                    <li><a href="category.html?type=language">Sách Học Ngoại Ngữ</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-submenu">
-                                <a href="category.html?type=foreign"><i class="fa-solid fa-book-open"></i> Sách Ngoại Văn <i class="fa-solid fa-angle-right"></i></a>
-                                <ul class="submenu">
-                                    <li><a href="category.html?type=coffee-table">Coffee Table Books</a></li>
-                                    <li><a href="category.html?type=fiction">Fiction</a></li>
-                                    <li><a href="category.html?type=taschen">Taschen</a></li>
-                                    <li><a href="category.html?type=non-fiction">Non Fiction</a></li>
-                                    <li><a href="category.html?type=bestseller">Bestselling Series</a></li>
-                                    <li><a href="category.html?type=gifts">Gifts of Others</a></li>
-                                    <li><a href="category.html?type=children-en">Children's Books</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="category.html?type=signed"><i class="fa-solid fa-signature"></i> Sách có chữ ký <i class="fa-solid fa-angle-right"></i></a></li>
-                        </ul>
-                    </div>
-                </aside>
-
-                <div class="main-content-area">
-                    <div class="category-header">
-                        <h1 id="categoryTitle">Tất cả sách</h1>
-                        <div class="sort-options">
-                            <select id="sortSelect" onchange="sortProducts()">
-                                <option value="default">Sắp xếp mặc định</option>
-                                <option value="price-low">Giá: Thấp đến cao</option>
-                                <option value="price-high">Giá: Cao đến thấp</option>
-                                <option value="name">Tên A-Z</option>
-                                <option value="newest">Mới nhất</option>
-                            </select>
+    <main>
+        <section class="main-content">
+            <div class="container">
+                <div class="content-layout">
+                    <aside class="sidebar">
+                        <div class="category-menu">
+                            <h3 class="category-title">DANH MỤC SẢN PHẨM</h3>
+                            <ul class="category-list">
+                                <li class="has-submenu category-item">
+                                    <a href="#" data-category="vietnamese"><i class="fa-solid fa-book"></i> Sách Tiếng Việt <i class="fa-solid fa-angle-right"></i></a>
+                                    <ul class="submenu category-submenu">
+                                        <li><a href="#" data-subcategory="literature">Văn Học</a></li>
+                                        <li><a href="#" data-subcategory="parenting">Nuôi Dạy Con</a></li>
+                                        <li><a href="#" data-subcategory="history">Lịch Sử - Địa Lý - Tôn Giáo</a></li>
+                                        <li><a href="#" data-subcategory="culture">Văn Hóa - Nghệ Thuật - Du Lịch</a></li>
+                                        <li><a href="#" data-subcategory="children">Thiếu Nhi</a></li>
+                                        <li><a href="#" data-subcategory="biography">Tiếu Sử - Hồi Ký</a></li>
+                                        <li><a href="#" data-subcategory="science">Khoa Học Kỹ Thuật</a></li>
+                                        <li><a href="#" data-subcategory="art">Âm Nhạc - Mỹ Thuật - Thời Trang</a></li>
+                                        <li><a href="#" data-subcategory="economics">Kinh Tế</a></li>
+                                        <li><a href="#" data-subcategory="education">Giáo Khoa - Tham Khảo</a></li>
+                                        <li><a href="#" data-subcategory="politics">Chính Trị - Pháp Lý - Triết Học</a></li>
+                                        <li><a href="#" data-subcategory="health">Sức Khỏe - Dinh Dưỡng</a></li>
+                                        <li><a href="#" data-subcategory="psychology">Tâm Lý - Kỹ Năng Sống</a></li>
+                                        <li><a href="#" data-subcategory="language">Sách Học Ngoại Ngữ</a></li>
+                                        <li><a href="#" data-subcategory="lifestyle">Lối Sống</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu category-item">
+                                    <a href="#" data-category="foreign"><i class="fa-solid fa-book-open"></i> Sách Ngoại Văn <i class="fa-solid fa-angle-right"></i></a>
+                                    <ul class="submenu category-submenu">
+                                        <li><a href="#" data-subcategory="coffee-table">Coffee Table Books</a></li>
+                                        <li><a href="#" data-subcategory="fiction">Fiction</a></li>
+                                        <li><a href="#" data-subcategory="taschen">Taschen</a></li>
+                                        <li><a href="#" data-subcategory="non-fiction">Non Fiction</a></li>
+                                        <li><a href="#" data-subcategory="bestseller">Bestselling Series</a></li>
+                                        <li><a href="#" data-subcategory="gifts">Gifts of Others</a></li>
+                                        <li><a href="#" data-subcategory="children-en">Children's Books</a></li>
+                                    </ul>
+                                </li>
+                                <li class="category-item"><a href="#" data-category="signed"><i class="fa-solid fa-signature"></i> Sách có chữ ký <i class="fa-solid fa-angle-right"></i></a></li>
+                            </ul>
                         </div>
-                    </div>
-
-                    <div class="filter-bar">
-                        <div class="filter-options">
-                            <button class="filter-tag active" onclick="filterByPrice('all')">Tất cả</button>
-                            <button class="filter-tag" onclick="filterByPrice('under-200')">Dưới 200k</button>
-                            <button class="filter-tag" onclick="filterByPrice('200-300')">200k - 300k</button>
-                            <button class="filter-tag" onclick="filterByPrice('over-300')">Trên 300k</button>
+                    </aside>
+                    <div class="main-content-area">
+                        <div class="category-header">
+                            <h1 id="categoryTitle">Tất cả sách</h1>
+                            <div class="sort-options">
+                                <select id="sortSelect" onchange="sortProducts()">
+                                    <option value="default">Sắp xếp mặc định</option>
+                                    <option value="price-low">Giá: Thấp đến cao</option>
+                                    <option value="price-high">Giá: Cao đến thấp</option>
+                                    <option value="name">Tên A-Z</option>
+                                    <option value="newest">Mới nhất</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="view-options">
-                            <button class="view-btn grid-view active" onclick="setView('grid')"><i class="fa-solid fa-grid"></i></button>
-                            <button class="view-btn list-view" onclick="setView('list')"><i class="fa-solid fa-list"></i></button>
-                        </div>
-                    </div>
 
-                    <div class="products-container">
-                        <div class="product-grid" id="productGrid">
-                            <!-- Products will be loaded here by JavaScript -->
+                        <div class="filter-bar">
+                            <div class="filter-options">
+                                <button class="filter-tag active" onclick="filterByPrice('all')">Tất cả</button>
+                                <button class="filter-tag" onclick="filterByPrice('under-200')">Dưới 200k</button>
+                                <button class="filter-tag" onclick="filterByPrice('200-300')">200k - 300k</button>
+                                <button class="filter-tag" onclick="filterByPrice('over-300')">Trên 300k</button>
+                            </div>
+                            <div class="view-options">
+                                <button class="view-btn grid-view active" onclick="setView('grid')"><i class="fa-solid fa-grid"></i></button>
+                                <button class="view-btn list-view" onclick="setView('list')"><i class="fa-solid fa-list"></i></button>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="pagination">
-                        <button class="page-btn" onclick="changePage(-1)">‹ Trước</button>
-                        <span class="page-numbers">
-                            <button class="page-num active">1</button>
-                            <button class="page-num">2</button>
-                            <button class="page-num">3</button>
-                            <button class="page-num">4</button>
-                            <button class="page-num">5</button>
-                        </span>
-                        <button class="page-btn" onclick="changePage(1)">Sau ›</button>
+                        <div class="products-container">
+                            <div class="product-grid" id="productGrid">
+                                <div class="loading-placeholder">
+                                    <p>Đang tải sản phẩm...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pagination">
+                            <button class="page-btn" onclick="changePage(-1)">‹ Trước</button>
+                            <span class="page-numbers">
+                                <button class="page-num active">1</button>
+                                <button class="page-num">2</button>
+                                <button class="page-num">3</button>
+                                <button class="page-num">4</button>
+                                <button class="page-num">5</button>
+                            </span>
+                            <button class="page-btn" onclick="changePage(1)">Sau ›</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+        
+        <!-- <div class="fixed-contact-buttons">
+            <a href="#" class="zalo"><img src="images/icon-zalo.png" alt="Zalo"></a>
+            <a href="#" class="chat"><img src="images/icon-chat.png" alt="Chat"></a>
+        </div> -->
     </main>
 
     <footer>
@@ -185,259 +203,8 @@
         </div>
     </footer>
 
+    <script src="data.js"></script>
     <script src="script.js"></script>
-    <script>
-        // Sample product data
-        const products = [
-            {
-                id: 1,
-                name: "Tâm trí chữa lành cơ thể như thế nào",
-                image: "images/book-tlch-1.jpg",
-                price: 239000,
-                category: "vietnamese",
-                subcategory: "psychology"
-            },
-            {
-                id: 2,
-                name: "Global Class - Doanh nghiệp vươn tầm thế giới",
-                image: "images/book-global-class.jpg",
-                price: 249000,
-                category: "vietnamese",
-                subcategory: "economics"
-            },
-            {
-                id: 3,
-                name: "Cẩm go: Khảo luận về...",
-                image: "images/book-cam-go.jpg",
-                price: 199000,
-                category: "vietnamese",
-                subcategory: "history"
-            },
-            {
-                id: 4,
-                name: "Đừng bỏ lỡ",
-                image: "images/book-my-thuat.jpg",
-                price: 289000,
-                category: "vietnamese",
-                subcategory: "art"
-            },
-            {
-                id: 5,
-                name: "Lịch sử 285k",
-                image: "images/book-lich-su.jpg",
-                price: 285000,
-                category: "vietnamese",
-                subcategory: "history"
-            },
-            {
-                id: 6,
-                name: "Tiểu sử: Viễn du...",
-                image: "images/book-vien-du.jpg",
-                price: 265000,
-                category: "vietnamese",
-                subcategory: "biography"
-            },
-            {
-                id: 7,
-                name: "Born in North America",
-                image: "images/book-foreign-1.jpg",
-                price: 325000,
-                category: "foreign",
-                subcategory: "non-fiction"
-            },
-            {
-                id: 8,
-                name: "Perimenopause Workbook",
-                image: "images/book-foreign-2.jpg",
-                price: 299000,
-                category: "foreign",
-                subcategory: "health"
-            },
-            {
-                id: 9,
-                name: "Whole30",
-                image: "images/book-foreign-3.jpg",
-                price: 279000,
-                category: "foreign",
-                subcategory: "health"
-            },
-            {
-                id: 10,
-                name: "The Seventh Scroll",
-                image: "images/book-foreign-4.jpg",
-                price: 310000,
-                category: "foreign",
-                subcategory: "fiction"
-            }
-        ];
-
-        let currentProducts = [...products];
-        let currentPage = 1;
-        const productsPerPage = 8;
-
-        // Load products on page load
-        window.addEventListener('DOMContentLoaded', function() {
-            loadCategoryFromURL();
-            displayProducts();
-        });
-
-        function loadCategoryFromURL() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const type = urlParams.get('type');
-            
-            if (type) {
-                filterByCategory(type);
-                updateCategoryTitle(type);
-            }
-        }
-
-        function updateCategoryTitle(type) {
-            const titles = {
-                'vietnamese': 'Sách Tiếng Việt',
-                'foreign': 'Sách Ngoại Văn',
-                'signed': 'Sách có chữ ký',
-                'new': 'Sách mới',
-                'literature': 'Văn Học',
-                'psychology': 'Tâm Lý - Kỹ Năng Sống',
-                'economics': 'Kinh Tế',
-                'history': 'Lịch Sử - Địa Lý',
-                'art': 'Âm Nhạc - Mỹ Thuật',
-                'biography': 'Tiếu Sử - Hồi Ký',
-                'fiction': 'Fiction',
-                'non-fiction': 'Non Fiction',
-                'health': 'Sức Khỏe - Dinh Dưỡng'
-            };
-            
-            document.getElementById('categoryTitle').textContent = titles[type] || 'Tất cả sách';
-        }
-
-        function filterByCategory(category) {
-            if (category === 'all') {
-                currentProducts = [...products];
-            } else {
-                currentProducts = products.filter(product => 
-                    product.category === category || product.subcategory === category
-                );
-            }
-            currentPage = 1;
-            displayProducts();
-        }
-
-        function filterByPrice(priceRange) {
-            // Update active filter
-            document.querySelectorAll('.filter-tag').forEach(tag => tag.classList.remove('active'));
-            event.target.classList.add('active');
-
-            if (priceRange === 'all') {
-                currentProducts = [...products];
-            } else if (priceRange === 'under-200') {
-                currentProducts = products.filter(product => product.price < 200000);
-            } else if (priceRange === '200-300') {
-                currentProducts = products.filter(product => product.price >= 200000 && product.price <= 300000);
-            } else if (priceRange === 'over-300') {
-                currentProducts = products.filter(product => product.price > 300000);
-            }
-            
-            currentPage = 1;
-            displayProducts();
-        }
-
-        function sortProducts() {
-            const sortBy = document.getElementById('sortSelect').value;
-            
-            switch(sortBy) {
-                case 'price-low':
-                    currentProducts.sort((a, b) => a.price - b.price);
-                    break;
-                case 'price-high':
-                    currentProducts.sort((a, b) => b.price - a.price);
-                    break;
-                case 'name':
-                    currentProducts.sort((a, b) => a.name.localeCompare(b.name));
-                    break;
-                case 'newest':
-                    currentProducts.sort((a, b) => b.id - a.id);
-                    break;
-                default:
-                    currentProducts = [...products];
-            }
-            
-            displayProducts();
-        }
-
-        function searchProducts() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            
-            if (searchTerm === '') {
-                currentProducts = [...products];
-            } else {
-                currentProducts = products.filter(product => 
-                    product.name.toLowerCase().includes(searchTerm)
-                );
-            }
-            
-            currentPage = 1;
-            displayProducts();
-        }
-
-        function displayProducts() {
-            const grid = document.getElementById('productGrid');
-            const startIndex = (currentPage - 1) * productsPerPage;
-            const endIndex = startIndex + productsPerPage;
-            const productsToShow = currentProducts.slice(startIndex, endIndex);
-            
-            grid.innerHTML = '';
-            
-            productsToShow.forEach(product => {
-                const productHTML = `
-                    <div class="product-item" onclick="goToProduct(${product.id})">
-                        <img src="${product.image}" alt="${product.name}">
-                        <h4>${product.name}</h4>
-                        <p class="price">${formatPrice(product.price)}</p>
-                    </div>
-                `;
-                grid.innerHTML += productHTML;
-            });
-        }
-
-        function goToProduct(productId) {
-            window.location.href = `product.html?id=${productId}`;
-        }
-
-        function formatPrice(price) {
-            return new Intl.NumberFormat('vi-VN', {
-                style: 'currency',
-                currency: 'VND',
-                minimumFractionDigits: 0
-            }).format(price);
-        }
-
-        function setView(viewType) {
-            document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector(`.${viewType}-view`).classList.add('active');
-            
-            const grid = document.getElementById('productGrid');
-            if (viewType === 'list') {
-                grid.classList.add('list-view');
-            } else {
-                grid.classList.remove('list-view');
-            }
-        }
-
-        function changePage(direction) {
-            const totalPages = Math.ceil(currentProducts.length / productsPerPage);
-            const newPage = currentPage + direction;
-            
-            if (newPage >= 1 && newPage <= totalPages) {
-                currentPage = newPage;
-                displayProducts();
-                
-                // Update page numbers
-                document.querySelectorAll('.page-num').forEach((btn, index) => {
-                    btn.classList.toggle('active', index + 1 === currentPage);
-                });
-            }
-        }
-    </script>
+    <script src="auth.js"></script>
 </body>
 </html>

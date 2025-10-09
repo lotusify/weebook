@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Về Chúng Tôi - BookShelf</title>
+    <title>Về Chúng Tôi - BookSelf</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
     <header>
         <div class="header-main">
             <div class="container">
                 <div class="brand-section">
                     <a href="index.html" class="logo">
-                        <img src="images/logo.png" alt="BookShelf Logo">
-                        <span class="brand-name">BookShelf</span>
+                        <img src="images/logo.png" alt="BookSelf Logo">
+                        <span class="brand-name">BookSelf</span>
                     </a>
                 </div>
 
@@ -26,10 +28,12 @@
                     </ul>
                 </nav>
 
-                <div class="search-bar">
-                    <button class="filter-btn"><i class="fa-solid fa-filter"></i></button>
-                    <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="search-container">
+                    <div class="search-bar">
+                        <button class="filter-btn"><i class="fa-solid fa-filter"></i></button>
+                        <input type="text" class="search-input" placeholder="Tìm kiếm sản phẩm...">
+                        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
                 </div>
 
                 <div class="header-right">
@@ -41,19 +45,8 @@
                         </span>
                     </div>
                     <div class="user-actions">
-                        <a href="#"><i class="fa-regular fa-user"></i> Tài khoản</a>
-                        <a href="#"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng <span class="cart-count">2</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="category-bar">
-            <div class="container">
-                <div class="category-menu-horizontal">
-                    <div class="category-toggle">
-                        <i class="fa-solid fa-bars"></i>
-                        <span>DANH MỤC SẢN PHẨM</span>
+                        <a href="#"><i class="fa-regular fa-user"></i> <span>Tài khoản</span></a>
+                        <a href="#" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i> <span>Giỏ hàng</span> <span class="cart-count">0</span></a>
                     </div>
                 </div>
             </div>
@@ -63,7 +56,7 @@
     <main class="about-page">
         <div class="container">
             <div class="page-header">
-                <h1>Về BookShelf</h1>
+                <h1>Về BookSelf</h1>
                 <p>Cửa hàng sách trực tuyến hàng đầu Việt Nam</p>
             </div>
 

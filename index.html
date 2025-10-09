@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlackCat</title>
+    <title>BookSelf</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+    <script src="data.js"></script>
     <script src="script.js"></script>
     <header>
         <div class="header-main">
@@ -30,10 +31,13 @@
                 </nav>
 
                 <!-- Search Bar -->
-                <div class="search-bar">
-                    <button class="filter-btn"><i class="fa-solid fa-filter"></i></button>
-                    <input type="text" placeholder="Tìm kiếm sản phẩm">
-                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="search-container">
+                    <div class="search-bar">
+                        <button class="filter-btn"><i class="fa-solid fa-filter"></i></button>
+                        <input type="text" class="search-input" placeholder="Tìm kiếm sản phẩm...">
+                        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div class="autocomplete-dropdown" style="display: none;"></div>
                 </div>
 
                 <!-- Header Right Section -->
@@ -46,8 +50,8 @@
                         </span>
                     </div>
                     <div class="user-actions">
-                        <a href="#"><i class="fa-regular fa-user"></i> Tài khoản</a>
-                        <a href="#"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng <span class="cart-count">2</span></a>
+                        <a href="#"><i class="fa-regular fa-user"></i> <span>Tài khoản</span></a>
+                        <a href="#" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i> <span>Giỏ hàng</span> <span class="cart-count">0</span></a>
                     </div>
                 </div>
             </div>
@@ -61,39 +65,39 @@
                         <div class="category-menu">
                             <h3 class="category-title">DANH MỤC SẢN PHẨM</h3>
                             <ul class="category-list">
-                                <li class="has-submenu">
-                                    <a href="category.html?type=vietnamese"><i class="fa-solid fa-book"></i> Sách Tiếng Việt <i class="fa-solid fa-angle-right"></i></a>
-                                    <ul class="submenu">
-                                        <li><a href="category.html?type=literature">Văn Học</a></li>
-                                        <li><a href="category.html?type=parenting">Nuôi Dạy Con</a></li>
-                                        <li><a href="category.html?type=history">Lịch Sử - Địa Lý - Tôn Giáo</a></li>
-                                        <li><a href="category.html?type=culture">Văn Hóa - Nghệ Thuật - Du Lịch</a></li>
-                                        <li><a href="#">Thiếu Nhi</a></li>
-                                        <li><a href="#">Tiếu Sử - Hồi Ký</a></li>
-                                        <li><a href="#">Khoa Học Kỹ Thuật</a></li>
-                                        <li><a href="#">Âm Nhạc - Mỹ Thuật - Thời Trang</a></li>
-                                        <li><a href="#">Kinh Tế</a></li>
-                                        <li><a href="#">Giáo Khoa - Tham Khảo</a></li>
-                                        <li><a href="#">Chính Trị - Pháp Lý - Triết Học</a></li>
-                                        <li><a href="#">Sức Khỏe - Dinh Dưỡng</a></li>
-                                        <li><a href="#">Tâm Lý - Kỹ Năng Sống</a></li>
-                                        <li><a href="#">Sách Học Ngoại Ngữ</a></li>
-                                        <li><a href="#">Tiếu Sử Hồi Ký</a></li>
+                                <li class="has-submenu category-item">
+                                    <a href="#" data-category="vietnamese"><i class="fa-solid fa-book"></i> Sách Tiếng Việt <i class="fa-solid fa-angle-right"></i></a>
+                                    <ul class="submenu category-submenu">
+                                        <li><a href="#" data-subcategory="literature">Văn Học</a></li>
+                                        <li><a href="#" data-subcategory="parenting">Nuôi Dạy Con</a></li>
+                                        <li><a href="#" data-subcategory="history">Lịch Sử - Địa Lý - Tôn Giáo</a></li>
+                                        <li><a href="#" data-subcategory="culture">Văn Hóa - Nghệ Thuật - Du Lịch</a></li>
+                                        <li><a href="#" data-subcategory="children">Thiếu Nhi</a></li>
+                                        <li><a href="#" data-subcategory="biography">Tiếu Sử - Hồi Ký</a></li>
+                                        <li><a href="#" data-subcategory="science">Khoa Học Kỹ Thuật</a></li>
+                                        <li><a href="#" data-subcategory="art">Âm Nhạc - Mỹ Thuật - Thời Trang</a></li>
+                                        <li><a href="#" data-subcategory="economics">Kinh Tế</a></li>
+                                        <li><a href="#" data-subcategory="education">Giáo Khoa - Tham Khảo</a></li>
+                                        <li><a href="#" data-subcategory="politics">Chính Trị - Pháp Lý - Triết Học</a></li>
+                                        <li><a href="#" data-subcategory="health">Sức Khỏe - Dinh Dưỡng</a></li>
+                                        <li><a href="#" data-subcategory="psychology">Tâm Lý - Kỹ Năng Sống</a></li>
+                                        <li><a href="#" data-subcategory="language">Sách Học Ngoại Ngữ</a></li>
+                                        <li><a href="#" data-subcategory="lifestyle">Lối Sống</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-submenu">
-                                    <a href="category.html?type=foreign"><i class="fa-solid fa-book-open"></i> Sách Ngoại Văn <i class="fa-solid fa-angle-right"></i></a>
-                                    <ul class="submenu">
-                                        <li><a href="#">Coffee Table Books</a></li>
-                                        <li><a href="#">Fiction</a></li>
-                                        <li><a href="#">Taschen</a></li>
-                                        <li><a href="#">Non Fiction</a></li>
-                                        <li><a href="#">Bestselling Series</a></li>
-                                        <li><a href="#">Gifts of Others</a></li>
-                                        <li><a href="#">Children's Books</a></li>
+                                <li class="has-submenu category-item">
+                                    <a href="#" data-category="foreign"><i class="fa-solid fa-book-open"></i> Sách Ngoại Văn <i class="fa-solid fa-angle-right"></i></a>
+                                    <ul class="submenu category-submenu">
+                                        <li><a href="#" data-subcategory="coffee-table">Coffee Table Books</a></li>
+                                        <li><a href="#" data-subcategory="fiction">Fiction</a></li>
+                                        <li><a href="#" data-subcategory="taschen">Taschen</a></li>
+                                        <li><a href="#" data-subcategory="non-fiction">Non Fiction</a></li>
+                                        <li><a href="#" data-subcategory="bestseller">Bestselling Series</a></li>
+                                        <li><a href="#" data-subcategory="gifts">Gifts of Others</a></li>
+                                        <li><a href="#" data-subcategory="children-en">Children's Books</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="category.html?type=signed"><i class="fa-solid fa-signature"></i> Sách có chữ ký <i class="fa-solid fa-angle-right"></i></a></li>
+                                <li class="category-item"><a href="#" data-category="signed"><i class="fa-solid fa-signature"></i> Sách có chữ ký <i class="fa-solid fa-angle-right"></i></a></li>
                             </ul>
                         </div>
                     </aside>
@@ -106,8 +110,8 @@
             </div>
         </section>
 
-        <section class="product-showcase container">
-            <h2>SÁCH TIẾNG VIỆT</h2>
+        <section class="product-showcase container featured-products">
+            <h2>SẢN PHẨM NỔI BẬT</h2>
             <div class="product-brand-logos">
                 <img src="https://bizweb.dktcdn.net/thumb/small/100/488/358/themes/952022/assets/vendorimg_1.jpg?1727790635926" alt="Brand Logo">
                 <img src="https://bizweb.dktcdn.net/thumb/small/100/488/358/themes/952022/assets/vendorimg_3.jpg?1727790635926" alt="Brand Logo">
@@ -119,140 +123,18 @@
                 <button class="scroll-btn right"><i class="fa-solid fa-angle-right"></i></button>
             </div>
             <div class="product-grid">
-                <div class="product-item">
-                    <img src="images/book-tlch-1.jpg" alt="Tâm trí chữa lành">
-                    <p class="product-category">Tâm lý - Kỹ năng sống</p>
-                    <h3>Tâm trí chữa lành cơ thể như thế nào</h3>
-                    <div class="product-price">
-                        <span class="current-price">239.000₫</span>
-                        </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/book-global-class.jpg" alt="Global Class">
-                    <p class="product-category">Kinh tế - Kinh doanh</p>
-                    <h3>Global Class</h3>
-                    <div class="product-price">
-                        <span class="current-price">299.000₫</span>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/book-cam-go.jpg" alt="Cẩm Go">
-                    <p class="product-category">Lịch sử - Chính trị</p>
-                    <h3>Cẩm go: Khảo luận về...</h3>
-                    <div class="product-price">
-                        <span class="current-price">189.000₫</span>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/book-my-thuat.jpg" alt="Đừng bỏ lỡ">
-                    <p class="product-category">Nghệ thuật - Thiết kế</p>
-                    <h3>Đừng bỏ lỡ</h3>
-                    <div class="product-price">
-                        <span class="current-price">289.000₫</span>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/book-lich-su.jpg" alt="Xem quanh">
-                    <p class="product-category">Lịch sử - Chính trị</p>
-                    <h3>Xem quanh 285k</h3>
-                    <div class="product-price">
-                        <span class="current-price">285.000₫</span>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/book-vien-du.jpg" alt="Tiểu sử">
-                    <p class="product-category">Tiểu sử - Hồi ký</p>
-                    <h3>Tiểu sử: Viễn du...</h3>
-                    <div class="product-price">
-                        <span class="current-price">279.000₫</span>
-                    </div>
+                <div class="loading-placeholder">
+                    <p>Đang tải sản phẩm nổi bật...</p>
                 </div>
             </div>
             <a href="#" class="btn-view-all">Xem tất cả</a>
         </section>
 
-        <section class="product-showcase container">
-            <h2>SÁCH NGOẠI VĂN</h2>
+        <section class="product-showcase container new-releases">
+            <h2>SÁCH MỚI PHÁT HÀNH</h2>
             <div class="product-grid">
-                <div class="product-item">
-                    <img src="images/book-foreign-1.jpg" alt="Born in North America">
-                    <p class="product-category">Foreign Languages</p>
-                    <h3>Born in North America</h3>
-                    <div class="product-price">
-                        <span class="current-price">187.000₫</span>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/book-foreign-2.jpg" alt="Perimenopause Workbook">
-                    <p class="product-category">Foreign Languages</p>
-                    <h3>Perimenopause Workbook</h3>
-                    <div class="product-price">
-                        <span class="current-price">167.000₫</span>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/book-foreign-3.jpg" alt="Whole30">
-                    <p class="product-category">Foreign Languages</p>
-                    <h3>Whole30</h3>
-                    <div class="product-price">
-                        <span class="current-price">247.000₫</span>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/book-foreign-4.jpg" alt="The Seventh Scroll">
-                    <p class="product-category">Foreign Languages</p>
-                    <h3>The Seventh Scroll</h3>
-                    <div class="product-price">
-                        <span class="current-price">167.000₫</span>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/book-foreign-5.jpg" alt="Vivienne Westwood">
-                    <p class="product-category">Foreign Languages</p>
-                    <h3>Vivienne Westwood</h3>
-                    <div class="product-price">
-                        <span class="current-price">1.599.000₫</span>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/book-foreign-6.jpg" alt="In Search of">
-                    <p class="product-category">Foreign Languages</p>
-                    <h3>IN SEARCH OF</h3>
-                    <div class="product-price">
-                        <span class="current-price">249.000₫</span>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/book-foreign-7.jpg" alt="The Lazy Person's">
-                    <p class="product-category">Foreign Languages</p>
-                    <h3>The Lazy Person's</h3>
-                    <div class="product-price">
-                        <span class="current-price">259.000₫</span>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/book-foreign-8.jpg" alt="Little Book of Gri">
-                    <p class="product-category">Foreign Languages</p>
-                    <h3>LITTLE BOOK OF GRI</h3>
-                    <div class="product-price">
-                        <span class="current-price">249.000₫</span>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/book-foreign-9.jpg" alt="Little Book of">
-                    <p class="product-category">Foreign Languages</p>
-                    <h3>LITTLE BOOK OF</h3>
-                    <div class="product-price">
-                        <span class="current-price">269.000₫</span>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/book-foreign-10.jpg" alt="Elizabeth">
-                    <p class="product-category">Foreign Languages</p>
-                    <h3>ELIZABETH</h3>
-                    <div class="product-price">
-                        <span class="current-price">699.000₫</span>
-                    </div>
+                <div class="loading-placeholder">
+                    <p>Đang tải sách mới phát hành...</p>
                 </div>
             </div>
             <a href="#" class="btn-view-all">Xem tất cả</a>
@@ -309,6 +191,8 @@
         </div>
     </footer>
 
+    <script src="data.js"></script>
     <script src="script.js"></script>
+    <script src="auth.js"></script>
 </body>
 </html>

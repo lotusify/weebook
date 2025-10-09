@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ cá nhân - BookShelf</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="profile-page">
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    
+    <header>
+        <div class="header-main">
+            <div class="container">
+                <div class="brand-section">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="BookShelf Logo">
+                        <span class="brand-name">BookShelf</span>
+                    </a>
+                </div>
+                
+                <nav class="main-nav">
+                    <a href="index.html">Trang chủ</a>
+                    <a href="category.html">Danh mục</a>
+                    <a href="about.html">Giới thiệu</a>
+                </nav>
+                
+                <div class="user-actions">
+                    <a href="#" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <a href="#" class="user-account">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Tài khoản</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile-main">
+        <div class="container">
+            <div class="profile-layout">
+                <!-- Profile Sidebar -->
+                <div class="profile-sidebar">
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <img src="https://via.placeholder.com/100x100/00B4A6/FFFFFF?text=U" alt="Avatar" id="profileAvatar">
+                            <button class="avatar-edit-btn" onclick="editAvatar()">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                        </div>
+                        <h3 id="profileName">Tên người dùng</h3>
+                        <p id="profileEmail">email@example.com</p>
+                        <p id="profilePhone">0123456789</p>
+                    </div>
+                    
+                    <nav class="profile-nav">
+                        <a href="#personal-info" class="nav-item active" data-section="personal-info">
+                            <i class="fas fa-user"></i>
+                            <span>Thông tin cá nhân</span>
+                        </a>
+                        <a href="#orders" class="nav-item" data-section="orders">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>Đơn hàng</span>
+                        </a>
+                        <a href="#wishlist" class="nav-item" data-section="wishlist">
+                            <i class="fas fa-heart"></i>
+                            <span>Danh sách yêu thích</span>
+                        </a>
+                        <a href="#reviews" class="nav-item" data-section="reviews">
+                            <i class="fas fa-star"></i>
+                            <span>Đánh giá</span>
+                        </a>
+                        <a href="#settings" class="nav-item" data-section="settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Cài đặt</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Profile Content -->
+                <div class="profile-content">
+                    <!-- Personal Information Section -->
+                    <div class="profile-section active" id="personal-info">
+                        <div class="section-header">
+                            <h2>Thông tin cá nhân</h2>
+                            <button class="edit-btn" onclick="toggleEditMode('personal-info')">
+                                <i class="fas fa-edit"></i>
+                                Chỉnh sửa
+                            </button>
+                        </div>
+                        
+                        <div class="profile-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="editName">Họ và tên</label>
+                                    <input type="text" id="editName" name="name" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editPhone">Số điện thoại</label>
+                                    <input type="tel" id="editPhone" name="phone" readonly>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="editEmail">Email</label>
+                                <input type="email" id="editEmail" name="email" readonly>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="editAddress">Địa chỉ</label>
+                                <textarea id="editAddress" name="address" rows="3" readonly></textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button class="btn btn-primary" onclick="saveProfile()" style="display: none;">
+                                    <i class="fas fa-save"></i>
+                                    Lưu thay đổi
+                                </button>
+                                <button class="btn btn-secondary" onclick="cancelEdit()" style="display: none;">
+                                    <i class="fas fa-times"></i>
+                                    Hủy
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Orders Section -->
+                    <div class="profile-section" id="orders">
+                        <div class="section-header">
+                            <h2>Đơn hàng của tôi</h2>
+                        </div>
+                        
+                        <div class="orders-list" id="ordersList">
+                            <!-- Orders will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Wishlist Section -->
+                    <div class="profile-section" id="wishlist">
+                        <div class="section-header">
+                            <h2>Danh sách yêu thích</h2>
+                        </div>
+                        
+                        <div class="wishlist-grid" id="wishlistGrid">
+                            <!-- Wishlist items will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Reviews Section -->
+                    <div class="profile-section" id="reviews">
+                        <div class="section-header">
+                            <h2>Đánh giá của tôi</h2>
+                        </div>
+                        
+                        <div class="reviews-list" id="reviewsList">
+                            <!-- Reviews will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Settings Section -->
+                    <div class="profile-section" id="settings">
+                        <div class="section-header">
+                            <h2>Cài đặt tài khoản</h2>
+                        </div>
+                        
+                        <div class="settings-content">
+                            <div class="setting-group">
+                                <h3>Bảo mật</h3>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h4>Đổi mật khẩu</h4>
+                                        <p>Thay đổi mật khẩu để bảo mật tài khoản</p>
+                                    </div>
+                                    <button class="btn btn-secondary" onclick="changePassword()">
+                                        Đổi mật khẩu
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="setting-group">
+                                <h3>Thông báo</h3>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h4>Email thông báo</h4>
+                                        <p>Nhận thông báo về đơn hàng và khuyến mãi</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="emailNotifications" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h4>SMS thông báo</h4>
+                                        <p>Nhận SMS về trạng thái đơn hàng</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="smsNotifications">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="setting-group">
+                                <h3>Tài khoản</h3>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h4>Xóa tài khoản</h4>
+                                        <p>Xóa vĩnh viễn tài khoản và dữ liệu</p>
+                                    </div>
+                                    <button class="btn btn-danger" onclick="deleteAccount()">
+                                        Xóa tài khoản
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="profile.js"></script>
+</body>
+</html>

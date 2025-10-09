@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt hàng thành công - BookShelf</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="order-success-page">
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    
+    <header>
+        <div class="header-main">
+            <div class="container">
+                <div class="brand-section">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="BookShelf Logo">
+                        <span class="brand-name">BookShelf</span>
+                    </a>
+                </div>
+                
+                <div class="checkout-progress">
+                    <div class="progress-step active">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Giỏ hàng</span>
+                    </div>
+                    <div class="progress-step active">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Thông tin</span>
+                    </div>
+                    <div class="progress-step active">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Thanh toán</span>
+                    </div>
+                    <div class="progress-step active">
+                        <i class="fas fa-check"></i>
+                        <span>Hoàn thành</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="order-success-main">
+        <div class="container">
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                
+                <h1>Đặt hàng thành công!</h1>
+                <p class="success-message">Cảm ơn bạn đã đặt hàng. Chúng tôi sẽ xử lý đơn hàng của bạn trong thời gian sớm nhất.</p>
+                
+                <div class="order-info-card">
+                    <h3>Thông tin đơn hàng</h3>
+                    <div class="order-details" id="orderDetails">
+                        <!-- Order details will be loaded here -->
+                    </div>
+                </div>
+                
+                <div class="next-steps">
+                    <h3>Bước tiếp theo</h3>
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Xác nhận email</h4>
+                                <p>Chúng tôi sẽ gửi email xác nhận đơn hàng đến địa chỉ email của bạn.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item">
+                            <div class="step-icon">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Chuẩn bị hàng</h4>
+                                <p>Đơn hàng sẽ được chuẩn bị và đóng gói cẩn thận.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item">
+                            <div class="step-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Giao hàng</h4>
+                                <p>Đơn hàng sẽ được giao đến địa chỉ bạn đã cung cấp.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="index.html" class="btn btn-primary">
+                        <i class="fas fa-home"></i>
+                        Về trang chủ
+                    </a>
+                    <a href="orders.html" class="btn btn-secondary">
+                        <i class="fas fa-list"></i>
+                        Xem đơn hàng
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="order-success.js"></script>
+</body>
+</html>

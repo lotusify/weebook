@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đơn hàng của tôi - BookShelf</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="orders-page">
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    
+    <header>
+        <div class="header-main">
+            <div class="container">
+                <div class="brand-section">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="BookShelf Logo">
+                        <span class="brand-name">BookShelf</span>
+                    </a>
+                </div>
+                
+                <nav class="main-nav">
+                    <a href="index.html">Trang chủ</a>
+                    <a href="category.html">Danh mục</a>
+                    <a href="about.html">Giới thiệu</a>
+                </nav>
+                
+                <div class="user-actions">
+                    <a href="#" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <a href="#" class="user-account">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Tài khoản</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="orders-main">
+        <div class="container">
+            <div class="orders-header">
+                <h1>Đơn hàng của tôi</h1>
+                <div class="orders-filters">
+                    <select id="statusFilter">
+                        <option value="all">Tất cả trạng thái</option>
+                        <option value="pending">Chờ xử lý</option>
+                        <option value="processing">Đang xử lý</option>
+                        <option value="shipped">Đã giao hàng</option>
+                        <option value="delivered">Đã nhận hàng</option>
+                        <option value="cancelled">Đã hủy</option>
+                    </select>
+                    <select id="timeFilter">
+                        <option value="all">Tất cả thời gian</option>
+                        <option value="7days">7 ngày qua</option>
+                        <option value="30days">30 ngày qua</option>
+                        <option value="90days">90 ngày qua</option>
+                        <option value="1year">1 năm qua</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="orders-content">
+                <div class="orders-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="pendingCount">0</h3>
+                            <p>Chờ xử lý</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="processingCount">0</h3>
+                            <p>Đang xử lý</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="shippedCount">0</h3>
+                            <p>Đã giao hàng</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="deliveredCount">0</h3>
+                            <p>Đã nhận hàng</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="orders-list" id="ordersList">
+                    <!-- Orders will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="orders.js"></script>
+</body>
+</html>
