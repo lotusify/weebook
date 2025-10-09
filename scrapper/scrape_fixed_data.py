@@ -37,6 +37,87 @@ def remove_price_from_title(title):
     title = re.sub(r'\s+\d+\s*₫?\s*$', '', title)
     return title.strip()
 
+def scrape_readstation_foreign():
+    """Scrape foreign books from ReadStation"""
+    print("Scraping foreign books from ReadStation...")
+    books = []
+    
+    urls = [
+        "https://readstation.vn/sach-ngoai-van",
+        "https://readstation.vn/sach-ngoai-van?page=2"
+    ]
+    
+    for url in urls:
+        try:
+            print(f"Scraping: {url}")
+            response = requests.get(url, timeout=10)
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            products = soup.find_all('div', class_='item_product_main')
+            print(f"Found {len(products)} products")
+            
+            for product in products:
+                try:
+                    # Extract title from link title attribute
+                    link_elem = product.find('a', class_='image_thumb')
+                    if not link_elem:
+                        continue
+                    
+                    title = link_elem.get('title', '').strip()
+                    if not title:
+                        continue
+                    
+                    # Remove price from title
+                    title = remove_price_from_title(title)
+                    
+                    # Extract price from price-box div
+                    price_elem = product.find('div', class_='price-box')
+                    if not price_elem:
+                        continue
+                    
+                    price_text = price_elem.get_text(strip=True)
+                    price = clean_price(price_text)
+                    
+                    if price == 0:
+                        continue
+                    
+                    # Get image from data-src
+                    img_elem = product.find('img')
+                    image_url = img_elem.get('data-src') if img_elem else '/images/placeholder.jpg'
+                    if image_url and image_url.startswith('//'):
+                        image_url = 'https:' + image_url
+                    elif image_url and image_url.startswith('/'):
+                        image_url = 'https://readstation.vn' + image_url
+                    
+                    product_url = link_elem.get('href') if link_elem else '#'
+                    if product_url.startswith('/'):
+                        product_url = 'https://readstation.vn' + product_url
+                    
+                    books.append({
+                        'title': title,
+                        'price': price,
+                        'originalPrice': int(price * 1.2),
+                        'category': 'foreign',
+                        'subcategory': 'fiction',
+                        'image': image_url,
+                        'url': product_url,
+                        'brand': 'ReadStation',
+                        'author': 'Tác giả không rõ'  # ReadStation doesn't show author in listing
+                    })
+                    
+                except Exception as e:
+                    print(f"Error processing product: {e}")
+                    continue
+            
+            time.sleep(1)
+            
+        except Exception as e:
+            print(f"Error scraping {url}: {e}")
+            continue
+    
+    print(f"Scraped {len(books)} foreign books")
+    return books
+
 def scrape_readstation_vietnamese():
     """Scrape Vietnamese books from ReadStation"""
     print("Scraping Vietnamese books from ReadStation...")
@@ -356,7 +437,15 @@ def generate_metadata(book):
     book['rating'] = round(random.uniform(3.5, 5.0), 1)
     book['reviewCount'] = random.randint(10, 500)
     # Generate specific descriptions based on category
-    if book['category'] == 'vietnamese':
+    if book['category'] == 'foreign':
+        descriptions = [
+            f"'{book['title']}' is an excellent foreign book that brings valuable knowledge and fresh perspectives on life. Written in English, this work offers international insights and cultural diversity.",
+            f"The book '{book['title']}' is a remarkable piece with rich content and clear presentation. It helps expand your understanding and develop critical thinking skills.",
+            f"'{book['title']}' is a beloved book among readers due to its engaging content and accessible writing style. Perfect for those who want to learn and gain more knowledge.",
+            f"This foreign book '{book['title']}' provides useful information and valuable life lessons. The content is presented scientifically and is easy to understand.",
+            f"'{book['title']}' is an excellent choice for those who want to enhance their knowledge and skills. The content is carefully compiled and easy to apply."
+        ]
+    elif book['category'] == 'vietnamese':
         descriptions = [
             f"Cuốn sách '{book['title']}' mang đến những kiến thức bổ ích và những góc nhìn mới mẻ về cuộc sống. Tác phẩm được viết bằng ngôn ngữ tiếng Việt dễ hiểu, phù hợp với độc giả Việt Nam.",
             f"'{book['title']}' là một tác phẩm đáng đọc với nội dung phong phú và cách trình bày rõ ràng. Sách giúp bạn mở rộng tầm hiểu biết và phát triển tư duy.",
@@ -406,6 +495,10 @@ def main():
     print("Starting fixed data scraping...")
     
     all_books = []
+    
+    # Scrape Foreign books
+    foreign_books = scrape_readstation_foreign()
+    all_books.extend(foreign_books)
     
     # Scrape Vietnamese books
     vietnamese_books = scrape_readstation_vietnamese()

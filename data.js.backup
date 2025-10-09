@@ -2,7 +2,6 @@
 // Real data scraped from multiple sources with real images
 
 const BOOK_DATABASE = {
-    
     1: {
         id: 1,
         title: "Nexus - Lược sử của những  lưới thông tin từ Thời đại Đồ đá dến trí tuệ Nhân tạo",
@@ -29,7 +28,6 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
     2: {
         id: 2,
         title: "Hành Trình Nuôi Con: Chăm Con 0 -12 Tháng - Cẩm nang nuôi con đầy đủ nhất",
@@ -56,7 +54,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
     3: {
         id: 3,
         title: "All That IELTS - Trợ thủ giúp giảm nỗi lo trong phòng thi",
@@ -83,7 +80,6 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
     4: {
         id: 4,
         title: "Quản trị công ty hiện đại",
@@ -110,7 +106,6 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
     5: {
         id: 5,
         title: "Quy tắc số 1",
@@ -137,7 +132,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
     6: {
         id: 6,
         title: "SMART X Chiến lược tăng trưởng doanh thu thông minh",
@@ -164,7 +158,6 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
     7: {
         id: 7,
         title: "Khởi nguyên của Vũ Trụ",
@@ -191,7 +184,6 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
     8: {
         id: 8,
         title: "Vui cười lên cùng chứng khoán",
@@ -218,7 +210,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
     9: {
         id: 9,
         title: "Bí mật ( Bìa cứng ) SDV",
@@ -245,7 +236,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
     10: {
         id: 10,
         title: "Tủ sách đời người : Những tuyệt tác của Shakespeare",
@@ -272,7 +262,6 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
     11: {
         id: 11,
         title: "100 Câu hỏi về lịch sử chữ quốc ngữ",
@@ -299,7 +288,6 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
     12: {
         id: 12,
         title: "Tư tưởng Phật Giáo",
@@ -326,7 +314,6 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
     13: {
         id: 13,
         title: "GNSV : Nguyễn Tri Phương",
@@ -353,7 +340,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
     14: {
         id: 14,
         title: "GNSV : Lương Ngọc Quyến và cuộc khởi nghĩa Thái Nguyên 1917",
@@ -380,7 +366,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
     15: {
         id: 15,
         title: "GNSV : Cao Bá Quát",
@@ -407,7 +392,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
     16: {
         id: 16,
         title: "Dẫn dắt sự thay đổi",
@@ -434,7 +418,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
     17: {
         id: 17,
         title: "English Collocations in news - Đọc tin không \"vấp\"",
@@ -461,7 +444,6 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
     18: {
         id: 18,
         title: "Sụp đổ",
@@ -488,7 +470,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
     19: {
         id: 19,
         title: "Kiếm tiền từ bất cứ điều gì",
@@ -515,7 +496,6 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
     20: {
         id: 20,
         title: "Đọc hiểu công trình kiến trúc",
@@ -542,7 +522,6 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
     21: {
         id: 21,
         title: "Marketing bệnh viện thực hành 3 : Bứt phá (SDV)",
@@ -569,7 +548,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
     22: {
           id: 22,
         title: "Nuance 2 - 50 Sắc thái của câu",
@@ -596,7 +574,6 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
     23: {
         id: 23,
         title: "Quản trị chiến lược thực chiến",
@@ -623,7 +600,6 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
     24: {
         id: 24,
         title: "Adolf Hitler - Chân dung một trùm phát xít",
@@ -650,7 +626,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
     25: {
         id: 25,
         title: "1000 Bộ não - Lý thuyết mới về trí tuệ con người",
@@ -677,7 +652,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
     26: {
         id: 26,
         title: "Vua Gia Long",
@@ -704,7 +678,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
     27: {
         id: 27,
         title: "Lịch sử chữ Quốc ngữ (1615 - 1919)",
@@ -731,7 +704,6 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
     28: {
         id: 28,
         title: "Những lá thư gửi nhà cải cách giáo dục trẻ",
@@ -758,7 +730,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
     29: {
         id: 29,
         title: "Nghệ thuật đàm phán đỉnh cao (TB)",
@@ -785,7 +756,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
     30: {
         id: 30,
         title: "Thuật quản trị",
@@ -812,7 +782,6 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
     31: {
         id: 31,
         title: "Thuật ủy quyền và giám sát",
@@ -839,7 +808,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
     32: {
         id: 32,
         title: "Thuật quản lý bán hàng",
@@ -866,7 +834,6 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
     33: {
         id: 33,
         title: "Tăng tốc bán hàng bằng SPIN",
@@ -893,7 +860,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
     34: {
         id: 34,
         title: "MBA Căn bản",
@@ -920,7 +886,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
     35: {
         id: 35,
         title: "Nature in North America",
@@ -950,34 +915,6 @@ const BOOK_DATABASE = {
 
     36: {
         id: 36,
-        title: "The Complete Color Works 1994-2015 - Bộ Sưu Tập Tất Cả Các Bản Thảo Tranh Màu Của Thám Tử Lừng Danh Conan (Bìa Cứng)",
-        author: "Gosho Aoyama",
-        publisher: "Shueisha",
-        publishDate: "2023-08-27",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 380000,
-        originalPrice: 456000,
-        discount: 0,
-        isbn: "978-654-56362-4",
-        pages: 128,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "481g",
-        dimensions: "21 x 14 x 5 cm",
-        stock: 66,
-        rating: 4.5,
-        reviewCount: 483,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/76232/thumbs/the-complete-color-works-1994-2015-bo-suu-tap-tat-ca-cac-ban-thao-tranh-mau-cua-tham-tu-lung-danh-conan-bia-cung.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Compa vẽ' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: true
-    },
-
-
-    37: {
-        id: 37,
         title: "Farmhouse Cookbook",
         author: "Leo Tolstoy",
         publisher: "NXB Thế Giới",
@@ -1003,36 +940,8 @@ const BOOK_DATABASE = {
         newRelease: false
     },
 
-    38: {
-        id: 38,
-        title: "Ếch Ộp - Thời Vàng Son Để Lại",
-        author: "Nguyễn Hưng",
-        publisher: "NXB Kim Đồng",
-        publishDate: "2024-06-12",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 87200,
-        originalPrice: 104640,
-        discount: 0,
-        isbn: "978-326-96498-7",
-        pages: 213,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "583g",
-        dimensions: "21 x 15 x 3 cm",
-        stock: 81,
-        rating: 4.3,
-        reviewCount: 127,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/76172/thumbs/ech-op-thoi-vang-son-de-lai.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Máy tính Casio fx-570VN Plus' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: false
-    },
-
-
-    39: {
-        id: 39,
+    37: {
+        id: 37,
         title: "The Whole30",
         author: "Agatha Christie",
         publisher: "NXB Trẻ",
@@ -1058,36 +967,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    40: {
-        id: 40,
-        title: "Công Chúa Tóc Cam",
-        author: "Kolya Bùi",
-        publisher: "Kodansha",
-        publishDate: "2023-12-11",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 111200,
-        originalPrice: 133440,
-        discount: 0,
-        isbn: "978-186-46902-8",
-        pages: 495,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "619g",
-        dimensions: "15 x 13 x 3 cm",
-        stock: 79,
-        rating: 3.7,
-        reviewCount: 89,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/75451/thumbs/cong-chua-toc-cam.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút dạ quang' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: true,
-        newRelease: false
-    },
-
-
-    41: {
-        id: 41,
+    38: {
+        id: 38,
         title: "The Seventh Scroll",
         author: "Charles Dickens",
         publisher: "NXB Trẻ",
@@ -1113,36 +994,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    42: {
-        id: 42,
-        title: "Cuộc Phiêu Lưu Của Thuyền Trưởng Sinbad",
-        author: "Nghệ Sĩ Quang Thảo",
-        publisher: "NXB Hội Nhà Văn",
-        publishDate: "2023-08-21",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 135000,
-        originalPrice: 162000,
-        discount: 0,
-        isbn: "978-148-85821-2",
-        pages: 147,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "486g",
-        dimensions: "16 x 16 x 4 cm",
-        stock: 45,
-        rating: 4.6,
-        reviewCount: 82,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/75311/thumbs/cuoc-phieu-luu-cua-thuyen-truong-sinbad.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bìa hồ sơ A4' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: false
-    },
-
-
-    43: {
-        id: 43,
+    39: {
+        id: 39,
         title: "Vivienne Westwood Catwalk",
         author: "Paulo Coelho",
         publisher: "NXB Văn Học",
@@ -1168,36 +1021,8 @@ const BOOK_DATABASE = {
         newRelease: false
     },
 
-    44: {
-        id: 44,
-        title: "Hôm Nay Lại Là Một Ngày Không Muốn Đi Làm",
-        author: "Tiểu Lam Và Những Người Bạn",
-        publisher: "Shogakukan",
-        publishDate: "2023-06-06",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 156000,
-        originalPrice: 187200,
-        discount: 0,
-        isbn: "978-755-68414-9",
-        pages: 178,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "443g",
-        dimensions: "18 x 17 x 1 cm",
-        stock: 39,
-        rating: 4.8,
-        reviewCount: 196,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/71770/thumbs/hom-nay-lai-la-mot-ngay-khong-muon-di-lam.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Giấy A4 Double A' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: false
-    },
-
-
-    45: {
-        id: 45,
+    40: {
+        id: 40,
         title: "IN SEARCH OF PERFUMES",
         author: "J.K. Rowling",
         publisher: "NXB Trẻ",
@@ -1223,36 +1048,8 @@ const BOOK_DATABASE = {
         newRelease: false
     },
 
-    46: {
-        id: 46,
-        title: "Black Jack (Bản Đặc Biệt - Bộ 22 Tập)",
-        author: "Tezuka Osamu",
-        publisher: "Square Enix",
-        publishDate: "2024-12-15",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 2970000,
-        originalPrice: 3564000,
-        discount: 0,
-        isbn: "978-760-25813-8",
-        pages: 213,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "206g",
-        dimensions: "15 x 17 x 4 cm",
-        stock: 97,
-        rating: 4.9,
-        reviewCount: 131,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/71072/thumbs/black-jack-ban-dac-biet-bo-22-tap.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Kéo văn phòng' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: false
-    },
-
-
-    47: {
-        id: 47,
+    41: {
+        id: 41,
         title: "THE LAZY PERSON\'S  GUIDE TO EXE",
         author: "Mark Twain",
         publisher: "NXB Văn Học",
@@ -1278,36 +1075,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    48: {
-        id: 48,
-        title: "Người Trưởng Thành Cũng Muốn Khóc - Tập 1",
-        author: "Angelado",
-        publisher: "NXB Trẻ",
-        publishDate: "2024-12-07",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 86400,
-        originalPrice: 103680,
-        discount: 0,
-        isbn: "978-140-48347-7",
-        pages: 171,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "476g",
-        dimensions: "16 x 10 x 5 cm",
-        stock: 45,
-        rating: 4.0,
-        reviewCount: 496,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/70913/thumbs/nguoi-truong-thanh-cung-muon-khoc-tap-1.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Băng keo trong' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: true,
-        newRelease: false
-    },
-
-
-    49: {
-        id: 49,
+    42: {
+        id: 42,
         title: "LITTLE BOOK OF GIN",
         author: "Charles Dickens",
         publisher: "NXB Thế Giới",
@@ -1333,36 +1102,8 @@ const BOOK_DATABASE = {
         newRelease: false
     },
 
-    50: {
-        id: 50,
-        title: "Neko Neko Honey (Bộ 2 Tập)",
-        author: "Souta Narazaki",
-        publisher: "NXB Trẻ",
-        publishDate: "2023-06-19",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 120000,
-        originalPrice: 144000,
-        discount: 0,
-        isbn: "978-145-68995-5",
-        pages: 257,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "762g",
-        dimensions: "21 x 13 x 2 cm",
-        stock: 51,
-        rating: 4.4,
-        reviewCount: 13,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/69698/thumbs/neko-neko-honey-bo-2-tap.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Ghim bấm' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: false
-    },
-
-
-    51: {
-        id: 51,
+    43: {
+        id: 43,
         title: "LITTLE BOOK OF WHISKY",
         author: "Charles Dickens",
         publisher: "NXB Trẻ",
@@ -1388,36 +1129,8 @@ const BOOK_DATABASE = {
         newRelease: false
     },
 
-    52: {
-        id: 52,
-        title: "Em Trai Hàng Xóm Bướng Bỉnh Quá - Tập 4",
-        author: "S Monkey",
-        publisher: "Square Enix",
-        publishDate: "2022-12-10",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 116000,
-        originalPrice: 139200,
-        discount: 0,
-        isbn: "978-497-30755-2",
-        pages: 410,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "297g",
-        dimensions: "22 x 11 x 3 cm",
-        stock: 73,
-        rating: 4.3,
-        reviewCount: 411,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/69473/thumbs/em-trai-hang-xom-buong-binh-qua-tap-4.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Kẹp giấy' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: true,
-        newRelease: false
-    },
-
-
-    53: {
-        id: 53,
+    44: {
+        id: 44,
         title: "ELIZABETH:  CELEBRATION IN PHOTO",
         author: "Paulo Coelho",
         publisher: "NXB Hội Nhà Văn",
@@ -1443,36 +1156,8 @@ const BOOK_DATABASE = {
         newRelease: false
     },
 
-    54: {
-        id: 54,
-        title: "Em Trai Hàng Xóm Bướng Bỉnh Quá - Tập 3",
-        author: "S Monkey",
-        publisher: "Shueisha",
-        publishDate: "2022-09-20",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 116000,
-        originalPrice: 139200,
-        discount: 0,
-        isbn: "978-108-39630-1",
-        pages: 319,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "620g",
-        dimensions: "23 x 18 x 5 cm",
-        stock: 65,
-        rating: 4.0,
-        reviewCount: 251,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/68328/thumbs/em-trai-hang-xom-buong-binh-qua-tap-3.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút lông dầu' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: true,
-        newRelease: false
-    },
-
-
-    55: {
-        id: 55,
+    45: {
+        id: 45,
         title: "THE OFFICIAL TOUR DE FRANCE",
         author: "J.K. Rowling",
         publisher: "NXB Trẻ",
@@ -1498,36 +1183,8 @@ const BOOK_DATABASE = {
         newRelease: false
     },
 
-    56: {
-        id: 56,
-        title: "Black Jack - Tập 22 (Bản Đặc Biệt)",
-        author: "Tezuka Osamu",
-        publisher: "NXB Hội Nhà Văn",
-        publishDate: "2022-11-20",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 135000,
-        originalPrice: 162000,
-        discount: 0,
-        isbn: "978-756-59396-9",
-        pages: 132,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "381g",
-        dimensions: "18 x 12 x 2 cm",
-        stock: 79,
-        rating: 4.5,
-        reviewCount: 315,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/67970/thumbs/black-jack-tap-22-ban-dac-biet.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút chì màu' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: true,
-        newRelease: true
-    },
-
-
-    57: {
-        id: 57,
+    46: {
+        id: 46,
         title: "THE STORY OF HARLEY-DAVIDSON",
         author: "Fyodor Dostoevsky",
         publisher: "NXB Trẻ",
@@ -1553,36 +1210,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    58: {
-        id: 58,
-        title: "Boxset Metalize Quý Ngài Phara-Ông (Bộ 3 Tập)",
-        author: "Hiroto Wada",
-        publisher: "Shogakukan",
-        publishDate: "2024-01-28",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 108000,
-        originalPrice: 129600,
-        discount: 0,
-        isbn: "978-527-84358-8",
-        pages: 262,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "371g",
-        dimensions: "22 x 12 x 5 cm",
-        stock: 93,
-        rating: 4.7,
-        reviewCount: 124,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/67732/thumbs/boxset-metalize-quy-ngai-phara-ong-bo-3-tap.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Tập vở học sinh' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: true,
-        newRelease: true
-    },
-
-
-    59: {
-        id: 59,
+    47: {
+        id: 47,
         title: "THE STORY OF PORSCHE",
         author: "Leo Tolstoy",
         publisher: "NXB Trẻ",
@@ -1608,36 +1237,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    60: {
-        id: 60,
-        title: "Sideworld - Thế Giới Bên Cạnh",
-        author: "nachi",
-        publisher: "NXB Hội Nhà Văn",
-        publishDate: "2025-09-10",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 92000,
-        originalPrice: 110400,
-        discount: 0,
-        isbn: "978-232-69734-9",
-        pages: 257,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "347g",
-        dimensions: "17 x 17 x 5 cm",
-        stock: 91,
-        rating: 4.7,
-        reviewCount: 272,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/67641/thumbs/sideworld-the-gioi-ben-canh.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Sổ tay' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: true,
-        newRelease: true
-    },
-
-
-    61: {
-        id: 61,
+    48: {
+        id: 48,
         title: "F1 THE OFFICIAL  HISTORY",
         author: "George Orwell",
         publisher: "NXB Trẻ",
@@ -1663,36 +1264,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    62: {
-        id: 62,
-        title: "Boxset Giấc Mộng Buổi Tà Dương (Tập 1+ 2)",
-        author: "Yuhki Kamatani",
-        publisher: "NXB Trẻ",
-        publishDate: "2023-12-18",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 90000,
-        originalPrice: 108000,
-        discount: 0,
-        isbn: "978-693-58962-6",
-        pages: 188,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "244g",
-        dimensions: "17 x 14 x 3 cm",
-        stock: 20,
-        rating: 4.4,
-        reviewCount: 66,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/67554/thumbs/boxset-giac-mong-buoi-ta-duong-tap-1-2.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút highlight' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: true
-    },
-
-
-    63: {
-        id: 63,
+    49: {
+        id: 49,
         title: "F1 CIRCUITS  FROM ABOVE",
         author: "Paulo Coelho",
         publisher: "NXB Hội Nhà Văn",
@@ -1718,36 +1291,8 @@ const BOOK_DATABASE = {
         newRelease: false
     },
 
-    64: {
-        id: 64,
-        title: "Boxset Lawful Drug (3 Tập)",
-        author: "Clamp",
-        publisher: "Shueisha",
-        publishDate: "2024-08-22",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 108000,
-        originalPrice: 129600,
-        discount: 0,
-        isbn: "978-522-41268-6",
-        pages: 400,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "346g",
-        dimensions: "24 x 18 x 1 cm",
-        stock: 23,
-        rating: 3.6,
-        reviewCount: 218,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/67552/thumbs/boxset-lawful-drug-3-tap.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút gel' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: true,
-        newRelease: true
-    },
-
-
-    65: {
-        id: 65,
+    50: {
+        id: 50,
         title: "CHAIRS",
         author: "Charles Dickens",
         publisher: "NXB Thế Giới",
@@ -1773,36 +1318,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    66: {
-        id: 66,
-        title: "Black Jack - Tập 21 (Bản Đặc Biệt)",
-        author: "Tezuka Osamu",
-        publisher: "NXB Văn Học",
-        publishDate: "2022-11-14",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 135000,
-        originalPrice: 162000,
-        discount: 0,
-        isbn: "978-590-44047-3",
-        pages: 166,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "249g",
-        dimensions: "15 x 13 x 2 cm",
-        stock: 98,
-        rating: 4.2,
-        reviewCount: 347,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/67336/thumbs/black-jack-tap-21-ban-dac-biet.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút máy' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: true
-    },
-
-
-    67: {
-        id: 67,
+    51: {
+        id: 51,
         title: "SNEAKERS",
         author: "Fyodor Dostoevsky",
         publisher: "NXB Văn Học",
@@ -1828,36 +1345,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    68: {
-        id: 68,
-        title: "Heesu Ở Lớp B - Tập 2",
-        author: "Lily",
-        publisher: "NXB Trẻ",
-        publishDate: "2022-03-11",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 92000,
-        originalPrice: 110400,
-        discount: 0,
-        isbn: "978-898-77051-5",
-        pages: 399,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "304g",
-        dimensions: "23 x 16 x 5 cm",
-        stock: 19,
-        rating: 3.5,
-        reviewCount: 39,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/67174/thumbs/heesu-o-lop-b-tap-2.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút chì màu nước' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: true,
-        newRelease: false
-    },
-
-
-    69: {
-        id: 69,
+    52: {
+        id: 52,
         title: "CULT T-SHIRTS",
         author: "Leo Tolstoy",
         publisher: "NXB Văn Học",
@@ -1883,36 +1372,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    70: {
-        id: 70,
-        title: "Những Con Mèo Ở Tử Cấm Thành - Tập 3",
-        author: "A Nam, Thỏ Ngốc",
-        publisher: "Kodansha",
-        publishDate: "2025-11-08",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 103200,
-        originalPrice: 123840,
-        discount: 0,
-        isbn: "978-243-92854-5",
-        pages: 307,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "331g",
-        dimensions: "21 x 12 x 2 cm",
-        stock: 39,
-        rating: 4.6,
-        reviewCount: 455,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/66880/thumbs/nhung-con-meo-o-tu-cam-thanh-tap-3.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút dạ' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: true
-    },
-
-
-    71: {
-        id: 71,
+    53: {
+        id: 53,
         title: "VINTAGE HANDBAGS",
         author: "Gabriel García Márquez",
         publisher: "NXB Văn Học",
@@ -1938,36 +1399,8 @@ const BOOK_DATABASE = {
         newRelease: false
     },
 
-    72: {
-        id: 72,
-        title: "Những Con Mèo Ở Tử Cấm Thành - Tập 2",
-        author: "A Nam, Thỏ Ngốc",
-        publisher: "NXB Văn Học",
-        publishDate: "2024-11-22",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 97600,
-        originalPrice: 117120,
-        discount: 0,
-        isbn: "978-133-53471-8",
-        pages: 407,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "220g",
-        dimensions: "21 x 11 x 1 cm",
-        stock: 48,
-        rating: 3.9,
-        reviewCount: 217,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/66879/thumbs/nhung-con-meo-o-tu-cam-thanh-tap-2.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút lông' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: true
-    },
-
-
-    73: {
-        id: 73,
+    54: {
+        id: 54,
         title: "VINTAGE SHOES",
         author: "George Orwell",
         publisher: "NXB Hội Nhà Văn",
@@ -1993,36 +1426,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    74: {
-        id: 74,
-        title: "Black Jack - Tập 20 (Bản Đặc Biệt)",
-        author: "Tezuka Osamu",
-        publisher: "Shogakukan",
-        publishDate: "2023-11-19",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 135000,
-        originalPrice: 162000,
-        discount: 0,
-        isbn: "978-739-74350-4",
-        pages: 167,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "727g",
-        dimensions: "24 x 20 x 4 cm",
-        stock: 80,
-        rating: 3.9,
-        reviewCount: 335,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/66710/thumbs/black-jack-tap-20-ban-dac-biet.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút bi nước' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: false
-    },
-
-
-    75: {
-        id: 75,
+    55: {
+        id: 55,
         title: "VINTAGE FASHION",
         author: "Fyodor Dostoevsky",
         publisher: "NXB Thế Giới",
@@ -2048,36 +1453,8 @@ const BOOK_DATABASE = {
         newRelease: false
     },
 
-    76: {
-        id: 76,
-        title: "Em Trai Hàng Xóm Bướng Bỉnh Quá - Tập 2",
-        author: "S Monkey",
-        publisher: "NXB Văn Học",
-        publishDate: "2023-04-25",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 116000,
-        originalPrice: 139200,
-        discount: 0,
-        isbn: "978-949-97037-9",
-        pages: 303,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "529g",
-        dimensions: "25 x 14 x 3 cm",
-        stock: 50,
-        rating: 3.9,
-        reviewCount: 470,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/66691/thumbs/em-trai-hang-xom-buong-binh-qua-tap-2-5.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút chì kim' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: true,
-        newRelease: true
-    },
-
-
-    77: {
-        id: 77,
+    56: {
+        id: 56,
         title: "THE FASHION SHOW",
         author: "Haruki Murakami",
         publisher: "NXB Văn Học",
@@ -2103,36 +1480,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    78: {
-        id: 78,
-        title: "Black Jack - Tập 19 (Bản Đặc Biệt)",
-        author: "Tezuka Osamu",
-        publisher: "Shogakukan",
-        publishDate: "2024-07-17",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 135000,
-        originalPrice: 162000,
-        discount: 0,
-        isbn: "978-188-58002-6",
-        pages: 267,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "455g",
-        dimensions: "21 x 10 x 4 cm",
-        stock: 98,
-        rating: 4.1,
-        reviewCount: 449,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/66123/thumbs/black-jack-tap-19-ban-dac-biet.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút dạ quang neon' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: true,
-        newRelease: false
-    },
-
-
-    79: {
-        id: 79,
+    57: {
+        id: 57,
         title: "LITTLE BOOK OF CHANEL BY LAGERFELD",
         author: "Fyodor Dostoevsky",
         publisher: "NXB Thế Giới",
@@ -2158,36 +1507,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    80: {
-        id: 80,
-        title: "Lời Nói Dối Tháng Tư (Boxset)",
-        author: "Arakawa Naoshi",
-        publisher: "NXB Văn Học",
-        publishDate: "2023-12-07",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 595000,
-        originalPrice: 714000,
-        discount: 0,
-        isbn: "978-773-29120-8",
-        pages: 420,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "524g",
-        dimensions: "15 x 15 x 1 cm",
-        stock: 55,
-        rating: 4.3,
-        reviewCount: 87,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/65974/thumbs/loi-noi-doi-thang-tu-boxset.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút gel đen' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: false
-    },
-
-
-    81: {
-        id: 81,
+    58: {
+        id: 58,
         title: "LITTLE BOOK OF VALENTINO",
         author: "Haruki Murakami",
         publisher: "NXB Văn Học",
@@ -2213,36 +1534,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    82: {
-        id: 82,
-        title: "Boxset Wish - Clamp (Bộ 4 Cuốn)",
-        author: "Clamp",
-        publisher: "Kodansha",
-        publishDate: "2022-11-13",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 170000,
-        originalPrice: 204000,
-        discount: 0,
-        isbn: "978-745-15307-6",
-        pages: 433,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "438g",
-        dimensions: "24 x 19 x 4 cm",
-        stock: 45,
-        rating: 4.2,
-        reviewCount: 463,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/53931/thumbs/boxset-wish-clamp-bo-4-cuon.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút bi xanh' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: true
-    },
-
-
-    83: {
-        id: 83,
+    59: {
+        id: 59,
         title: "LITTLE BOOK OF HERMES",
         author: "Charles Dickens",
         publisher: "NXB Thế Giới",
@@ -2268,36 +1561,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    84: {
-        id: 84,
-        title: "Black Jack - Tập 18 (Bản Đặc Biệt)",
-        author: "Tezuka Osamu",
-        publisher: "NXB Kim Đồng",
-        publishDate: "2022-09-10",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 135000,
-        originalPrice: 162000,
-        discount: 0,
-        isbn: "978-852-54001-9",
-        pages: 455,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "680g",
-        dimensions: "18 x 19 x 5 cm",
-        stock: 73,
-        rating: 3.6,
-        reviewCount: 295,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/51379/thumbs/black-jack-tap-18-ban-dac-biet.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút chì HB' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: false
-    },
-
-
-    85: {
-        id: 85,
+    60: {
+        id: 60,
         title: "THE LITTLE GUIDE TO CHRISTIAN DIOR",
         author: "Agatha Christie",
         publisher: "NXB Trẻ",
@@ -2323,36 +1588,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    86: {
-        id: 86,
-        title: "Nhập Mạc Chi Thần - Tập 1",
-        author: "Vũ Hàng, Bo Bo",
-        publisher: "NXB Hội Nhà Văn",
-        publishDate: "2025-10-10",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 103200,
-        originalPrice: 123840,
-        discount: 0,
-        isbn: "978-509-36622-1",
-        pages: 111,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "329g",
-        dimensions: "24 x 10 x 2 cm",
-        stock: 26,
-        rating: 4.7,
-        reviewCount: 253,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/51030/thumbs/nhap-mac-chi-than-tap-1.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút dạ quang vàng' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: false
-    },
-
-
-    87: {
-        id: 87,
+    61: {
+        id: 61,
         title: "THE LITTLE BOOK OF ROSE",
         author: "Agatha Christie",
         publisher: "NXB Trẻ",
@@ -2378,36 +1615,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    88: {
-        id: 88,
-        title: "Black Jack - Tập 17 (Bản Đặc Biệt)",
-        author: "Tezuka Osamu",
-        publisher: "Kodansha",
-        publishDate: "2024-09-14",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 135000,
-        originalPrice: 162000,
-        discount: 0,
-        isbn: "978-420-10825-3",
-        pages: 116,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "709g",
-        dimensions: "18 x 18 x 1 cm",
-        stock: 28,
-        rating: 4.8,
-        reviewCount: 410,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/50996/thumbs/black-jack-tap-17-ban-dac-biet.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút gel xanh' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: false
-    },
-
-
-    89: {
-        id: 89,
+    62: {
+        id: 62,
         title: "THE LITTLE BOOK OF PROSECCO",
         author: "J.K. Rowling",
         publisher: "NXB Thế Giới",
@@ -2433,36 +1642,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    90: {
-        id: 90,
-        title: "Những Con Mèo Ở Tử Cấm Thành - Tập 1",
-        author: "A Nam, Thỏ Ngốc",
-        publisher: "NXB Kim Đồng",
-        publishDate: "2024-03-12",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 97600,
-        originalPrice: 117120,
-        discount: 0,
-        isbn: "978-998-87036-9",
-        pages: 339,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "282g",
-        dimensions: "24 x 13 x 1 cm",
-        stock: 24,
-        rating: 4.6,
-        reviewCount: 96,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/50742/thumbs/nhung-con-meo-o-tu-cam-thanh-tap-1.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút bi đỏ' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: true
-    },
-
-
-    91: {
-        id: 91,
+    63: {
+        id: 63,
         title: "THE STORY OF FERRARI",
         author: "Leo Tolstoy",
         publisher: "NXB Hội Nhà Văn",
@@ -2488,36 +1669,8 @@ const BOOK_DATABASE = {
         newRelease: false
     },
 
-    92: {
-        id: 92,
-        title: "Heesu Ở Lớp B - Tập 1",
-        author: "Lily",
-        publisher: "Kodansha",
-        publishDate: "2025-02-11",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 103200,
-        originalPrice: 123840,
-        discount: 0,
-        isbn: "978-249-78105-6",
-        pages: 342,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "666g",
-        dimensions: "17 x 20 x 3 cm",
-        stock: 78,
-        rating: 4.7,
-        reviewCount: 109,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/50735/thumbs/heesu-o-lop-b-tap-1.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút chì 2B' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: true,
-        newRelease: true
-    },
-
-
-    93: {
-        id: 93,
+    64: {
+        id: 64,
         title: "LITTLE BOOK OF BALENCIAGA",
         author: "Gabriel García Márquez",
         publisher: "NXB Thế Giới",
@@ -2543,36 +1696,8 @@ const BOOK_DATABASE = {
         newRelease: false
     },
 
-    94: {
-        id: 94,
-        title: "Em Trai Hàng Xóm Bướng Bỉnh Quá - Tập 1",
-        author: "S Monkey",
-        publisher: "NXB Hội Nhà Văn",
-        publishDate: "2022-02-06",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 116000,
-        originalPrice: 139200,
-        discount: 0,
-        isbn: "978-461-86594-7",
-        pages: 356,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "479g",
-        dimensions: "23 x 10 x 4 cm",
-        stock: 40,
-        rating: 4.0,
-        reviewCount: 157,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/50691/thumbs/em-trai-hang-xom-buong-binh-qua-tap-1.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút dạ quang xanh' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: true,
-        newRelease: true
-    },
-
-
-    95: {
-        id: 95,
+    65: {
+        id: 65,
         title: "LITTLE BOOK OF LOUIS VUITTON",
         author: "Mark Twain",
         publisher: "NXB Hội Nhà Văn",
@@ -2598,36 +1723,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    96: {
-        id: 96,
-        title: "The Complete Color Works 1994-2015 - Bộ Sưu Tập Tất Cả Các Bản Thảo Tranh Màu Của Thám Tử Lừng Danh Conan (Bìa Cứng)",
-        author: "Gosho Aoyama",
-        publisher: "NXB Trẻ",
-        publishDate: "2025-07-01",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 380000,
-        originalPrice: 456000,
-        discount: 0,
-        isbn: "978-954-73941-2",
-        pages: 281,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "790g",
-        dimensions: "21 x 19 x 2 cm",
-        stock: 60,
-        rating: 3.9,
-        reviewCount: 97,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/76232/thumbs/the-complete-color-works-1994-2015-bo-suu-tap-tat-ca-cac-ban-thao-tranh-mau-cua-tham-tu-lung-danh-conan-bia-cung.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút gel tím' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: true
-    },
-
-
-    97: {
-        id: 97,
+    66: {
+        id: 66,
         title: "DIANA: THE PEOPLE\'S PRINCESS",
         author: "Haruki Murakami",
         publisher: "NXB Trẻ",
@@ -2653,36 +1750,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    98: {
-        id: 98,
-        title: "Ếch Ộp - Thời Vàng Son Để Lại",
-        author: "Nguyễn Hưng",
-        publisher: "NXB Kim Đồng",
-        publishDate: "2023-03-06",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 87200,
-        originalPrice: 104640,
-        discount: 0,
-        isbn: "978-761-42041-3",
-        pages: 455,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "608g",
-        dimensions: "23 x 17 x 1 cm",
-        stock: 16,
-        rating: 4.6,
-        reviewCount: 302,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/76172/thumbs/ech-op-thoi-vang-son-de-lai.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút bi đen' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: true,
-        newRelease: false
-    },
-
-
-    99: {
-        id: 99,
+    67: {
+        id: 67,
         title: "LITTLE BOOK OF GUCCI",
         author: "Mark Twain",
         publisher: "NXB Thế Giới",
@@ -2708,36 +1777,8 @@ const BOOK_DATABASE = {
         newRelease: false
     },
 
-    100: {
-        id: 100,
-        title: "Công Chúa Tóc Cam",
-        author: "Kolya Bùi",
-        publisher: "NXB Trẻ",
-        publishDate: "2022-07-05",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 111200,
-        originalPrice: 133440,
-        discount: 0,
-        isbn: "978-918-87179-3",
-        pages: 234,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "704g",
-        dimensions: "20 x 20 x 3 cm",
-        stock: 23,
-        rating: 4.7,
-        reviewCount: 232,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/75451/thumbs/cong-chua-toc-cam.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút chì 4B' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: false
-    },
-
-
-    101: {
-        id: 101,
+    68: {
+        id: 68,
         title: "LITTLE BOOK OF DIOR",
         author: "J.K. Rowling",
         publisher: "NXB Hội Nhà Văn",
@@ -2763,36 +1804,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    102: {
-        id: 102,
-        title: "Cuộc Phiêu Lưu Của Thuyền Trưởng Sinbad",
-        author: "Nghệ Sĩ Quang Thảo",
-        publisher: "Square Enix",
-        publishDate: "2024-11-18",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 135000,
-        originalPrice: 162000,
-        discount: 0,
-        isbn: "978-261-72008-7",
-        pages: 387,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "581g",
-        dimensions: "15 x 18 x 4 cm",
-        stock: 47,
-        rating: 3.8,
-        reviewCount: 46,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/75311/thumbs/cuoc-phieu-luu-cua-thuyen-truong-sinbad.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút dạ quang hồng' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: true,
-        newRelease: false
-    },
-
-
-    103: {
-        id: 103,
+    69: {
+        id: 69,
         title: "LITTLE BOOK OF AUDREY HEPBURN",
         author: "J.K. Rowling",
         publisher: "NXB Hội Nhà Văn",
@@ -2818,36 +1831,8 @@ const BOOK_DATABASE = {
         newRelease: true
     },
 
-    104: {
-        id: 104,
-        title: "Hôm Nay Lại Là Một Ngày Không Muốn Đi Làm",
-        author: "Tiểu Lam Và Những Người Bạn",
-        publisher: "Kodansha",
-        publishDate: "2022-06-25",
-        category: "comics",
-        subcategory: "comic-books",
-        price: 156000,
-        originalPrice: 187200,
-        discount: 0,
-        isbn: "978-962-85505-7",
-        pages: 158,
-        language: "English",
-        format: "Bìa mềm",
-        weight: "621g",
-        dimensions: "22 x 16 x 2 cm",
-        stock: 93,
-        rating: 4.0,
-        reviewCount: 302,
-        images: ["https://www.netabooks.vn/Data/Sites/1/Product/71770/thumbs/hom-nay-lai-la-mot-ngay-khong-muon-di-lam.jpg"],
-        description: `Sản phẩm văn phòng phẩm 'Bút gel cam' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
-        featured: false,
-        newRelease: false
-    },
-
-
-    105: {
-        id: 105,
+    70: {
+        id: 70,
         title: "AROUND THE WORLD VEGAN COOKBOOK",
         author: "Charles Dickens",
         publisher: "NXB Thế Giới",
@@ -2872,9 +1857,918 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    106: {
-        id: 106,
+    35: {
+        id: 35,
+        title: "The Complete Color Works 1994-2015 - Bộ Sưu Tập Tất Cả Các Bản Thảo Tranh Màu Của Thám Tử Lừng Danh Conan (Bìa Cứng)",
+        author: "Gosho Aoyama",
+        publisher: "Shueisha",
+        publishDate: "2023-08-27",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 380000,
+        originalPrice: 456000,
+        discount: 0,
+        isbn: "978-654-56362-4",
+        pages: 128,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "481g",
+        dimensions: "21 x 14 x 5 cm",
+        stock: 66,
+        rating: 4.5,
+        reviewCount: 483,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/76232/thumbs/the-complete-color-works-1994-2015-bo-suu-tap-tat-ca-cac-ban-thao-tranh-mau-cua-tham-tu-lung-danh-conan-bia-cung.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Compa vẽ' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: true
+    },
+    36: {
+        id: 36,
+        title: "Ếch Ộp - Thời Vàng Son Để Lại",
+        author: "Nguyễn Hưng",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2024-06-12",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 87200,
+        originalPrice: 104640,
+        discount: 0,
+        isbn: "978-326-96498-7",
+        pages: 213,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "583g",
+        dimensions: "21 x 15 x 3 cm",
+        stock: 81,
+        rating: 4.3,
+        reviewCount: 127,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/76172/thumbs/ech-op-thoi-vang-son-de-lai.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Máy tính Casio fx-570VN Plus' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: false
+    },
+    37: {
+        id: 37,
+        title: "Công Chúa Tóc Cam",
+        author: "Kolya Bùi",
+        publisher: "Kodansha",
+        publishDate: "2023-12-11",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 111200,
+        originalPrice: 133440,
+        discount: 0,
+        isbn: "978-186-46902-8",
+        pages: 495,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "619g",
+        dimensions: "15 x 13 x 3 cm",
+        stock: 79,
+        rating: 3.7,
+        reviewCount: 89,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/75451/thumbs/cong-chua-toc-cam.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút dạ quang' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: true,
+        newRelease: false
+    },
+    38: {
+        id: 38,
+        title: "Cuộc Phiêu Lưu Của Thuyền Trưởng Sinbad",
+        author: "Nghệ Sĩ Quang Thảo",
+        publisher: "NXB Hội Nhà Văn",
+        publishDate: "2023-08-21",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 135000,
+        originalPrice: 162000,
+        discount: 0,
+        isbn: "978-148-85821-2",
+        pages: 147,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "486g",
+        dimensions: "16 x 16 x 4 cm",
+        stock: 45,
+        rating: 4.6,
+        reviewCount: 82,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/75311/thumbs/cuoc-phieu-luu-cua-thuyen-truong-sinbad.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bìa hồ sơ A4' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: false
+    },
+    39: {
+        id: 39,
+        title: "Hôm Nay Lại Là Một Ngày Không Muốn Đi Làm",
+        author: "Tiểu Lam Và Những Người Bạn",
+        publisher: "Shogakukan",
+        publishDate: "2023-06-06",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 156000,
+        originalPrice: 187200,
+        discount: 0,
+        isbn: "978-755-68414-9",
+        pages: 178,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "443g",
+        dimensions: "18 x 17 x 1 cm",
+        stock: 39,
+        rating: 4.8,
+        reviewCount: 196,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/71770/thumbs/hom-nay-lai-la-mot-ngay-khong-muon-di-lam.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Giấy A4 Double A' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: false
+    },
+    40: {
+        id: 40,
+        title: "Black Jack (Bản Đặc Biệt - Bộ 22 Tập)",
+        author: "Tezuka Osamu",
+        publisher: "Square Enix",
+        publishDate: "2024-12-15",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 2970000,
+        originalPrice: 3564000,
+        discount: 0,
+        isbn: "978-760-25813-8",
+        pages: 213,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "206g",
+        dimensions: "15 x 17 x 4 cm",
+        stock: 97,
+        rating: 4.9,
+        reviewCount: 131,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/71072/thumbs/black-jack-ban-dac-biet-bo-22-tap.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Kéo văn phòng' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: false
+    },
+    41: {
+        id: 41,
+        title: "Người Trưởng Thành Cũng Muốn Khóc - Tập 1",
+        author: "Angelado",
+        publisher: "NXB Trẻ",
+        publishDate: "2024-12-07",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 86400,
+        originalPrice: 103680,
+        discount: 0,
+        isbn: "978-140-48347-7",
+        pages: 171,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "476g",
+        dimensions: "16 x 10 x 5 cm",
+        stock: 45,
+        rating: 4.0,
+        reviewCount: 496,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/70913/thumbs/nguoi-truong-thanh-cung-muon-khoc-tap-1.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Băng keo trong' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: true,
+        newRelease: false
+    },
+    42: {
+        id: 42,
+        title: "Neko Neko Honey (Bộ 2 Tập)",
+        author: "Souta Narazaki",
+        publisher: "NXB Trẻ",
+        publishDate: "2023-06-19",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 120000,
+        originalPrice: 144000,
+        discount: 0,
+        isbn: "978-145-68995-5",
+        pages: 257,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "762g",
+        dimensions: "21 x 13 x 2 cm",
+        stock: 51,
+        rating: 4.4,
+        reviewCount: 13,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/69698/thumbs/neko-neko-honey-bo-2-tap.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Ghim bấm' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: false
+    },
+    43: {
+        id: 43,
+        title: "Em Trai Hàng Xóm Bướng Bỉnh Quá - Tập 4",
+        author: "S Monkey",
+        publisher: "Square Enix",
+        publishDate: "2022-12-10",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 116000,
+        originalPrice: 139200,
+        discount: 0,
+        isbn: "978-497-30755-2",
+        pages: 410,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "297g",
+        dimensions: "22 x 11 x 3 cm",
+        stock: 73,
+        rating: 4.3,
+        reviewCount: 411,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/69473/thumbs/em-trai-hang-xom-buong-binh-qua-tap-4.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Kẹp giấy' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: true,
+        newRelease: false
+    },
+    44: {
+        id: 44,
+        title: "Em Trai Hàng Xóm Bướng Bỉnh Quá - Tập 3",
+        author: "S Monkey",
+        publisher: "Shueisha",
+        publishDate: "2022-09-20",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 116000,
+        originalPrice: 139200,
+        discount: 0,
+        isbn: "978-108-39630-1",
+        pages: 319,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "620g",
+        dimensions: "23 x 18 x 5 cm",
+        stock: 65,
+        rating: 4.0,
+        reviewCount: 251,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/68328/thumbs/em-trai-hang-xom-buong-binh-qua-tap-3.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút lông dầu' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: true,
+        newRelease: false
+    },
+    45: {
+        id: 45,
+        title: "Black Jack - Tập 22 (Bản Đặc Biệt)",
+        author: "Tezuka Osamu",
+        publisher: "NXB Hội Nhà Văn",
+        publishDate: "2022-11-20",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 135000,
+        originalPrice: 162000,
+        discount: 0,
+        isbn: "978-756-59396-9",
+        pages: 132,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "381g",
+        dimensions: "18 x 12 x 2 cm",
+        stock: 79,
+        rating: 4.5,
+        reviewCount: 315,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/67970/thumbs/black-jack-tap-22-ban-dac-biet.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút chì màu' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: true,
+        newRelease: true
+    },
+    46: {
+        id: 46,
+        title: "Boxset Metalize Quý Ngài Phara-Ông (Bộ 3 Tập)",
+        author: "Hiroto Wada",
+        publisher: "Shogakukan",
+        publishDate: "2024-01-28",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 108000,
+        originalPrice: 129600,
+        discount: 0,
+        isbn: "978-527-84358-8",
+        pages: 262,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "371g",
+        dimensions: "22 x 12 x 5 cm",
+        stock: 93,
+        rating: 4.7,
+        reviewCount: 124,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/67732/thumbs/boxset-metalize-quy-ngai-phara-ong-bo-3-tap.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Tập vở học sinh' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: true,
+        newRelease: true
+    },
+    47: {
+        id: 47,
+        title: "Sideworld - Thế Giới Bên Cạnh",
+        author: "nachi",
+        publisher: "NXB Hội Nhà Văn",
+        publishDate: "2025-09-10",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 92000,
+        originalPrice: 110400,
+        discount: 0,
+        isbn: "978-232-69734-9",
+        pages: 257,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "347g",
+        dimensions: "17 x 17 x 5 cm",
+        stock: 91,
+        rating: 4.7,
+        reviewCount: 272,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/67641/thumbs/sideworld-the-gioi-ben-canh.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Sổ tay' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: true,
+        newRelease: true
+    },
+    48: {
+        id: 48,
+        title: "Boxset Giấc Mộng Buổi Tà Dương (Tập 1+ 2)",
+        author: "Yuhki Kamatani",
+        publisher: "NXB Trẻ",
+        publishDate: "2023-12-18",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 90000,
+        originalPrice: 108000,
+        discount: 0,
+        isbn: "978-693-58962-6",
+        pages: 188,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "244g",
+        dimensions: "17 x 14 x 3 cm",
+        stock: 20,
+        rating: 4.4,
+        reviewCount: 66,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/67554/thumbs/boxset-giac-mong-buoi-ta-duong-tap-1-2.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút highlight' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: true
+    },
+    49: {
+        id: 49,
+        title: "Boxset Lawful Drug (3 Tập)",
+        author: "Clamp",
+        publisher: "Shueisha",
+        publishDate: "2024-08-22",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 108000,
+        originalPrice: 129600,
+        discount: 0,
+        isbn: "978-522-41268-6",
+        pages: 400,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "346g",
+        dimensions: "24 x 18 x 1 cm",
+        stock: 23,
+        rating: 3.6,
+        reviewCount: 218,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/67552/thumbs/boxset-lawful-drug-3-tap.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút gel' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: true,
+        newRelease: true
+    },
+    50: {
+        id: 50,
+        title: "Black Jack - Tập 21 (Bản Đặc Biệt)",
+        author: "Tezuka Osamu",
+        publisher: "NXB Văn Học",
+        publishDate: "2022-11-14",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 135000,
+        originalPrice: 162000,
+        discount: 0,
+        isbn: "978-590-44047-3",
+        pages: 166,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "249g",
+        dimensions: "15 x 13 x 2 cm",
+        stock: 98,
+        rating: 4.2,
+        reviewCount: 347,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/67336/thumbs/black-jack-tap-21-ban-dac-biet.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút máy' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: true
+    },
+    51: {
+        id: 51,
+        title: "Heesu Ở Lớp B - Tập 2",
+        author: "Lily",
+        publisher: "NXB Trẻ",
+        publishDate: "2022-03-11",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 92000,
+        originalPrice: 110400,
+        discount: 0,
+        isbn: "978-898-77051-5",
+        pages: 399,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "304g",
+        dimensions: "23 x 16 x 5 cm",
+        stock: 19,
+        rating: 3.5,
+        reviewCount: 39,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/67174/thumbs/heesu-o-lop-b-tap-2.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút chì màu nước' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: true,
+        newRelease: false
+    },
+    52: {
+        id: 52,
+        title: "Những Con Mèo Ở Tử Cấm Thành - Tập 3",
+        author: "A Nam, Thỏ Ngốc",
+        publisher: "Kodansha",
+        publishDate: "2025-11-08",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 103200,
+        originalPrice: 123840,
+        discount: 0,
+        isbn: "978-243-92854-5",
+        pages: 307,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "331g",
+        dimensions: "21 x 12 x 2 cm",
+        stock: 39,
+        rating: 4.6,
+        reviewCount: 455,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/66880/thumbs/nhung-con-meo-o-tu-cam-thanh-tap-3.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút dạ' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: true
+    },
+    53: {
+        id: 53,
+        title: "Những Con Mèo Ở Tử Cấm Thành - Tập 2",
+        author: "A Nam, Thỏ Ngốc",
+        publisher: "NXB Văn Học",
+        publishDate: "2024-11-22",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 97600,
+        originalPrice: 117120,
+        discount: 0,
+        isbn: "978-133-53471-8",
+        pages: 407,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "220g",
+        dimensions: "21 x 11 x 1 cm",
+        stock: 48,
+        rating: 3.9,
+        reviewCount: 217,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/66879/thumbs/nhung-con-meo-o-tu-cam-thanh-tap-2.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút lông' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: true
+    },
+    54: {
+        id: 54,
+        title: "Black Jack - Tập 20 (Bản Đặc Biệt)",
+        author: "Tezuka Osamu",
+        publisher: "Shogakukan",
+        publishDate: "2023-11-19",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 135000,
+        originalPrice: 162000,
+        discount: 0,
+        isbn: "978-739-74350-4",
+        pages: 167,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "727g",
+        dimensions: "24 x 20 x 4 cm",
+        stock: 80,
+        rating: 3.9,
+        reviewCount: 335,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/66710/thumbs/black-jack-tap-20-ban-dac-biet.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút bi nước' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: false
+    },
+    55: {
+        id: 55,
+        title: "Em Trai Hàng Xóm Bướng Bỉnh Quá - Tập 2",
+        author: "S Monkey",
+        publisher: "NXB Văn Học",
+        publishDate: "2023-04-25",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 116000,
+        originalPrice: 139200,
+        discount: 0,
+        isbn: "978-949-97037-9",
+        pages: 303,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "529g",
+        dimensions: "25 x 14 x 3 cm",
+        stock: 50,
+        rating: 3.9,
+        reviewCount: 470,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/66691/thumbs/em-trai-hang-xom-buong-binh-qua-tap-2-5.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút chì kim' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: true,
+        newRelease: true
+    },
+    56: {
+        id: 56,
+        title: "Black Jack - Tập 19 (Bản Đặc Biệt)",
+        author: "Tezuka Osamu",
+        publisher: "Shogakukan",
+        publishDate: "2024-07-17",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 135000,
+        originalPrice: 162000,
+        discount: 0,
+        isbn: "978-188-58002-6",
+        pages: 267,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "455g",
+        dimensions: "21 x 10 x 4 cm",
+        stock: 98,
+        rating: 4.1,
+        reviewCount: 449,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/66123/thumbs/black-jack-tap-19-ban-dac-biet.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút dạ quang neon' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: true,
+        newRelease: false
+    },
+    57: {
+        id: 57,
+        title: "Lời Nói Dối Tháng Tư (Boxset)",
+        author: "Arakawa Naoshi",
+        publisher: "NXB Văn Học",
+        publishDate: "2023-12-07",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 595000,
+        originalPrice: 714000,
+        discount: 0,
+        isbn: "978-773-29120-8",
+        pages: 420,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "524g",
+        dimensions: "15 x 15 x 1 cm",
+        stock: 55,
+        rating: 4.3,
+        reviewCount: 87,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/65974/thumbs/loi-noi-doi-thang-tu-boxset.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút gel đen' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: false
+    },
+    58: {
+        id: 58,
+        title: "Boxset Wish - Clamp (Bộ 4 Cuốn)",
+        author: "Clamp",
+        publisher: "Kodansha",
+        publishDate: "2022-11-13",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 170000,
+        originalPrice: 204000,
+        discount: 0,
+        isbn: "978-745-15307-6",
+        pages: 433,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "24 x 19 x 4 cm",
+        stock: 45,
+        rating: 4.2,
+        reviewCount: 463,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/53931/thumbs/boxset-wish-clamp-bo-4-cuon.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút bi xanh' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: true
+    },
+    59: {
+        id: 59,
+        title: "Black Jack - Tập 18 (Bản Đặc Biệt)",
+        author: "Tezuka Osamu",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2022-09-10",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 135000,
+        originalPrice: 162000,
+        discount: 0,
+        isbn: "978-852-54001-9",
+        pages: 455,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "680g",
+        dimensions: "18 x 19 x 5 cm",
+        stock: 73,
+        rating: 3.6,
+        reviewCount: 295,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/51379/thumbs/black-jack-tap-18-ban-dac-biet.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút chì HB' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: false
+    },
+    60: {
+        id: 60,
+        title: "Nhập Mạc Chi Thần - Tập 1",
+        author: "Vũ Hàng, Bo Bo",
+        publisher: "NXB Hội Nhà Văn",
+        publishDate: "2025-10-10",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 103200,
+        originalPrice: 123840,
+        discount: 0,
+        isbn: "978-509-36622-1",
+        pages: 111,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "329g",
+        dimensions: "24 x 10 x 2 cm",
+        stock: 26,
+        rating: 4.7,
+        reviewCount: 253,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/51030/thumbs/nhap-mac-chi-than-tap-1.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút dạ quang vàng' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: false
+    },
+    61: {
+        id: 61,
+        title: "Black Jack - Tập 17 (Bản Đặc Biệt)",
+        author: "Tezuka Osamu",
+        publisher: "Kodansha",
+        publishDate: "2024-09-14",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 135000,
+        originalPrice: 162000,
+        discount: 0,
+        isbn: "978-420-10825-3",
+        pages: 116,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "709g",
+        dimensions: "18 x 18 x 1 cm",
+        stock: 28,
+        rating: 4.8,
+        reviewCount: 410,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/50996/thumbs/black-jack-tap-17-ban-dac-biet.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút gel xanh' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: false
+    },
+    62: {
+        id: 62,
+        title: "Những Con Mèo Ở Tử Cấm Thành - Tập 1",
+        author: "A Nam, Thỏ Ngốc",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2024-03-12",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 97600,
+        originalPrice: 117120,
+        discount: 0,
+        isbn: "978-998-87036-9",
+        pages: 339,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "282g",
+        dimensions: "24 x 13 x 1 cm",
+        stock: 24,
+        rating: 4.6,
+        reviewCount: 96,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/50742/thumbs/nhung-con-meo-o-tu-cam-thanh-tap-1.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút bi đỏ' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: true
+    },
+    63: {
+        id: 63,
+        title: "Heesu Ở Lớp B - Tập 1",
+        author: "Lily",
+        publisher: "Kodansha",
+        publishDate: "2025-02-11",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 103200,
+        originalPrice: 123840,
+        discount: 0,
+        isbn: "978-249-78105-6",
+        pages: 342,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "666g",
+        dimensions: "17 x 20 x 3 cm",
+        stock: 78,
+        rating: 4.7,
+        reviewCount: 109,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/50735/thumbs/heesu-o-lop-b-tap-1.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút chì 2B' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: true,
+        newRelease: true
+    },
+    64: {
+        id: 64,
+        title: "Em Trai Hàng Xóm Bướng Bỉnh Quá - Tập 1",
+        author: "S Monkey",
+        publisher: "NXB Hội Nhà Văn",
+        publishDate: "2022-02-06",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 116000,
+        originalPrice: 139200,
+        discount: 0,
+        isbn: "978-461-86594-7",
+        pages: 356,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "479g",
+        dimensions: "23 x 10 x 4 cm",
+        stock: 40,
+        rating: 4.0,
+        reviewCount: 157,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/50691/thumbs/em-trai-hang-xom-buong-binh-qua-tap-1.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút dạ quang xanh' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: true,
+        newRelease: true
+    },
+    65: {
+        id: 65,
+        title: "The Complete Color Works 1994-2015 - Bộ Sưu Tập Tất Cả Các Bản Thảo Tranh Màu Của Thám Tử Lừng Danh Conan (Bìa Cứng)",
+        author: "Gosho Aoyama",
+        publisher: "NXB Trẻ",
+        publishDate: "2025-07-01",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 380000,
+        originalPrice: 456000,
+        discount: 0,
+        isbn: "978-954-73941-2",
+        pages: 281,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "790g",
+        dimensions: "21 x 19 x 2 cm",
+        stock: 60,
+        rating: 3.9,
+        reviewCount: 97,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/76232/thumbs/the-complete-color-works-1994-2015-bo-suu-tap-tat-ca-cac-ban-thao-tranh-mau-cua-tham-tu-lung-danh-conan-bia-cung.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút gel tím' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: true
+    },
+    66: {
+        id: 66,
+        title: "Ếch Ộp - Thời Vàng Son Để Lại",
+        author: "Nguyễn Hưng",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2023-03-06",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 87200,
+        originalPrice: 104640,
+        discount: 0,
+        isbn: "978-761-42041-3",
+        pages: 455,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "608g",
+        dimensions: "23 x 17 x 1 cm",
+        stock: 16,
+        rating: 4.6,
+        reviewCount: 302,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/76172/thumbs/ech-op-thoi-vang-son-de-lai.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút bi đen' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: true,
+        newRelease: false
+    },
+    67: {
+        id: 67,
+        title: "Công Chúa Tóc Cam",
+        author: "Kolya Bùi",
+        publisher: "NXB Trẻ",
+        publishDate: "2022-07-05",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 111200,
+        originalPrice: 133440,
+        discount: 0,
+        isbn: "978-918-87179-3",
+        pages: 234,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "704g",
+        dimensions: "20 x 20 x 3 cm",
+        stock: 23,
+        rating: 4.7,
+        reviewCount: 232,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/75451/thumbs/cong-chua-toc-cam.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút chì 4B' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: false
+    },
+    68: {
+        id: 68,
+        title: "Cuộc Phiêu Lưu Của Thuyền Trưởng Sinbad",
+        author: "Nghệ Sĩ Quang Thảo",
+        publisher: "Square Enix",
+        publishDate: "2024-11-18",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 135000,
+        originalPrice: 162000,
+        discount: 0,
+        isbn: "978-261-72008-7",
+        pages: 387,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "581g",
+        dimensions: "15 x 18 x 4 cm",
+        stock: 47,
+        rating: 3.8,
+        reviewCount: 46,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/75311/thumbs/cuoc-phieu-luu-cua-thuyen-truong-sinbad.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút dạ quang hồng' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: true,
+        newRelease: false
+    },
+    69: {
+        id: 69,
+        title: "Hôm Nay Lại Là Một Ngày Không Muốn Đi Làm",
+        author: "Tiểu Lam Và Những Người Bạn",
+        publisher: "Kodansha",
+        publishDate: "2022-06-25",
+        category: "comics",
+        subcategory: "comic-books",
+        price: 156000,
+        originalPrice: 187200,
+        discount: 0,
+        isbn: "978-962-85505-7",
+        pages: 158,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "621g",
+        dimensions: "22 x 16 x 2 cm",
+        stock: 93,
+        rating: 4.0,
+        reviewCount: 302,
+        images: ["https://www.netabooks.vn/Data/Sites/1/Product/71770/thumbs/hom-nay-lai-la-mot-ngay-khong-muon-di-lam.jpg"],
+        description: `Sản phẩm văn phòng phẩm 'Bút gel cam' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+        featured: false,
+        newRelease: false
+    },
+    70: {
+        id: 70,
         title: "Black Jack (Bản Đặc Biệt - Bộ 22 Tập)",
         author: "Tezuka Osamu",
         publisher: "Kodansha",
@@ -2899,9 +2793,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    107: {
-        id: 107,
+    71: {
+        id: 71,
         title: "Người Trưởng Thành Cũng Muốn Khóc - Tập 1",
         author: "Angelado",
         publisher: "NXB Kim Đồng",
@@ -2926,9 +2819,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    108: {
-        id: 108,
+    72: {
+        id: 72,
         title: "Neko Neko Honey (Bộ 2 Tập)",
         author: "Souta Narazaki",
         publisher: "NXB Trẻ",
@@ -2953,9 +2845,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    109: {
-        id: 109,
+    73: {
+        id: 73,
         title: "Em Trai Hàng Xóm Bướng Bỉnh Quá - Tập 4",
         author: "S Monkey",
         publisher: "NXB Kim Đồng",
@@ -2980,9 +2871,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    110: {
-        id: 110,
+    74: {
+        id: 74,
         title: "Em Trai Hàng Xóm Bướng Bỉnh Quá - Tập 3",
         author: "S Monkey",
         publisher: "Square Enix",
@@ -3007,9 +2897,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    111: {
-        id: 111,
+    75: {
+        id: 75,
         title: "Black Jack - Tập 22 (Bản Đặc Biệt)",
         author: "Tezuka Osamu",
         publisher: "Shueisha",
@@ -3034,9 +2923,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    112: {
-        id: 112,
+    76: {
+        id: 76,
         title: "Boxset Metalize Quý Ngài Phara-Ông (Bộ 3 Tập)",
         author: "Hiroto Wada",
         publisher: "NXB Kim Đồng",
@@ -3061,9 +2949,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    113: {
-        id: 113,
+    77: {
+        id: 77,
         title: "Sideworld - Thế Giới Bên Cạnh",
         author: "nachi",
         publisher: "NXB Hội Nhà Văn",
@@ -3088,9 +2975,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    114: {
-        id: 114,
+    78: {
+        id: 78,
         title: "Boxset Giấc Mộng Buổi Tà Dương (Tập 1+ 2)",
         author: "Yuhki Kamatani",
         publisher: "NXB Văn Học",
@@ -3115,9 +3001,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    115: {
-        id: 115,
+    79: {
+        id: 79,
         title: "Boxset Lawful Drug (3 Tập)",
         author: "Clamp",
         publisher: "NXB Hội Nhà Văn",
@@ -3142,9 +3027,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    116: {
-        id: 116,
+    80: {
+        id: 80,
         title: "Black Jack - Tập 21 (Bản Đặc Biệt)",
         author: "Tezuka Osamu",
         publisher: "NXB Kim Đồng",
@@ -3169,9 +3053,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    117: {
-        id: 117,
+    81: {
+        id: 81,
         title: "Heesu Ở Lớp B - Tập 2",
         author: "Lily",
         publisher: "NXB Văn Học",
@@ -3196,9 +3079,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    118: {
-        id: 118,
+    82: {
+        id: 82,
         title: "Những Con Mèo Ở Tử Cấm Thành - Tập 3",
         author: "A Nam, Thỏ Ngốc",
         publisher: "NXB Hội Nhà Văn",
@@ -3223,9 +3105,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    119: {
-        id: 119,
+    83: {
+        id: 83,
         title: "Những Con Mèo Ở Tử Cấm Thành - Tập 2",
         author: "A Nam, Thỏ Ngốc",
         publisher: "NXB Hội Nhà Văn",
@@ -3250,9 +3131,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    120: {
-        id: 120,
+    84: {
+        id: 84,
         title: "Black Jack - Tập 20 (Bản Đặc Biệt)",
         author: "Tezuka Osamu",
         publisher: "NXB Hội Nhà Văn",
@@ -3277,9 +3157,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    121: {
-        id: 121,
+    85: {
+        id: 85,
         title: "Em Trai Hàng Xóm Bướng Bỉnh Quá - Tập 2",
         author: "S Monkey",
         publisher: "NXB Kim Đồng",
@@ -3304,9 +3183,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    122: {
-        id: 122,
+    86: {
+        id: 86,
         title: "Black Jack - Tập 19 (Bản Đặc Biệt)",
         author: "Tezuka Osamu",
         publisher: "NXB Văn Học",
@@ -3331,9 +3209,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    123: {
-        id: 123,
+    87: {
+        id: 87,
         title: "Lời Nói Dối Tháng Tư (Boxset)",
         author: "Arakawa Naoshi",
         publisher: "Square Enix",
@@ -3358,9 +3235,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    124: {
-        id: 124,
+    88: {
+        id: 88,
         title: "Boxset Wish - Clamp (Bộ 4 Cuốn)",
         author: "Clamp",
         publisher: "NXB Hội Nhà Văn",
@@ -3385,9 +3261,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    125: {
-        id: 125,
+    89: {
+        id: 89,
         title: "Black Jack - Tập 18 (Bản Đặc Biệt)",
         author: "Tezuka Osamu",
         publisher: "Kodansha",
@@ -3412,9 +3287,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    126: {
-        id: 126,
+    90: {
+        id: 90,
         title: "Nhập Mạc Chi Thần - Tập 1",
         author: "Vũ Hàng, Bo Bo",
         publisher: "Shogakukan",
@@ -3439,9 +3313,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    127: {
-        id: 127,
+    91: {
+        id: 91,
         title: "Black Jack - Tập 17 (Bản Đặc Biệt)",
         author: "Tezuka Osamu",
         publisher: "Shueisha",
@@ -3466,9 +3339,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    128: {
-        id: 128,
+    92: {
+        id: 92,
         title: "Những Con Mèo Ở Tử Cấm Thành - Tập 1",
         author: "A Nam, Thỏ Ngốc",
         publisher: "Shogakukan",
@@ -3493,9 +3365,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    129: {
-        id: 129,
+    93: {
+        id: 93,
         title: "Heesu Ở Lớp B - Tập 1",
         author: "Lily",
         publisher: "NXB Văn Học",
@@ -3520,9 +3391,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    130: {
-        id: 130,
+    94: {
+        id: 94,
         title: "Em Trai Hàng Xóm Bướng Bỉnh Quá - Tập 1",
         author: "S Monkey",
         publisher: "NXB Trẻ",
@@ -3547,9 +3417,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    131: {
-        id: 131,
+    95: {
+        id: 95,
         title: "The Complete Color Works 1994-2015 - Bộ Sưu Tập Tất Cả Các Bản Thảo Tranh Màu Của Thám Tử Lừng Danh Conan (Bìa Cứng)",
         author: "Gosho Aoyama",
         publisher: "NXB Văn Học",
@@ -3574,9 +3443,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    132: {
-        id: 132,
+    96: {
+        id: 96,
         title: "Ếch Ộp - Thời Vàng Son Để Lại",
         author: "Nguyễn Hưng",
         publisher: "NXB Kim Đồng",
@@ -3601,9 +3469,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    133: {
-        id: 133,
+    97: {
+        id: 97,
         title: "Công Chúa Tóc Cam",
         author: "Kolya Bùi",
         publisher: "NXB Văn Học",
@@ -3628,9 +3495,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    134: {
-        id: 134,
+    98: {
+        id: 98,
         title: "Cuộc Phiêu Lưu Của Thuyền Trưởng Sinbad",
         author: "Nghệ Sĩ Quang Thảo",
         publisher: "NXB Kim Đồng",
@@ -3655,9 +3521,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    135: {
-        id: 135,
+    99: {
+        id: 99,
         title: "Hôm Nay Lại Là Một Ngày Không Muốn Đi Làm",
         author: "Tiểu Lam Và Những Người Bạn",
         publisher: "Shueisha",
@@ -3682,9 +3547,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    136: {
-        id: 136,
+    100: {
+        id: 100,
         title: "Black Jack (Bản Đặc Biệt - Bộ 22 Tập)",
         author: "Tezuka Osamu",
         publisher: "Kodansha",
@@ -3709,9 +3573,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    137: {
-        id: 137,
+    101: {
+        id: 101,
         title: "Người Trưởng Thành Cũng Muốn Khóc - Tập 1",
         author: "Angelado",
         publisher: "NXB Kim Đồng",
@@ -3736,9 +3599,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    138: {
-        id: 138,
+    102: {
+        id: 102,
         title: "Neko Neko Honey (Bộ 2 Tập)",
         author: "Souta Narazaki",
         publisher: "NXB Hội Nhà Văn",
@@ -3763,9 +3625,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    139: {
-        id: 139,
+    103: {
+        id: 103,
         title: "Em Trai Hàng Xóm Bướng Bỉnh Quá - Tập 4",
         author: "S Monkey",
         publisher: "NXB Trẻ",
@@ -3790,9 +3651,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    140: {
-        id: 140,
+    104: {
+        id: 104,
         title: "Em Trai Hàng Xóm Bướng Bỉnh Quá - Tập 3",
         author: "S Monkey",
         publisher: "Shogakukan",
@@ -3817,9 +3677,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    141: {
-        id: 141,
+    105: {
+        id: 105,
         title: "Black Jack - Tập 22 (Bản Đặc Biệt)",
         author: "Tezuka Osamu",
         publisher: "Kodansha",
@@ -3844,9 +3703,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    142: {
-        id: 142,
+    106: {
+        id: 106,
         title: "Boxset Metalize Quý Ngài Phara-Ông (Bộ 3 Tập)",
         author: "Hiroto Wada",
         publisher: "NXB Trẻ",
@@ -3871,9 +3729,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    143: {
-        id: 143,
+    107: {
+        id: 107,
         title: "Sideworld - Thế Giới Bên Cạnh",
         author: "nachi",
         publisher: "NXB Kim Đồng",
@@ -3898,9 +3755,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    144: {
-        id: 144,
+    108: {
+        id: 108,
         title: "Boxset Giấc Mộng Buổi Tà Dương (Tập 1+ 2)",
         author: "Yuhki Kamatani",
         publisher: "NXB Văn Học",
@@ -3925,9 +3781,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    145: {
-        id: 145,
+    109: {
+        id: 109,
         title: "Boxset Lawful Drug (3 Tập)",
         author: "Clamp",
         publisher: "NXB Hội Nhà Văn",
@@ -3952,9 +3807,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    146: {
-        id: 146,
+    110: {
+        id: 110,
         title: "Black Jack - Tập 21 (Bản Đặc Biệt)",
         author: "Tezuka Osamu",
         publisher: "Shogakukan",
@@ -3979,9 +3833,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    147: {
-        id: 147,
+    111: {
+        id: 111,
         title: "Heesu Ở Lớp B - Tập 2",
         author: "Lily",
         publisher: "NXB Văn Học",
@@ -4006,9 +3859,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    148: {
-        id: 148,
+    112: {
+        id: 112,
         title: "Những Con Mèo Ở Tử Cấm Thành - Tập 3",
         author: "A Nam, Thỏ Ngốc",
         publisher: "Kodansha",
@@ -4033,9 +3885,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    149: {
-        id: 149,
+    113: {
+        id: 113,
         title: "Những Con Mèo Ở Tử Cấm Thành - Tập 2",
         author: "A Nam, Thỏ Ngốc",
         publisher: "NXB Hội Nhà Văn",
@@ -4060,9 +3911,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    150: {
-        id: 150,
+    114: {
+        id: 114,
         title: "Black Jack - Tập 20 (Bản Đặc Biệt)",
         author: "Tezuka Osamu",
         publisher: "NXB Trẻ",
@@ -4087,9 +3937,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    151: {
-        id: 151,
+    115: {
+        id: 115,
         title: "Em Trai Hàng Xóm Bướng Bỉnh Quá - Tập 2",
         author: "S Monkey",
         publisher: "NXB Trẻ",
@@ -4114,9 +3963,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    152: {
-        id: 152,
+    116: {
+        id: 116,
         title: "Black Jack - Tập 19 (Bản Đặc Biệt)",
         author: "Tezuka Osamu",
         publisher: "NXB Kim Đồng",
@@ -4141,9 +3989,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    153: {
-        id: 153,
+    117: {
+        id: 117,
         title: "Lời Nói Dối Tháng Tư (Boxset)",
         author: "Arakawa Naoshi",
         publisher: "Square Enix",
@@ -4168,9 +4015,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    154: {
-        id: 154,
+    118: {
+        id: 118,
         title: "Boxset Wish - Clamp (Bộ 4 Cuốn)",
         author: "Clamp",
         publisher: "NXB Trẻ",
@@ -4195,9 +4041,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    155: {
-        id: 155,
+    119: {
+        id: 119,
         title: "Black Jack - Tập 18 (Bản Đặc Biệt)",
         author: "Tezuka Osamu",
         publisher: "Kodansha",
@@ -4222,9 +4067,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    156: {
-        id: 156,
+    120: {
+        id: 120,
         title: "Nhập Mạc Chi Thần - Tập 1",
         author: "Vũ Hàng, Bo Bo",
         publisher: "NXB Trẻ",
@@ -4249,9 +4093,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    157: {
-        id: 157,
+    121: {
+        id: 121,
         title: "Black Jack - Tập 17 (Bản Đặc Biệt)",
         author: "Tezuka Osamu",
         publisher: "Kodansha",
@@ -4276,9 +4119,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    158: {
-        id: 158,
+    122: {
+        id: 122,
         title: "Những Con Mèo Ở Tử Cấm Thành - Tập 1",
         author: "A Nam, Thỏ Ngốc",
         publisher: "Shogakukan",
@@ -4303,9 +4145,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    159: {
-        id: 159,
+    123: {
+        id: 123,
         title: "Heesu Ở Lớp B - Tập 1",
         author: "Lily",
         publisher: "Shogakukan",
@@ -4330,9 +4171,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    160: {
-        id: 160,
+    124: {
+        id: 124,
         title: "Em Trai Hàng Xóm Bướng Bỉnh Quá - Tập 1",
         author: "S Monkey",
         publisher: "Shogakukan",
@@ -4357,9 +4197,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    161: {
-        id: 161,
+    125: {
+        id: 125,
         title: "Thảm nằm chơi họa tiết sâu róm Baby Einstein",
         author: "",
         publisher: "Hasbro Vietnam",
@@ -4384,9 +4223,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    162: {
-        id: 162,
+    126: {
+        id: 126,
         title: "PORORO MINICAR CRANE",
         author: "",
         publisher: "LEGO Vietnam",
@@ -4411,9 +4249,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    163: {
-        id: 163,
+    127: {
+        id: 127,
         title: "PORORO METAL MIXER TRUCK PRX216003",
         author: "",
         publisher: "Hot Wheels",
@@ -4438,9 +4275,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    164: {
-        id: 164,
+    128: {
+        id: 128,
         title: "PORORO FRICTION FORKLIFT PRM216354",
         author: "",
         publisher: "Fisher-Price",
@@ -4465,9 +4301,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    165: {
-        id: 165,
+    129: {
+        id: 129,
         title: "PORORO FRICTION TRUCK PRM216355",
         author: "",
         publisher: "Playmobil",
@@ -4492,9 +4327,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    166: {
-        id: 166,
+    130: {
+        id: 130,
         title: "Đồ chơi vũ khí biến hình Optimus Prime Transformers",
         author: "",
         publisher: "Fisher-Price",
@@ -4519,9 +4353,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    167: {
-        id: 167,
+    131: {
+        id: 131,
         title: "Bộ đồ chơi mô hình bắn tơ Mech Strike Spider-Man Marvel",
         author: "",
         publisher: "Mattel Vietnam",
@@ -4546,9 +4379,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    168: {
-        id: 168,
+    132: {
+        id: 132,
         title: "Bộ đồ chơi nhện phóng tơ Spider-Man F7845",
         author: "",
         publisher: "Bandai Namco",
@@ -4573,9 +4405,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    169: {
-        id: 169,
+    133: {
+        id: 133,
         title: "Đồ chơi lắp ráp trạm cảnh sát Max Build More 889 mảnh",
         author: "",
         publisher: "Hot Wheels",
@@ -4600,9 +4431,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    170: {
-        id: 170,
+    134: {
+        id: 134,
         title: "Đồ chơi lắp ráp trạm cứu hỏa Max Build More 976 mảnh",
         author: "",
         publisher: "Fisher-Price",
@@ -4627,9 +4457,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    171: {
-        id: 171,
+    135: {
+        id: 135,
         title: "PORORO PUSH AND GO AIRPLANE",
         author: "",
         publisher: "Hasbro Vietnam",
@@ -4654,9 +4483,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    172: {
-        id: 172,
+    142: {
+        id: 142,
         title: "POKEPLA QUICK!! 06 Pochama",
         author: "",
         publisher: "Barbie",
@@ -4681,9 +4509,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    173: {
-        id: 173,
+    143: {
+        id: 143,
         title: "Khóa an toàn đa năng Safety 1st",
         author: "",
         publisher: "Hot Wheels",
@@ -4708,9 +4535,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    174: {
-        id: 174,
+    145: {
+        id: 145,
         title: "Gỗ tô màu con voi Star Kids",
         author: "",
         publisher: "Barbie",
@@ -4735,9 +4561,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    175: {
-        id: 175,
+    152: {
+        id: 152,
         title: "MÔ HÌNH LẮP RÁP METALIONS Taurus 314025",
         author: "",
         publisher: "Hasbro Vietnam",
@@ -4762,9 +4587,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    176: {
-        id: 176,
+    153: {
+        id: 153,
         title: "Đồ chơi thú bông hình thỏ 45cm",
         author: "",
         publisher: "Hasbro Vietnam",
@@ -4789,9 +4613,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    177: {
-        id: 177,
+    154: {
+        id: 154,
         title: "MÔ HÌNH LẮP RÁP METALIONS Giant Elk 314047",
         author: "",
         publisher: "Fisher-Price",
@@ -4816,63 +4639,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    178: {
-        id: 178,
-        title: "Tủ đựng tài liệu 4 tầng Deli 9794 - Màu xám - Kích thước: 270×360×260mm",
-        author: "",
-        publisher: "The Gioi Van Phong Pham",
-        publishDate: "2024-10-28",
-        category: "office-supplies",
-        subcategory: "pens",
-        price: 43755,
-        originalPrice: 52506,
-        discount: 16,
-        isbn: "978-865-15747-9",
-        pages: 1,
-        language: "Tiếng Việt",
-        format: "Sản phẩm",
-        weight: "63g",
-        dimensions: "20 x 10 x 2 cm",
-        stock: 23,
-        rating: 4.2,
-        reviewCount: 156,
-        images: ["https://product.hstatic.net/200000242629/product/deli_97941_dfe212aad30e4538b77d97286dfa143b_large.png"],
-        description: `Sản phẩm văn phòng phẩm 'Tủ đựng tài liệu 4 tầng Deli 9794 - Màu xám - Kích thước: 270×360×260mm' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
-        featured: true,
-        newRelease: false
-    },
-
-    179: {
-        id: 179,
-        title: "Tủ đựng tài liệu 5 tầng Deli 9795 - Màu xám - Kích thước: 270×360×260mm",
-        author: "",
-        publisher: "The Gioi Van Phong Pham",
-        publishDate: "2024-10-28",
-        category: "office-supplies",
-        subcategory: "pens",
-        price: 123936,
-        originalPrice: 148723,
-        discount: 16,
-        isbn: "978-865-15748-6",
-        pages: 1,
-        language: "Tiếng Việt",
-        format: "Sản phẩm",
-        weight: "75g",
-        dimensions: "25 x 15 x 3 cm",
-        stock: 18,
-        rating: 4.5,
-        reviewCount: 89,
-        images: ["https://product.hstatic.net/200000242629/product/deli_97954_d060813595294682abf498515a2d2313_large.png"],
-        description: `'Tủ đựng tài liệu 5 tầng Deli 9795 - Màu xám - Kích thước: 270×360×260mm' là dụng cụ văn phòng không thể thiếu, giúp bạn hoàn thành công việc một cách hiệu quả và chuyên nghiệp.`,
-        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
-        featured: true,
-        newRelease: false
-    },
-
-    180: {
-        id: 180,
+    157: {
+        id: 157,
         title: "Đồ chơi siêu anh hùng Legends Retro Black Widow 9.5 cm Avengers",
         author: "",
         publisher: "Fisher-Price",
@@ -4897,36 +4665,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    181: {
-        id: 181,
-        title: "File còng bật Plus 5cm khổ A4 (File càng cua)",
-        author: "",
-        publisher: "The Gioi Van Phong Pham",
-        publishDate: "2024-10-28",
-        category: "office-supplies",
-        subcategory: "pens",
-        price: 123220,
-        originalPrice: 147864,
-        discount: 16,
-        isbn: "978-865-15749-3",
-        pages: 1,
-        language: "Tiếng Việt",
-        format: "Sản phẩm",
-        weight: "45g",
-        dimensions: "30 x 20 x 2 cm",
-        stock: 32,
-        rating: 4.3,
-        reviewCount: 234,
-        images: ["https://product.hstatic.net/200000242629/product/file_cong_plus_b6d35b40e42f435b98a0b082279df500_large.png"],
-        description: `Sản phẩm 'File còng bật Plus 5cm khổ A4 (File càng cua)' được sản xuất từ chất liệu bền bỉ, đảm bảo độ bền cao trong quá trình sử dụng. Lựa chọn tin cậy cho văn phòng và gia đình.`,
-        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
-        featured: false,
-        newRelease: true
-    },
-
-    182: {
-        id: 182,
+    158: {
+        id: 158,
         title: "POKEPLA QUICK!! 03 Pikachu (Battle Pose)",
         author: "",
         publisher: "Hot Wheels",
@@ -4951,36 +4691,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    183: {
-        id: 183,
-        title: "Dập ghim đại KW-TriO 50LA - Dập 240 tờ - DO CTY VIỄN ĐÔNG NHẬP KHẨU",
-        author: "",
-        publisher: "The Gioi Van Phong Pham",
-        publishDate: "2024-10-28",
-        category: "office-supplies",
-        subcategory: "pens",
-        price: 341219,
-        originalPrice: 409463,
-        discount: 16,
-        isbn: "978-865-15750-9",
-        pages: 1,
-        language: "Tiếng Việt",
-        format: "Sản phẩm",
-        weight: "120g",
-        dimensions: "35 x 25 x 5 cm",
-        stock: 12,
-        rating: 4.7,
-        reviewCount: 67,
-        images: ["https://product.hstatic.net/200000242629/product/50la_55d4e3dbf2394592b55a830141b51327_large.png"],
-        description: `'Dập ghim đại KW-TriO 50LA - Dập 240 tờ - DO CTY VIỄN ĐÔNG NHẬP KHẨU' là dụng cụ học tập và làm việc chất lượng, giúp bạn ghi chép và tổ chức công việc một cách khoa học và hiệu quả.`,
-        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
-        featured: true,
-        newRelease: false
-    },
-
-    184: {
-        id: 184,
+    159: {
+        id: 159,
         title: "Khay ăn 3 ngăn Richell",
         author: "",
         publisher: "Fisher-Price",
@@ -5005,90 +4717,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    185: {
-        id: 185,
-        title: "Khay tài liệu 3 tầng TCT-230",
-        author: "",
-        publisher: "The Gioi Van Phong Pham",
-        publishDate: "2024-10-28",
-        category: "office-supplies",
-        subcategory: "pens",
-        price: 142829,
-        originalPrice: 171395,
-        discount: 16,
-        isbn: "978-865-15751-6",
-        pages: 1,
-        language: "Tiếng Việt",
-        format: "Sản phẩm",
-        weight: "80g",
-        dimensions: "28 x 18 x 4 cm",
-        stock: 25,
-        rating: 4.1,
-        reviewCount: 123,
-        images: ["https://product.hstatic.net/200000242629/product/tc2301_487e063dcbd244d1acc90f2cbc346d86_692e72ed9dbf4b689755b6f7360dcbf6_large.jpg"],
-        description: `Văn phòng phẩm 'Khay tài liệu 3 tầng TCT-230' với thiết kế gọn nhẹ và tiện lợi, phù hợp cho mọi nhu cầu sử dụng từ học tập đến công việc chuyên nghiệp.`,
-        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
-        featured: false,
-        newRelease: true
-    },
-
-    186: {
-        id: 186,
-        title: "Vỉ 2 viên Pin đũa Duracell AAA",
-        author: "",
-        publisher: "The Gioi Van Phong Pham",
-        publishDate: "2024-10-28",
-        category: "office-supplies",
-        subcategory: "pens",
-        price: 51905,
-        originalPrice: 62286,
-        discount: 16,
-        isbn: "978-865-15752-3",
-        pages: 1,
-        language: "Tiếng Việt",
-        format: "Sản phẩm",
-        weight: "25g",
-        dimensions: "10 x 5 x 1 cm",
-        stock: 45,
-        rating: 4.6,
-        reviewCount: 178,
-        images: ["https://product.hstatic.net/200000242629/product/pin_duracell_aaa1_8a518ca62ae94ce299a97323dcd9cc6f_large.png"],
-        description: `Sản phẩm văn phòng phẩm 'Vỉ 2 viên Pin đũa Duracell AAA' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
-        featured: true,
-        newRelease: false
-    },
-
-    187: {
-        id: 187,
-        title: "Kẹp bướm màu 15mm Deli E8556A - Hộp 60 cái",
-        author: "",
-        publisher: "The Gioi Van Phong Pham",
-        publishDate: "2024-10-28",
-        category: "office-supplies",
-        subcategory: "pens",
-        price: 143700,
-        originalPrice: 172440,
-        discount: 16,
-        isbn: "978-865-15753-0",
-        pages: 1,
-        language: "Tiếng Việt",
-        format: "Sản phẩm",
-        weight: "55g",
-        dimensions: "15 x 10 x 2 cm",
-        stock: 28,
-        rating: 4.4,
-        reviewCount: 145,
-        images: ["https://product.hstatic.net/200000242629/product/kep_mau_deli151_d889da7bcde54f73bca1757bec05d758_large.jpg"],
-        description: `'Kẹp bướm màu 15mm Deli E8556A - Hộp 60 cái' là dụng cụ văn phòng không thể thiếu, giúp bạn hoàn thành công việc một cách hiệu quả và chuyên nghiệp.`,
-        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
-        featured: false,
-        newRelease: true
-    },
-
-    188: {
-        id: 188,
+    162: {
+        id: 162,
         title: "Đồ chơi thú bông hình sóc đội nón 45cm",
         author: "",
         publisher: "Hot Wheels",
@@ -5113,36 +4743,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    189: {
-        id: 189,
-        title: "File 20 lá cao cấp Double A màu ghi",
-        author: "",
-        publisher: "The Gioi Van Phong Pham",
-        publishDate: "2024-10-28",
-        category: "office-supplies",
-        subcategory: "pens",
-        price: 443769,
-        originalPrice: 532523,
-        discount: 16,
-        isbn: "978-865-15754-7",
-        pages: 1,
-        language: "Tiếng Việt",
-        format: "Sản phẩm",
-        weight: "200g",
-        dimensions: "35 x 25 x 8 cm",
-        stock: 15,
-        rating: 4.8,
-        reviewCount: 89,
-        images: ["https://product.hstatic.net/200000242629/product/fd3a5a446749ee72ec5c48e134f0b203_401e2ec012914255b8e54c758893a117_large.jpg"],
-        description: `Sản phẩm 'File 20 lá cao cấp Double A màu ghi' được sản xuất từ chất liệu bền bỉ, đảm bảo độ bền cao trong quá trình sử dụng. Lựa chọn tin cậy cho văn phòng và gia đình.`,
-        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
-        featured: true,
-        newRelease: false
-    },
-
-    190: {
-        id: 190,
+    163: {
+        id: 163,
         title: "ĐỒ CHƠI TOBOT GEOMECHA MINI RAPTOR 216010",
         author: "",
         publisher: "Playmobil",
@@ -5167,36 +4769,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    191: {
-        id: 191,
-        title: "Kẹp bướm màu 51mm Deli E8551A - Hộp 12 cái",
-        author: "",
-        publisher: "The Gioi Van Phong Pham",
-        publishDate: "2024-10-28",
-        category: "office-supplies",
-        subcategory: "pens",
-        price: 285257,
-        originalPrice: 342308,
-        discount: 16,
-        isbn: "978-865-15755-4",
-        pages: 1,
-        language: "Tiếng Việt",
-        format: "Sản phẩm",
-        weight: "85g",
-        dimensions: "20 x 15 x 3 cm",
-        stock: 22,
-        rating: 4.3,
-        reviewCount: 167,
-        images: ["https://product.hstatic.net/200000242629/product/kep_mau_deli511_446c202ae70a41b6bdca91a61a9c4d2d_large.jpg"],
-        description: `'Kẹp bướm màu 51mm Deli E8551A - Hộp 12 cái' là dụng cụ học tập và làm việc chất lượng, giúp bạn ghi chép và tổ chức công việc một cách khoa học và hiệu quả.`,
-        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
-        featured: false,
-        newRelease: true
-    },
-
-    192: {
-        id: 192,
+    164: {
+        id: 164,
         title: "Đồ chơi túi snack thú bông Value Toys (8 thủ nhỏ/túi) (Mẫu ngẫu nhiên)",
         author: "",
         publisher: "Barbie",
@@ -5221,36 +4795,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    193: {
-        id: 193,
-        title: "Tập 100 phong bì trắng A8 kích thước 9.4 x 18.5cm - dùng để đựng tiền, danh thiếp, thẻ quà tặng",
-        author: "",
-        publisher: "The Gioi Van Phong Pham",
-        publishDate: "2024-10-28",
-        category: "office-supplies",
-        subcategory: "pens",
-        price: 111269,
-        originalPrice: 133523,
-        discount: 16,
-        isbn: "978-865-15756-1",
-        pages: 1,
-        language: "Tiếng Việt",
-        format: "Sản phẩm",
-        weight: "40g",
-        dimensions: "18 x 10 x 1 cm",
-        stock: 35,
-        rating: 4.2,
-        reviewCount: 198,
-        images: ["https://product.hstatic.net/200000242629/product/pbdt_8ede803d16df4a34a53d845c71e9bf17_large.jpg"],
-        description: `Văn phòng phẩm 'Tập 100 phong bì trắng A8 kích thước 9.4 x 18.5cm - dùng để đựng tiền, danh thiếp, thẻ quà tặng' với thiết kế gọn nhẹ và tiện lợi, phù hợp cho mọi nhu cầu sử dụng từ học tập đến công việc chuyên nghiệp.`,
-        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
-        featured: true,
-        newRelease: false
-    },
-
-    194: {
-        id: 194,
+    165: {
+        id: 165,
         title: "Đồ chơi thú bông hình chim cánh cụt 38cm (Màu ngẫu nhiên)",
         author: "",
         publisher: "Hot Wheels",
@@ -5275,36 +4821,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    195: {
-        id: 195,
-        title: "[GIÁ 1K...] Túi clear bag khổ F dày TCT020, TCT022F",
-        author: "",
-        publisher: "The Gioi Van Phong Pham",
-        publishDate: "2024-10-28",
-        category: "office-supplies",
-        subcategory: "pens",
-        price: 57629,
-        originalPrice: 69155,
-        discount: 16,
-        isbn: "978-865-15757-8",
-        pages: 1,
-        language: "Tiếng Việt",
-        format: "Sản phẩm",
-        weight: "30g",
-        dimensions: "25 x 15 x 1 cm",
-        stock: 42,
-        rating: 4.0,
-        reviewCount: 112,
-        images: ["https://product.hstatic.net/200000242629/product/tui_tct009_mong_a0fc326588334627a1fd1996bcb7d559_large.png"],
-        description: `Sản phẩm văn phòng phẩm '[GIÁ 1K...] Túi clear bag khổ F dày TCT020, TCT022F' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
-        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
-        featured: false,
-        newRelease: true
-    },
-
-    196: {
-        id: 196,
+    166: {
+        id: 166,
         title: "Đồ chơi thú bông hình chú heo ôm dâu tây 32cm",
         author: "",
         publisher: "Hasbro Vietnam",
@@ -5329,36 +4847,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    197: {
-        id: 197,
-        title: "[GIÁ 1K...] Móc dán tường trong suốt",
-        author: "",
-        publisher: "The Gioi Van Phong Pham",
-        publishDate: "2024-10-28",
-        category: "office-supplies",
-        subcategory: "pens",
-        price: 8900,
-        originalPrice: 10680,
-        discount: 16,
-        isbn: "978-865-15758-5",
-        pages: 1,
-        language: "Tiếng Việt",
-        format: "Sản phẩm",
-        weight: "15g",
-        dimensions: "8 x 5 x 1 cm",
-        stock: 58,
-        rating: 3.9,
-        reviewCount: 76,
-        images: ["https://product.hstatic.net/200000242629/product/img_20221025_115954_cd7e20cea6924e589d9b0feb014297b8_large.jpg"],
-        description: `'[GIÁ 1K...] Móc dán tường trong suốt' là dụng cụ văn phòng không thể thiếu, giúp bạn hoàn thành công việc một cách hiệu quả và chuyên nghiệp.`,
-        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
-        featured: false,
-        newRelease: true
-    },
-
-    198: {
-        id: 198,
+    167: {
+        id: 167,
         title: "Đồ chơi thú bông hình chú heo đội nón 45cm",
         author: "",
         publisher: "Bandai Namco",
@@ -5383,36 +4873,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    199: {
-        id: 199,
-        title: "[TẶNG FILE 8 NGĂN] Thùng 5 Tập Giấy in A4 Quality ĐL70gsm",
-        author: "",
-        publisher: "The Gioi Van Phong Pham",
-        publishDate: "2024-10-28",
-        category: "office-supplies",
-        subcategory: "pens",
-        price: 179000,
-        originalPrice: 214800,
-        discount: 16,
-        isbn: "978-865-15759-2",
-        pages: 1,
-        language: "Tiếng Việt",
-        format: "Sản phẩm",
-        weight: "250g",
-        dimensions: "30 x 20 x 10 cm",
-        stock: 20,
-        rating: 4.5,
-        reviewCount: 134,
-        images: ["https://product.hstatic.net/200000242629/product/qu_5efe851234b04a83b6b3f1b5d2127c01_large.jpg"],
-        description: `Sản phẩm '[TẶNG FILE 8 NGĂN] Thùng 5 Tập Giấy in A4 Quality ĐL70gsm' được sản xuất từ chất liệu bền bỉ, đảm bảo độ bền cao trong quá trình sử dụng. Lựa chọn tin cậy cho văn phòng và gia đình.`,
-        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
-        featured: true,
-        newRelease: false
-    },
-
-    200: {
-        id: 200,
+    168: {
+        id: 168,
         title: "Đồ chơi thú bông hình chú heo đeo hoa 35cm Value Toys",
         author: "",
         publisher: "Bandai Namco",
@@ -5437,36 +4899,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    201: {
-        id: 201,
-        title: "[TẶNG FILE 8 NGĂN] Thùng 5 Tập Giấy in A4 SMARTIST ĐL70gsm",
-        author: "",
-        publisher: "The Gioi Van Phong Pham",
-        publishDate: "2024-10-28",
-        category: "office-supplies",
-        subcategory: "pens",
-        price: 199000,
-        originalPrice: 238800,
-        discount: 16,
-        isbn: "978-865-15760-8",
-        pages: 1,
-        language: "Tiếng Việt",
-        format: "Sản phẩm",
-        weight: "280g",
-        dimensions: "32 x 22 x 12 cm",
-        stock: 18,
-        rating: 4.6,
-        reviewCount: 156,
-        images: ["https://cdn.hstatic.net/products/200000242629/giay_a4_smartist3_4737423215c44ad9bcfe20f705528417_large.png"],
-        description: `'[TẶNG FILE 8 NGĂN] Thùng 5 Tập Giấy in A4 SMARTIST ĐL70gsm' là dụng cụ học tập và làm việc chất lượng, giúp bạn ghi chép và tổ chức công việc một cách khoa học và hiệu quả.`,
-        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
-        featured: true,
-        newRelease: false
-    },
-
-    202: {
-        id: 202,
+    169: {
+        id: 169,
         title: "Đồ chơi robot biến hình Terran Deluxe Twitch Transformers",
         author: "",
         publisher: "Barbie",
@@ -5491,36 +4925,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    203: {
-        id: 203,
-        title: "[THANH LÝ] Giấy nhớ Double A 3x3 (76x76mm)",
-        author: "",
-        publisher: "The Gioi Van Phong Pham",
-        publishDate: "2024-10-28",
-        category: "office-supplies",
-        subcategory: "pens",
-        price: 25000,
-        originalPrice: 30000,
-        discount: 16,
-        isbn: "978-865-15761-5",
-        pages: 1,
-        language: "Tiếng Việt",
-        format: "Sản phẩm",
-        weight: "20g",
-        dimensions: "8 x 8 x 1 cm",
-        stock: 65,
-        rating: 4.1,
-        reviewCount: 89,
-        images: ["https://product.hstatic.net/200000242629/product/giay_nho_331_49d446d76e66488bb6d3981b3cf37924_large.jpg"],
-        description: `Văn phòng phẩm '[THANH LÝ] Giấy nhớ Double A 3x3 (76x76mm)' với thiết kế gọn nhẹ và tiện lợi, phù hợp cho mọi nhu cầu sử dụng từ học tập đến công việc chuyên nghiệp.`,
-        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
-        featured: false,
-        newRelease: true
-    },
-
-    204: {
-        id: 204,
+    170: {
+        id: 170,
         title: "Đồ chơi robot biến hình Gen Studio Airazor Transformers",
         author: "",
         publisher: "LEGO Vietnam",
@@ -5545,9 +4951,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    205: {
-        id: 205,
+    173: {
+        id: 173,
         title: "Đồ chơi thú bông hình chú heo đeo hoa 25cm",
         author: "",
         publisher: "Barbie",
@@ -5572,9 +4977,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    206: {
-        id: 206,
+    174: {
+        id: 174,
         title: "Đồ chơi siêu anh hùng Guardians Drax 10cm Marvel",
         author: "",
         publisher: "Playmobil",
@@ -5599,9 +5003,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    207: {
-        id: 207,
+    176: {
+        id: 176,
         title: "MÔ HÌNH LẮP RÁP METALIONS Mammoth 314048",
         author: "",
         publisher: "Hot Wheels",
@@ -5626,9 +5029,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    208: {
-        id: 208,
+    177: {
+        id: 177,
         title: "POKEPLA QUICK!! 01 Pikachu",
         author: "",
         publisher: "Playmobil",
@@ -5653,9 +5055,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    209: {
-        id: 209,
+    178: {
+        id: 178,
         title: "Đồ chơi trứng lắp ráp Zuru Max Build More 310 mảnh",
         author: "",
         publisher: "Mattel Vietnam",
@@ -5680,9 +5081,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    210: {
-        id: 210,
+    179: {
+        id: 179,
         title: "Cốc tập uống 360 độ Munchkin có nắp 207ml (Hồng)",
         author: "",
         publisher: "Playmobil",
@@ -5707,9 +5107,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    211: {
-        id: 211,
+    180: {
+        id: 180,
         title: "Đồ chơi trò chơi vận động Twister",
         author: "",
         publisher: "LEGO Vietnam",
@@ -5734,9 +5133,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    212: {
-        id: 212,
+    181: {
+        id: 181,
         title: "Đồ chơi thú bông hình chú vịt 45cm",
         author: "",
         publisher: "Bandai Namco",
@@ -5761,9 +5159,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    213: {
-        id: 213,
+    183: {
+        id: 183,
         title: "Bộ Đường Đua Tài Chính",
         author: "",
         publisher: "Barbie",
@@ -5788,9 +5185,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    214: {
-        id: 214,
+    187: {
+        id: 187,
         title: "Cốc tập uống 3 giai đoạn (Nâu trái đất) Richell",
         author: "",
         publisher: "Mattel Vietnam",
@@ -5815,9 +5211,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    215: {
-        id: 215,
+    189: {
+        id: 189,
         title: "Khăn em bé hình con cừu Sheppy Ingenuity",
         author: "",
         publisher: "Fisher-Price",
@@ -5842,9 +5237,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    216: {
-        id: 216,
+    190: {
+        id: 190,
         title: "Gối cao su Kuku chống ngạt - thoáng khí size 33x48x3cm",
         author: "",
         publisher: "Fisher-Price",
@@ -5869,9 +5263,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    217: {
-        id: 217,
+    191: {
+        id: 191,
         title: "Gỗ tô màu máy bay chiến đấu Star Kids",
         author: "",
         publisher: "Barbie",
@@ -5896,9 +5289,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    218: {
-        id: 218,
+    192: {
+        id: 192,
         title: "Bộ hỗ trợ che ổ cắm Safety 1st",
         author: "",
         publisher: "Barbie",
@@ -5923,9 +5315,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    219: {
-        id: 219,
+    193: {
+        id: 193,
         title: "Đồ chơi truy tìm manh mối cơ bản Grab & Go Clue",
         author: "",
         publisher: "Bandai Namco",
@@ -5950,9 +5341,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    220: {
-        id: 220,
+    194: {
+        id: 194,
         title: "Bộ bút chì 24 màu Crayola 684024",
         author: "",
         publisher: "Hasbro Vietnam",
@@ -5977,9 +5367,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    221: {
-        id: 221,
+    195: {
+        id: 195,
         title: "Đồ chơi siêu anh hùng Guardians Mantis 10cm Marvel",
         author: "",
         publisher: "Barbie",
@@ -6004,9 +5393,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    222: {
-        id: 222,
+    196: {
+        id: 196,
         title: "Đồ chơi thú bông hình gấu tròn ôm bánh 32cm",
         author: "",
         publisher: "Fisher-Price",
@@ -6031,9 +5419,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    223: {
-        id: 223,
+    197: {
+        id: 197,
         title: "Cốc tập uống 3 giai đoạn Richell (Hồng)",
         author: "",
         publisher: "Mattel Vietnam",
@@ -6058,9 +5445,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    224: {
-        id: 224,
+    198: {
+        id: 198,
         title: "Đồ chơi robot biến hình Flex Changers Nightbird Transformers",
         author: "",
         publisher: "LEGO Vietnam",
@@ -6085,9 +5471,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    225: {
-        id: 225,
+    199: {
+        id: 199,
         title: "Đồ chơi mô hình siêu anh hùng Stunt Squad Black Panther, Iron Man vs Ultron Marvel",
         author: "",
         publisher: "LEGO Vietnam",
@@ -6112,9 +5497,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    226: {
-        id: 226,
+    200: {
+        id: 200,
         title: "Đồ chơi robot biến hình Titan Changers Cheetor Transformers",
         author: "",
         publisher: "Hasbro Vietnam",
@@ -6139,9 +5523,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    227: {
-        id: 227,
+    201: {
+        id: 201,
         title: "Đồ chơi robot biến hình Flex Changers Cheetor Transformers",
         author: "",
         publisher: "Playmobil",
@@ -6166,9 +5549,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    228: {
-        id: 228,
+    203: {
+        id: 203,
         title: "Bộ đồ chơi mô hình móng vuốt Mech Strike Black Panther Marvel",
         author: "",
         publisher: "Hot Wheels",
@@ -6193,9 +5575,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    229: {
-        id: 229,
+    204: {
+        id: 204,
         title: "Đồ chơi trứng sưu tập thời trang Zuru Fashion Mini Brands 5 Surprise S1",
         author: "",
         publisher: "Mattel Vietnam",
@@ -6220,9 +5601,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    230: {
-        id: 230,
+    205: {
+        id: 205,
         title: "Đồ chơi siêu anh hùng Legends Ant-Man Marvel",
         author: "",
         publisher: "Hot Wheels",
@@ -6247,9 +5627,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    231: {
-        id: 231,
+    206: {
+        id: 206,
         title: "Đồ chơi siêu anh hùng Avengers Guardians of the Galaxy Groot",
         author: "",
         publisher: "Hot Wheels",
@@ -6274,9 +5653,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    232: {
-        id: 232,
+    208: {
+        id: 208,
         title: "Đồ chơi robot biến hình Movie 7 Optimus Primal Weaponizer Transformers",
         author: "",
         publisher: "Playmobil",
@@ -6301,9 +5679,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    233: {
-        id: 233,
+    209: {
+        id: 209,
         title: "Bộ đồ chơi tập làm bánh có âm thanh và đèn",
         author: "",
         publisher: "Barbie",
@@ -6328,9 +5705,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    234: {
-        id: 234,
+    210: {
+        id: 210,
         title: "Bọc cạnh bàn Safety 1st",
         author: "",
         publisher: "Fisher-Price",
@@ -6355,9 +5731,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
-    235: {
-        id: 235,
+    213: {
+        id: 213,
         title: "Đồ chơi 2 trong 1 thú bông kèm bịt mắt Value Toys (Mẫu ngẫu nhiên)",
         author: "",
         publisher: "Bandai Namco",
@@ -6382,9 +5757,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    236: {
-        id: 236,
+    214: {
+        id: 214,
         title: "Bộ đồ chơi robot chiến binh biến hình Terran Warrior ELITA-1 Transformers",
         author: "",
         publisher: "Mattel Vietnam",
@@ -6409,9 +5783,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    237: {
-        id: 237,
+    218: {
+        id: 218,
         title: "Bộ đồ chơi robot biến hình MV7 Weaponizer Arcee Transformers",
         author: "",
         publisher: "Hot Wheels",
@@ -6436,9 +5809,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: false
     },
-
-    238: {
-        id: 238,
+    219: {
+        id: 219,
         title: "Đồ chơi câu cá vui nhộn Epic Fun",
         author: "",
         publisher: "Hasbro Vietnam",
@@ -6463,9 +5835,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    239: {
-        id: 239,
+    225: {
+        id: 225,
         title: "Đồ chơi robot biến hình Gen Studio Series Voyager Butch Transformers",
         author: "",
         publisher: "Hasbro Vietnam",
@@ -6490,9 +5861,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    240: {
-        id: 240,
+    238: {
+        id: 238,
         title: "Cốc tập uống 3 giai đoạn (Vàng) Richell",
         author: "",
         publisher: "Fisher-Price",
@@ -6517,9 +5887,8 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
-    241: {
-        id: 241,
+    239: {
+        id: 239,
         title: "Bộ đồ chơi robot chiến binh biến hình Terran Deluxe Megatron Transformers",
         author: "",
         publisher: "Mattel Vietnam",
@@ -6544,9 +5913,8 @@ const BOOK_DATABASE = {
         featured: false,
         newRelease: true
     },
-
-    242: {
-        id: 242,
+    241: {
+        id: 241,
         title: "Bộ hộp đựng đồ ăn cho bé Skip Hop (Mẫu ngẫu nhiên)",
         author: "",
         publisher: "Fisher-Price",
@@ -6571,7 +5939,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: false
     },
-
     243: {
         id: 243,
         title: "Bát nhỏ có nắp Richell",
@@ -6598,7 +5965,6 @@ const BOOK_DATABASE = {
         featured: true,
         newRelease: true
     },
-
     244: {
         id: 244,
         title: "Bộ 2 núm ti silicone Y cut (6m+) Comotomo",
@@ -6624,8 +5990,397 @@ const BOOK_DATABASE = {
         tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
         featured: true,
         newRelease: true
-    }
-};
+    },
+    155: {
+        id: 155,
+        title: "Tủ đựng tài liệu 4 tầng Deli 9794 - Màu xám - Kích thước: 270×360×260mm",
+        author: "",
+        publisher: "The Gioi Van Phong Pham",
+        publishDate: "2024-10-28",
+        category: "office-supplies",
+        subcategory: "pens",
+        price: 43755,
+        originalPrice: 52506,
+        discount: 16,
+        isbn: "978-865-15747-9",
+        pages: 1,
+        language: "Tiếng Việt",
+        format: "Sản phẩm",
+        weight: "63g",
+        dimensions: "20 x 10 x 2 cm",
+        stock: 23,
+        rating: 4.2,
+        reviewCount: 156,
+        images: ["https://product.hstatic.net/200000242629/product/deli_97941_dfe212aad30e4538b77d97286dfa143b_large.png"],
+        description: `Sản phẩm văn phòng phẩm 'Tủ đựng tài liệu 4 tầng Deli 9794 - Màu xám - Kích thước: 270×360×260mm' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
+        featured: true,
+        newRelease: false
+    },
+    156: {
+        id: 156,
+        title: "Tủ đựng tài liệu 5 tầng Deli 9795 - Màu xám - Kích thước: 270×360×260mm",
+        author: "",
+        publisher: "The Gioi Van Phong Pham",
+        publishDate: "2024-10-28",
+        category: "office-supplies",
+        subcategory: "pens",
+        price: 123936,
+        originalPrice: 148723,
+        discount: 16,
+        isbn: "978-865-15748-6",
+        pages: 1,
+        language: "Tiếng Việt",
+        format: "Sản phẩm",
+        weight: "75g",
+        dimensions: "25 x 15 x 3 cm",
+        stock: 18,
+        rating: 4.5,
+        reviewCount: 89,
+        images: ["https://product.hstatic.net/200000242629/product/deli_97954_d060813595294682abf498515a2d2313_large.png"],
+        description: `'Tủ đựng tài liệu 5 tầng Deli 9795 - Màu xám - Kích thước: 270×360×260mm' là dụng cụ văn phòng không thể thiếu, giúp bạn hoàn thành công việc một cách hiệu quả và chuyên nghiệp.`,
+        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
+        featured: true,
+        newRelease: false
+    },
+    157: {
+        id: 157,
+        title: "File còng bật Plus 5cm khổ A4 (File càng cua)",
+        author: "",
+        publisher: "The Gioi Van Phong Pham",
+        publishDate: "2024-10-28",
+        category: "office-supplies",
+        subcategory: "pens",
+        price: 123220,
+        originalPrice: 147864,
+        discount: 16,
+        isbn: "978-865-15749-3",
+        pages: 1,
+        language: "Tiếng Việt",
+        format: "Sản phẩm",
+        weight: "45g",
+        dimensions: "30 x 20 x 2 cm",
+        stock: 32,
+        rating: 4.3,
+        reviewCount: 234,
+        images: ["https://product.hstatic.net/200000242629/product/file_cong_plus_b6d35b40e42f435b98a0b082279df500_large.png"],
+        description: `Sản phẩm 'File còng bật Plus 5cm khổ A4 (File càng cua)' được sản xuất từ chất liệu bền bỉ, đảm bảo độ bền cao trong quá trình sử dụng. Lựa chọn tin cậy cho văn phòng và gia đình.`,
+        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
+        featured: false,
+        newRelease: true
+    },
+    158: {
+        id: 158,
+        title: "Dập ghim đại KW-TriO 50LA - Dập 240 tờ - DO CTY VIỄN ĐÔNG NHẬP KHẨU",
+        author: "",
+        publisher: "The Gioi Van Phong Pham",
+        publishDate: "2024-10-28",
+        category: "office-supplies",
+        subcategory: "pens",
+        price: 341219,
+        originalPrice: 409463,
+        discount: 16,
+        isbn: "978-865-15750-9",
+        pages: 1,
+        language: "Tiếng Việt",
+        format: "Sản phẩm",
+        weight: "120g",
+        dimensions: "35 x 25 x 5 cm",
+        stock: 12,
+        rating: 4.7,
+        reviewCount: 67,
+        images: ["https://product.hstatic.net/200000242629/product/50la_55d4e3dbf2394592b55a830141b51327_large.png"],
+        description: `'Dập ghim đại KW-TriO 50LA - Dập 240 tờ - DO CTY VIỄN ĐÔNG NHẬP KHẨU' là dụng cụ học tập và làm việc chất lượng, giúp bạn ghi chép và tổ chức công việc một cách khoa học và hiệu quả.`,
+        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
+        featured: true,
+        newRelease: false
+    },
+    159: {
+        id: 159,
+        title: "Khay tài liệu 3 tầng TCT-230",
+        author: "",
+        publisher: "The Gioi Van Phong Pham",
+        publishDate: "2024-10-28",
+        category: "office-supplies",
+        subcategory: "pens",
+        price: 142829,
+        originalPrice: 171395,
+        discount: 16,
+        isbn: "978-865-15751-6",
+        pages: 1,
+        language: "Tiếng Việt",
+        format: "Sản phẩm",
+        weight: "80g",
+        dimensions: "28 x 18 x 4 cm",
+        stock: 25,
+        rating: 4.1,
+        reviewCount: 123,
+        images: ["https://product.hstatic.net/200000242629/product/tc2301_487e063dcbd244d1acc90f2cbc346d86_692e72ed9dbf4b689755b6f7360dcbf6_large.jpg"],
+        description: `Văn phòng phẩm 'Khay tài liệu 3 tầng TCT-230' với thiết kế gọn nhẹ và tiện lợi, phù hợp cho mọi nhu cầu sử dụng từ học tập đến công việc chuyên nghiệp.`,
+        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
+        featured: false,
+        newRelease: true
+    },
+    160: {
+        id: 160,
+        title: "Vỉ 2 viên Pin đũa Duracell AAA",
+        author: "",
+        publisher: "The Gioi Van Phong Pham",
+        publishDate: "2024-10-28",
+        category: "office-supplies",
+        subcategory: "pens",
+        price: 51905,
+        originalPrice: 62286,
+        discount: 16,
+        isbn: "978-865-15752-3",
+        pages: 1,
+        language: "Tiếng Việt",
+        format: "Sản phẩm",
+        weight: "25g",
+        dimensions: "10 x 5 x 1 cm",
+        stock: 45,
+        rating: 4.6,
+        reviewCount: 178,
+        images: ["https://product.hstatic.net/200000242629/product/pin_duracell_aaa1_8a518ca62ae94ce299a97323dcd9cc6f_large.png"],
+        description: `Sản phẩm văn phòng phẩm 'Vỉ 2 viên Pin đũa Duracell AAA' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
+        featured: true,
+        newRelease: false
+    },
+    161: {
+        id: 161,
+        title: "Kẹp bướm màu 15mm Deli E8556A - Hộp 60 cái",
+        author: "",
+        publisher: "The Gioi Van Phong Pham",
+        publishDate: "2024-10-28",
+        category: "office-supplies",
+        subcategory: "pens",
+        price: 143700,
+        originalPrice: 172440,
+        discount: 16,
+        isbn: "978-865-15753-0",
+        pages: 1,
+        language: "Tiếng Việt",
+        format: "Sản phẩm",
+        weight: "55g",
+        dimensions: "15 x 10 x 2 cm",
+        stock: 28,
+        rating: 4.4,
+        reviewCount: 145,
+        images: ["https://product.hstatic.net/200000242629/product/kep_mau_deli151_d889da7bcde54f73bca1757bec05d758_large.jpg"],
+        description: `'Kẹp bướm màu 15mm Deli E8556A - Hộp 60 cái' là dụng cụ văn phòng không thể thiếu, giúp bạn hoàn thành công việc một cách hiệu quả và chuyên nghiệp.`,
+        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
+        featured: false,
+        newRelease: true
+    },
+    162: {
+        id: 162,
+        title: "File 20 lá cao cấp Double A màu ghi",
+        author: "",
+        publisher: "The Gioi Van Phong Pham",
+        publishDate: "2024-10-28",
+        category: "office-supplies",
+        subcategory: "pens",
+        price: 443769,
+        originalPrice: 532523,
+        discount: 16,
+        isbn: "978-865-15754-7",
+        pages: 1,
+        language: "Tiếng Việt",
+        format: "Sản phẩm",
+        weight: "200g",
+        dimensions: "35 x 25 x 8 cm",
+        stock: 15,
+        rating: 4.8,
+        reviewCount: 89,
+        images: ["https://product.hstatic.net/200000242629/product/fd3a5a446749ee72ec5c48e134f0b203_401e2ec012914255b8e54c758893a117_large.jpg"],
+        description: `Sản phẩm 'File 20 lá cao cấp Double A màu ghi' được sản xuất từ chất liệu bền bỉ, đảm bảo độ bền cao trong quá trình sử dụng. Lựa chọn tin cậy cho văn phòng và gia đình.`,
+        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
+        featured: true,
+        newRelease: false
+    },
+    163: {
+        id: 163,
+        title: "Kẹp bướm màu 51mm Deli E8551A - Hộp 12 cái",
+        author: "",
+        publisher: "The Gioi Van Phong Pham",
+        publishDate: "2024-10-28",
+        category: "office-supplies",
+        subcategory: "pens",
+        price: 285257,
+        originalPrice: 342308,
+        discount: 16,
+        isbn: "978-865-15755-4",
+        pages: 1,
+        language: "Tiếng Việt",
+        format: "Sản phẩm",
+        weight: "85g",
+        dimensions: "20 x 15 x 3 cm",
+        stock: 22,
+        rating: 4.3,
+        reviewCount: 167,
+        images: ["https://product.hstatic.net/200000242629/product/kep_mau_deli511_446c202ae70a41b6bdca91a61a9c4d2d_large.jpg"],
+        description: `'Kẹp bướm màu 51mm Deli E8551A - Hộp 12 cái' là dụng cụ học tập và làm việc chất lượng, giúp bạn ghi chép và tổ chức công việc một cách khoa học và hiệu quả.`,
+        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
+        featured: false,
+        newRelease: true
+    },
+    164: {
+        id: 164,
+        title: "Tập 100 phong bì trắng A8 kích thước 9.4 x 18.5cm - dùng để đựng tiền, danh thiếp, thẻ quà tặng",
+        author: "",
+        publisher: "The Gioi Van Phong Pham",
+        publishDate: "2024-10-28",
+        category: "office-supplies",
+        subcategory: "pens",
+        price: 111269,
+        originalPrice: 133523,
+        discount: 16,
+        isbn: "978-865-15756-1",
+        pages: 1,
+        language: "Tiếng Việt",
+        format: "Sản phẩm",
+        weight: "40g",
+        dimensions: "18 x 10 x 1 cm",
+        stock: 35,
+        rating: 4.2,
+        reviewCount: 198,
+        images: ["https://product.hstatic.net/200000242629/product/pbdt_8ede803d16df4a34a53d845c71e9bf17_large.jpg"],
+        description: `Văn phòng phẩm 'Tập 100 phong bì trắng A8 kích thước 9.4 x 18.5cm - dùng để đựng tiền, danh thiếp, thẻ quà tặng' với thiết kế gọn nhẹ và tiện lợi, phù hợp cho mọi nhu cầu sử dụng từ học tập đến công việc chuyên nghiệp.`,
+        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
+        featured: true,
+        newRelease: false
+    },
+    165: {
+        id: 165,
+        title: "[GIÁ 1K...] Túi clear bag khổ F dày TCT020, TCT022F",
+        author: "",
+        publisher: "The Gioi Van Phong Pham",
+        publishDate: "2024-10-28",
+        category: "office-supplies",
+        subcategory: "pens",
+        price: 57629,
+        originalPrice: 69155,
+        discount: 16,
+        isbn: "978-865-15757-8",
+        pages: 1,
+        language: "Tiếng Việt",
+        format: "Sản phẩm",
+        weight: "30g",
+        dimensions: "25 x 15 x 1 cm",
+        stock: 42,
+        rating: 4.0,
+        reviewCount: 112,
+        images: ["https://product.hstatic.net/200000242629/product/tui_tct009_mong_a0fc326588334627a1fd1996bcb7d559_large.png"],
+        description: `Sản phẩm văn phòng phẩm '[GIÁ 1K...] Túi clear bag khổ F dày TCT020, TCT022F' được thiết kế tiện dụng và chất lượng cao. Phù hợp cho công việc văn phòng, học tập và các hoạt động hàng ngày.`,
+        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
+        featured: false,
+        newRelease: true
+    },
+    166: {
+        id: 166,
+        title: "[GIÁ 1K...] Móc dán tường trong suốt",
+        author: "",
+        publisher: "The Gioi Van Phong Pham",
+        publishDate: "2024-10-28",
+        category: "office-supplies",
+        subcategory: "pens",
+        price: 8900,
+        originalPrice: 10680,
+        discount: 16,
+        isbn: "978-865-15758-5",
+        pages: 1,
+        language: "Tiếng Việt",
+        format: "Sản phẩm",
+        weight: "15g",
+        dimensions: "8 x 5 x 1 cm",
+        stock: 58,
+        rating: 3.9,
+        reviewCount: 76,
+        images: ["https://product.hstatic.net/200000242629/product/img_20221025_115954_cd7e20cea6924e589d9b0feb014297b8_large.jpg"],
+        description: `'[GIÁ 1K...] Móc dán tường trong suốt' là dụng cụ văn phòng không thể thiếu, giúp bạn hoàn thành công việc một cách hiệu quả và chuyên nghiệp.`,
+        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
+        featured: false,
+        newRelease: true
+    },
+    167: {
+        id: 167,
+        title: "[TẶNG FILE 8 NGĂN] Thùng 5 Tập Giấy in A4 Quality ĐL70gsm",
+        author: "",
+        publisher: "The Gioi Van Phong Pham",
+        publishDate: "2024-10-28",
+        category: "office-supplies",
+        subcategory: "pens",
+        price: 179000,
+        originalPrice: 214800,
+        discount: 16,
+        isbn: "978-865-15759-2",
+        pages: 1,
+        language: "Tiếng Việt",
+        format: "Sản phẩm",
+        weight: "250g",
+        dimensions: "30 x 20 x 10 cm",
+        stock: 20,
+        rating: 4.5,
+        reviewCount: 134,
+        images: ["https://product.hstatic.net/200000242629/product/qu_5efe851234b04a83b6b3f1b5d2127c01_large.jpg"],
+        description: `Sản phẩm '[TẶNG FILE 8 NGĂN] Thùng 5 Tập Giấy in A4 Quality ĐL70gsm' được sản xuất từ chất liệu bền bỉ, đảm bảo độ bền cao trong quá trình sử dụng. Lựa chọn tin cậy cho văn phòng và gia đình.`,
+        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
+        featured: true,
+        newRelease: false
+    },
+    168: {
+        id: 168,
+        title: "[TẶNG FILE 8 NGĂN] Thùng 5 Tập Giấy in A4 SMARTIST ĐL70gsm",
+        author: "",
+        publisher: "The Gioi Van Phong Pham",
+        publishDate: "2024-10-28",
+        category: "office-supplies",
+        subcategory: "pens",
+        price: 199000,
+        originalPrice: 238800,
+        discount: 16,
+        isbn: "978-865-15760-8",
+        pages: 1,
+        language: "Tiếng Việt",
+        format: "Sản phẩm",
+        weight: "280g",
+        dimensions: "32 x 22 x 12 cm",
+        stock: 18,
+        rating: 4.6,
+        reviewCount: 156,
+        images: ["https://cdn.hstatic.net/products/200000242629/giay_a4_smartist3_4737423215c44ad9bcfe20f705528417_large.png"],
+        description: `'[TẶNG FILE 8 NGĂN] Thùng 5 Tập Giấy in A4 SMARTIST ĐL70gsm' là dụng cụ học tập và làm việc chất lượng, giúp bạn ghi chép và tổ chức công việc một cách khoa học và hiệu quả.`,
+        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
+        featured: true,
+        newRelease: false
+    },
+    169: {
+        id: 169,
+        title: "[THANH LÝ] Giấy nhớ Double A 3x3 (76x76mm)",
+        author: "",
+        publisher: "The Gioi Van Phong Pham",
+        publishDate: "2024-10-28",
+        category: "office-supplies",
+        subcategory: "pens",
+        price: 25000,
+        originalPrice: 30000,
+        discount: 16,
+        isbn: "978-865-15761-5",
+        pages: 1,
+        language: "Tiếng Việt",
+        format: "Sản phẩm",
+        weight: "20g",
+        dimensions: "8 x 8 x 1 cm",
+        stock: 65,
+        rating: 4.1,
+        reviewCount: 89,
+        images: ["https://product.hstatic.net/200000242629/product/giay_nho_331_49d446d76e66488bb6d3981b3cf37924_large.jpg"],
+        description: `Văn phòng phẩm '[THANH LÝ] Giấy nhớ Double A 3x3 (76x76mm)' với thiết kế gọn nhẹ và tiện lợi, phù hợp cho mọi nhu cầu sử dụng từ học tập đến công việc chuyên nghiệp.`,
+        tags: ["văn phòng phẩm", "dụng cụ học tập", "bút viết", "giáo dục", "làm việc"],
+        featured: false,
+        newRelease: true
+    }};
 
 // ========== CATEGORIES ========== //
 const CATEGORIES = {
