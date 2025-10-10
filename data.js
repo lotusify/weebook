@@ -5,7 +5,7 @@ const BOOK_DATABASE = {
     
     1: {
         id: 1,
-        title: "Nexus - Lược sử của những  lưới thông tin từ Thời đại Đồ đá dến trí tuệ Nhân tạo",
+        title: "Nexus - Lược sử của những  lưới thông tin từ Thời đại Đồ đá đến trí tuệ Nhân tạo",
         author: "Yuval Noah Harari",
         publisher: "NXB Thế Giới",
         publishDate: "2023-01-01",
@@ -6696,6 +6696,103 @@ class BookDatabase {
     
     static getBooksByCategory(category) {
         return Object.values(BOOK_DATABASE).filter(book => book.category === category);
+    }
+    
+    static getRelatedBooks(currentBookId, limit = 4) {
+        console.log('=== getRelatedBooks DEBUG START ===');
+        console.log('currentBookId:', currentBookId, 'type:', typeof currentBookId);
+        
+        const currentBook = BOOK_DATABASE[parseInt(currentBookId)];
+        if (!currentBook) {
+            console.log('❌ Current book not found for ID:', currentBookId);
+            return [];
+        }
+        
+        console.log('✅ Current book found:', currentBook.title, 'Category:', currentBook.category);
+        
+        const allBooks = Object.values(BOOK_DATABASE);
+        console.log('Total books in database:', allBooks.length);
+        const relatedBooks = [];
+        
+        // Algorithm 1: Same category + nearby IDs (priority)
+        const sameCategoryBooks = allBooks.filter(book => {
+            const categoryMatch = book.category === currentBook.category;
+            const idMatch = book.id !== parseInt(currentBookId);
+            console.log(`Book ${book.id}: category="${book.category}", categoryMatch=${categoryMatch}, idMatch=${idMatch}`);
+            return categoryMatch && idMatch;
+        });
+        
+        console.log('Same category books found:', sameCategoryBooks.length);
+        
+        // Sort by ID proximity to current book
+        sameCategoryBooks.sort((a, b) => {
+            const diffA = Math.abs(a.id - currentBook.id);
+            const diffB = Math.abs(b.id - currentBook.id);
+            return diffA - diffB;
+        });
+        
+        // Add same category books first
+        relatedBooks.push(...sameCategoryBooks.slice(0, Math.min(3, sameCategoryBooks.length)));
+        
+        // Algorithm 2: Same publisher/brand (if not enough from category)
+        if (relatedBooks.length < limit && currentBook.publisher) {
+            const samePublisherBooks = allBooks.filter(book => 
+                book.publisher === currentBook.publisher && 
+                book.id !== parseInt(currentBookId) &&
+                !relatedBooks.some(rb => rb.id === book.id)
+            );
+            
+            // Sort by ID proximity
+            samePublisherBooks.sort((a, b) => {
+                const diffA = Math.abs(a.id - currentBook.id);
+                const diffB = Math.abs(b.id - currentBook.id);
+                return diffA - diffB;
+            });
+            
+            relatedBooks.push(...samePublisherBooks.slice(0, limit - relatedBooks.length));
+        }
+        
+        // Algorithm 3: Similar price range (if still not enough)
+        if (relatedBooks.length < limit) {
+            const priceRange = currentBook.price * 0.3; // ±30% price range
+            const similarPriceBooks = allBooks.filter(book => 
+                book.id !== parseInt(currentBookId) &&
+                !relatedBooks.some(rb => rb.id === book.id) &&
+                Math.abs(book.price - currentBook.price) <= priceRange
+            );
+            
+            // Sort by ID proximity
+            similarPriceBooks.sort((a, b) => {
+                const diffA = Math.abs(a.id - currentBook.id);
+                const diffB = Math.abs(b.id - currentBook.id);
+                return diffA - diffB;
+            });
+            
+            relatedBooks.push(...similarPriceBooks.slice(0, limit - relatedBooks.length));
+        }
+        
+        // Algorithm 4: Random nearby IDs (fallback)
+        if (relatedBooks.length < limit) {
+            const remainingBooks = allBooks.filter(book => 
+                book.id !== parseInt(currentBookId) &&
+                !relatedBooks.some(rb => rb.id === book.id)
+            );
+            
+            // Sort by ID proximity
+            remainingBooks.sort((a, b) => {
+                const diffA = Math.abs(a.id - currentBook.id);
+                const diffB = Math.abs(b.id - currentBook.id);
+                return diffA - diffB;
+            });
+            
+            relatedBooks.push(...remainingBooks.slice(0, limit - relatedBooks.length));
+        }
+        
+        console.log('Final related books count:', relatedBooks.length);
+        console.log('Final related books:', relatedBooks.map(b => ({id: b.id, title: b.title})));
+        console.log('=== getRelatedBooks DEBUG END ===');
+        
+        return relatedBooks.slice(0, limit);
     }
     
     static getBooksBySubcategory(category, subcategory) {

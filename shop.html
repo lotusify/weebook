@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa hàng - BookSelf</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Dynamic Header -->
+    <div id="header-placeholder"></div>
+
+    <main class="shop-page">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="index.html">Trang chủ</a>
+                <span>/</span>
+                <a href="category.html">Cửa hàng</a>
+                <span>/</span>
+                <span id="breadcrumb-shop">Loading...</span>
+            </nav>
+
+            <!-- Shop Info Card -->
+            <div class="shop-info-card">
+                <div class="shop-header">
+                    <div class="shop-logo">
+                        <img id="shopLogo" src="images/logo.png" alt="Shop Logo">
+                    </div>
+                    <div class="shop-details">
+                        <h1 id="shopName">Loading...</h1>
+                        <div class="shop-meta">
+                            <div class="shop-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-text">4.8 (156 đánh giá)</span>
+                            </div>
+                            <div class="shop-stats">
+                                <span id="productCount">0 sản phẩm</span>
+                                <span>•</span>
+                                <span>Đã tham gia từ 2020</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop-actions">
+                        <button class="btn-chat-shop" id="chatShopBtn">
+                            <i class="fas fa-comments"></i>
+                            Chat với Shop
+                        </button>
+                        <button class="btn-follow-shop" id="followShopBtn">
+                            <i class="fas fa-heart"></i>
+                            Theo dõi
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Bar -->
+            <div class="filter-bar">
+                <div class="filter-left">
+                    <span id="filterResults">Hiển thị tất cả sản phẩm</span>
+                </div>
+                <div class="filter-right">
+                    <select id="sortSelect" onchange="sortProducts()">
+                        <option value="default">Sắp xếp mặc định</option>
+                        <option value="price-low">Giá thấp đến cao</option>
+                        <option value="price-high">Giá cao đến thấp</option>
+                        <option value="newest">Mới nhất</option>
+                        <option value="popular">Phổ biến nhất</option>
+                    </select>
+                    <select id="priceFilter" onchange="filterByPrice()">
+                        <option value="all">Tất cả giá</option>
+                        <option value="0-100000">Dưới 100k</option>
+                        <option value="100000-300000">100k - 300k</option>
+                        <option value="300000-500000">300k - 500k</option>
+                        <option value="500000+">Trên 500k</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="shop-products">
+                <div class="product-grid" id="shopProductsGrid">
+                    <!-- Dynamic products will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-section">
+                <button class="btn-load-more" id="loadMoreBtn" onclick="loadMoreProducts()">
+                    <i class="fas fa-plus"></i>
+                    Xem thêm sản phẩm
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Dynamic Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Dynamic Chatbot -->
+    <div id="chatbot-placeholder"></div>
+
+    <!-- Shop Chat Modal -->
+    <div id="shopChatModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Chat với <span id="modalShopName">Shop</span></h3>
+                <button class="modal-close" onclick="closeShopChat()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="chat-messages" id="shopChatMessages">
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            <p>Xin chào! Tôi có thể giúp bạn tìm hiểu về các sản phẩm của shop. Bạn cần hỗ trợ gì?</p>
+                            <span class="message-time">${new Date().toLocaleTimeString()}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="shopChatInput" placeholder="Nhập tin nhắn...">
+                    <button onclick="sendShopMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="load-components.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        // Shop page specific functions
+        function sortProducts() {
+            const sortSelect = document.getElementById('sortSelect');
+            const sortValue = sortSelect.value;
+            // Implementation will be added in script.js
+            console.log('Sort by:', sortValue);
+        }
+
+        function filterByPrice() {
+            const priceFilter = document.getElementById('priceFilter');
+            const filterValue = priceFilter.value;
+            // Implementation will be added in script.js
+            console.log('Filter by price:', filterValue);
+        }
+
+        function loadMoreProducts() {
+            // Implementation will be added in script.js
+            console.log('Load more products');
+        }
+
+        function openShopChat() {
+            const modal = document.getElementById('shopChatModal');
+            modal.style.display = 'block';
+        }
+
+        function closeShopChat() {
+            const modal = document.getElementById('shopChatModal');
+            modal.style.display = 'none';
+        }
+
+        function sendShopMessage() {
+            const input = document.getElementById('shopChatInput');
+            const messages = document.getElementById('shopChatMessages');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            // Add user message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user-message';
+            userMessage.innerHTML = `
+                <div class="message-content">
+                    <p>${message}</p>
+                    <span class="message-time">${new Date().toLocaleTimeString()}</span>
+                </div>
+            `;
+            messages.appendChild(userMessage);
+            
+            // Clear input
+            input.value = '';
+            
+            // Simulate shop response
+            setTimeout(() => {
+                const botMessage = document.createElement('div');
+                botMessage.className = 'message bot-message';
+                botMessage.innerHTML = `
+                    <div class="message-content">
+                        <p>Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.</p>
+                        <span class="message-time">${new Date().toLocaleTimeString()}</span>
+                    </div>
+                `;
+                messages.appendChild(botMessage);
+                messages.scrollTop = messages.scrollHeight;
+            }, 1000);
+            
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('shopChatModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Add Enter key support for shop chat
+        function initializeShopChatEnterKey() {
+            const shopChatInput = document.getElementById('shopChatInput');
+            if (shopChatInput) {
+                shopChatInput.addEventListener('keypress', function(e) {
+                    if (e.keyCode === 13) { // Enter key
+                        e.preventDefault();
+                        sendShopMessage();
+                    }
+                });
+            }
+        }
+
+        // Initialize shop page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize shop chat Enter key support
+            setTimeout(() => {
+                initializeShopChatEnterKey();
+            }, 1000);
+            
+            // Wait for BookDatabase to be available
+            const waitForData = () => {
+                if (window.BookDatabase) {
+                    console.log('BookDatabase loaded, initializing shop page...');
+                    initializeShopPage();
+                } else {
+                    console.log('BookDatabase not ready, retrying...');
+                    setTimeout(waitForData, 50);
+                }
+            };
+            
+            setTimeout(waitForData, 10);
+        });
+    </script>
+</body>
+</html>

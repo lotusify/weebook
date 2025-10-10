@@ -49,7 +49,7 @@
                         <span class="rating-text"></span>
                     </div>
                     <div class="product-meta">
-                        <span class="brand">Thương hiệu: <strong id="productBrand">BookSelf</strong></span>
+                        <span class="brand">Thương hiệu: <strong id="productBrand"><a href="#" id="publisherLink">BookSelf</a></strong></span>
                         <span class="sku">Mã sản phẩm: <strong class="product-sku" id="productSku"></strong></span>
                     </div>
 
@@ -58,7 +58,10 @@
                         <span class="original-price" id="originalPrice" style="display: none;"></span>
                     </div>
                     
-                    <div class="stock-status" id="stockStatus"></div>
+                    <div class="stock-status" id="stockStatus">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Còn hàng</span>
+                    </div>
                     
                     <div class="discount-badge" id="productDiscountBadge" style="display: none;"></div>
 
@@ -99,52 +102,55 @@
                     </div>
                 </div>
 
-                <!-- Seller Info -->
-                <div class="seller-info">
-                    <div class="seller-badge">
-                        <img src="images/logo.png" alt="BookSelf" class="seller-logo">
-                        <div class="seller-details">
-                            <h4 id="shopName">BOOKSELF</h4>
-                            <span>Chính hãng</span>
+                <!-- Right Column: Seller Info + Related Products -->
+                <div class="right-column">
+                    <!-- Seller Info -->
+                    <div class="seller-info">
+                        <div class="seller-badge">
+                            <img src="images/logo.png" alt="BookSelf" class="seller-logo">
+                            <div class="seller-details">
+                                <h4 id="shopName"><a href="#" id="shopLink">BOOKSELF</a></h4>
+                                <span>Chính hãng</span>
+                            </div>
+                        </div>
+                        <div class="seller-actions">
+                            <button class="btn-chat" onclick="openChat()">Chat</button>
+                            <button class="btn-view-shop" onclick="viewShop()">Xem shop</button>
                         </div>
                     </div>
-                    <div class="seller-actions">
-                        <button class="btn-chat" onclick="openChat()">Chat</button>
-                        <button class="btn-view-shop" onclick="viewShop()">Xem shop</button>
+
+                    <!-- Related Products -->
+                    <div class="related-products-section">
+                        <h3>Sản phẩm liên quan</h3>
+                        <div class="related-products-grid" id="relatedProductsGrid">
+                            <!-- Dynamic related products will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Details Tabs -->
+                <div class="product-details-tabs">
+                    <div class="tab-headers">
+                        <button class="tab-btn active" onclick="showTab('description')">Mô tả</button>
+                        <button class="tab-btn" onclick="showTab('specifications')">Thông số</button>
+                        <button class="tab-btn" onclick="showTab('reviews')">Đánh giá</button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div id="description" class="tab-pane active">
+                            <div id="productDescription">Loading...</div>
+                        </div>
+                        
+                        <div id="specifications" class="tab-pane">
+                            <div id="productSpecifications">Loading...</div>
+                        </div>
+                        
+                        <div id="reviews" class="tab-pane">
+                            <div id="productReviews">Loading...</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Product Details Tabs -->
-            <div class="product-details-tabs">
-                <div class="tab-headers">
-                    <button class="tab-btn active" onclick="showTab('description')">Mô tả</button>
-                    <button class="tab-btn" onclick="showTab('specifications')">Thông số</button>
-                    <button class="tab-btn" onclick="showTab('reviews')">Đánh giá</button>
-                </div>
-                
-                <div class="tab-content">
-                    <div id="description" class="tab-pane active">
-                        <div id="productDescription">Loading...</div>
-                    </div>
-                    
-                    <div id="specifications" class="tab-pane">
-                        <div id="productSpecifications">Loading...</div>
-                    </div>
-                    
-                    <div id="reviews" class="tab-pane">
-                        <div id="productReviews">Loading...</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Related Products -->
-            <div class="related-products-section">
-                <h2>Sản phẩm liên quan</h2>
-                <div class="product-grid" id="relatedProductsGrid">
-                    <!-- Dynamic related products will be loaded here -->
-                </div>
-            </div>
         </div>
     </main>
 
