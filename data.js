@@ -3164,7 +3164,7 @@ const BOOK_DATABASE = {
         rating: 4.7,
         reviewCount: 312,
         images: ["https://www.netabooks.vn/Data/Sites/1/Product/67336/thumbs/black-jack-tap-21-ban-dac-biet.jpg"],
-        description: `Tiếp tục hành trình của vị bác sĩ huyền thoại Black Jack trong Tập 21. Tezuka Osamu mang đến những câu chuyện cảm động về y đức, nhân văn và những ca phẫu thuật đầy kịch tính. Mỗi trang truyện là một bài học về cuộc sống, sự sống và cái chết, được kể qua ngòi bút tinh tế của bậc thầy manga. Bản đặc biệt với chất lượng in cao cấp, xứng đáng có mặt trong bộ sưu tập của mọi fan manga.`,
+        description: `Tiếp tục hành trình của vị bác sĩ huyền thoại Black Jack trong Tập 21. Những câu chuyện cảm động về y đức, nhân văn và các ca phẫu thuật đầy kịch tính. Bản đặc biệt với chất lượng in cao cấp, xứng đáng có mặt trong bộ sưu tập của mọi fan manga.`,
         tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
         featured: true,
         newRelease: false
@@ -3218,7 +3218,7 @@ const BOOK_DATABASE = {
         rating: 3.8,
         reviewCount: 237,
         images: ["https://www.netabooks.vn/Data/Sites/1/Product/66880/thumbs/nhung-con-meo-o-tu-cam-thanh-tap-3.jpg"],
-        description: `Tiếp tục cuộc phiêu lưu của những chú mèo đáng yêu trong Tử Cấm Thành! Tập 3 mang đến những câu chuyện mới thú vị về cuộc sống của các chú mèo hoàng cung, với nhiều tình tiết hài hước và cảm động. Bộ truyện tranh kết hợp giữa lịch sử văn hóa Trung Quốc và sự dễ thương của những chú mèo, phù hợp cho mọi lứa tuổi yêu thích truyện tranh và văn hóa phương Đông.`,
+        description: `Tiếp tục cuộc phiêu lưu của những chú mèo đáng yêu trong Tử Cấm Thành! Những câu chuyện thú vị về cuộc sống hoàng cung với nhiều tình tiết hài hước và cảm động. Kết hợp văn hóa Trung Hoa và sự dễ thương của mèo.`,
         tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
         featured: false,
         newRelease: false
@@ -3488,7 +3488,7 @@ const BOOK_DATABASE = {
         rating: 4.6,
         reviewCount: 178,
         images: ["https://www.netabooks.vn/Data/Sites/1/Product/50742/thumbs/nhung-con-meo-o-tu-cam-thanh-tap-1.jpg"],
-        description: `Bắt đầu hành trình khám phá thế giới của những chú mèo hoàng cung trong Tử Cấm Thành! Tập 1 giới thiệu các nhân vật chính - những chú mèo dễ thương với tính cách đặc biệt, sống trong hoàng cung cổ kính. Bộ truyện kết hợp yếu tố lịch sử, văn hóa Trung Hoa với những câu chuyện hài hước về cuộc sống hàng ngày của bầy mèo. Phù hợp cho mọi lứa tuổi, đặc biệt là người yêu động vật và văn hóa phương Đông.`,
+        description: `Bắt đầu hành trình khám phá thế giới mèo hoàng cung trong Tử Cấm Thành! Giới thiệu các nhân vật chính với những câu chuyện hài hước về cuộc sống hàng ngày. Kết hợp lịch sử văn hóa Trung Hoa với sự dễ thương của động vật.`,
         tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
         featured: true,
         newRelease: false
