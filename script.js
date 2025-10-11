@@ -1990,27 +1990,42 @@ function logout() {
 
 function updateUserInterface() {
     const user = getCurrentUser();
-    const userAccountLink = document.querySelector('.user-actions a[href="auth.html"]');
+    const accountLink = document.querySelector('.account-link');
+    const logoutLink = document.querySelector('.logout-link');
     const adminLink = document.querySelector('.admin-link');
     
-    if (userAccountLink) {
+    if (accountLink) {
         if (user) {
-            userAccountLink.innerHTML = `
+            accountLink.innerHTML = `
                 <i class="fa-regular fa-user"></i> 
                 <span>${user.name}</span>
             `;
-            userAccountLink.href = 'profile.html';
+            accountLink.href = 'profile.html';
+            
+            // Show logout link
+            if (logoutLink) {
+                logoutLink.style.display = 'flex';
+                logoutLink.onclick = (e) => {
+                    e.preventDefault();
+                    logout();
+                };
+            }
             
             // Show admin link if user is admin
             if (user.role === 'admin' && adminLink) {
                 adminLink.style.display = 'inline-flex';
             }
         } else {
-        userAccountLink.innerHTML = `
-            <i class="fa-regular fa-user"></i> 
-            <span>Tài khoản</span>
-        `;
-        userAccountLink.href = 'auth.html';
+            accountLink.innerHTML = `
+                <i class="fa-regular fa-user"></i> 
+                <span>Tài khoản</span>
+            `;
+            accountLink.href = 'auth.html';
+            
+            // Hide logout link
+            if (logoutLink) {
+                logoutLink.style.display = 'none';
+            }
             
             // Hide admin link
             if (adminLink) {
