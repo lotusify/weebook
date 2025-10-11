@@ -34,7 +34,17 @@
                     </span>
                 </div>
                 <div class="user-actions">
-                    <a href="auth.html"><i class="fa-regular fa-user"></i> <span>Tài khoản</span></a>
+                    <div class="account-menu">
+                        <a href="auth.html" class="account-link"><i class="fa-regular fa-user"></i> <span>Tài khoản</span></a>
+                        <div class="account-submenu">
+                            <a href="profile.html"><i class="fas fa-user-circle"></i> Thông tin tài khoản</a>
+                            <a href="profile.html#wishlist"><i class="fas fa-heart"></i> Sách yêu thích</a>
+                            <a href="profile.html#reviews"><i class="fas fa-star"></i> Đánh giá của tôi</a>
+                            <a href="profile.html#orders"><i class="fas fa-shopping-bag"></i> Đơn hàng</a>
+                            <div class="submenu-divider"></div>
+                            <a href="#" class="logout-link" style="display: none;"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                        </div>
+                    </div>
                     <a href="#" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i> <span>Giỏ hàng</span> <span class="cart-count">0</span></a>
                     <a href="admin.html" class="admin-link" style="display: none;"><i class="fa-solid fa-cog"></i> <span>Admin</span></a>
                 </div>

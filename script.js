@@ -245,6 +245,7 @@ let searchTimeout;
 function initializeSearch() {
     const searchInput = document.querySelector('.search-input');
     const searchBtn = document.querySelector('.search-btn');
+    const filterBtn = document.querySelector('.filter-btn');
     
     if (searchInput) {
         searchInput.addEventListener('input', handleSearch);
@@ -260,6 +261,14 @@ function initializeSearch() {
     
     if (searchBtn) {
         searchBtn.addEventListener('click', performSearch);
+    }
+    
+    // Initialize filter button
+    if (filterBtn) {
+        filterBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showFilterModal();
+        });
     }
 }
 
@@ -329,6 +338,91 @@ function performSearch() {
         window.location.href = `category.html?search=${encodeURIComponent(query)}`;
     }
 }
+
+function showFilterModal() {
+    // Create and show a filter modal
+    const existingModal = document.getElementById('filterModal');
+    if (existingModal) {
+        existingModal.style.display = 'flex';
+        return;
+    }
+    
+    const modal = document.createElement('div');
+    modal.id = 'filterModal';
+    modal.className = 'filter-modal';
+    modal.innerHTML = `
+        <div class="filter-modal-content">
+            <div class="filter-modal-header">
+                <h3><i class="fa-solid fa-filter"></i> Bộ lọc sản phẩm</h3>
+                <button class="close-modal" onclick="closeFilterModal()">&times;</button>
+            </div>
+            <div class="filter-modal-body">
+                <div class="filter-section">
+                    <h4>Khoảng giá</h4>
+                    <div class="filter-options">
+                        <button class="filter-option" onclick="applyQuickFilter('price', 'under-200')">Dưới 200.000đ</button>
+                        <button class="filter-option" onclick="applyQuickFilter('price', '200-300')">200.000đ - 300.000đ</button>
+                        <button class="filter-option" onclick="applyQuickFilter('price', '300-500')">300.000đ - 500.000đ</button>
+                        <button class="filter-option" onclick="applyQuickFilter('price', '500-1000')">500.000đ - 1.000.000đ</button>
+                        <button class="filter-option" onclick="applyQuickFilter('price', 'over-1000')">Trên 1.000.000đ</button>
+                    </div>
+                </div>
+                <div class="filter-section">
+                    <h4>Danh mục</h4>
+                    <div class="filter-options">
+                        <button class="filter-option" onclick="applyQuickFilter('category', 'vietnamese')">Sách Tiếng Việt</button>
+                        <button class="filter-option" onclick="applyQuickFilter('category', 'foreign')">Sách Ngoại Văn</button>
+                        <button class="filter-option" onclick="applyQuickFilter('category', 'comics')">Truyện Tranh</button>
+                        <button class="filter-option" onclick="applyQuickFilter('category', 'office-supplies')">Văn Phòng Phẩm</button>
+                        <button class="filter-option" onclick="applyQuickFilter('category', 'toys')">Đồ Chơi</button>
+                    </div>
+                </div>
+                <div class="filter-section">
+                    <h4>Sắp xếp</h4>
+                    <div class="filter-options">
+                        <button class="filter-option" onclick="applyQuickFilter('sort', 'newest')">Mới nhất</button>
+                        <button class="filter-option" onclick="applyQuickFilter('sort', 'price-low')">Giá thấp đến cao</button>
+                        <button class="filter-option" onclick="applyQuickFilter('sort', 'price-high')">Giá cao đến thấp</button>
+                        <button class="filter-option" onclick="applyQuickFilter('sort', 'name')">Tên A-Z</button>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-modal-footer">
+                <button class="btn btn-secondary" onclick="closeFilterModal()">Đóng</button>
+                <button class="btn btn-primary" onclick="viewAllProducts()">Xem tất cả sản phẩm</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    modal.style.display = 'flex';
+    
+    // Close on backdrop click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeFilterModal();
+        }
+    });
+}
+
+function closeFilterModal() {
+    const modal = document.getElementById('filterModal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
+
+function applyQuickFilter(type, value) {
+    // Navigate to category page with filter applied
+    const params = new URLSearchParams();
+    params.append(type, value);
+    window.location.href = `category.html?${params.toString()}`;
+}
+
+function viewAllProducts() {
+    window.location.href = 'category.html';
+}
+
 
 // ========== PRODUCT GRID ========== //
 function initializeProductGrid() {
@@ -1990,27 +2084,42 @@ function logout() {
 
 function updateUserInterface() {
     const user = getCurrentUser();
-    const userAccountLink = document.querySelector('.user-actions a[href="auth.html"]');
+    const accountLink = document.querySelector('.account-link');
+    const logoutLink = document.querySelector('.logout-link');
     const adminLink = document.querySelector('.admin-link');
     
-    if (userAccountLink) {
+    if (accountLink) {
         if (user) {
-            userAccountLink.innerHTML = `
+            accountLink.innerHTML = `
                 <i class="fa-regular fa-user"></i> 
                 <span>${user.name}</span>
             `;
-            userAccountLink.href = 'profile.html';
+            accountLink.href = 'profile.html';
+            
+            // Show logout link
+            if (logoutLink) {
+                logoutLink.style.display = 'flex';
+                logoutLink.onclick = (e) => {
+                    e.preventDefault();
+                    logout();
+                };
+            }
             
             // Show admin link if user is admin
             if (user.role === 'admin' && adminLink) {
                 adminLink.style.display = 'inline-flex';
             }
         } else {
-        userAccountLink.innerHTML = `
-            <i class="fa-regular fa-user"></i> 
-            <span>Tài khoản</span>
-        `;
-        userAccountLink.href = 'auth.html';
+            accountLink.innerHTML = `
+                <i class="fa-regular fa-user"></i> 
+                <span>Tài khoản</span>
+            `;
+            accountLink.href = 'auth.html';
+            
+            // Hide logout link
+            if (logoutLink) {
+                logoutLink.style.display = 'none';
+            }
             
             // Hide admin link
             if (adminLink) {
@@ -2108,8 +2217,23 @@ function openChat() {
 }
 
 function viewShop() {
-    // Redirect to shop page (demo)
-    showNotification('Tính năng xem shop đang được phát triển!', 'info');
+    // Get current product's publisher if available
+    const productId = getProductIdFromUrl();
+    let publisher = null;
+    
+    if (productId && window.BookDatabase) {
+        const product = window.BookDatabase.getBookById(productId);
+        if (product) {
+            publisher = product.publisher;
+        }
+    }
+    
+    // Navigate to shop page
+    if (publisher) {
+        window.location.href = `shop.html?publisher=${encodeURIComponent(publisher)}`;
+    } else {
+        window.location.href = 'shop.html';
+    }
 }
 
 function createChatModal() {
@@ -2375,10 +2499,9 @@ function filterByPrice(priceRange) {
         }
     });
     
-    // Update pagination after filtering
-    setTimeout(() => {
-        updateProductDisplay(currentPage);
-    }, 100);
+    // Reset to page 1 and update display
+    currentPage = 1;
+    updateProductDisplay(currentPage);
 }
 
 // Set view mode (grid or list)
@@ -2473,10 +2596,12 @@ function updateProductDisplay(page) {
         return;
     }
     
-    const products = productGrid.querySelectorAll('.product-card');
-    totalProducts = products.length;
+    const allProducts = productGrid.querySelectorAll('.product-card');
+    // Only count products that are not hidden by filters
+    const visibleProducts = Array.from(allProducts).filter(p => !p.classList.contains('hidden'));
+    totalProducts = visibleProducts.length;
     
-    console.log(`Total products found: ${totalProducts}`);
+    console.log(`Total products found: ${totalProducts} (${allProducts.length} total, ${allProducts.length - totalProducts} filtered)`);
     
     if (totalProducts === 0) {
         console.log('No products to display');
@@ -2488,13 +2613,22 @@ function updateProductDisplay(page) {
     const startIndex = (page - 1) * currentProductsPerPage;
     const endIndex = startIndex + currentProductsPerPage;
     
-    // Show/hide products based on pagination
-    products.forEach((product, index) => {
-        if (index >= startIndex && index < endIndex) {
+    // Show/hide products based on pagination, but respect filter
+    let visibleIndex = 0;
+    allProducts.forEach((product) => {
+        // Skip products hidden by filter
+        if (product.classList.contains('hidden')) {
+            product.style.display = 'none';
+            return;
+        }
+        
+        // Apply pagination to visible products
+        if (visibleIndex >= startIndex && visibleIndex < endIndex) {
             product.style.display = 'block';
         } else {
             product.style.display = 'none';
         }
+        visibleIndex++;
     });
     
     // Update pagination controls
