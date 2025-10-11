@@ -197,11 +197,25 @@
         }
 
         function openChat() {
-            alert('Mở chat với shop...');
+            // Use the global function from script.js
+            if (window.openChat && typeof window.openChat === 'function') {
+                window.openChat();
+            } else {
+                // Fallback if script.js not loaded yet
+                showNotification('Đang khởi tạo chat...', 'info');
+                setTimeout(() => window.openChat(), 100);
+            }
         }
 
         function viewShop() {
-            alert('Xem shop...');
+            // Use the global function from script.js
+            if (window.viewShop && typeof window.viewShop === 'function') {
+                window.viewShop();
+            } else {
+                // Fallback if script.js not loaded yet  
+                showNotification('Đang tải thông tin shop...', 'info');
+                setTimeout(() => window.viewShop(), 100);
+            }
         }
 
         // Initialize product page when DOM is loaded

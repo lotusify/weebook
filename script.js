@@ -2217,8 +2217,23 @@ function openChat() {
 }
 
 function viewShop() {
-    // Redirect to shop page (demo)
-    showNotification('Tính năng xem shop đang được phát triển!', 'info');
+    // Get current product's publisher if available
+    const productId = getProductIdFromUrl();
+    let publisher = null;
+    
+    if (productId && window.BookDatabase) {
+        const product = window.BookDatabase.getBookById(productId);
+        if (product) {
+            publisher = product.publisher;
+        }
+    }
+    
+    // Navigate to shop page
+    if (publisher) {
+        window.location.href = `shop.html?publisher=${encodeURIComponent(publisher)}`;
+    } else {
+        window.location.href = 'shop.html';
+    }
 }
 
 function createChatModal() {
@@ -2484,10 +2499,9 @@ function filterByPrice(priceRange) {
         }
     });
     
-    // Update pagination after filtering
-    setTimeout(() => {
-        updateProductDisplay(currentPage);
-    }, 100);
+    // Reset to page 1 and update display
+    currentPage = 1;
+    updateProductDisplay(currentPage);
 }
 
 // Set view mode (grid or list)
@@ -2582,10 +2596,12 @@ function updateProductDisplay(page) {
         return;
     }
     
-    const products = productGrid.querySelectorAll('.product-card');
-    totalProducts = products.length;
+    const allProducts = productGrid.querySelectorAll('.product-card');
+    // Only count products that are not hidden by filters
+    const visibleProducts = Array.from(allProducts).filter(p => !p.classList.contains('hidden'));
+    totalProducts = visibleProducts.length;
     
-    console.log(`Total products found: ${totalProducts}`);
+    console.log(`Total products found: ${totalProducts} (${allProducts.length} total, ${allProducts.length - totalProducts} filtered)`);
     
     if (totalProducts === 0) {
         console.log('No products to display');
@@ -2597,13 +2613,22 @@ function updateProductDisplay(page) {
     const startIndex = (page - 1) * currentProductsPerPage;
     const endIndex = startIndex + currentProductsPerPage;
     
-    // Show/hide products based on pagination
-    products.forEach((product, index) => {
-        if (index >= startIndex && index < endIndex) {
+    // Show/hide products based on pagination, but respect filter
+    let visibleIndex = 0;
+    allProducts.forEach((product) => {
+        // Skip products hidden by filter
+        if (product.classList.contains('hidden')) {
+            product.style.display = 'none';
+            return;
+        }
+        
+        // Apply pagination to visible products
+        if (visibleIndex >= startIndex && visibleIndex < endIndex) {
             product.style.display = 'block';
         } else {
             product.style.display = 'none';
         }
+        visibleIndex++;
     });
     
     // Update pagination controls
