@@ -145,35 +145,8 @@
         </div>
     </footer>
 
-    <div class="floating-chatbot" id="floatingChatbot">
-        <div class="chatbot-toggle" onclick="toggleChatbot()">
-            <i class="fas fa-comments"></i>
-        </div>
-        <div class="chatbot-window" id="chatbotWindow">
-            <div class="chatbot-header">
-                <h4>AI Assistant</h4>
-                <button class="chatbot-close" onclick="toggleChatbot()">&times;</button>
-            </div>
-            <div class="chatbot-messages" id="chatbotMessages">
-                <div class="message bot-message">
-                    <div class="message-content">
-                        <p>Xin chào! Tôi là AI Assistant của BookSelf. Tôi có thể giúp bạn tìm sách, trả lời câu hỏi về sản phẩm, hoặc hỗ trợ đặt hàng. Bạn cần gì?</p>
-                        <span class="message-time">${new Date().toLocaleTimeString()}</span>
-                    </div>
-                </div>
-            </div>
-            <div class="chatbot-input">
-                <input type="text" id="chatbotInput" placeholder="Nhập câu hỏi...">
-                <button onclick="sendChatbotMessage()">Gửi</button>
-            </div>
-            <div class="chatbot-actions">
-                <button class="btn-customer-service" onclick="chatWithCustomerService()">
-                    <i class="fas fa-headset"></i>
-                    Tôi muốn chat với CSKH
-                </button>
-            </div>
-        </div>
-    </div>
+    <div id="footer-placeholder"></div>
+    <div id="chatbot-placeholder"></div>
 
     <script src="../data.js"></script>
     <script src="../script.js"></script>
