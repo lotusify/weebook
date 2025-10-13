@@ -57,9 +57,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="footer-main container">
                 <div class="footer-col about-us">
                     <img src="${basePath}images/logo.png" alt="Read Station Logo" class="footer-logo">
-                    <p>Công ty cổ phần sách BlackCat</p>
+                    <p>Công ty cổ phần sách BookSelf</p>
                     <p><strong>Bạn cần hỗ trợ? Gọi chúng tôi 24/7</strong></p>
-                    <p class="phone-number">0902 147 258</p>
+                    <p class="phone-number">0912 913 914</p>
                     <p class="address-title">Thông tin địa chỉ</p>
                     <p class="address-detail">Số 125 Đường Trần Hưng Đạo, Phường Cầu Kho, Quận 1, TP. Hồ Chí Minh</p>
                 </div>

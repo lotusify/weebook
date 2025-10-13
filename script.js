@@ -2720,6 +2720,8 @@ function initializeDynamicTabsWidth() {
     }, 100);
 }
 
+
+
 function calculateTabsWidth() {
     const productContainer = document.querySelector('.product-detail-container');
     const tabsElement = document.querySelector('.product-details-tabs');

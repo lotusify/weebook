@@ -69,86 +69,56 @@ function handleLogin(e) {
     e.preventDefault();
     
     const formData = new FormData(e.target);
-    const email = formData.get('email');
-    const password = formData.get('password');
+    const email = formData.get('email').trim();
+    const password = formData.get('password').trim();
     const rememberMe = document.getElementById('rememberMe').checked;
 
-    // Validate input
     if (!email || !password) {
         showNotification('Vui lòng điền đầy đủ thông tin!', 'error');
         return;
     }
 
-    // Check for admin login
-    if (email === 'admin@bookself.com' && password === 'admin@bookself.com') {
+    // --- 1️⃣ Kiểm tra tài khoản mặc định ---
+    const defaultAccount = {
+        email: "admin@bookshelf.com",
+        password: "123456",
+        name: "Administrator",
+        role: "admin"
+    };
+
+    if (email === defaultAccount.email && password === defaultAccount.password) {
         const adminSession = {
-            id: 'admin',
-            name: 'Administrator',
-            email: email,
-            role: 'admin',
+            id: "admin",
+            name: defaultAccount.name,
+            email: defaultAccount.email,
+            role: defaultAccount.role,
             loginTime: new Date().toISOString(),
             rememberMe: rememberMe
         };
 
-        // Store admin session
         if (rememberMe) {
             localStorage.setItem('bookshelf-user', JSON.stringify(adminSession));
         } else {
             sessionStorage.setItem('bookshelf-user', JSON.stringify(adminSession));
         }
 
-        showNotification('Chào mừng Administrator!', 'success');
-        
-        // Redirect to admin dashboard
+        showNotification('Đăng nhập thành công (Administrator)!', 'success');
         setTimeout(() => {
-            window.location.href = 'admin.html';
-        }, 1500);
+            window.location.href = 'index.html'; // hoặc 'admin.html' nếu có
+        }, 1000);
         return;
     }
 
-    // Check for default user login
-    if (email === 'user@bookself.com' && password === 'user@bookself.com') {
-        const userSession = {
-            id: 'user',
-            name: 'Người dùng',
-            email: email,
-            phone: '0123456789',
-            role: 'user',
-            loginTime: new Date().toISOString(),
-            rememberMe: rememberMe
-        };
-
-        // Store user session
-        if (rememberMe) {
-            localStorage.setItem('bookshelf-user', JSON.stringify(userSession));
-        } else {
-            sessionStorage.setItem('bookshelf-user', JSON.stringify(userSession));
-        }
-
-        showNotification(`Chào mừng ${userSession.name}!`, 'success');
-        
-        // Redirect to home page
-        setTimeout(() => {
-            window.location.href = 'index.html';
-        }, 1500);
-        return;
-    }
-
-    // Check for regular user login
-    const users = getUsers();
-    const user = users.find(u => u.email === email);
+    // --- 2️⃣ Kiểm tra tài khoản người dùng đã đăng ký ---
+    const users = JSON.parse(localStorage.getItem('bookshelf-users')) || [];
+    const user = users.find(u => u.email === email && u.password === password);
 
     if (!user) {
-        showNotification('Email không tồn tại!', 'error');
+        showNotification('Sai email hoặc mật khẩu!', 'error');
         return;
     }
 
-    if (user.password !== password) {
-        showNotification('Mật khẩu không đúng!', 'error');
-        return;
-    }
-
-    // Regular user login successful
+    // --- 3️⃣ Lưu session khi đăng nhập thành công ---
     const userSession = {
         id: user.id,
         name: user.name,
@@ -159,7 +129,6 @@ function handleLogin(e) {
         rememberMe: rememberMe
     };
 
-    // Store session
     if (rememberMe) {
         localStorage.setItem('bookshelf-user', JSON.stringify(userSession));
     } else {
@@ -167,14 +136,11 @@ function handleLogin(e) {
     }
 
     showNotification(`Chào mừng ${userSession.name}!`, 'success');
-    
-    // Redirect to home page
     setTimeout(() => {
         window.location.href = 'index.html';
-    }, 1500);
+    }, 1000);
 }
 
-// ========== REGISTER FUNCTIONALITY ========== //
 function handleRegister(e) {
     e.preventDefault();
     
@@ -207,14 +173,16 @@ function handleRegister(e) {
         return;
     }
 
-    // For front-end demo, allow any email (no duplicate check)
-    // const users = getUsers();
-    // if (users.find(u => u.email === email)) {
-    //     showNotification('Email đã được sử dụng!', 'error');
-    //     return;
-    // }
+    // ✅ Lấy danh sách người dùng hiện tại
+    const users = getUsers();
 
-    // Create new user
+    // Kiểm tra email trùng
+    if (users.find(u => u.email === email)) {
+        showNotification('Email đã được sử dụng!', 'error');
+        return;
+    }
+
+    // Tạo tài khoản mới
     const newUser = {
         id: generateUserId(),
         name: name,
@@ -227,13 +195,13 @@ function handleRegister(e) {
         reviews: []
     };
 
-    // Save user
+    // Lưu vào localStorage
     users.push(newUser);
     localStorage.setItem('bookshelf-users', JSON.stringify(users));
 
     showNotification('Tạo tài khoản thành công!', 'success');
-    
-    // Auto login
+
+    // Tự động đăng nhập sau khi đăng ký
     setTimeout(() => {
         const userSession = {
             id: newUser.id,
@@ -243,7 +211,7 @@ function handleRegister(e) {
             loginTime: new Date().toISOString(),
             rememberMe: false
         };
-        
+
         sessionStorage.setItem('bookshelf-user', JSON.stringify(userSession));
         window.location.href = 'index.html';
     }, 1500);
