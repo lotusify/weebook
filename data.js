@@ -6624,6 +6624,33 @@ const BOOK_DATABASE = {
         tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
         featured: true,
         newRelease: true
+    },
+
+    245: {
+    id: 245,
+    title: "Dân chủ",
+    author: "Lê Duy Khánh",
+    publisher: "NCC",
+    publishDate: "2024-12-09",
+    category: "toys",
+    subcategory: "educational-toys",
+    price: 99000,
+    originalPrice: 118800,
+    discount: 0,
+    isbn: "978-861-23971-4",
+    pages: 406,
+    language: "English",
+    format: "Bìa mềm",
+    weight: "278g",
+    dimensions: "15 x 19 x 2 cm",
+    stock: 53,
+    rating: 4.1,
+    reviewCount: 198,
+    images: ["https://product.hstatic.net/1000202622/product/ct00010__2__4b1043f1218742888b21131c36f5041f_de888ccef58d42578b6d9ec83413f6ed_large.png"],
+    description: `Cuốn sách Bộ 2 núm ti silicone Y cut (6m+) Comotomo là một tác phẩm hay với nội dung sâu sắc và ý nghĩa. Phù hợp cho mọi lứa tuổi yêu thích đọc sách.`,
+    tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
+    featured: true,
+    newRelease: true
     }
 };
 
