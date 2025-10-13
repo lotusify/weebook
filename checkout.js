@@ -1,5 +1,5 @@
 // ========== CHECKOUT SYSTEM ========== //
-// Complete checkout and payment system for BookShelf
+// Complete checkout and payment system for BookSelf
 
 document.addEventListener('DOMContentLoaded', function() {
     initializeCheckout();
@@ -16,7 +16,7 @@ function initializeCheckout() {
     }
 
     // Check if cart has items
-    const cart = JSON.parse(localStorage.getItem('bookshelf-cart')) || [];
+    const cart = JSON.parse(localStorage.getItem('bookself-cart')) || [];
     if (cart.length === 0) {
         showNotification('Giỏ hàng trống!', 'error');
         setTimeout(() => {
@@ -51,7 +51,7 @@ function loadUserInformation() {
 }
 
 function loadOrderItems() {
-    const cart = JSON.parse(localStorage.getItem('bookshelf-cart')) || [];
+    const cart = JSON.parse(localStorage.getItem('bookself-cart')) || [];
     const orderItemsContainer = document.getElementById('orderItems');
     
     if (!window.BookDatabase) {
@@ -184,7 +184,7 @@ function getDistrictsByCity(city) {
 }
 
 function updateShippingCost() {
-    const cart = JSON.parse(localStorage.getItem('bookshelf-cart')) || [];
+    const cart = JSON.parse(localStorage.getItem('bookself-cart')) || [];
     let subtotal = 0;
     
     cart.forEach(item => {
@@ -260,7 +260,7 @@ function processCheckout() {
     };
     
     // Get cart items
-    const cart = JSON.parse(localStorage.getItem('bookshelf-cart')) || [];
+    const cart = JSON.parse(localStorage.getItem('bookself-cart')) || [];
     
     // Calculate totals
     let subtotal = 0;
@@ -306,7 +306,7 @@ function processCheckout() {
     saveOrder(order);
     
     // Clear cart
-    localStorage.removeItem('bookshelf-cart');
+    localStorage.removeItem('bookself-cart');
     
     // Update cart count
     updateCartCount();
@@ -321,21 +321,21 @@ function processCheckout() {
 }
 
 function saveOrder(order) {
-    const orders = JSON.parse(localStorage.getItem('bookshelf-orders')) || [];
+    const orders = JSON.parse(localStorage.getItem('bookself-orders')) || [];
     orders.push(order);
-    localStorage.setItem('bookshelf-orders', JSON.stringify(orders));
+    localStorage.setItem('bookself-orders', JSON.stringify(orders));
     
     // Update user's orders
     const users = getUsers();
     const userIndex = users.findIndex(u => u.id === order.userId);
     if (userIndex !== -1) {
         users[userIndex].orders.push(order.id);
-        localStorage.setItem('bookshelf-users', JSON.stringify(users));
+        localStorage.setItem('bookself-users', JSON.stringify(users));
     }
 }
 
 function generateOrderId() {
-    const orders = JSON.parse(localStorage.getItem('bookshelf-orders')) || [];
+    const orders = JSON.parse(localStorage.getItem('bookself-orders')) || [];
     return orders.length > 0 ? Math.max(...orders.map(o => o.id)) + 1 : 1;
 }
 

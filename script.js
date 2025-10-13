@@ -1,4 +1,4 @@
-// ========== BOOKSHELF INTERACTIVE FEATURES ========== //
+// ========== BOOKSELF INTERACTIVE FEATURES ========== //
 // Main JavaScript file for dynamic functionality
 
 // DOM Content Loaded
@@ -595,7 +595,7 @@ function renderStars(rating) {
 }
 
 // ========== CART FUNCTIONALITY ========== //
-let cart = JSON.parse(localStorage.getItem('bookshelf-cart')) || [];
+let cart = JSON.parse(localStorage.getItem('bookself-cart')) || [];
 
 function initializeCart() {
     updateCartCount();
@@ -638,7 +638,7 @@ function addToCart(productId, quantity = 1) {
         });
     }
     
-    localStorage.setItem('bookshelf-cart', JSON.stringify(cart));
+    localStorage.setItem('bookself-cart', JSON.stringify(cart));
     updateCartCount();
     updateCartDropdown();
     showNotification(`Đã thêm "${book.title}" vào giỏ hàng!`);
@@ -669,7 +669,7 @@ function addToWishlist(productId) {
     }
     
     // Use localStorage for demo (no user login required)
-    let wishlist = JSON.parse(localStorage.getItem('bookshelf-wishlist')) || [];
+    let wishlist = JSON.parse(localStorage.getItem('bookself-wishlist')) || [];
     
     // Check if already in wishlist
     if (wishlist.includes(productId)) {
@@ -679,7 +679,7 @@ function addToWishlist(productId) {
     
     // Add to wishlist
     wishlist.push(productId);
-    localStorage.setItem('bookshelf-wishlist', JSON.stringify(wishlist));
+    localStorage.setItem('bookself-wishlist', JSON.stringify(wishlist));
     
     showNotification(`Đã thêm "${book.title}" vào danh sách yêu thích!`, 'success');
     updateWishlistButtons();
@@ -687,11 +687,11 @@ function addToWishlist(productId) {
 
 function removeFromWishlist(productId) {
     // Use localStorage for demo (no user login required)
-    let wishlist = JSON.parse(localStorage.getItem('bookshelf-wishlist')) || [];
+    let wishlist = JSON.parse(localStorage.getItem('bookself-wishlist')) || [];
     
     // Remove from wishlist
     wishlist = wishlist.filter(id => id !== productId);
-    localStorage.setItem('bookshelf-wishlist', JSON.stringify(wishlist));
+    localStorage.setItem('bookself-wishlist', JSON.stringify(wishlist));
     
     if (window.BookDatabase) {
         const book = window.BookDatabase.getBookById(productId);
@@ -705,7 +705,7 @@ function removeFromWishlist(productId) {
 
 function isInWishlist(productId) {
     // Use localStorage for demo (no user login required)
-    let wishlist = JSON.parse(localStorage.getItem('bookshelf-wishlist')) || [];
+    let wishlist = JSON.parse(localStorage.getItem('bookself-wishlist')) || [];
     return wishlist.includes(productId);
 }
 
@@ -752,7 +752,7 @@ function removeFromCart(productId) {
     
     const book = window.BookDatabase.getBookById(productId);
     cart = cart.filter(item => item.id !== productId);
-    localStorage.setItem('bookshelf-cart', JSON.stringify(cart));
+    localStorage.setItem('bookself-cart', JSON.stringify(cart));
     updateCartCount();
     updateCartDropdown();
     if (book) {
@@ -767,7 +767,7 @@ function updateCartQuantity(productId, newQuantity) {
             removeFromCart(productId);
         } else {
             item.quantity = newQuantity;
-            localStorage.setItem('bookshelf-cart', JSON.stringify(cart));
+            localStorage.setItem('bookself-cart', JSON.stringify(cart));
             updateCartCount();
             updateCartDropdown();
         }
@@ -892,7 +892,7 @@ function updateCartDropdown() {
     const checkoutBtn = dropdown.querySelector('.checkout-btn');
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', () => {
-            const cart = JSON.parse(localStorage.getItem('bookshelf-cart')) || [];
+            const cart = JSON.parse(localStorage.getItem('bookself-cart')) || [];
             if (cart.length === 0) {
                 showNotification('Giỏ hàng trống!', 'error');
                 return;
@@ -1202,7 +1202,7 @@ function loadCategoryContent() {
         titleElement.textContent = pageTitle;
     }
     
-    document.title = `${pageTitle} - BookShelf`;
+    document.title = `${pageTitle} - BookSelf`;
     
     // Update results count
     const resultsCount = document.querySelector('.results-count');
@@ -2022,7 +2022,7 @@ function toggleViewMode(mode) {
     productGrid.classList.add(`${mode}-view`);
     
     // Save preference
-    localStorage.setItem('bookshelf-view-mode', mode);
+    localStorage.setItem('bookself-view-mode', mode);
 }
 
 // ========== AUTHENTICATION INTEGRATION ========== //
@@ -2039,11 +2039,11 @@ function initializeAuth() {
 // Get current logged in user
 function getCurrentUser() {
     // Check localStorage first (remember me)
-    let userSession = localStorage.getItem('bookshelf-user');
+    let userSession = localStorage.getItem('bookself-user');
     
     // If not found, check sessionStorage
     if (!userSession) {
-        userSession = sessionStorage.getItem('bookshelf-user');
+        userSession = sessionStorage.getItem('bookself-user');
     }
     
     if (userSession) {
@@ -2065,14 +2065,14 @@ function isLoggedIn() {
 
 // Get all users from localStorage
 function getUsers() {
-    const users = localStorage.getItem('bookshelf-users');
+    const users = localStorage.getItem('bookself-users');
     return users ? JSON.parse(users) : [];
 }
 
 // Logout user
 function logout() {
-    localStorage.removeItem('bookshelf-user');
-    sessionStorage.removeItem('bookshelf-user');
+    localStorage.removeItem('bookself-user');
+    sessionStorage.removeItem('bookself-user');
     updateUserInterface();
     showNotification('Đã đăng xuất thành công!', 'success');
     
@@ -2401,7 +2401,7 @@ function chatWithCustomerService() {
         csMessage.className = 'message bot-message';
         csMessage.innerHTML = `
             <div class="message-content">
-                <p>Xin chào! Tôi là nhân viên CSKH của BookShelf. Tôi có thể hỗ trợ bạn về đơn hàng, thanh toán, giao hàng và các vấn đề khác. Bạn cần hỗ trợ gì?</p>
+                <p>Xin chào! Tôi là nhân viên CSKH của BookSelf. Tôi có thể hỗ trợ bạn về đơn hàng, thanh toán, giao hàng và các vấn đề khác. Bạn cần hỗ trợ gì?</p>
                 <span class="message-time">${new Date().toLocaleTimeString()}</span>
             </div>
         `;

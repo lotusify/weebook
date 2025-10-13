@@ -1,5 +1,5 @@
 // ========== ADMIN DASHBOARD FUNCTIONALITY ========== //
-// Complete admin management system for BookShelf
+// Complete admin management system for BookSelf
 
 document.addEventListener('DOMContentLoaded', function() {
     // Check admin authentication
@@ -276,9 +276,9 @@ function addBook() {
     }
     
     // For demo purposes, we'll add to localStorage
-    const existingBooks = JSON.parse(localStorage.getItem('bookshelf-admin-books')) || [];
+    const existingBooks = JSON.parse(localStorage.getItem('bookself-admin-books')) || [];
     existingBooks.push(newBook);
-    localStorage.setItem('bookshelf-admin-books', JSON.stringify(existingBooks));
+    localStorage.setItem('bookself-admin-books', JSON.stringify(existingBooks));
     
     showNotification('Thêm sách thành công!', 'success');
     closeModal('addBookModal');
@@ -616,7 +616,7 @@ function addPromotion() {
     };
     
     promotions.push(newPromotion);
-    localStorage.setItem('bookshelf-promotions', JSON.stringify(promotions));
+    localStorage.setItem('bookself-promotions', JSON.stringify(promotions));
     
     showNotification('Thêm ưu đãi thành công!', 'success');
     closeModal('addPromotionModal');
@@ -632,7 +632,7 @@ function deletePromotion(promotionId) {
     if (confirm('Bạn có chắc chắn muốn xóa ưu đãi này?')) {
         const promotions = getPromotions();
         const updatedPromotions = promotions.filter(p => p.id !== promotionId);
-        localStorage.setItem('bookshelf-promotions', JSON.stringify(updatedPromotions));
+        localStorage.setItem('bookself-promotions', JSON.stringify(updatedPromotions));
         
         showNotification('Xóa ưu đãi thành công!', 'success');
         loadPromotionsData();
@@ -726,7 +726,7 @@ function initializeTopBooksChart() {
 
 // ========== UTILITY FUNCTIONS ========== //
 function getOrders() {
-    let orders = JSON.parse(localStorage.getItem('bookshelf-orders')) || [];
+    let orders = JSON.parse(localStorage.getItem('bookself-orders')) || [];
     
     // If no orders exist, create some sample orders for demo
     if (orders.length === 0) {
@@ -772,14 +772,14 @@ function getOrders() {
                 date: new Date().toISOString()
             }
         ];
-        localStorage.setItem('bookshelf-orders', JSON.stringify(orders));
+        localStorage.setItem('bookself-orders', JSON.stringify(orders));
     }
     
     return orders;
 }
 
 function getUsers() {
-    let users = JSON.parse(localStorage.getItem('bookshelf-users')) || [];
+    let users = JSON.parse(localStorage.getItem('bookself-users')) || [];
     
     // If no users exist, create some sample users for demo
     if (users.length === 0) {
@@ -813,14 +813,14 @@ function getUsers() {
                 createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString()
             }
         ];
-        localStorage.setItem('bookshelf-users', JSON.stringify(users));
+        localStorage.setItem('bookself-users', JSON.stringify(users));
     }
     
     return users;
 }
 
 function getPromotions() {
-    let promotions = JSON.parse(localStorage.getItem('bookshelf-promotions')) || [];
+    let promotions = JSON.parse(localStorage.getItem('bookself-promotions')) || [];
     
     // If no promotions exist, create some sample promotions for demo
     if (promotions.length === 0) {
@@ -853,7 +853,7 @@ function getPromotions() {
                 createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString()
             }
         ];
-        localStorage.setItem('bookshelf-promotions', JSON.stringify(promotions));
+        localStorage.setItem('bookself-promotions', JSON.stringify(promotions));
     }
     
     return promotions;

@@ -28,13 +28,11 @@ weebook/
 │   ├── auth.html                  ← Đăng nhập/đăng ký
 │   ├── admin.html                 ← Panel quản trị
 │   ├── chatbot.html               ← Chatbot AI
-│   ├── about.html                 ← Giới thiệu công ty
-│   └── category-menu.html         ← Menu danh mục
+│   └── about.html                 ← Giới thiệu công ty
 │
 ├── 🔧 JavaScript Files
 │   ├── script.js                  ← JavaScript chính (logic website)
-│   ├── load-components.js         ← Load header/footer components
-│   ├── update-pages.js            ← Cập nhật nội dung trang
+│   ├── load-components.js         ← Load header/footer/chatbot components
 │   ├── checkout.js                ← Logic thanh toán
 │   ├── order-success.js           ← Logic trang thành công
 │   ├── orders.js                  ← Logic quản lý đơn hàng
@@ -44,9 +42,7 @@ weebook/
 │   └── admin.js                   ← Logic admin panel
 │
 ├── 🎨 Styling & Components
-│   ├── style.css                  ← CSS chính (responsive design)
-│   ├── header.html                ← Component header
-│   └── footer.html                ← Component footer
+│   └── style.css                  ← CSS chính (responsive design)
 │
 ├── 📊 Data & Configuration
 │   ├── data.js                    ← Database sản phẩm (169 sản phẩm)
@@ -59,19 +55,11 @@ weebook/
 │       ├── logo.png               ← Logo công ty
 │       └── icon-*.png             ← Icons
 │
-├── 📋 Info Pages
-│   └── info/                      ← Thư mục chính sách và hướng dẫn
-│       ├── chinh-sach-*.html      ← Các chính sách
-│       ├── huong-dan-*.html       ← Hướng dẫn sử dụng
-│       └── template.html          ← Template trang info
-│
-└── 🕷️ Scrapper Tools
-    └── scrapper/                  ← Thư mục công cụ scraping (71 files)
-        ├── *.py                   ← 51 scripts Python
-        ├── *.json                 ← 11 files dữ liệu
-        ├── *.html                  ← 7 files debug/test
-        ├── requirements.txt       ← Python dependencies
-        └── SCRAPING_GUIDE.md      ← Hướng dẫn scraping
+└── 📋 Info Pages
+    └── info/                      ← Thư mục chính sách và hướng dẫn
+        ├── chinh-sach-*.html      ← Các chính sách
+        ├── huong-dan-*.html       ← Hướng dẫn sử dụng
+        └── template.html          ← Template trang info
 ```
 
 ---
@@ -123,13 +111,10 @@ weebook/
 ### 🔧 File hỗ trợ
 
 #### `load-components.js` - Load components
-- **Mục đích:** Load header và footer vào các trang
-- **Function:** `loadHeader()`, `loadFooter()`
+- **Mục đích:** Load header, footer và chatbot vào các trang
+- **Function:** `loadComponents()` - Load tất cả components
 - **Usage:** Được gọi trong mỗi trang HTML
-
-#### `update-pages.js` - Cập nhật trang
-- **Mục đích:** Cập nhật nội dung động của các trang
-- **Functions:** `updatePageTitle()`, `updateBreadcrumb()`
+- **Components:** Header, Footer, Chatbot với HTML được định nghĩa trong file
 
 #### `checkout.js` - Thanh toán
 - **Mục đích:** Xử lý logic thanh toán
@@ -152,17 +137,12 @@ weebook/
 - **Hướng dẫn:** `huong-dan-*.html`
 - **Template:** `template.html` cho các trang info
 
-### 🕷️ Scrapper Tools (`scrapper/`)
+### 📋 Info Pages (`info/`)
 
-#### Python Scripts
-- **Scraping:** `scrape_*.py` - Lấy data từ các website
-- **Processing:** `convert_*.py` - Chuyển đổi format data
-- **Fixing:** `fix_*.py` - Sửa lỗi trong data
-- **Debugging:** `debug_*.py` - Debug HTML structure
-
-#### Data Files
-- **JSON:** `*_data.json` - Dữ liệu scraped
-- **HTML:** `*_debug.html` - HTML debug files
+#### Chính sách và hướng dẫn
+- **Chính sách:** `chinh-sach-*.html` - Các chính sách của website
+- **Hướng dẫn:** `huong-dan-*.html` - Hướng dẫn sử dụng
+- **Template:** `template.html` - Template cho các trang info
 
 ---
 
@@ -186,25 +166,9 @@ python -m http.server 8000
 - Tìm object `BOOK_DATABASE`
 - Thêm entry mới theo format có sẵn
 
-**Cách 2: Scrape từ website** (Khuyến nghị!)
-
-```bash
-# Vào thư mục scrapper
-cd scrapper
-
-# Cài đặt dependencies
-pip install -r requirements.txt
-
-# Scrape data từ ReadStation.vn
-python scrape_readstation.py
-
-# Convert sang format data.js
-python convert_to_datajs.py
-
-# Copy nội dung data_new.js vào data.js ở thư mục gốc
-```
-
-📖 **Chi tiết:** Xem `scrapper/SCRAPING_GUIDE.md`
+**Cách 2: Import từ file JSON** (Nếu có sẵn)
+- Import dữ liệu từ file JSON có sẵn
+- Convert sang format `data.js`
 
 ### 3. Thay đổi giao diện
 Sửa file: `style.css`
@@ -250,11 +214,11 @@ Sửa file: `script.js`
 - ✅ Thống kê đơn hàng
 - ✅ Chatbot AI hỗ trợ
 
-### 🕷️ Scraping & Data
-- ✅ Scrape data từ ReadStation.vn
-- ✅ Scrape văn phòng phẩm từ TheGioiVanPhongPham
-- ✅ Tự động xử lý và chuyển đổi data
-- ✅ Debug tools và validation
+### 🔧 Components & Maintainability
+- ✅ Dynamic component loading (header, footer, chatbot)
+- ✅ Centralized component management
+- ✅ Easy maintenance và updates
+- ✅ Consistent UI across all pages
 
 ---
 
@@ -270,42 +234,24 @@ Sửa file: `script.js`
 
 ---
 
-## 🕷️ Scraping Data
+## 🔧 Component Architecture
 
-### 📚 Sách từ ReadStation.vn ⭐ ĐÃ HOÀN THÀNH
+### 📦 Dynamic Component Loading
 
-**Website hiện đang dùng 154 sản phẩm sách thật từ ReadStation.vn!**
+**Website sử dụng centralized component management!**
 
-Script Python đã lấy:
-- ✅ Tiêu đề sách thật
-- ✅ Giá bán thật  
-- ✅ **Link ảnh thật từ website** (không dùng placeholder nữa!)
-- ✅ URL sản phẩm thật
-- ✅ Tác giả và nhà xuất bản thật
+Tất cả components được quản lý trong `load-components.js`:
+- ✅ **Header** - Navigation, logo, search bar
+- ✅ **Footer** - Links, contact info, social media
+- ✅ **Chatbot** - AI assistant với floating UI
 
-Sau đó tự động thêm:
-- Rating, review count
-- Mô tả chi tiết
-- Tags phù hợp
-- ISBN, số trang, kích thước
+### 🎯 Ưu điểm
 
-### 📝 Văn phòng phẩm từ TheGioiVanPhongPham ⭐ ĐÃ HOÀN THÀNH
-
-**Website hiện đang dùng 15 sản phẩm văn phòng phẩm thật!**
-
-Script Python đã lấy:
-- ✅ Tên sản phẩm thật
-- ✅ Giá bán thật
-- ✅ **Ảnh sản phẩm thật từ product.hstatic.net**
-- ✅ Mô tả sản phẩm phù hợp
-
-### Ưu điểm
-
-1. **Ảnh thật** - Không dùng placeholder
-2. **Giá thật** - Từ website gốc
-3. **Tự động** - Không cần nhập tay
-4. **Nhanh** - 169 sản phẩm trong vài phút
-5. **Đa dạng** - Sách + văn phòng phẩm
+1. **Maintainability** - Chỉ cần sửa 1 file để update tất cả trang
+2. **Consistency** - UI đồng nhất trên mọi trang
+3. **Performance** - Load components dynamically
+4. **Flexibility** - Dễ dàng thêm/sửa components
+5. **Clean Code** - Không có hardcoded HTML trong các trang
 
 ---
 
@@ -318,12 +264,10 @@ Script Python đã lấy:
 - **Local Storage** - Lưu giỏ hàng và user data
 - **Responsive Design** - Mobile-first approach
 
-### Backend/Data
-- **Python 3.x** - Scraping và data processing
-- **BeautifulSoup4** - Web scraping
-- **Requests** - HTTP requests
-- **JSON** - Data format
-- **Regular Expressions** - Text processing
+### Data Management
+- **JSON** - Data format cho sản phẩm
+- **Local Storage** - Lưu giỏ hàng và user data
+- **Dynamic Loading** - Load components và content
 
 ### Tools & Utilities
 - **Git** - Version control
@@ -344,12 +288,11 @@ Script Python đã lấy:
 - **Truyện tranh:** ~4 sản phẩm
 
 ### Files
-- **HTML:** 13 trang
-- **JavaScript:** 10 files
+- **HTML:** 12 trang
+- **JavaScript:** 9 files
 - **CSS:** 1 file chính
-- **Python:** 51 scripts
 - **Images:** 20+ ảnh
-- **Total:** 96+ files
+- **Total:** 40+ files
 
 ### Categories
 - `vietnamese` - Sách tiếng Việt
@@ -407,4 +350,4 @@ MIT License - Xem file LICENSE để biết thêm chi tiết.
 
 **Made with ❤️ by BookSelf Team**
 
-*Website bán sách trực tuyến với 169 sản phẩm thật từ ReadStation.vn và TheGioiVanPhongPham*
+*Website bán sách trực tuyến với 169 sản phẩm và centralized component management*
