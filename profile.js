@@ -161,7 +161,7 @@ function loadUserOrders() {
 }
 
 function loadUserWishlist() {
-    const wishlist = JSON.parse(localStorage.getItem('bookshelf-wishlist')) || [];
+    const wishlist = JSON.parse(localStorage.getItem('bookself-wishlist')) || [];
     const wishlistGrid = document.getElementById('wishlistGrid');
     
     if (!wishlistGrid) return;
@@ -271,9 +271,9 @@ function handleProfileUpdate(e) {
     
     // Save updated user data
     if (user.rememberMe) {
-        localStorage.setItem('bookshelf-user', JSON.stringify(updatedUser));
+        localStorage.setItem('bookself-user', JSON.stringify(updatedUser));
     } else {
-        sessionStorage.setItem('bookshelf-user', JSON.stringify(updatedUser));
+        sessionStorage.setItem('bookself-user', JSON.stringify(updatedUser));
     }
     
     showNotification('Cập nhật thông tin thành công!', 'success');
@@ -403,7 +403,7 @@ function rateOrder(orderId) {
 
 // ========== UTILITY FUNCTIONS ========== //
 function getOrders() {
-    return JSON.parse(localStorage.getItem('bookshelf-orders')) || [];
+    return JSON.parse(localStorage.getItem('bookself-orders')) || [];
 }
 
 function formatPrice(price) {

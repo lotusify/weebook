@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thanh toán - BookShelf</title>
+    <title>Thanh toán - BookSelf</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
@@ -11,38 +11,33 @@
     <script src="data.js"></script>
     <script src="script.js"></script>
     <script src="auth.js"></script>
+    <script src="load-components.js"></script>
     
-    <header>
-        <div class="header-main">
-            <div class="container">
-                <div class="brand-section">
-                    <a href="index.html" class="logo">
-                        <img src="images/logo.png" alt="BookShelf Logo">
-                        <span class="brand-name">BookShelf</span>
-                    </a>
+    <div id="header-placeholder"></div>
+    
+    <!-- Checkout Progress Bar -->
+    <div class="checkout-progress-bar">
+        <div class="container">
+            <div class="checkout-progress">
+                <div class="progress-step active">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Giỏ hàng</span>
                 </div>
-                
-                <div class="checkout-progress">
-                    <div class="progress-step active">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>Giỏ hàng</span>
-                    </div>
-                    <div class="progress-step active">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Thông tin</span>
-                    </div>
-                    <div class="progress-step">
-                        <i class="fas fa-credit-card"></i>
-                        <span>Thanh toán</span>
-                    </div>
-                    <div class="progress-step">
-                        <i class="fas fa-check"></i>
-                        <span>Hoàn thành</span>
-                    </div>
+                <div class="progress-step active">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Thông tin</span>
+                </div>
+                <div class="progress-step">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Thanh toán</span>
+                </div>
+                <div class="progress-step">
+                    <i class="fas fa-check"></i>
+                    <span>Hoàn thành</span>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
 
     <main class="checkout-main">
         <div class="container">
