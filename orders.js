@@ -24,7 +24,7 @@ function initializeOrders() {
 
 function loadOrders(statusFilter = 'all', timeFilter = 'all') {
     const currentUser = getCurrentUser();
-    const orders = JSON.parse(localStorage.getItem('bookshelf-orders')) || [];
+    const orders = JSON.parse(localStorage.getItem('bookself-orders')) || [];
     const userOrders = orders.filter(order => order.userId === currentUser.id);
     
     // Apply status filter
@@ -219,13 +219,13 @@ function viewOrderDetails(orderId) {
 
 function cancelOrder(orderId) {
     if (confirm('Bạn có chắc chắn muốn hủy đơn hàng này?')) {
-        const orders = JSON.parse(localStorage.getItem('bookshelf-orders')) || [];
+        const orders = JSON.parse(localStorage.getItem('bookself-orders')) || [];
         const orderIndex = orders.findIndex(o => o.id === orderId);
         
         if (orderIndex !== -1) {
             orders[orderIndex].status = 'cancelled';
             orders[orderIndex].cancelledAt = new Date().toISOString();
-            localStorage.setItem('bookshelf-orders', JSON.stringify(orders));
+            localStorage.setItem('bookself-orders', JSON.stringify(orders));
             
             showNotification('Đã hủy đơn hàng thành công!', 'success');
             loadOrders();
@@ -234,7 +234,7 @@ function cancelOrder(orderId) {
 }
 
 function reorder(orderId) {
-    const orders = JSON.parse(localStorage.getItem('bookshelf-orders')) || [];
+    const orders = JSON.parse(localStorage.getItem('bookself-orders')) || [];
     const order = orders.find(o => o.id === orderId);
     
     if (!order) {
@@ -243,7 +243,7 @@ function reorder(orderId) {
     }
     
     // Add items to cart
-    let cart = JSON.parse(localStorage.getItem('bookshelf-cart')) || [];
+    let cart = JSON.parse(localStorage.getItem('bookself-cart')) || [];
     
     order.items.forEach(item => {
         const existingItem = cart.find(cartItem => cartItem.id === item.bookId);
@@ -258,7 +258,7 @@ function reorder(orderId) {
         }
     });
     
-    localStorage.setItem('bookshelf-cart', JSON.stringify(cart));
+    localStorage.setItem('bookself-cart', JSON.stringify(cart));
     updateCartCount();
     updateCartDropdown();
     

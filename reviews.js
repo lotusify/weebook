@@ -260,7 +260,7 @@ function submitReview(productId) {
             users[userIndex].reviews = [];
         }
         users[userIndex].reviews.push(review.id);
-        localStorage.setItem('bookshelf-users', JSON.stringify(users));
+        localStorage.setItem('bookself-users', JSON.stringify(users));
     }
     
     // Reset form
@@ -305,7 +305,7 @@ function likeReview(reviewId) {
     
     if (reviewIndex !== -1) {
         reviews[reviewIndex].likes = (reviews[reviewIndex].likes || 0) + 1;
-        localStorage.setItem('bookshelf-reviews', JSON.stringify(reviews));
+        localStorage.setItem('bookself-reviews', JSON.stringify(reviews));
         
         // Reload reviews
         const urlParams = new URLSearchParams(window.location.search);
@@ -328,7 +328,7 @@ function deleteReview(reviewId) {
     if (confirm('Bạn có chắc chắn muốn xóa đánh giá này?')) {
         const reviews = getAllReviews();
         const updatedReviews = reviews.filter(r => r.id !== reviewId);
-        localStorage.setItem('bookshelf-reviews', JSON.stringify(updatedReviews));
+        localStorage.setItem('bookself-reviews', JSON.stringify(updatedReviews));
         
         // Update user's reviews
         const currentUser = getCurrentUser();
@@ -336,7 +336,7 @@ function deleteReview(reviewId) {
         const userIndex = users.findIndex(u => u.id === currentUser.id);
         if (userIndex !== -1) {
             users[userIndex].reviews = users[userIndex].reviews.filter(id => id !== reviewId);
-            localStorage.setItem('bookshelf-users', JSON.stringify(users));
+            localStorage.setItem('bookself-users', JSON.stringify(users));
         }
         
         // Reload reviews
@@ -351,13 +351,13 @@ function deleteReview(reviewId) {
 
 // Utility functions
 function getAllReviews() {
-    return JSON.parse(localStorage.getItem('bookshelf-reviews')) || [];
+    return JSON.parse(localStorage.getItem('bookself-reviews')) || [];
 }
 
 function saveReview(review) {
     const reviews = getAllReviews();
     reviews.push(review);
-    localStorage.setItem('bookshelf-reviews', JSON.stringify(reviews));
+    localStorage.setItem('bookself-reviews', JSON.stringify(reviews));
 }
 
 function generateReviewId() {

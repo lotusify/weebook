@@ -1,5 +1,5 @@
 // ========== AUTHENTICATION SYSTEM ========== //
-// Complete authentication system for BookShelf
+// Complete authentication system for BookSelf
 
 document.addEventListener('DOMContentLoaded', function() {
     initializeAuth();
@@ -92,9 +92,9 @@ function handleLogin(e) {
 
         // Store admin session
         if (rememberMe) {
-            localStorage.setItem('bookshelf-user', JSON.stringify(adminSession));
+            localStorage.setItem('bookself-user', JSON.stringify(adminSession));
         } else {
-            sessionStorage.setItem('bookshelf-user', JSON.stringify(adminSession));
+            sessionStorage.setItem('bookself-user', JSON.stringify(adminSession));
         }
 
         showNotification('Chào mừng Administrator!', 'success');
@@ -120,9 +120,9 @@ function handleLogin(e) {
 
         // Store user session
         if (rememberMe) {
-            localStorage.setItem('bookshelf-user', JSON.stringify(userSession));
+            localStorage.setItem('bookself-user', JSON.stringify(userSession));
         } else {
-            sessionStorage.setItem('bookshelf-user', JSON.stringify(userSession));
+            sessionStorage.setItem('bookself-user', JSON.stringify(userSession));
         }
 
         showNotification(`Chào mừng ${userSession.name}!`, 'success');
@@ -161,9 +161,9 @@ function handleLogin(e) {
 
     // Store session
     if (rememberMe) {
-        localStorage.setItem('bookshelf-user', JSON.stringify(userSession));
+        localStorage.setItem('bookself-user', JSON.stringify(userSession));
     } else {
-        sessionStorage.setItem('bookshelf-user', JSON.stringify(userSession));
+        sessionStorage.setItem('bookself-user', JSON.stringify(userSession));
     }
 
     showNotification(`Chào mừng ${userSession.name}!`, 'success');
@@ -229,7 +229,7 @@ function handleRegister(e) {
 
     // Save user
     users.push(newUser);
-    localStorage.setItem('bookshelf-users', JSON.stringify(users));
+    localStorage.setItem('bookself-users', JSON.stringify(users));
 
     showNotification('Tạo tài khoản thành công!', 'success');
     
@@ -244,7 +244,7 @@ function handleRegister(e) {
             rememberMe: false
         };
         
-        sessionStorage.setItem('bookshelf-user', JSON.stringify(userSession));
+        sessionStorage.setItem('bookself-user', JSON.stringify(userSession));
         window.location.href = 'index.html';
     }, 1500);
 }
@@ -322,7 +322,7 @@ function handleForgotPassword(e) {
 
 // ========== UTILITY FUNCTIONS ========== //
 function getUsers() {
-    return JSON.parse(localStorage.getItem('bookshelf-users')) || [];
+    return JSON.parse(localStorage.getItem('bookself-users')) || [];
 }
 
 function generateUserId() {
@@ -348,13 +348,13 @@ function togglePassword(inputId) {
 
 // ========== USER SESSION MANAGEMENT ========== //
 function getCurrentUser() {
-    const userSession = localStorage.getItem('bookshelf-user') || sessionStorage.getItem('bookshelf-user');
+    const userSession = localStorage.getItem('bookself-user') || sessionStorage.getItem('bookself-user');
     return userSession ? JSON.parse(userSession) : null;
 }
 
 function logout() {
-    localStorage.removeItem('bookshelf-user');
-    sessionStorage.removeItem('bookshelf-user');
+    localStorage.removeItem('bookself-user');
+    sessionStorage.removeItem('bookself-user');
     showNotification('Đã đăng xuất thành công!', 'success');
     setTimeout(() => {
         window.location.href = 'index.html';

@@ -1,4 +1,4 @@
-// ========== BOOKSHELF DATABASE ========== //
+// ========== BOOKSELF DATABASE ========== //
 // Real data scraped from multiple sources with real images
 
 const BOOK_DATABASE = {
