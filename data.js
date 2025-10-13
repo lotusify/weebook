@@ -6652,6 +6652,78 @@ const BOOK_DATABASE = {
         tags: ["sách", "đọc sách", "tri thức", "giáo dục", "phát triển bản thân"],
         featured: false,
         newRelease: true
+    },
+    246: {
+       id: 246,
+        title: "Bocchi The Rock! - Tập 1",
+        author: "Aki Hamazi",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2024-03-11",
+        category: "comics",
+        subcategory: "manga",
+        price: 38000,
+        originalPrice: 40000,
+        discount: 0,
+        isbn: "978-604-2-33867-7",
+        pages: 120,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "180g",
+        dimensions: "20.5 x 15 x 0.6 cm",
+        stock: 99,
+        rating: 4.9,
+        reviewCount: 294,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/9/7/9786042259446.jpg"],
+        description: `Goto Hitori là một nữ sinh hướng nội. Giao tiếp kém, học cũng kém, tay chân lại vụng về, nên suốt thời cấp 2 chẳng thể kết bạn với ai, chỉ có cây guitar bầu bạn. Khi lên lớp 10, một ngày nọ, cô nàng tình cờ gia nhập Ban nhạc Đoàn Kết, lấy nghệ danh là Bocchi và trở thành một tay guitar khuấy đảo nền nhạc Rock nước Nhật!? Nhưng trước hết, Bocchi phải nhìn được vào mắt các thành viên trong ban nhạc đã!`,
+        tags: ["sách truyện", "truyện tranh", "phát triển bản thân"],
+        featured: false,
+        newRelease: true
+    },
+    247: {
+       id: 247,
+        title: "Hành trình của Elaina - Tập 16",
+        author: "Jougi Shiraishi",
+        publisher: "NXB Hà Nội",
+        publishDate: "2024-04-15",
+        category: "comics",
+        subcategory: "light-novels",
+        price: 118000,
+        originalPrice: 148000,
+        discount: 0,
+        isbn: "978-604-44-3487-2",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "320g",
+        dimensions: "18 x 13 x 1.5 cm",
+        stock: 64,
+        rating: 4.3,
+        reviewCount: 243,
+        images: ["https://amak.vn/wp-content/uploads/2025/06/Bia-Elaina-16.png"],
+        description: `Ngày xửa ngày xưa, có một cô phù thủy tên Elaina.
+
+Cô đang trên hành trình khám phá thế giới rộng lớn bao la và tìm kiếm bản ngã cho riêng mình.
+
+Những người cô ấy gặp trên chuyến đi này là…
+
+Một nhà thám hiểm nhiệt huyết đang theo đuổi ước mơ.
+
+Phù thủy "Than Củi" đứng lên vì chính nghĩa.
+
+Cặp chị em đáng yêu trong trang phục kỵ sĩ hào nhoáng.
+
+S.á.t nhân hàng loạt thoắt ẩn thoắt hiện.
+
+"Cây chổi phép" cố gắng cứu giúp chiếc ô bị bỏ rơi.
+
+Cùng nữ phù thủy không ngừng chiến đấu với người ch.ế.t để bảo vệ vương quốc của mình.
+
+"Vậy, lần này, cô muốn làm gì đây?"
+
+Những cuộc gặp gỡ chia ly sẽ được nàng phù thủy nhỏ viết tiếp trên chuyến chu du của mình.`,
+        tags: ["sách truyện", "tiểu thuyết", "phát triển bản thân"],
+        featured: false,
+        newRelease: true
     }
 };
 
