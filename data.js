@@ -6708,17 +6708,17 @@ Những người cô ấy gặp trên chuyến đi này là…
 
 Một nhà thám hiểm nhiệt huyết đang theo đuổi ước mơ.
 
-Phù thủy “Than Củi” đứng lên vì chính nghĩa.
+Phù thủy "Than Củi" đứng lên vì chính nghĩa.
 
 Cặp chị em đáng yêu trong trang phục kỵ sĩ hào nhoáng.
 
 S.á.t nhân hàng loạt thoắt ẩn thoắt hiện.
 
-“Cây chổi phép” cố gắng cứu giúp chiếc ô bị bỏ rơi.
+"Cây chổi phép" cố gắng cứu giúp chiếc ô bị bỏ rơi.
 
 Cùng nữ phù thủy không ngừng chiến đấu với người ch.ế.t để bảo vệ vương quốc của mình.
 
-“Vậy, lần này, cô muốn làm gì đây?”
+"Vậy, lần này, cô muốn làm gì đây?"
 
 Những cuộc gặp gỡ chia ly sẽ được nàng phù thủy nhỏ viết tiếp trên chuyến chu du của mình.`,
         tags: ["sách truyện", "tiểu thuyết", "phát triển bản thân"],
