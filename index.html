@@ -98,7 +98,12 @@
                     </aside>
                     <div class="main-content-area">
                         <div class="hero-banner">
-                            <img src="images/hero-banner.png" alt="Read Station Hero Banner">
+                            <div class="slides">
+                                <img src="banner1.jpg" alt="Read Station Hero Banner">
+                                <img src="banner2.jpg" alt="Read Station Hero Banner">
+                                <img src="banner3.jpg" alt="Read Station Hero Banner">
+                            </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -147,5 +152,35 @@
     <script src="data.js"></script>
     <script src="script.js"></script>
     <script src="auth.js"></script>
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelector(".hero-banner .slides");
+    if (!slides) return;
+
+    const slideItems = slides.children;
+    const total = slideItems.length;
+    let index = 0;
+
+    // Clone toàn bộ để tạo hiệu ứng vòng lặp mượt
+    slides.appendChild(slideItems[0].cloneNode(true));
+
+    function moveSlide() {
+      index++;
+      slides.style.transition = "transform 0.8s ease-in-out";
+      slides.style.transform = `translateX(-${index * 100}%)`;
+
+      // Khi đến slide clone, quay lại slide 1 mà không giật
+      if (index === total) {
+        setTimeout(() => {
+          slides.style.transition = "none";
+          slides.style.transform = "translateX(0)";
+          index = 0;
+        }, 800); // khớp với thời gian transition
+      }
+    }
+
+    setInterval(moveSlide, 4000); // 4 giây mỗi ảnh
+  });
+</script>
 </body>
 </html>
