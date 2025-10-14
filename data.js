@@ -6724,7 +6724,315 @@ Những cuộc gặp gỡ chia ly sẽ được nàng phù thủy nhỏ viết t
         tags: ["sách truyện", "tiểu thuyết", "phát triển bản thân"],
         featured: false,
         newRelease: true
+    },
+    248: {
+       id: 248,
+        title: "Chúa tể bóng tối (Light-novel) - Tập 4",
+        author: "Daisuke Aizawa",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2024-11-19",
+        category: "comics",
+        subcategory: "light-novels",
+        price: 115200,
+        originalPrice: 128000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 13 x 1.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://cdn.hstatic.net/products/200000343865/chua-te-bong-toi_ln_tap-4_tb-2025_7347c3c56ed64785b99ecdc78ab3bb2d_master.jpg"],
+        description: `Sau khi sát hại vua cha và phản bội quê hương, giờ đây Rose lại đồng ý bắt tay với Công tước Doem để bảo vệ mẹ mình.
+Tại vương quốc nghệ thuật Oriana đang phủ trong bầu không khí chiến tranh, tin tức về đám cưới của Rose và Doem dần lan rộng.
+“Ta chắc chắn sẽ không bỏ qua cho chuyện này…”
+Có thể hai người đã được gia đình đôi bên chấp thuận, nhưng Chúa tể Bóng tối thì nhất quyết sẽ không để đám cưới kia diễn ra trót lọt!*CHÚA TỂ BÓNG TỐI là series light-novel ăn khách tại Nhật Bản, đã được chuyển thể manga, anime, manga ngoại truyện và cả game mobile với hơn 4 triệu bản sách đã bán ra!`,
+        tags: ["sách truyện", "tiểu thuyết","viễn tưởng", "hành động"],
+        featured: false,
+        newRelease: true
+    },
+    249: {
+       id: 249,
+        title: "Làm bạn với cô nàng dễ thương nhì lớp - Tập 2",
+        author: "Takata Azuri Hyuga",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2024-07-11",
+        category: "comics",
+        subcategory: "light-novels",
+        price: 94500,
+        originalPrice: 105000,
+        discount: 0,
+        isbn: "978-604-2-24356-8",
+        pages: 404,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "400g",
+        dimensions: "19 x 13 x 1.5 cm",
+        stock: 36,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://cdn.hstatic.net/products/200000343865/lam-ban-voi-co-nang-de-thuong-nhi-lop_tap-2_bia_56bf9ede62454c3f8b928c6625def6e5_master.jpg"],
+        description: `“Cô nàng dễ thương nhì lớp” Asanagi Umi và Maehara Maki tôi đây đang trong một mối quan hệ “trên tình bạn dưới tình yêu”. Tôi muốn tỏ tình đàng hoàng và trở thành người yêu cô ấy…
+Với quyết tâm như vậy, tôi ngỏ lời mời Umi đi chơi vào dịp Giáng sinh, nhưng nghe đâu đúng vào đêm vọng lễ Giáng sinh lại có một bữa tiệc giao lưu giữa trường tôi và trường nữ sinh được tổ chức. Chưa hết, hình như Seki từ câu lạc bộ bóng chày đang ấp ủ ý định mời Amami đến dự tiệc… và đề nghị tôi trợ giúp!?
+Chuyện thi cử, chuyện hậu trường của bữa tiệc mà tôi phải tham gia giúp đỡ, lại còn cả chuyện của hai vị phụ huynh đã li hôn… tất cả khiến tôi bận tối mắt tối mũi, nhưng nhờ có Umi, tôi vẫn giữ được suy nghĩ lạc quan. Hai chúng tôi vẫn có những khoảng thời gian riêng tư bên nhau, như lúc đi học và tan trường, hay buổi hẹn hò đầu tiên vào ngày nghỉ.`,
+        tags: ["sách truyện", "tiểu thuyết","viễn tưởng", "hành động"],
+        featured: false,
+        newRelease: true
+    },
+    250: {
+       id: 250,
+        title: "Ma Pháp Thiếu Nữ - Tập 9",
+        author: "Endou Asari, Marui-no",
+        publisher: "NXB Phụ Nữ Việt Nam",
+        publishDate: "2025-07-14",
+        category: "comics",
+        subcategory: "light-novels",
+        price: 159000,
+        originalPrice: 135000,
+        discount: 0,
+        isbn: "3300000052649-qt",
+        pages: 396,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "400g",
+        dimensions: "19 x 13 x 1.9 cm",
+        stock: 39,
+        rating: 3.8,
+        reviewCount: 113,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/b/_/b_a_1_ma_ph_p_thi_u_n_t_p_9_3.jpg"],
+        description: `Ma pháp thiếu nữ - Eposides Φ
+Đây là tuyển tập câu chuyện về các ma pháp thiếu nữ, xuất hiện từ tập đầu cho tới tập ACES. Những câu chuyện không thể bỏ lỡ về ngày tháng êm đềm và vui vẻ trong cuộc sống thường ngày chưa được biết đến của họ, những góc khuất không ngờ phía sau những sự kiện phát sinh trong tập chính, tất cả đều được ghi lại trong mười một truyện ngắn này.
+Một cuốn sách nhất định phải có nếu bạn muốn chìm đắm trong thế giới của các ma pháp thiếu nữ. Mời các bạn cùng thưởng thức!`,
+        tags: ["sách truyện", "tiểu thuyết","viễn tưởng", "hành động"],
+        featured: false,
+        newRelease: true
+    },
+    251: {
+       id: 251,
+        title: "Grimgar - Ảo Ảnh Và Tro Tàn - Tập 16",
+        author: "Jyumonji Ao, Shirai Eiri",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2024-04-29",
+        category: "comics",
+        subcategory: "light-novels",
+        price: 85000,
+        originalPrice: 100000,
+        discount: 0,
+        isbn: "8935352607909",
+        pages: 370,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "400g",
+        dimensions: "19 x 13 x 1.9 cm",
+        stock: 85,
+        rating: 3.5,
+        reviewCount: 364,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/g/r/grimgar_ao_anh_v_tro_tan_bia_tap_16.jpg"],
+        description: `Buộc lòng phải chấp nhận hiện thực như nó vốn có. Cô ấy không còn nữa rồi. Vĩnh viễn…
+Quân viễn chinh của Vương quốc Arabakia đã hoàn thành mục tiêu chiếm lại Alterna đánh đổi bằng sựhi sinh to lớn. Haruhiro bị quật ngã trước mất mát quá lớn lao. Tướng Jin Mogis của quân đội viễn chinh ôm trong lòng những dã tâm. Đoàn lính tình nguyện còn sống sót. Cư dân của toà tháp kín đầy bí ẩn.
+
+Trong lúc những toan tính của các thế lực đan xen rối rắm, nhóm Haruhiro có đồng đội bị bắt làm con tin, buộc phải thực hiện một nhiệm vụ nguy hiểm. Không ngờ, mục tiêu lại là kết đồng minh với goblin!? Đang lúc khó khăn nối tiếp khó khăn, và không thể tìm ra lối thoát, “gã đó” – kẻ từng đồng cam cộng khổ chia ngọt sẻ bùi nhưng đã đi theo con đường khác – bỗng nhiên xuất hiện…!
+Những mối liên kết chồng chất ở Grimgar sẽ trở thành sức mạnh cho nhóm Haruhiro đã một lần nữa mất đi kí ức.`,
+        tags: ["sách truyện", "tiểu thuyết","viễn tưởng", "hành động"],
+        featured: false,
+        newRelease: true
+    },
+    252: {
+       id: 252,
+        title: "Card Captor Sakura - Thẻ bài pha lê - Tập 16",
+        author: "Clamp",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2024-12-15",
+        category: "comics",
+        subcategory: "manga",
+        price: 27000,
+        originalPrice: 30000,
+        discount: 0,
+        isbn: "6242211950001",
+        pages: 192,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "110g",
+        dimensions: "19 x 13 x 0.5cm",
+        stock: 90,
+        rating: 4.5,
+        reviewCount: 125,
+        images: ["https://product.hstatic.net/200000343865/product/card-captor-sakura_tap-16_bia_917bf094e8244ff6a2a709b8c82084bd_master.png"],
+        description: `Với sự dẫn dắt của chìa khóa giấc mơ và những lá bài pha lê, câu chuyện mới của Sakura đã bắt đầu!
+Sakura đã trở thành học sinh trung học khi tháng 4 quay lại cùng những đóa anh đào nở rộ. Được gặp lại Syaoran yêu quý, còn được học chung trường khiến nụ cười luôn rạng rỡ trên môi Sakura! Nhưng những lá bài của Sakura bỗng trở nên kì lạ sau một giấc mơ bí ẩn…? Các bạn hãy cùng Sakura bước vào cuộc hành trình mới của mình trong “Card Captor Sakura - Thẻ bài pha lê” này nhé!`,
+        tags: ["sách truyện", "truyện tranh","viễn tưởng", "hành động"],
+        featured: false,
+        newRelease: true
+    },
+    253: {
+       id: 253,
+        title: "(Tập lẻ) Chu du ẩm thực tại Dị giới với kĩ năng không tưởng - Sui phiêu lưu ký",
+        author: "Momo Futaba, Ren Eguchi, Masa",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2024-04-15",
+        category: "comics",
+        subcategory: "manga",
+        price: 31500,
+        originalPrice: 35000,
+        discount: 0,
+        isbn: "978-604-2-28408-0",
+        pages: 146,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "165g",
+        dimensions: "19 x 13 x 1.9 cm",
+        stock: 85,
+        rating: 4.1,
+        reviewCount: 324,
+        images: ["https://cdn.hstatic.net/products/200000343865/am-thuc-tai-di-gioi-voi-ki-nang-khong-tuong_sui-phieu-luu-ky_tap-2_bia_f57adbc0e9ff4f6db40175332902dd84_master.jpg"],
+        description: `Series ngoại truyện chính thức của Chu du ẩm thực tại Dị giới với kĩ năng không tưởng. Nhân vật trung tâm là Sui - Chú Slime háu ăn và siêu quấn người!! Những giờ phút "thư giãn" nơi Dị giới bao la sẽ được thể hiện qua một góc nhìn độc đáo và vô cùng dễ thương. Các Fan của Sui nhất định đừng bỏ qua nhé!`,
+        tags: ["sách truyện", "truyện tranh","viễn tưởng", "hành động"],
+        featured: false,
+        newRelease: true
+    },
+    254: {
+       id: 254,
+        title: "Boxset 2 Ma pháp thiếu nữ (3 tập)",
+        author: "Magica Quartet, Hanokage",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2024-04-15",
+        category: "comics",
+        subcategory: "manga",
+        price: 108000,
+        originalPrice: 130000,
+        discount: 0,
+        isbn: "5232216840004",
+        pages: 162,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "600g",
+        dimensions: "19 x 13 x 0.5 cm",
+        stock: 102,
+        rating: 4.9,
+        reviewCount: 56,
+        images: ["https://product.hstatic.net/200000343865/product/p-thieu-nu-mot-cau-chuyen-khac_boxset-_-mini-clear-file-------boxset-2_b4ba3fa070df46cea69bda0681a4d8e7_master.jpg"],
+        description: `Tomoe Mami là một Ma Pháp Thiếu Nữ đang hoạt động tại thành phố Mitakihara. Cô mang trên mình sứ mệnh ngày ngày đơn thương độc mã chiến đấu với Ma Nữ, cho đến khi gặp được Sakura Kyoko - một cô bé mới bước vào nghề. Với lòng ngưỡng mộ ngập tràn dành cho Mami, Kyoko đã ngỏ lời... “Xin hãy nhận em làm đệ tử!”...!?
+Ở phần 2, chúng ta sẽ được lội ngược dòng về quá khứ khi Kyoko và Mami còn là đồng đội. Phải chăng số phận của các Ma pháp thiếu nữ là dù thân thiết tới đâu cũng buộc phải chia xa vào một ngày nào đó?
+`,
+        tags: ["sách truyện", "truyện tranh","viễn tưởng", "hành động"],
+        featured: false,
+        newRelease: true
+    },
+    255: {
+       id: 255,
+        title: "Cô bé Dorami",
+        author: "Fujiko F Fujio",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2024-04-15",
+        category: "comics",
+        subcategory: "manga",
+        price: 20000,
+        originalPrice: 23000,
+        discount: 0,
+        isbn: "978-604-2-39176-4",
+        pages: 240,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "600g",
+        dimensions: "19 x 13 x 0.5 cm",
+        stock: 102,
+        rating: 5.0,
+        reviewCount: 56,
+        images: ["https://cdn.hstatic.net/products/200000343865/co-be-dorami_bia_ba95ce7032e3437f8a994ec03d7421f1_master.jpg"],
+        description: `Tuyển tập siêu-đặc-biệt về Dorami - cô em gái đáng yêu và lanh lợi của Mèo Ú Doraemon!
+
+Chứa đựng gần 20 mẩu truyện chọn lọc từ series truyện ngắn, chuyên mục “Bách khoa toàn tư về Dorami” và tổng hợp các tranh màu về nhân vật này!
+
+Sách ra mắt với 2 ấn bản: bìa gập và bìa rời. Bản bìa rời đi kèm bookmark và obi tráng kim, phát hành một lần duy nhất!
+
+---
+DORAMI
+
+Em gái của Doraemon, cũng là mèo máy. Sinh ngày 2 tháng 12 năm 2114. Hiện đang sống ở nhà Sewashi tại thế kỉ 22, thi thoảng lại thay Doraemon trông nom Nobita để anh trai được nghỉ ngơi. Tuy giỏi giang hơn người anh, nhưng khổ nỗi cô nàng lại hơi nghiêm túc và săn sóc người khác thái quá.`,
+        tags: ["sách truyện", "truyện tranh","viễn tưởng"],
+        featured: false,
+        newRelease: true
+    },
+    256: {
+       id: 256,
+        title: "Shin - Cậu bé bút chì - Tập 1",
+        author: "Magica Quartet, Hanokage",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2005-04-15",
+        category: "comics",
+        subcategory: "manga",
+        price: 20500,
+        originalPrice: 25000,
+        discount: 0,
+        isbn: "6252206920001",
+        pages: 162,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "600g",
+        dimensions: "19 x 13 x 0.5 cm",
+        stock: 102,
+        rating: 4.9,
+        reviewCount: 56,
+        images: ["https://product.hstatic.net/200000343865/product/shin---cau-be-but-chi---dac-biet---tap-1_07f4197e804c4c7a87daabbff01b87d5_master.png"],
+        description: `Crayon Shin-chan (tên tiếng Việt: Shin-cậu bé bút chì)của tác giả Yoshito Usui là một trong những bộ manga nổi tiếng của Nhật Bản. Sau khi tập 50 được xuất bản tại Nhật vào năm 2010, tác giả tiếp tục đăng tải những mẩu truyện ngắn đầy thú vị xoay quanh nhân vật chính, cậu bé Shin tinh nghịch đáng yêu, lên nguyệt san Town Manga. Và cuốn Shin đặc biệt này tập hợp 21 mẩu truyện ngắn đã được đăng trong 2 năm đó.
+
+Vậy Shin- Cậu bé bút chì đặc biệt này có gì khác so với bộ thường mà nhà xuất bản đang gửi tới bạn đọc?
+
+Điều đầu tiên, chắc các bạn cũng biết, đó là bộ đặc biệt này sẽ được phát hành đồng thời với bên Nhật. Tức là không phải chờ lâu mới được cầm trên tay cuốn truyện hài hước mà các bạn đang mong chờ, các otaku (fantruyện tranh) bên Nhật được cầm trên tay cuốn đặc biệt lúc nào, các bạn cũng được sở hữu nó ngay lúc đó.
+
+Điều thứ hai, mỗi chương trong tác phẩm này là một câu chuyện riêng biệt, với chiều dài từ 4 đến 5 trang. Vô cùng ngắn gọn mà hài hước, mỗi câu chuyện lại mang đến cho ta những tràng cười, cũng như những bài học thú vị khác nhau.
+
+Tiếp tục đáp ứng nhu cầu của độc giả yêu thích bộ truyện, nhà xuất bản xin gửi tới các bạn tập đầu tiên trong bộ Shin-cậu bé bút chì đặc biệt này. Hi vọng rằng các bạn sẽ ủng hộ cuốn truyện nhiệt tình như với bộ Shin thường kì cũng như phần nào hiểu được ý nghĩa nhân văn và thông điệp mà nhà xuất bản gửi gắm tới các bạn độc giả thân yêu.`,
+        tags: ["sách truyện", "truyện tranh", "hài hước"],
+        featured: false,
+        newRelease: true
+    },
+    257: {
+       id: 257,
+        title: "Dragon Ball - 7 viên ngọc rồng - Tập 1",
+        author: "Akira Toriyama",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2024-04-15",
+        category: "comics",
+        subcategory: "manga",
+        price: 25000,
+        originalPrice: 30000,
+        discount: 0,
+        isbn: "6252200610001",
+        pages: 192,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "150g",
+        dimensions: "19 x 13 x 0.5 cm",
+        stock: 102,
+        rating: 4.9,
+        reviewCount: 56,
+        images: ["https://product.hstatic.net/200000343865/product/dragon-ball_tap-1_047b116d3f0e4637a6f97bef34bb03f0_master.jpg"],
+        description: `Dragon Ball - 7 Viên Ngọc Rồng là câu chuyện kể về cậu bé có đuôi khỉ tên là Goku được tìm thấy bởi ông lão sống một mình trong rừng, ông lão xem đứa bé như là cháu của mình. Một ngày nọ Goku tình cờ gặp cô gái tên là Bulma trên đường đi bắt cá về, Goku và Bulma đã cùng nhau truy tìm bảy viên ngọc rồng. Bảy viên ngọc rồng chứa đựng bí mật có thể triệu hồi một con rồng và ban điều ước cho ai sở hữu chúng.
+
+Trên cuộc hành trình dài đi tìm bảy viên ngọc rồng, họ gặp những người bạn và những đấu sĩ huyền thoại cũng như nhiều ác quỷ. Họ trải qua những khó khăn và học hỏi các chiêu thức võ thuật đặc biệt để tham gia thi đấu trong đại hội võ thuật thế giới được tổ chức hàng năm. Ngoài các sự kiện đại hội võ thuật, Goku và các bạn còn phải đối phó với các thế lực độc ác như Đại vương Pilaf, Quân đoàn khăn đỏ của Độc nhãn tướng quân, Đại ma vương Pocollo và những đứa con của hắn. Rồi họ đi đến Namek, gặp rồng thần của Namek; chạm trán rô-bô sát thủ, Fide và sau đó là Xên bọ hung, Ma bư…
+Tâm điểm của Dragon Ball - 7 Viên Ngọc Rồng nói về triết lý của “tình bạn, sự chiến đấu và chiến thắng vẻ vang”. Như một loạt các sự kiện xảy ra trong bộ truyện, lòng tốt và những hoạt động hướng về sự hòa bình của nhân loại, các nhân vật chính tiến triển theo một quỹ đạo của sự chiến đấu, chiến thắng, chết đi và học được những bài học quan trọng trong cuộc sống để rồi tiếp tục chiến đấu. Cùng với sự tiến triển của bộ truyện, những anh hùng tiếp tục đạt được những tiến bộ võ thuật.`,
+        tags: ["sách truyện", "truyện tranh","viễn tưởng", "hành động"],
+        featured: false,
+        newRelease: true
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 };
 
 // ========== CATEGORIES ========== //
