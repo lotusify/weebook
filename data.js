@@ -7202,8 +7202,8 @@ Tâm điểm của Dragon Ball - 7 Viên Ngọc Rồng nói về triết lý c�
     rating: 5.0,
     reviewCount: 320,
     images: ["https://i.pinimg.com/736x/6d/2e/b1/6d2eb1cfc7384e53c9e3172c9e777d09.jpg"],
-    description: `Đừng bỏ lỡ mô hình siêu đáng yêu của Bangboo Fairy, còn được biết đến với tên gọi Ju! Là một Bangboo đặc biệt và là người đồng hành quen thuộc trong game, mô hình này có thiết kế nhỏ gọn, dễ thương và màu sắc tươi sáng. Đây là sự bổ sung hoàn hảo để làm sinh động thêm bất kỳ góc trưng bày Zenless Zone Zero nào.`,
-    tags: ["mô hình", "chibi", "Zenless Zone Zero", "ZZZ", "Bangboo", "Fairy", "Ju", "sưu tầm", "đáng yêu"],
+    description: `Đừng bỏ lỡ mô hình siêu dễ thương của Ju Fufu! Là một con mèo cute trong Zenless Zone Zero, mô hình này được thiết kế nhỏ gọn, đáng yêu và sử dụng tông màu ấm rực rỡ. Đây chính là điểm nhấn lý tưởng để làm nổi bật bất kỳ góc trưng bày ZZZ nào — đối tác hoàn hảo cho fan của Ju Fufu!`,
+    tags: ["mô hình", "chibi", "Zenless Zone Zero", "ZZZ", "Fairy", "Ju", "sưu tầm", "đáng yêu"],
     featured: true,
     newRelease: true
 }
