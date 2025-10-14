@@ -1132,6 +1132,11 @@ function loadRelatedProductsLegacy(currentBookId) {
 
 function initializeCategoryPage() {
     console.log('Category page initialized');
+    
+    // Load pagination state first
+    const paginationState = loadPaginationState();
+    currentPage = paginationState.page;
+    
     loadCategoryContent();
     initializeFilters();
 }
@@ -1155,6 +1160,24 @@ function loadCategoryContent() {
     
     console.log('URL params:', { category, subcategory, search, type });
     console.log('Current URL:', window.location.href);
+    
+    // Check if category/subcategory changed and clear pagination if needed
+    const savedCategory = sessionStorage.getItem('categoryCurrentCategory');
+    const savedSubcategory = sessionStorage.getItem('categoryCurrentSubcategory');
+    
+    if (category !== savedCategory || subcategory !== savedSubcategory) {
+        // Category changed, clear pagination state
+        clearPaginationState();
+        currentPage = 1;
+    }
+    
+    // Save current category and subcategory to sessionStorage
+    if (category) {
+        sessionStorage.setItem('categoryCurrentCategory', category);
+    }
+    if (subcategory) {
+        sessionStorage.setItem('categoryCurrentSubcategory', subcategory);
+    }
     
     let books = [];
     let pageTitle = 'Tất cả sản phẩm';
@@ -2581,6 +2604,7 @@ function changePage(direction) {
     if (newPage === currentPage) return; // No change needed
     
     currentPage = newPage;
+    savePaginationState(); // Save state when changing page
     updateProductDisplay(currentPage);
 }
 
@@ -2588,6 +2612,39 @@ function changePage(direction) {
 let currentProductsPerPage = 30; // Fixed at 30 items per page
 let currentPage = 1;
 let totalProducts = 0;
+
+// Load pagination state from sessionStorage
+function loadPaginationState() {
+    const savedPage = sessionStorage.getItem('categoryCurrentPage');
+    const savedCategory = sessionStorage.getItem('categoryCurrentCategory');
+    const savedSubcategory = sessionStorage.getItem('categoryCurrentSubcategory');
+    
+    if (savedPage) {
+        currentPage = parseInt(savedPage);
+        console.log('Loaded pagination state - Page:', currentPage);
+    }
+    
+    return {
+        page: savedPage ? parseInt(savedPage) : 1,
+        category: savedCategory,
+        subcategory: savedSubcategory
+    };
+}
+
+// Save pagination state to sessionStorage
+function savePaginationState() {
+    sessionStorage.setItem('categoryCurrentPage', currentPage.toString());
+    console.log('Saved pagination state - Page:', currentPage);
+}
+
+// Clear pagination state (when switching categories)
+function clearPaginationState() {
+    sessionStorage.removeItem('categoryCurrentPage');
+    sessionStorage.removeItem('categoryCurrentCategory');
+    sessionStorage.removeItem('categoryCurrentSubcategory');
+    currentPage = 1;
+    console.log('Cleared pagination state');
+}
 
 function updateProductDisplay(page) {
     const productGrid = document.getElementById('productGrid');
@@ -2633,6 +2690,9 @@ function updateProductDisplay(page) {
     
     // Update pagination controls
     updatePaginationControls();
+    
+    // Save pagination state
+    savePaginationState();
     
     console.log(`Showing products ${startIndex + 1}-${Math.min(endIndex, totalProducts)} of ${totalProducts} (Page ${page}/${totalPages})`);
 }
@@ -2687,6 +2747,7 @@ function goToPage(page) {
     if (page === currentPage) return; // Already on this page
     
     currentPage = page;
+    savePaginationState(); // Save state when changing page
     updateProductDisplay(currentPage);
 }
 
@@ -2694,6 +2755,7 @@ function goToPage(page) {
 function changeItemsPerPage(itemsPerPage) {
     currentProductsPerPage = itemsPerPage;
     currentPage = 1; // Reset to first page
+    savePaginationState(); // Save state when changing items per page
     updateProductDisplay(currentPage);
 }
 
@@ -2702,6 +2764,9 @@ window.filterByPrice = filterByPrice;
 window.setView = setView;
 window.sortProducts = sortProducts;
 window.changePage = changePage;
+window.loadPaginationState = loadPaginationState;
+window.savePaginationState = savePaginationState;
+window.clearPaginationState = clearPaginationState;
 
 // ========== DYNAMIC TABS WIDTH CALCULATION ========== //
 
