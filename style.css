@@ -2373,7 +2373,7 @@ input:focus, select:focus, textarea:focus {
 
 .shop-page {
     padding: 20px 0;
-    background: var(--background-light);
+    background: var(--background-teal);
     min-height: 100vh;
 }
 
@@ -4645,7 +4645,7 @@ footer {
 
 /* ========== CHECKOUT PAGE ========== */
 .checkout-page {
-    background: var(--background-light);
+    background: var(--background-teal);
     min-height: 100vh;
 }
 
@@ -4973,7 +4973,7 @@ footer {
 
 /* ========== ORDER SUCCESS PAGE ========== */
 .order-success-page {
-    background: var(--background-light);
+    background: var(--background-teal);
     min-height: 100vh;
 }
 
@@ -5291,7 +5291,7 @@ footer {
 
 /* ========== PROFILE PAGE ========== */
 .profile-page {
-    background: var(--background-light);
+    background: var(--background-teal);
     min-height: 100vh;
 }
 
@@ -5828,7 +5828,7 @@ input:checked + .toggle-slider:before {
 
 /* ========== REVIEWS PAGE ========== */
 .reviews-page {
-    background: var(--background-light);
+    background: var(--background-teal);
     min-height: 100vh;
 }
 
@@ -6182,7 +6182,7 @@ input:checked + .toggle-slider:before {
 
 /* ========== ORDERS PAGE ========== */
 .orders-page {
-    background: var(--background-light);
+    background: var(--background-teal);
     min-height: 100vh;
 }
 
@@ -6707,7 +6707,7 @@ html {
 
 /* ========== ADMIN DASHBOARD STYLES ========== */
 .admin-body {
-    background-color: var(--background-light);
+    background-color: var(--background-teal);
     margin: 0;
     padding: 0;
 }
@@ -6839,7 +6839,7 @@ html {
     flex: 1;
     margin-left: 250px;
     padding: 2rem;
-    background: var(--background-light);
+    background: var(--background-teal);
 }
 
 .admin-section {
