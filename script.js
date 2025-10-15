@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeCart();
     initializeAuth();
     
+    // Listen for cart updates from other pages
+    initializeCartSyncListener();
+    
     // Wait for data to be loaded and initialize page-specific features
     const waitForData = () => {
         if (window.BookDatabase) {
@@ -613,6 +616,30 @@ function initializeCart() {
     });
 }
 
+function initializeCartSyncListener() {
+    // Listen for cart updates across different pages/tabs
+    window.addEventListener('cartUpdated', function(event) {
+        console.log('Cart update received:', event.detail);
+        
+        // Reload cart from localStorage to sync
+        cart = JSON.parse(localStorage.getItem('bookself-cart')) || [];
+        
+        // Update UI
+        updateCartCount();
+        updateCartDropdown();
+    });
+    
+    // Listen for storage changes (when cart is modified in another tab)
+    window.addEventListener('storage', function(event) {
+        if (event.key === 'bookself-cart') {
+            console.log('Cart updated in another tab');
+            cart = JSON.parse(event.newValue || '[]');
+            updateCartCount();
+            updateCartDropdown();
+        }
+    });
+}
+
 function addToCart(productId, quantity = 1) {
     if (!window.BookDatabase) return;
     
@@ -622,7 +649,9 @@ function addToCart(productId, quantity = 1) {
         return;
     }
     
-    const existingItem = cart.find(item => item.id === productId);
+    // Convert productId to consistent type for comparison
+    const productIdStr = String(productId);
+    const existingItem = cart.find(item => String(item.id) === productIdStr);
     
     if (existingItem) {
         existingItem.quantity += quantity;
@@ -637,6 +666,12 @@ function addToCart(productId, quantity = 1) {
     localStorage.setItem('bookself-cart', JSON.stringify(cart));
     updateCartCount();
     updateCartDropdown();
+    
+    // Trigger custom event to notify all pages about cart change
+    window.dispatchEvent(new CustomEvent('cartUpdated', {
+        detail: { action: 'add', productId: productId, quantity: quantity, cart: cart }
+    }));
+    
     showNotification(`Đã thêm "${book.title}" vào giỏ hàng!`);
 }
 
@@ -752,18 +787,25 @@ function removeFromCart(productId) {
     const book = window.BookDatabase.getBookById(productId);
     console.log('Book found:', book);
     
-    // Convert productId to number for comparison
-    const productIdNum = parseInt(productId);
+    // Convert both to string for safe comparison (since IDs can be string or number)
+    const productIdStr = String(productId);
     
     cart = cart.filter(item => {
-        console.log('Comparing item.id:', item.id, typeof item.id, 'with productId:', productIdNum, typeof productIdNum);
-        return item.id !== productIdNum;
+        const itemIdStr = String(item.id);
+        console.log('Comparing item.id:', itemIdStr, 'with productId:', productIdStr);
+        return itemIdStr !== productIdStr;
     });
     
     console.log('Cart after removal:', cart);
     localStorage.setItem('bookself-cart', JSON.stringify(cart));
     updateCartCount();
     updateCartDropdown();
+    
+    // Trigger custom event to notify all pages about cart change
+    window.dispatchEvent(new CustomEvent('cartUpdated', {
+        detail: { action: 'remove', productId: productId, cart: cart }
+    }));
+    
     if (book) {
         showNotification(`Đã xóa "${book.title}" khỏi giỏ hàng!`, 'info');
     }
@@ -773,12 +815,13 @@ function updateCartQuantity(productId, newQuantity) {
     console.log('updateCartQuantity called with:', productId, typeof productId, 'newQuantity:', newQuantity);
     console.log('Current cart:', cart);
     
-    // Convert productId to number for comparison
-    const productIdNum = parseInt(productId);
+    // Convert both to string for safe comparison
+    const productIdStr = String(productId);
     
     const item = cart.find(item => {
-        console.log('Looking for item.id:', item.id, typeof item.id, 'vs productId:', productIdNum, typeof productIdNum);
-        return item.id === productIdNum;
+        const itemIdStr = String(item.id);
+        console.log('Looking for item.id:', itemIdStr, 'vs productId:', productIdStr);
+        return itemIdStr === productIdStr;
     });
     
     console.log('Item found:', item);
@@ -791,6 +834,11 @@ function updateCartQuantity(productId, newQuantity) {
             localStorage.setItem('bookself-cart', JSON.stringify(cart));
             updateCartCount();
             updateCartDropdown();
+            
+            // Trigger custom event to notify all pages about cart change
+            window.dispatchEvent(new CustomEvent('cartUpdated', {
+                detail: { action: 'update', productId: productId, quantity: newQuantity, cart: cart }
+            }));
         }
     } else {
         console.log('Item not found in cart!');
@@ -2510,6 +2558,8 @@ if (typeof window !== 'undefined') {
     window.removeFromCart = removeFromCart;
     window.updateCartCount = updateCartCount;
     window.updateCartDropdown = updateCartDropdown;
+    window.formatPrice = formatPrice;
+    window.renderStars = renderStars;
 }
 
 // ========== CATEGORY PAGE FUNCTIONS ========== //

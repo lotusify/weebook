@@ -23,6 +23,9 @@ function initializeProfilePage() {
     // Initialize navigation
     initializeProfileNavigation();
     
+    // Initialize cart sync for cross-page updates
+    initializeCartSyncForProfile();
+    
     // Load initial section based on URL hash or default to info
     const hash = window.location.hash.substring(1);
     const initialSection = hash || 'info';
@@ -47,6 +50,40 @@ function initializeProfileNavigation() {
             navItems.forEach(nav => nav.classList.remove('active'));
             item.classList.add('active');
         });
+    });
+}
+
+function initializeCartSyncForProfile() {
+    console.log('Initializing cart sync for profile page');
+    
+    // Listen for cart updates from script.js
+    window.addEventListener('cartUpdated', function(event) {
+        console.log('Profile page received cart update:', event.detail);
+        
+        // Force update cart UI elements
+        setTimeout(() => {
+            if (typeof window.updateCartCount === 'function') {
+                window.updateCartCount();
+            }
+            if (typeof window.updateCartDropdown === 'function') {
+                window.updateCartDropdown();
+            }
+        }, 50);
+    });
+    
+    // Listen for storage changes (cross-tab sync)
+    window.addEventListener('storage', function(event) {
+        if (event.key === 'bookself-cart') {
+            console.log('Profile page detected cart change in another tab');
+            setTimeout(() => {
+                if (typeof window.updateCartCount === 'function') {
+                    window.updateCartCount();
+                }
+                if (typeof window.updateCartDropdown === 'function') {
+                    window.updateCartDropdown();
+                }
+            }, 50);
+        }
     });
 }
 
@@ -185,10 +222,10 @@ function loadUserWishlist() {
     
     if (wishlist.length === 0) {
         wishlistGrid.innerHTML = `
-            <div class="empty-state">
-                <i class="fas fa-heart"></i>
-                <h3>Danh sách yêu thích trống</h3>
-                <p>Bạn chưa thêm sách nào vào danh sách yêu thích.</p>
+            <div class="empty-state" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
+                <i class="fas fa-heart" style="font-size: 4rem; color: var(--text-light); margin-bottom: 1rem;"></i>
+                <h3 style="color: var(--text-color); margin-bottom: 0.5rem;">Danh sách yêu thích trống</h3>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem;">Bạn chưa thêm sách nào vào danh sách yêu thích.</p>
                 <a href="index.html" class="btn btn-primary">Mua sắm ngay</a>
             </div>
         `;
@@ -202,21 +239,25 @@ function loadUserWishlist() {
     
     const wishlistBooks = wishlist.map(id => window.BookDatabase.getBookById(id)).filter(book => book);
     
+    // Layout đặc biệt cho wishlist - bỏ rating, bỏ hover, thêm nút ở dưới
     wishlistGrid.innerHTML = wishlistBooks.map(book => `
-        <div class="wishlist-item">
-            <div class="wishlist-image">
-                <img src="${book.images[0]}" alt="${book.title}" onclick="viewProduct(${book.id})" style="cursor: pointer;">
-                <button class="remove-wishlist-btn" onclick="removeFromWishlist(${book.id})">
-                    <i class="fas fa-times"></i>
+        <div class="product-card wishlist-card" data-product-id="${book.id}">
+            <div class="product-image">
+                <img src="${book.images[0]}" alt="${book.title}" loading="lazy" onclick="viewProduct(${book.id})" style="cursor: pointer;">
+                <button class="remove-from-wishlist-btn" onclick="event.preventDefault(); event.stopPropagation(); removeFromWishlist(${book.id})" title="Xóa khỏi danh sách yêu thích">
+                    <i class="fas fa-trash"></i>
                 </button>
             </div>
-            <div class="wishlist-info">
-                <h4 onclick="viewProduct(${book.id})" style="cursor: pointer;">${book.title}</h4>
-                <p>${book.author}</p>
-                <div class="wishlist-price">${formatPrice(book.price)}</div>
-                <button class="btn btn-primary btn-sm" onclick="addToCartFromWishlist(${book.id})">
+            <div class="product-info">
+                <h3 class="product-title" onclick="viewProduct(${book.id})" style="cursor: pointer;">${book.title}</h3>
+                <p class="product-author">${book.author}</p>
+                <div class="product-price">
+                    <span class="current-price">${formatPrice(book.price)}</span>
+                    ${book.originalPrice && book.originalPrice > book.price ? `<span class="original-price">${formatPrice(book.originalPrice)}</span>` : ''}
+                </div>
+                <button class="btn btn-primary wishlist-add-to-cart-btn" onclick="addToCartFromWishlist(${book.id})">
                     <i class="fas fa-shopping-cart"></i>
-                    Thêm vào giỏ
+                    Thêm vào giỏ hàng
                 </button>
             </div>
         </div>
@@ -389,7 +430,7 @@ function showNotification(message, type = 'success') {
 // ========== WISHLIST FUNCTIONS ========== //
 // Override functions to add reload functionality
 function removeFromWishlist(bookId) {
-    console.log('Removing from wishlist:', bookId, typeof bookId); // Debug log
+    console.log('Removing from wishlist:', bookId, typeof bookId);
     
     // Use localStorage for demo (no user login required)
     let wishlist = JSON.parse(localStorage.getItem('bookself-wishlist')) || [];
@@ -404,56 +445,25 @@ function removeFromWishlist(bookId) {
     
     localStorage.setItem('bookself-wishlist', JSON.stringify(wishlist));
     
-    showNotification('Đã xóa sản phẩm khỏi danh sách yêu thích!', 'success');
-    
-    // Reload wishlist
-    loadUserWishlist();
-}
-
-function addToCart(bookId) {
-    console.log('Adding to cart:', bookId); // Debug log
-    
-    // Get current cart
-    let cart = JSON.parse(localStorage.getItem('bookself-cart')) || [];
-    
-    // Check if item already exists in cart
-    const existingItem = cart.find(item => item.id === bookId);
-    
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.push({
-            id: bookId,
-            quantity: 1
-        });
+    if (typeof window.showNotification === 'function') {
+        window.showNotification('Đã xóa sản phẩm khỏi danh sách yêu thích!', 'success');
     }
     
-    // Save cart
-    localStorage.setItem('bookself-cart', JSON.stringify(cart));
+    // Reload wishlist display
+    loadUserWishlist();
     
-    showNotification('Đã thêm sản phẩm vào giỏ hàng!', 'success');
-    
-    // Update cart count if function exists
-    if (typeof updateCartCount === 'function') {
-        updateCartCount();
+    // Update wishlist buttons in other pages if available
+    if (typeof window.updateWishlistButtons === 'function') {
+        window.updateWishlistButtons();
     }
 }
 
 function addToCartFromWishlist(bookId) {
-    // Use the addToCart function from script.js if available
+    // Đơn giản thôi - dùng hàm có sẵn trong script.js
     if (typeof window.addToCart === 'function') {
         window.addToCart(bookId);
     } else {
-        // Fallback to local function
-        addToCart(bookId);
-    }
-    
-    // Update cart count and dropdown immediately
-    if (typeof window.updateCartCount === 'function') {
-        window.updateCartCount();
-    }
-    if (typeof window.updateCartDropdown === 'function') {
-        window.updateCartDropdown();
+        console.error('addToCart function not available');
     }
 }
 

@@ -7666,6 +7666,65 @@ html {
     background: #c53030;
 }
 
+/* Remove from wishlist button on product card */
+.remove-from-wishlist-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: var(--error-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+.remove-from-wishlist-btn:hover {
+    background: #c53030;
+    transform: scale(1.1);
+}
+
+/* Wishlist specific styling */
+.wishlist-card .product-info {
+    padding-bottom: 1rem;
+}
+
+/* Ẩn overlay cho wishlist cards */
+.wishlist-card .product-overlay {
+    display: none !important;
+}
+
+/* Đơn giản hóa wishlist card - bỏ hover effects */
+.wishlist-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.wishlist-add-to-cart-btn {
+    width: 100%;
+    margin-top: 0.75rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.wishlist-add-to-cart-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.wishlist-add-to-cart-btn i {
+    margin-right: 0.5rem;
+}
+
 .wishlist-info h4 {
     color: var(--text-color);
     margin-bottom: 0.5rem;
