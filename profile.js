@@ -449,11 +449,11 @@ function addToCartFromWishlist(bookId) {
     }
     
     // Update cart count and dropdown immediately
-    if (typeof updateCartCount === 'function') {
-        updateCartCount();
+    if (typeof window.updateCartCount === 'function') {
+        window.updateCartCount();
     }
-    if (typeof updateCartDropdown === 'function') {
-        updateCartDropdown();
+    if (typeof window.updateCartDropdown === 'function') {
+        window.updateCartDropdown();
     }
 }
 

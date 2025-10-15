@@ -99,9 +99,9 @@
                     <div class="main-content-area">
                         <div class="hero-banner">
                             <div class="slides">
-                                <img src="banner1.jpg" alt="Read Station Hero Banner">
-                                <img src="banner2.jpg" alt="Read Station Hero Banner">
-                                <img src="banner3.jpg" alt="Read Station Hero Banner">
+                                <img src="images/banner1.jpg" alt="Read Station Hero Banner">
+                                <img src="images/banner2.jpg" alt="Read Station Hero Banner">
+                                <img src="images/banner3.jpg" alt="Read Station Hero Banner">
                             </div>
                            
                         </div>
@@ -112,7 +112,7 @@
 
         <section class="product-showcase container featured-products">
             <h2>SẢN PHẨM NỔI BẬT</h2>
-            <div class="product-brand-logos">
+            <!-- <div class="product-brand-logos">
                 <img src="https://bizweb.dktcdn.net/thumb/small/100/488/358/themes/952022/assets/vendorimg_1.jpg?1727790635926" alt="Brand Logo">
                 <img src="https://bizweb.dktcdn.net/thumb/small/100/488/358/themes/952022/assets/vendorimg_3.jpg?1727790635926" alt="Brand Logo">
                 <img src="https://bizweb.dktcdn.net/thumb/small/100/488/358/themes/952022/assets/vendorimg_4.jpg?1727790635926" alt="Brand Logo">
@@ -121,7 +121,7 @@
                 <img src="https://bizweb.dktcdn.net/thumb/small/100/488/358/themes/952022/assets/vendorimg_7.jpg?1727790635926" alt="Brand Logo">
                 <img src="https://bizweb.dktcdn.net/thumb/small/100/488/358/themes/952022/assets/vendorimg_8.jpg?1727790635926" alt="Brand Logo">
                 <button class="scroll-btn right"><i class="fa-solid fa-angle-right"></i></button>
-            </div>
+            </div> -->
             <div class="product-grid">
                 <div class="loading-placeholder">
                     <p>Đang tải sản phẩm nổi bật...</p>
@@ -159,27 +159,44 @@
 
     const slideItems = slides.children;
     const total = slideItems.length;
-    let index = 0;
+    let currentIndex = 0;
+    let autoPlayInterval;
 
-    // Clone toàn bộ để tạo hiệu ứng vòng lặp mượt
-    slides.appendChild(slideItems[0].cloneNode(true));
+    // Clone slides for infinite scroll
+    const firstClone = slideItems[0].cloneNode(true);
+    const lastClone = slideItems[total - 1].cloneNode(true);
+    slides.appendChild(firstClone);
+    slides.insertBefore(lastClone, slideItems[0]);
 
-    function moveSlide() {
-      index++;
-      slides.style.transition = "transform 0.8s ease-in-out";
-      slides.style.transform = `translateX(-${index * 100}%)`;
+    // Set initial position
+    currentIndex = 1;
+    updateSlidePosition();
 
-      // Khi đến slide clone, quay lại slide 1 mà không giật
-      if (index === total) {
+    function updateSlidePosition() {
+      slides.style.transition = "transform 0.6s ease-in-out";
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+      currentIndex++;
+      updateSlidePosition();
+      
+      if (currentIndex >= total + 1) {
         setTimeout(() => {
           slides.style.transition = "none";
-          slides.style.transform = "translateX(0)";
-          index = 0;
-        }, 800); // khớp với thời gian transition
+          currentIndex = 1;
+          updateSlidePosition();
+        }, 600);
       }
     }
 
-    setInterval(moveSlide, 4000); // 4 giây mỗi ảnh
+    function startAutoPlay() {
+      if (autoPlayInterval) clearInterval(autoPlayInterval);
+      autoPlayInterval = setInterval(nextSlide, 4000);
+    }
+
+    // Start autoplay
+    startAutoPlay();
   });
 </script>
 </body>
