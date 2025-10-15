@@ -7206,7 +7206,37 @@ Tâm điểm của Dragon Ball - 7 Viên Ngọc Rồng nói về triết lý c�
     tags: ["mô hình", "chibi", "Zenless Zone Zero", "ZZZ", "Fairy", "Ju", "sưu tầm", "đáng yêu"],
     featured: true,
     newRelease: true
-}
+},
+262: {
+    id: 262,
+    title: "Cách nuôi loli hợp pháp",
+    author: "Blue Archive",
+    publisher: "NXB Anime",
+    publishDate: "2024-12-20",
+    category: "comics",
+    subcategory: "manga",
+    price: 50000,
+    originalPrice: 60000,
+    discount: 17,
+    isbn: "9786041234567",
+    pages: 200,
+    language: "Tiếng Việt",
+    format: "Bìa mềm",
+    weight: "200g",
+    dimensions: "18 x 13 x 1 cm",
+    stock: 50,
+    rating: 4.8,
+    reviewCount: 128,
+    images: ["https://i.redd.it/7txtuwk4i7nb1.jpg"],
+    description: `Cuốn sách hướng dẫn chi tiết về cách chăm sóc và nuôi dưỡng những nhân vật loli một cách hợp pháp và an toàn. Sách bao gồm các phương pháp giáo dục, chăm sóc sức khỏe, và phát triển tâm lý cho các nhân vật nhỏ tuổi trong thế giới anime/manga.
+
+Nội dung sách được biên soạn bởi các chuyên gia tâm lý học và giáo dục, đảm bảo tính khoa học và thực tiễn. Đây là tài liệu tham khảo hữu ích cho những ai yêu thích văn hóa anime và muốn hiểu rõ hơn về cách chăm sóc trẻ em trong bối cảnh hư cấu.
+
+Sách phù hợp với độc giả từ 16 tuổi trở lên và được khuyến nghị đọc cùng với sự hướng dẫn của người lớn.`,
+    tags: ["manga", "anime", "giáo dục", "tâm lý học", "loli", "hướng dẫn"],
+    featured: true,
+    newRelease: true
+},
 };
 
 // ========== CATEGORIES ========== //

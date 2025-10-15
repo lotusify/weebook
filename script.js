@@ -536,15 +536,11 @@ function renderProductCard(book) {
 }
 
 function renderRelatedProductCard(book) {
-    const discountBadge = book.discount > 0 ? `<span class="discount-badge">-${book.discount}%</span>` : '';
-    const newBadge = book.newRelease ? `<span class="new-badge">Mới</span>` : '';
-    
+    // Remove badges for related products
     return `
         <div class="product-card" data-product-id="${book.id}">
             <div class="product-image">
                 <img src="${book.images[0]}" alt="${book.title}" loading="lazy">
-                ${discountBadge}
-                ${newBadge}
             </div>
             <div class="product-info">
                 <h3 class="product-title">${book.title}</h3>
@@ -748,10 +744,23 @@ function goToReviews() {
 }
 
 function removeFromCart(productId) {
+    console.log('removeFromCart called with:', productId, typeof productId);
+    console.log('Current cart before removal:', cart);
+    
     if (!window.BookDatabase) return;
     
     const book = window.BookDatabase.getBookById(productId);
-    cart = cart.filter(item => item.id !== productId);
+    console.log('Book found:', book);
+    
+    // Convert productId to number for comparison
+    const productIdNum = parseInt(productId);
+    
+    cart = cart.filter(item => {
+        console.log('Comparing item.id:', item.id, typeof item.id, 'with productId:', productIdNum, typeof productIdNum);
+        return item.id !== productIdNum;
+    });
+    
+    console.log('Cart after removal:', cart);
     localStorage.setItem('bookself-cart', JSON.stringify(cart));
     updateCartCount();
     updateCartDropdown();
@@ -761,7 +770,19 @@ function removeFromCart(productId) {
 }
 
 function updateCartQuantity(productId, newQuantity) {
-    const item = cart.find(item => item.id === productId);
+    console.log('updateCartQuantity called with:', productId, typeof productId, 'newQuantity:', newQuantity);
+    console.log('Current cart:', cart);
+    
+    // Convert productId to number for comparison
+    const productIdNum = parseInt(productId);
+    
+    const item = cart.find(item => {
+        console.log('Looking for item.id:', item.id, typeof item.id, 'vs productId:', productIdNum, typeof productIdNum);
+        return item.id === productIdNum;
+    });
+    
+    console.log('Item found:', item);
+    
     if (item) {
         if (newQuantity <= 0) {
             removeFromCart(productId);
@@ -771,6 +792,8 @@ function updateCartQuantity(productId, newQuantity) {
             updateCartCount();
             updateCartDropdown();
         }
+    } else {
+        console.log('Item not found in cart!');
     }
 }
 
@@ -1911,9 +1934,20 @@ function initializeRelatedProducts() {
 function initializeWishlistButton(productId) {
     const wishlistBtn = document.getElementById('wishlistBtn');
     if (wishlistBtn) {
+        console.log('Initializing wishlist button for product:', productId);
+        
         wishlistBtn.onclick = (e) => {
             e.preventDefault();
+            console.log('Wishlist button clicked for product:', productId);
             toggleWishlist(productId);
+            
+            // Update button state immediately
+            const isInList = isInWishlist(productId);
+            if (isInList) {
+                wishlistBtn.classList.add('active');
+            } else {
+                wishlistBtn.classList.remove('active');
+            }
             
             // Visual feedback
             wishlistBtn.style.transform = 'scale(0.9)';
@@ -1924,6 +1958,18 @@ function initializeWishlistButton(productId) {
         
         // Update button state
         updateWishlistButtons();
+        
+        // Set initial state
+        const isInList = isInWishlist(productId);
+        if (isInList) {
+            wishlistBtn.classList.add('active');
+        } else {
+            wishlistBtn.classList.remove('active');
+        }
+        
+        console.log('Wishlist button initialized, isInList:', isInList);
+    } else {
+        console.log('Wishlist button not found!');
     }
 }
 
@@ -2461,6 +2507,9 @@ if (typeof window !== 'undefined') {
     window.openShopChat = openShopChat;
     window.closeShopChat = closeShopChat;
     window.sendShopMessage = sendShopMessage;
+    window.removeFromCart = removeFromCart;
+    window.updateCartCount = updateCartCount;
+    window.updateCartDropdown = updateCartDropdown;
 }
 
 // ========== CATEGORY PAGE FUNCTIONS ========== //

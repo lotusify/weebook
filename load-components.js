@@ -41,7 +41,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             </span>
                         </div>
                         <div class="user-actions">
-                            <a href="${basePath}auth.html"><i class="fa-regular fa-user"></i> <span>Tài khoản</span></a>
+                            <div class="account-menu">
+                                <a href="#" class="account-link"><i class="fa-regular fa-user"></i> <span>Tài khoản</span> <i class="fa-solid fa-chevron-down"></i></a>
+                                <div class="account-dropdown">
+                                    <a href="${basePath}profile.html"><i class="fa-solid fa-user"></i> <span>Tài khoản của tôi</span></a>
+                                    <a href="${basePath}profile.html#wishlist" onclick="handleWishlistLink()"><i class="fa-solid fa-heart"></i> <span>Sản phẩm yêu thích</span></a>
+                                    <a href="${basePath}auth.html" class="login-link"><i class="fa-solid fa-sign-in-alt"></i> <span>Đăng nhập</span></a>
+                                    <a href="#" class="logout-link" style="display: none;" onclick="logout()"><i class="fa-solid fa-sign-out-alt"></i> <span>Đăng xuất</span></a>
+                                </div>
+                            </div>
                             <a href="#" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i> <span>Giỏ hàng</span> <span class="cart-count">0</span></a>
                             <a href="${basePath}admin.html" class="admin-link" style="display: none;"><i class="fa-solid fa-cog"></i> <span>Admin</span></a>
                         </div>
@@ -142,6 +150,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (typeof setActiveNavigationItem === 'function') {
                 setActiveNavigationItem();
             }
+            // Update account menu after header is loaded
+            updateAccountMenu();
         }, 100);
     }
 
@@ -257,3 +267,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+// Function to update account menu based on login status
+function updateAccountMenu() {
+    // Use the isLoggedIn function from auth.js if available, otherwise check localStorage
+    const isLoggedIn = (typeof window.isLoggedIn === 'function') ? window.isLoggedIn() : (localStorage.getItem('isLoggedIn') === 'true');
+    const loginLink = document.querySelector('.login-link');
+    const logoutLink = document.querySelector('.logout-link');
+    
+    console.log('Login status:', isLoggedIn); // Debug log
+    
+    if (isLoggedIn) {
+        if (loginLink) loginLink.style.display = 'none';
+        if (logoutLink) logoutLink.style.display = 'flex';
+    } else {
+        if (loginLink) loginLink.style.display = 'flex';
+        if (logoutLink) logoutLink.style.display = 'none';
+    }
+}
+
+// Logout function
+function logout() {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('userEmail');
+    localStorage.removeItem('userName');
+    updateAccountMenu();
+    // Redirect to home page
+    window.location.href = 'index.html';
+}
+
+function handleWishlistLink() {
+    // Check if we're already on profile page
+    if (window.location.pathname.includes('profile.html')) {
+        // If already on profile page, just change section
+        if (typeof showProfileSection === 'function') {
+            showProfileSection('wishlist');
+        }
+        return false; // Prevent navigation
+    }
+    // If not on profile page, let normal navigation happen
+    return true;
+}

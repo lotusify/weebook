@@ -23,14 +23,14 @@ function initializeProfilePage() {
     // Initialize navigation
     initializeProfileNavigation();
     
-    // Load initial section
-    showProfileSection('info');
+    // Load initial section based on URL hash or default to info
+    const hash = window.location.hash.substring(1);
+    const initialSection = hash || 'info';
+    showProfileSection(initialSection);
     
     // Initialize forms
     initializeForms();
     
-    // Initialize chat
-    initializeChat();
 }
 
 // ========== PROFILE NAVIGATION ========== //
@@ -55,10 +55,21 @@ function showProfileSection(sectionId) {
     const sections = document.querySelectorAll('.profile-section');
     sections.forEach(section => section.classList.remove('active'));
     
+    // Update active nav item
+    const navItems = document.querySelectorAll('.profile-nav-item');
+    navItems.forEach(nav => nav.classList.remove('active'));
+    const activeNav = document.querySelector(`[data-section="${sectionId}"]`);
+    if (activeNav) {
+        activeNav.classList.add('active');
+    }
+    
     // Show target section
     const targetSection = document.getElementById(sectionId);
     if (targetSection) {
         targetSection.classList.add('active');
+        
+        // Update URL hash
+        window.location.hash = sectionId;
         
         // Load section-specific data
         switch(sectionId) {
@@ -74,10 +85,16 @@ function showProfileSection(sectionId) {
             case 'reviews':
                 loadUserReviews();
                 break;
-            case 'chat':
-                // Chat is already initialized
-                break;
         }
+    }
+}
+
+function showWishlistSection() {
+    // Only navigate if not already on profile page
+    if (!window.location.pathname.includes('profile.html')) {
+        window.location.href = 'profile.html#wishlist';
+    } else {
+        showProfileSection('wishlist');
     }
 }
 
@@ -188,16 +205,16 @@ function loadUserWishlist() {
     wishlistGrid.innerHTML = wishlistBooks.map(book => `
         <div class="wishlist-item">
             <div class="wishlist-image">
-                <img src="${book.images[0]}" alt="${book.title}">
+                <img src="${book.images[0]}" alt="${book.title}" onclick="viewProduct(${book.id})" style="cursor: pointer;">
                 <button class="remove-wishlist-btn" onclick="removeFromWishlist(${book.id})">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             <div class="wishlist-info">
-                <h4>${book.title}</h4>
+                <h4 onclick="viewProduct(${book.id})" style="cursor: pointer;">${book.title}</h4>
                 <p>${book.author}</p>
                 <div class="wishlist-price">${formatPrice(book.price)}</div>
-                <button class="btn btn-primary btn-sm" onclick="addToCart(${book.id})">
+                <button class="btn btn-primary btn-sm" onclick="addToCartFromWishlist(${book.id})">
                     <i class="fas fa-shopping-cart"></i>
                     Thêm vào giỏ
                 </button>
@@ -227,7 +244,7 @@ function initializeForms() {
 }
 
 function toggleEditMode() {
-    const inputs = document.querySelectorAll('#profileForm input, #profileForm textarea');
+    const inputs = document.querySelectorAll('#profileForm input:not([disabled]), #profileForm textarea');
     const formActions = document.querySelector('.form-actions');
     const editBtn = document.querySelector('.section-header .btn');
     
@@ -260,25 +277,29 @@ function handleProfileUpdate(e) {
     const formData = new FormData(e.target);
     const user = getCurrentUser();
     
-    // Update user data
+    // Update user data (don't update email as it's login credential)
     const updatedUser = {
         ...user,
         name: formData.get('name'),
         phone: formData.get('phone'),
         birthday: formData.get('birthday'),
         address: formData.get('address')
+        // Keep original email
     };
     
     // Save updated user data
     if (user.rememberMe) {
-        localStorage.setItem('bookself-user', JSON.stringify(updatedUser));
+        localStorage.setItem('bookshelf-user', JSON.stringify(updatedUser));
     } else {
-        sessionStorage.setItem('bookself-user', JSON.stringify(updatedUser));
+        sessionStorage.setItem('bookshelf-user', JSON.stringify(updatedUser));
     }
+    
+    // Update profile info in sidebar without reloading form
+    document.getElementById('profileName').textContent = updatedUser.name;
+    // Don't update email in sidebar as it shouldn't change
     
     showNotification('Cập nhật thông tin thành công!', 'success');
     toggleEditMode();
-    loadUserProfile();
 }
 
 function handlePasswordChange(e) {
@@ -305,92 +326,6 @@ function handlePasswordChange(e) {
     e.target.reset();
 }
 
-// ========== CHAT FUNCTIONALITY ========== //
-function initializeChat() {
-    const chatInput = document.getElementById('chatInput');
-    const sendBtn = document.getElementById('sendMessageBtn');
-    
-    if (chatInput && sendBtn) {
-        sendBtn.addEventListener('click', sendMessage);
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        });
-    }
-}
-
-function sendMessage() {
-    const chatInput = document.getElementById('chatInput');
-    const chatMessages = document.getElementById('chatMessages');
-    const message = chatInput.value.trim();
-    
-    if (!message) return;
-    
-    // Add user message
-    addChatMessage(message, 'user');
-    chatInput.value = '';
-    
-    // Simulate bot response
-    setTimeout(() => {
-        const botResponse = generateBotResponse(message);
-        addChatMessage(botResponse, 'bot');
-    }, 1000);
-}
-
-function addChatMessage(message, sender) {
-    const chatMessages = document.getElementById('chatMessages');
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `chat-message ${sender}-message`;
-    
-    const avatar = sender === 'user' ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
-    const time = new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' });
-    
-    messageDiv.innerHTML = `
-        <div class="message-avatar">
-            ${avatar}
-        </div>
-        <div class="message-content">
-            <p>${message}</p>
-            <span class="message-time">${time}</span>
-        </div>
-    `;
-    
-    chatMessages.appendChild(messageDiv);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-function generateBotResponse(userMessage) {
-    const responses = [
-        "Cảm ơn bạn đã liên hệ! Tôi sẽ hỗ trợ bạn ngay.",
-        "Bạn có thể tìm sách theo danh mục hoặc sử dụng công cụ tìm kiếm.",
-        "Để kiểm tra trạng thái đơn hàng, vui lòng cung cấp mã đơn hàng.",
-        "Chúng tôi có chính sách đổi trả trong vòng 7 ngày.",
-        "Bạn có thể thanh toán bằng thẻ tín dụng, chuyển khoản hoặc COD.",
-        "Thời gian giao hàng thường là 2-3 ngày làm việc.",
-        "Nếu bạn cần hỗ trợ thêm, vui lòng gọi hotline: 0866836004"
-    ];
-    
-    // Simple keyword matching
-    if (userMessage.toLowerCase().includes('đơn hàng') || userMessage.toLowerCase().includes('order')) {
-        return "Để kiểm tra đơn hàng, vui lòng cung cấp mã đơn hàng hoặc email đã đăng ký.";
-    }
-    
-    if (userMessage.toLowerCase().includes('sách') || userMessage.toLowerCase().includes('book')) {
-        return "Bạn có thể tìm sách theo danh mục hoặc sử dụng công cụ tìm kiếm ở trang chủ.";
-    }
-    
-    if (userMessage.toLowerCase().includes('giá') || userMessage.toLowerCase().includes('price')) {
-        return "Giá sách được hiển thị trên trang sản phẩm. Chúng tôi thường có các chương trình khuyến mãi.";
-    }
-    
-    if (userMessage.toLowerCase().includes('giao hàng') || userMessage.toLowerCase().includes('delivery')) {
-        return "Thời gian giao hàng thường là 2-3 ngày làm việc. Phí giao hàng tùy thuộc vào địa điểm.";
-    }
-    
-    // Default response
-    return responses[Math.floor(Math.random() * responses.length)];
-}
 
 // ========== ORDER ACTIONS ========== //
 function viewOrderDetails(orderId) {
@@ -451,13 +386,92 @@ function showNotification(message, type = 'success') {
     });
 }
 
+// ========== WISHLIST FUNCTIONS ========== //
+// Override functions to add reload functionality
+function removeFromWishlist(bookId) {
+    console.log('Removing from wishlist:', bookId, typeof bookId); // Debug log
+    
+    // Use localStorage for demo (no user login required)
+    let wishlist = JSON.parse(localStorage.getItem('bookself-wishlist')) || [];
+    console.log('Current wishlist before removal:', wishlist);
+    
+    // Convert bookId to number for comparison
+    const bookIdNum = parseInt(bookId);
+    
+    // Remove from wishlist
+    wishlist = wishlist.filter(id => parseInt(id) !== bookIdNum);
+    console.log('Wishlist after removal:', wishlist);
+    
+    localStorage.setItem('bookself-wishlist', JSON.stringify(wishlist));
+    
+    showNotification('Đã xóa sản phẩm khỏi danh sách yêu thích!', 'success');
+    
+    // Reload wishlist
+    loadUserWishlist();
+}
+
+function addToCart(bookId) {
+    console.log('Adding to cart:', bookId); // Debug log
+    
+    // Get current cart
+    let cart = JSON.parse(localStorage.getItem('bookself-cart')) || [];
+    
+    // Check if item already exists in cart
+    const existingItem = cart.find(item => item.id === bookId);
+    
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            id: bookId,
+            quantity: 1
+        });
+    }
+    
+    // Save cart
+    localStorage.setItem('bookself-cart', JSON.stringify(cart));
+    
+    showNotification('Đã thêm sản phẩm vào giỏ hàng!', 'success');
+    
+    // Update cart count if function exists
+    if (typeof updateCartCount === 'function') {
+        updateCartCount();
+    }
+}
+
+function addToCartFromWishlist(bookId) {
+    // Use the addToCart function from script.js if available
+    if (typeof window.addToCart === 'function') {
+        window.addToCart(bookId);
+    } else {
+        // Fallback to local function
+        addToCart(bookId);
+    }
+    
+    // Update cart count and dropdown immediately
+    if (typeof updateCartCount === 'function') {
+        updateCartCount();
+    }
+    if (typeof updateCartDropdown === 'function') {
+        updateCartDropdown();
+    }
+}
+
+function viewProduct(bookId) {
+    // Navigate to product page
+    window.location.href = `product.html?id=${bookId}`;
+}
+
 // Export functions for global access
 if (typeof window !== 'undefined') {
     window.showProfileSection = showProfileSection;
+    window.showWishlistSection = showWishlistSection;
     window.toggleEditMode = toggleEditMode;
     window.cancelEdit = cancelEdit;
     window.viewOrderDetails = viewOrderDetails;
     window.rateOrder = rateOrder;
     window.removeFromWishlist = removeFromWishlist;
     window.addToCart = addToCart;
+    window.addToCartFromWishlist = addToCartFromWishlist;
+    window.viewProduct = viewProduct;
 }
