@@ -157,42 +157,46 @@
     const slides = document.querySelector(".hero-banner .slides");
     if (!slides) return;
 
-    const slideItems = slides.children;
+    const slideItems = Array.from(slides.children);
     const total = slideItems.length;
     let currentIndex = 0;
     let autoPlayInterval;
 
-    // Clone slides for infinite scroll
-    const firstClone = slideItems[0].cloneNode(true);
-    const lastClone = slideItems[total - 1].cloneNode(true);
-    slides.appendChild(firstClone);
-    slides.insertBefore(lastClone, slideItems[0]);
+    // Clone all slides để tạo infinite scroll thật sự
+    slideItems.forEach(slide => {
+      const clone = slide.cloneNode(true);
+      slides.appendChild(clone);
+    });
 
     // Set initial position
-    currentIndex = 1;
     updateSlidePosition();
 
     function updateSlidePosition() {
-      slides.style.transition = "transform 0.6s ease-in-out";
       slides.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
     function nextSlide() {
       currentIndex++;
+      slides.style.transition = "transform 1.2s ease-in-out";
       updateSlidePosition();
       
-      if (currentIndex >= total + 1) {
+      // Khi đến slide cuối của bộ clone, reset về đầu không có animation
+      if (currentIndex >= total) {
         setTimeout(() => {
           slides.style.transition = "none";
-          currentIndex = 1;
+          currentIndex = 0;
           updateSlidePosition();
-        }, 600);
+          // Restore transition cho lần chuyển tiếp theo
+          setTimeout(() => {
+            slides.style.transition = "transform 1.2s ease-in-out";
+          }, 50);
+        }, 1200);
       }
     }
 
     function startAutoPlay() {
       if (autoPlayInterval) clearInterval(autoPlayInterval);
-      autoPlayInterval = setInterval(nextSlide, 4000);
+      autoPlayInterval = setInterval(nextSlide, 5000);
     }
 
     // Start autoplay
