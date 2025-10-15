@@ -19,7 +19,7 @@
     --background-primary: #ffffff;       /* Trắng chính */
     --background-light: #f7fafc;        /* Trắng kem nhẹ */
     --background-gray: #edf2f7;         /* Xám rất nhạt */
-    --background-teal: #e6fffa;         /* Teal rất nhạt cho sections */
+    --background-teal: #eefffc;         /* Teal rất nhạt cho sections */
     
     /* Border & Divider Colors */
     --border-color: #e2e8f0;            /* Border nhẹ nhàng */
@@ -62,7 +62,7 @@
 
 body {
     font-family: var(--font-primary);
-    background: var(--gradient-light);
+    background: var(--background-teal);
     color: var(--text-color);
     font-size: 14px;
     line-height: 1.6;
@@ -2648,7 +2648,7 @@ input:focus, select:focus, textarea:focus {
 /* ========== PRODUCT DETAIL PAGE ========== */
 .product-detail-page {
     padding: 10px 0;
-    background: var(--background-light);
+    background: var(--background-teal);
     min-height: 100vh;
 }
 
@@ -2658,7 +2658,7 @@ input:focus, select:focus, textarea:focus {
     gap: 30px;
     margin-bottom: 30px;
     align-items: start;
-    background: var(--background-light);
+    background: var(--background-teal);
     padding: 30px;
     border-radius: 12px;
     min-height: 400px;
