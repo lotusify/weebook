@@ -96,16 +96,30 @@
                             </ul>
                         </div>
                     </aside>
-                    <div class="main-content-area">
-                        <div class="hero-banner">
-                            <div class="slides">
-                                <img src="images/banner1.jpg" alt="Read Station Hero Banner">
-                                <img src="images/banner2.jpg" alt="Read Station Hero Banner">
-                                <img src="images/banner3.jpg" alt="Read Station Hero Banner">
-                            </div>
-                           
-                        </div>
-                    </div>
+<div class="hero-section">
+  <!-- Cột trái: Banner chính -->
+  <div class="hero-banner">
+    <div class="slides">
+      <img src="images/banner1.jpg" alt="Banner 1">
+      <img src="images/banner2.jpg" alt="Banner 2">
+      <img src="images/banner3.jpg" alt="Banner 3">
+    </div>
+    <button class="prev">‹</button>
+    <button class="next">›</button>
+    <div class="dots">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Cột phải: CHỈ 1 VOUCHER bằng chiều cao banner -->
+  <div class="hero-side">
+    <div class="voucher-container">
+      <img src="kien2.jpg" alt="Voucher">
+    </div>
+  </div>
+</div>
                 </div>
             </div>
         </section>
@@ -153,55 +167,85 @@
     <script src="script.js"></script>
     <script src="auth.js"></script>
    <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelector(".hero-banner .slides");
-    if (!slides) return;
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelector(".slides");
+  const images = document.querySelectorAll(".slides img");
+  const dotsContainer = document.querySelector(".dots");
+  const total = images.length;
+  let index = 0;
+  let interval;
 
-    const slideItems = Array.from(slides.children);
-    const total = slideItems.length;
-    let currentIndex = 0;
-    let autoPlayInterval;
+  slides.appendChild(images[0].cloneNode(true));
 
-    // Clone all slides để tạo infinite scroll thật sự
-    slideItems.forEach(slide => {
-      const clone = slide.cloneNode(true);
-      slides.appendChild(clone);
-    });
+  // Tạo chấm tròn
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement("span");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  }
 
-    // Set initial position
-    updateSlidePosition();
+  const dots = dotsContainer.querySelectorAll("span");
 
-    function updateSlidePosition() {
-      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+  function updateSlide() {
+    slides.style.transition = "transform 0.8s ease-in-out";
+    slides.style.transform = `translateX(-${index * 100}%)`;
+    updateDots();
+  }
+
+  function updateDots() {
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index % total].classList.add("active");
+  }
+
+  function nextSlide() {
+    index++;
+    slides.style.transition = "transform 0.8s ease-in-out";
+    slides.style.transform = `translateX(-${index * 100}%)`;
+
+    if (index === total) {
+      setTimeout(() => {
+        slides.style.transition = "none";
+        slides.style.transform = "translateX(0)";
+        index = 0;
+        updateDots();
+      }, 800);
+    } else {
+      updateDots();
     }
+  }
 
-    function nextSlide() {
-      currentIndex++;
-      slides.style.transition = "transform 1.2s ease-in-out";
-      updateSlidePosition();
-      
-      // Khi đến slide cuối của bộ clone, reset về đầu không có animation
-      if (currentIndex >= total) {
-        setTimeout(() => {
-          slides.style.transition = "none";
-          currentIndex = 0;
-          updateSlidePosition();
-          // Restore transition cho lần chuyển tiếp theo
-          setTimeout(() => {
-            slides.style.transition = "transform 1.2s ease-in-out";
-          }, 50);
-        }, 1200);
-      }
+  function prevSlide() {
+    index--;
+    if (index < 0) {
+      slides.style.transition = "none";
+      slides.style.transform = `translateX(-${total * 100}%)`;
+      index = total - 1;
+      setTimeout(() => {
+        slides.style.transition = "transform 0.8s ease-in-out";
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        updateDots();
+      }, 20);
+    } else {
+      updateSlide();
     }
+  }
 
-    function startAutoPlay() {
-      if (autoPlayInterval) clearInterval(autoPlayInterval);
-      autoPlayInterval = setInterval(nextSlide, 5000);
-    }
+  function startAutoSlide() {
+    interval = setInterval(nextSlide, 4000);
+  }
 
-    // Start autoplay
-    startAutoPlay();
-  });
+  function resetAutoSlide() {
+    clearInterval(interval);
+    startAutoSlide();
+  }
+
+  document.querySelector(".next").addEventListener("click", () => { nextSlide(); resetAutoSlide(); });
+  document.querySelector(".prev").addEventListener("click", () => { prevSlide(); resetAutoSlide(); });
+
+  startAutoSlide();
+});
 </script>
+
 </body>
 </html>

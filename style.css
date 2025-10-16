@@ -1698,25 +1698,166 @@ input:focus, select:focus, textarea:focus {
     flex: 1;
 }
 
-.hero-banner {
+.hero-section{
+  display: flex;
+  gap: 18px;
+  align-items: stretch;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+/* Banner chính chiếm 65% */
+.hero-banner{
+  position: relative;
+  width: 65%;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  min-height: 280px;
+}
+
+/* Cột bên phải chiếm 35% */
+.hero-side{
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* QUAN TRỌNG: Container giới hạn chiều cao */
+.voucher-container{
+  width: 100%;
+  height: 100%;
+  max-height: 100%; /* KHÔNG vượt quá chiều cao banner */
+  border-radius: 10px;
   overflow: hidden;
   position: relative;
 }
 
-.slides {
+/* Ảnh bị giới hạn trong container */
+.voucher-container img{
+  width: 100%;
+  height: 100%;
+  max-height: 100%; /* KHÔNG vượt quá container */
+  object-fit: cover; /* Crop ảnh để vừa container */
+  display: block;
+}
+
+/* Đảm bảo ảnh không bao giờ vượt quá banner */
+.hero-side, .voucher-container, .voucher-container img {
+  max-height: inherit; /* Kế thừa giới hạn chiều cao */
+}
+
+/* Slides và các phần khác giữ nguyên */
+.slides{
+  width: 100%;
+  height: 100%;
   display: flex;
-  width: 100%;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.8s ease-in-out;
 }
 
-.slides img {
+.slides img{
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   flex-shrink: 0;
-  border-radius: 12px;
-  user-select: none;
+  display: block;
 }
 
+.prev, .next{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  background-color: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  pointer-events: auto;
+}
+
+.prev { left: 12px; }
+.next { right: 12px; }
+
+.prev:hover, .next:hover{
+  background-color: rgba(0,0,0,0.75);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.hero-banner button:active{
+  transform: translateY(-50%);
+}
+
+/* Dots */
+.dots{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12px;
+  display: flex;
+  gap: 8px;
+  z-index: 30;
+  pointer-events: auto;
+}
+
+.dots span:nth-child(n+4) {
+  display: none !important;
+}
+
+.dots span{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(80,80,80,0.5);
+  transition: transform .18s, background .18s, opacity .18s;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.dots span.active{
+  background: #444;
+  transform: scale(1.25);
+}
+
+/* Responsive */
+@media (max-width: 880px){
+  .hero-section{
+    flex-direction: column;
+    gap: 12px;
+    padding: 8px;
+  }
+  .hero-banner{ 
+    width: 100%; 
+    min-height: 220px; 
+  }
+  .hero-side{ 
+    width: 100%; 
+    height: 150px; /* Chiều cao cố định trên mobile */
+  }
+  .voucher-container{
+    height: 100%;
+  }
+  .prev, .next{ 
+    width: 36px; 
+    height: 36px; 
+  }
+  .dots{ 
+    bottom: 8px; 
+  }
+}
 /* Sidebar */
 .sidebar {
     width: 300px;
