@@ -104,19 +104,14 @@
       <img src="images/banner2.jpg" alt="Banner 2">
       <img src="images/banner3.jpg" alt="Banner 3">
     </div>
-    <button class="prev">‹</button>
-    <button class="next">›</button>
-    <div class="dots">
-      <span class="active"></span>
-      <span></span>
-      <span></span>
-    </div>
+    <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
   </div>
 
   <!-- Cột phải: CHỈ 1 VOUCHER bằng chiều cao banner -->
   <div class="hero-side">
     <div class="voucher-container">
-      <img src="kien2.jpg" alt="Voucher">
+      <img src="images/small-bannerv2.jpg" alt="Voucher">
     </div>
   </div>
 </div>
@@ -170,61 +165,42 @@
 document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelector(".slides");
   const images = document.querySelectorAll(".slides img");
-  const dotsContainer = document.querySelector(".dots");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
   const total = images.length;
-  let index = 0;
+  let currentIndex = 0;
   let interval;
 
+  // Clone first image to end for infinite loop
   slides.appendChild(images[0].cloneNode(true));
 
-  // Tạo chấm tròn
-  for (let i = 0; i < total; i++) {
-    const dot = document.createElement("span");
-    if (i === 0) dot.classList.add("active");
-    dot.addEventListener("click", () => goToSlide(i));
-    dotsContainer.appendChild(dot);
-  }
-
-  const dots = dotsContainer.querySelectorAll("span");
-
   function updateSlide() {
-    slides.style.transition = "transform 0.8s ease-in-out";
-    slides.style.transform = `translateX(-${index * 100}%)`;
-    updateDots();
-  }
-
-  function updateDots() {
-    dots.forEach(dot => dot.classList.remove("active"));
-    dots[index % total].classList.add("active");
+    slides.style.transition = "transform 0.5s ease-in-out";
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
 
   function nextSlide() {
-    index++;
-    slides.style.transition = "transform 0.8s ease-in-out";
-    slides.style.transform = `translateX(-${index * 100}%)`;
-
-    if (index === total) {
+    currentIndex++;
+    updateSlide();
+    
+    if (currentIndex === total) {
       setTimeout(() => {
         slides.style.transition = "none";
         slides.style.transform = "translateX(0)";
-        index = 0;
-        updateDots();
-      }, 800);
-    } else {
-      updateDots();
+        currentIndex = 0;
+      }, 500);
     }
   }
 
   function prevSlide() {
-    index--;
-    if (index < 0) {
+    currentIndex--;
+    if (currentIndex < 0) {
       slides.style.transition = "none";
       slides.style.transform = `translateX(-${total * 100}%)`;
-      index = total - 1;
+      currentIndex = total - 1;
       setTimeout(() => {
-        slides.style.transition = "transform 0.8s ease-in-out";
-        slides.style.transform = `translateX(-${index * 100}%)`;
-        updateDots();
+        slides.style.transition = "transform 0.5s ease-in-out";
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
       }, 20);
     } else {
       updateSlide();
@@ -235,14 +211,31 @@ document.addEventListener("DOMContentLoaded", () => {
     interval = setInterval(nextSlide, 4000);
   }
 
-  function resetAutoSlide() {
+  function stopAutoSlide() {
     clearInterval(interval);
+  }
+
+  function resetAutoSlide() {
+    stopAutoSlide();
     startAutoSlide();
   }
 
-  document.querySelector(".next").addEventListener("click", () => { nextSlide(); resetAutoSlide(); });
-  document.querySelector(".prev").addEventListener("click", () => { prevSlide(); resetAutoSlide(); });
+  // Event listeners
+  nextBtn.addEventListener("click", () => {
+    nextSlide();
+    resetAutoSlide();
+  });
 
+  prevBtn.addEventListener("click", () => {
+    prevSlide();
+    resetAutoSlide();
+  });
+
+  // Pause on hover
+  slides.addEventListener("mouseenter", stopAutoSlide);
+  slides.addEventListener("mouseleave", startAutoSlide);
+
+  // Start auto slide
   startAutoSlide();
 });
 </script>

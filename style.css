@@ -1771,10 +1771,9 @@ input:focus, select:focus, textarea:focus {
 
 .prev, .next{
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: calc(50% - 22px);
   z-index: 30;
-  background-color: rgba(0,0,0,0.45);
+  background-color: rgba(0, 0, 0, 0.192);
   color: #fff;
   border: none;
   width: 44px;
@@ -1784,52 +1783,23 @@ input:focus, select:focus, textarea:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.175);
   pointer-events: auto;
+  will-change: background-color;
+  font-size: 16px;
 }
 
 .prev { left: 12px; }
 .next { right: 12px; }
 
 .prev:hover, .next:hover{
-  background-color: rgba(0,0,0,0.75);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  background-color: rgba(0,0,0,0.1.75);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .hero-banner button:active{
-  transform: translateY(-50%);
-}
-
-/* Dots */
-.dots{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 12px;
-  display: flex;
-  gap: 8px;
-  z-index: 30;
-  pointer-events: auto;
-}
-
-.dots span:nth-child(n+4) {
-  display: none !important;
-}
-
-.dots span{
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(80,80,80,0.5);
-  transition: transform .18s, background .18s, opacity .18s;
-  cursor: pointer;
-  opacity: 0.9;
-}
-
-.dots span.active{
-  background: #444;
-  transform: scale(1.25);
+  background-color: rgba(0,0,0,0.9);
 }
 
 /* Responsive */
@@ -1853,9 +1823,6 @@ input:focus, select:focus, textarea:focus {
   .prev, .next{ 
     width: 36px; 
     height: 36px; 
-  }
-  .dots{ 
-    bottom: 8px; 
   }
 }
 /* Sidebar */
