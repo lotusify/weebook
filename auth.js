@@ -78,38 +78,41 @@ function handleLogin(e) {
         return;
     }
 
-    // --- 1️⃣ Kiểm tra tài khoản mặc định ---
+    // --- Kiểm tra tài khoản mặc định ---
     const defaultAccount = {
         email: "admin@bookshelf.com",
-        password: "123456",
+        password: "12345678",
         name: "Administrator",
         role: "admin"
     };
 
-    if (email === defaultAccount.email && password === defaultAccount.password) {
-        const adminSession = {
-            id: "admin",
-            name: defaultAccount.name,
-            email: defaultAccount.email,
-            role: defaultAccount.role,
-            loginTime: new Date().toISOString(),
-            rememberMe: rememberMe
-        };
+    if (email.toLowerCase() === defaultAccount.email.toLowerCase() &&
+    password === defaultAccount.password) {
+    const adminSession = {
+        id: "admin",
+        name: defaultAccount.name,
+        email: defaultAccount.email,
+        role: defaultAccount.role,
+        loginTime: new Date().toISOString(),
+        rememberMe: rememberMe
+    };
 
-        if (rememberMe) {
-            localStorage.setItem('bookshelf-user', JSON.stringify(adminSession));
-        } else {
-            sessionStorage.setItem('bookshelf-user', JSON.stringify(adminSession));
-        }
-
-        showNotification('Đăng nhập thành công (Administrator)!', 'success');
-        setTimeout(() => {
-            window.location.href = 'index.html'; // hoặc 'admin.html' nếu có
-        }, 1000);
-        return;
+    if (rememberMe) {
+        localStorage.setItem('bookshelf-user', JSON.stringify(adminSession));
+    } else {
+        sessionStorage.setItem('bookshelf-user', JSON.stringify(adminSession));
     }
 
-    // --- 2️⃣ Kiểm tra tài khoản người dùng đã đăng ký ---
+    showNotification('Đăng nhập thành công (Administrator)!', 'success');
+
+    // Điều hướng sang giao diện Admin
+    setTimeout(() => {
+        window.location.href = 'admin.html';
+    }, 1000);
+
+    return;
+}
+    // --- Kiểm tra tài khoản người dùng đã đăng ký ---
     const users = JSON.parse(localStorage.getItem('bookshelf-users')) || [];
     const user = users.find(u => u.email === email && u.password === password);
 
@@ -118,7 +121,7 @@ function handleLogin(e) {
         return;
     }
 
-    // --- 3️⃣ Lưu session khi đăng nhập thành công ---
+    // --- Lưu session khi đăng nhập thành công ---
     const userSession = {
         id: user.id,
         name: user.name,
@@ -173,7 +176,7 @@ function handleRegister(e) {
         return;
     }
 
-    // ✅ Lấy danh sách người dùng hiện tại
+    //  Lấy danh sách người dùng hiện tại
     const users = getUsers();
 
     // Kiểm tra email trùng

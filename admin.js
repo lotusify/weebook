@@ -915,6 +915,11 @@ window.addEventListener('click', (e) => {
     }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    initializeAdminNavigation();
+    showSection("dashboard"); // Hiển thị dashboard mặc định khi load trang
+});
+
 // Export functions for global access
 if (typeof window !== 'undefined') {
     window.showSection = showSection;
@@ -934,3 +939,4 @@ if (typeof window !== 'undefined') {
     window.deletePromotion = deletePromotion;
     window.closeModal = closeModal;
 }
+
