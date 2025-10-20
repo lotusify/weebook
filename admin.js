@@ -287,15 +287,112 @@ function addBook() {
 }
 
 function editBook(bookId) {
-    showNotification('Chức năng chỉnh sửa sẽ được phát triển trong phiên bản tiếp theo!', 'info');
+    if (!window.BookDatabase) {
+        showNotification('Không thể tải dữ liệu sách!', 'error');
+        return;
+    }
+    
+    const book = window.BookDatabase.getBookById(bookId);
+    if (!book) {
+        showNotification('Không tìm thấy sách!', 'error');
+        return;
+    }
+    
+    // Fill form with existing data
+    document.getElementById('bookTitle').value = book.title;
+    document.getElementById('bookAuthor').value = book.author;
+    document.getElementById('bookPublisher').value = book.publisher || '';
+    document.getElementById('bookCategory').value = book.category;
+    document.getElementById('bookSubcategory').value = book.subcategory || '';
+    document.getElementById('bookPrice').value = book.price;
+    document.getElementById('bookOriginalPrice').value = book.originalPrice || book.price;
+    document.getElementById('bookStock').value = book.stock;
+    document.getElementById('bookDescription').value = book.description || '';
+    document.getElementById('bookImages').value = book.images.join(', ');
+    
+    // Change modal title and button
+    document.querySelector('#addBookModal .modal-header h2').textContent = 'Chỉnh sửa sách';
+    document.querySelector('#addBookModal .modal-footer .btn-primary').textContent = 'Cập nhật sách';
+    document.querySelector('#addBookModal .modal-footer .btn-primary').onclick = () => updateBook(bookId);
+    
+    // Show modal
+    document.getElementById('addBookModal').style.display = 'block';
+}
+
+function updateBook(bookId) {
+    const form = document.getElementById('addBookForm');
+    const formData = new FormData(form);
+    
+    if (!window.BookDatabase) {
+        showNotification('Không thể tải dữ liệu sách!', 'error');
+        return;
+    }
+    
+    const book = window.BookDatabase.getBookById(bookId);
+    if (!book) {
+        showNotification('Không tìm thấy sách!', 'error');
+        return;
+    }
+    
+    // Update book data
+    book.title = formData.get('title');
+    book.author = formData.get('author');
+    book.publisher = formData.get('publisher');
+    book.category = formData.get('category');
+    book.subcategory = formData.get('subcategory');
+    book.price = parseInt(formData.get('price'));
+    book.originalPrice = parseInt(formData.get('originalPrice')) || parseInt(formData.get('price'));
+    book.stock = parseInt(formData.get('stock'));
+    book.description = formData.get('description');
+    book.images = formData.get('images').split(',').map(img => img.trim()).filter(img => img);
+    
+    if (book.images.length === 0) {
+        book.images = ['images/book-tlch-1.jpg']; // Default image
+    }
+    
+    // Update in localStorage
+    const existingBooks = JSON.parse(localStorage.getItem('bookself-admin-books')) || [];
+    const bookIndex = existingBooks.findIndex(b => b.id === bookId);
+    if (bookIndex !== -1) {
+        existingBooks[bookIndex] = book;
+        localStorage.setItem('bookself-admin-books', JSON.stringify(existingBooks));
+    }
+    
+    showNotification('Cập nhật sách thành công!', 'success');
+    closeModal('addBookModal');
+    form.reset();
+    
+    // Reset modal title and button
+    document.querySelector('#addBookModal .modal-header h2').textContent = 'Thêm sách mới';
+    document.querySelector('#addBookModal .modal-footer .btn-primary').textContent = 'Thêm sách';
+    document.querySelector('#addBookModal .modal-footer .btn-primary').onclick = addBook;
+    
+    loadBooksData();
 }
 
 function deleteBook(bookId) {
-    if (confirm('Bạn có chắc chắn muốn xóa sách này?')) {
-        // In a real app, this would be sent to server
-        showNotification('Xóa sách thành công!', 'success');
-        loadBooksData();
+    if (!confirm('Bạn có chắc chắn muốn xóa sách này? Hành động này không thể hoàn tác!')) {
+        return;
     }
+    
+    if (!window.BookDatabase) {
+        showNotification('Không thể tải dữ liệu sách!', 'error');
+        return;
+    }
+    
+    const book = window.BookDatabase.getBookById(bookId);
+    if (!book) {
+        showNotification('Không tìm thấy sách!', 'error');
+        return;
+    }
+    
+    // Remove from localStorage
+    const existingBooks = JSON.parse(localStorage.getItem('bookself-admin-books')) || [];
+    const updatedBooks = existingBooks.filter(b => b.id !== bookId);
+    localStorage.setItem('bookself-admin-books', JSON.stringify(updatedBooks));
+    
+    showNotification(`Đã xóa sách "${book.title}" thành công!`, 'success');
+    loadBooksData();
 }
 
 // ========== ORDERS MANAGEMENT ========== //
@@ -381,11 +478,89 @@ function filterOrders() {
 }
 
 function updateOrderStatus(orderId) {
-    const newStatus = prompt('Nhập trạng thái mới (pending, processing, shipped, delivered, cancelled):');
-    if (newStatus && ['pending', 'processing', 'shipped', 'delivered', 'cancelled'].includes(newStatus)) {
-        // Update order status (in a real app, this would be sent to server)
-        showNotification('Cập nhật trạng thái đơn hàng thành công!', 'success');
+    const orders = getOrders();
+    const order = orders.find(o => o.id === orderId);
+    
+    if (!order) {
+        showNotification('Không tìm thấy đơn hàng!', 'error');
+        return;
+    }
+    
+    // Create status selection modal
+    const statusModal = document.createElement('div');
+    statusModal.className = 'modal';
+    statusModal.style.display = 'block';
+    statusModal.innerHTML = `
+        <div class="modal-content" style="max-width: 400px;">
+            <div class="modal-header">
+                <h2>Cập nhật trạng thái đơn hàng #${orderId}</h2>
+                <button class="modal-close" onclick="this.closest('.modal').remove()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Trạng thái hiện tại: <strong>${getStatusText(order.status)}</strong></label>
+                </div>
+                <div class="form-group">
+                    <label for="newStatus">Trạng thái mới:</label>
+                    <select id="newStatus" class="filter-select">
+                        <option value="pending">Chờ xử lý</option>
+                        <option value="processing">Đang xử lý</option>
+                        <option value="shipped">Đã giao</option>
+                        <option value="delivered">Hoàn thành</option>
+                        <option value="cancelled">Đã hủy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="statusNote">Ghi chú (tùy chọn):</label>
+                    <textarea id="statusNote" rows="3" placeholder="Nhập ghi chú về việc thay đổi trạng thái..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="this.closest('.modal').remove()">Hủy</button>
+                <button class="btn btn-primary" onclick="confirmStatusUpdate(${orderId})">Cập nhật</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(statusModal);
+    
+    // Set current status as selected
+    document.getElementById('newStatus').value = order.status;
+}
+
+function confirmStatusUpdate(orderId) {
+    const newStatus = document.getElementById('newStatus').value;
+    const statusNote = document.getElementById('statusNote').value;
+    
+    if (!newStatus) {
+        showNotification('Vui lòng chọn trạng thái mới!', 'error');
+        return;
+    }
+    
+    // Update order status
+    const orders = getOrders();
+    const orderIndex = orders.findIndex(o => o.id === orderId);
+    
+    if (orderIndex !== -1) {
+        orders[orderIndex].status = newStatus;
+        orders[orderIndex].statusHistory = orders[orderIndex].statusHistory || [];
+        orders[orderIndex].statusHistory.push({
+            status: newStatus,
+            date: new Date().toISOString(),
+            note: statusNote
+        });
+        
+        localStorage.setItem('bookself-orders', JSON.stringify(orders));
+        
+        showNotification(`Cập nhật trạng thái đơn hàng #${orderId} thành công!`, 'success');
+        
+        // Close modal
+        document.querySelector('.modal').remove();
+        
+        // Reload data
         loadOrdersData();
+    } else {
+        showNotification('Không tìm thấy đơn hàng!', 'error');
     }
 }
 
@@ -465,15 +640,139 @@ function filterUsers() {
 }
 
 function viewUserDetails(userId) {
-    showNotification('Chức năng xem chi tiết người dùng sẽ được phát triển trong phiên bản tiếp theo!', 'info');
+    const users = getUsers();
+    const user = users.find(u => u.id === userId);
+    
+    if (!user) {
+        showNotification('Không tìm thấy người dùng!', 'error');
+        return;
+    }
+    
+    const userOrders = getOrders().filter(order => order.customerEmail === user.email);
+    const totalSpent = userOrders.reduce((sum, order) => sum + order.total, 0);
+    
+    // Create user details modal
+    const userModal = document.createElement('div');
+    userModal.className = 'modal';
+    userModal.style.display = 'block';
+    userModal.innerHTML = `
+        <div class="modal-content" style="max-width: 600px;">
+            <div class="modal-header">
+                <h2>Chi tiết người dùng #${user.id}</h2>
+                <button class="modal-close" onclick="this.closest('.modal').remove()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="user-details-grid">
+                    <div class="user-info-section">
+                        <h3>Thông tin cá nhân</h3>
+                        <div class="info-item">
+                            <label>Tên:</label>
+                            <span>${user.name}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Email:</label>
+                            <span>${user.email}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Số điện thoại:</label>
+                            <span>${user.phone || 'Chưa cập nhật'}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Ngày đăng ký:</label>
+                            <span>${new Date(user.createdAt).toLocaleDateString('vi-VN')}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="user-stats-section">
+                        <h3>Thống kê mua hàng</h3>
+                        <div class="stat-item">
+                            <label>Tổng đơn hàng:</label>
+                            <span>${userOrders.length}</span>
+                        </div>
+                        <div class="stat-item">
+                            <label>Tổng chi tiêu:</label>
+                            <span>${formatPrice(totalSpent)}</span>
+                        </div>
+                        <div class="stat-item">
+                            <label>Đơn hàng gần nhất:</label>
+                            <span>${userOrders.length > 0 ? new Date(userOrders[userOrders.length - 1].date).toLocaleDateString('vi-VN') : 'Chưa có'}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                ${userOrders.length > 0 ? `
+                <div class="user-orders-section">
+                    <h3>Lịch sử đơn hàng</h3>
+                    <div class="table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Tổng tiền</th>
+                                    <th>Trạng thái</th>
+                                    <th>Ngày</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${userOrders.map(order => {
+                                    const book = window.BookDatabase ? window.BookDatabase.getBookById(order.bookId) : null;
+                                    const bookTitle = book ? book.title : 'Sách không tồn tại';
+                                    return `
+                                        <tr>
+                                            <td>#${order.id}</td>
+                                            <td>${bookTitle}</td>
+                                            <td>${order.quantity}</td>
+                                            <td>${formatPrice(order.total)}</td>
+                                            <td><span class="status-badge status-${order.status}">${getStatusText(order.status)}</span></td>
+                                            <td>${new Date(order.date).toLocaleDateString('vi-VN')}</td>
+                                        </tr>
+                                    `;
+                                }).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                ` : '<p class="text-center">Người dùng chưa có đơn hàng nào.</p>'}
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="this.closest('.modal').remove()">Đóng</button>
+                <button class="btn btn-danger" onclick="deleteUser(${userId}); this.closest('.modal').remove();">Xóa người dùng</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(userModal);
 }
 
 function deleteUser(userId) {
-    if (confirm('Bạn có chắc chắn muốn xóa người dùng này?')) {
-        // In a real app, this would be sent to server
-        showNotification('Xóa người dùng thành công!', 'success');
-        loadUsersData();
+    if (!confirm('Bạn có chắc chắn muốn xóa người dùng này? Hành động này không thể hoàn tác!')) {
+        return;
     }
+    
+    const users = getUsers();
+    const user = users.find(u => u.id === userId);
+    
+    if (!user) {
+        showNotification('Không tìm thấy người dùng!', 'error');
+        return;
+    }
+    
+    // Check if user has orders
+    const userOrders = getOrders().filter(order => order.customerEmail === user.email);
+    if (userOrders.length > 0) {
+        if (!confirm(`Người dùng này có ${userOrders.length} đơn hàng. Bạn có chắc chắn muốn xóa?`)) {
+            return;
+        }
+    }
+    
+    // Remove user
+    const updatedUsers = users.filter(u => u.id !== userId);
+    localStorage.setItem('bookself-users', JSON.stringify(updatedUsers));
+    
+    showNotification(`Đã xóa người dùng "${user.name}" thành công!`, 'success');
+    loadUsersData();
 }
 
 // ========== REVENUE MANAGEMENT ========== //
@@ -625,7 +924,62 @@ function addPromotion() {
 }
 
 function editPromotion(promotionId) {
-    showNotification('Chức năng chỉnh sửa ưu đãi sẽ được phát triển trong phiên bản tiếp theo!', 'info');
+    const promotions = getPromotions();
+    const promotion = promotions.find(p => p.id === promotionId);
+    
+    if (!promotion) {
+        showNotification('Không tìm thấy ưu đãi!', 'error');
+        return;
+    }
+    
+    // Fill form with existing data
+    document.getElementById('promotionName').value = promotion.name;
+    document.getElementById('promotionType').value = promotion.type;
+    document.getElementById('promotionValue').value = promotion.value;
+    document.getElementById('promotionStartDate').value = promotion.startDate;
+    document.getElementById('promotionEndDate').value = promotion.endDate;
+    
+    // Change modal title and button
+    document.querySelector('#addPromotionModal .modal-header h2').textContent = 'Chỉnh sửa ưu đãi';
+    document.querySelector('#addPromotionModal .modal-footer .btn-primary').textContent = 'Cập nhật ưu đãi';
+    document.querySelector('#addPromotionModal .modal-footer .btn-primary').onclick = () => updatePromotion(promotionId);
+    
+    // Show modal
+    document.getElementById('addPromotionModal').style.display = 'block';
+}
+
+function updatePromotion(promotionId) {
+    const form = document.getElementById('addPromotionForm');
+    const formData = new FormData(form);
+    
+    const promotions = getPromotions();
+    const promotionIndex = promotions.findIndex(p => p.id === promotionId);
+    
+    if (promotionIndex === -1) {
+        showNotification('Không tìm thấy ưu đãi!', 'error');
+        return;
+    }
+    
+    // Update promotion data
+    promotions[promotionIndex].name = formData.get('name');
+    promotions[promotionIndex].type = formData.get('type');
+    promotions[promotionIndex].value = parseInt(formData.get('value'));
+    promotions[promotionIndex].startDate = formData.get('startDate');
+    promotions[promotionIndex].endDate = formData.get('endDate');
+    promotions[promotionIndex].updatedAt = new Date().toISOString();
+    
+    localStorage.setItem('bookself-promotions', JSON.stringify(promotions));
+    
+    showNotification('Cập nhật ưu đãi thành công!', 'success');
+    closeModal('addPromotionModal');
+    form.reset();
+    
+    // Reset modal title and button
+    document.querySelector('#addPromotionModal .modal-header h2').textContent = 'Thêm ưu đãi mới';
+    document.querySelector('#addPromotionModal .modal-footer .btn-primary').textContent = 'Thêm ưu đãi';
+    document.querySelector('#addPromotionModal .modal-footer .btn-primary').onclick = addPromotion;
+    
+    loadPromotionsData();
 }
 
 function deletePromotion(promotionId) {
@@ -886,8 +1240,16 @@ function showNotification(message, type = 'success') {
     // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
+    
+    const iconMap = {
+        'success': 'fa-check-circle',
+        'error': 'fa-exclamation-circle',
+        'warning': 'fa-exclamation-triangle',
+        'info': 'fa-info-circle'
+    };
+    
     notification.innerHTML = `
-        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+        <i class="fas ${iconMap[type] || iconMap['info']}"></i>
         <span>${message}</span>
         <button class="notification-close">&times;</button>
     `;
@@ -895,11 +1257,11 @@ function showNotification(message, type = 'success') {
     // Add to page
     document.body.appendChild(notification);
     
-    // Auto remove after 3 seconds
+    // Auto remove after 4 seconds
     setTimeout(() => {
         notification.classList.add('fade-out');
         setTimeout(() => notification.remove(), 300);
-    }, 3000);
+    }, 4000);
     
     // Manual close
     notification.querySelector('.notification-close').addEventListener('click', () => {
@@ -924,14 +1286,18 @@ if (typeof window !== 'undefined') {
     window.showAddBookModal = showAddBookModal;
     window.addBook = addBook;
     window.editBook = editBook;
+    window.updateBook = updateBook;
     window.deleteBook = deleteBook;
     window.updateOrderStatus = updateOrderStatus;
+    window.confirmStatusUpdate = confirmStatusUpdate;
     window.viewUserDetails = viewUserDetails;
     window.deleteUser = deleteUser;
     window.showAddPromotionModal = showAddPromotionModal;
     window.addPromotion = addPromotion;
     window.editPromotion = editPromotion;
+    window.updatePromotion = updatePromotion;
     window.deletePromotion = deletePromotion;
     window.closeModal = closeModal;
+    window.showNotification = showNotification;
 }
 
