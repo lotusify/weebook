@@ -28,7 +28,7 @@ function initializeAdminDashboard() {
 
 // ========== ADMIN NAVIGATION ========== //
 function initializeAdminNavigation() {
-    const navItems = document.querySelectorAll('.admin-nav-item');
+    const navItems = document.querySelectorAll('.nav-item');
     
     navItems.forEach(item => {
         item.addEventListener('click', (e) => {
@@ -913,11 +913,6 @@ window.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal')) {
         e.target.style.display = 'none';
     }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    initializeAdminNavigation();
-    showSection("dashboard"); // Hiển thị dashboard mặc định khi load trang
 });
 
 // Export functions for global access
