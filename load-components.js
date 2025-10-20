@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="account-dropdown">
                                     <a href="${basePath}profile.html"><i class="fa-solid fa-user"></i> <span>Tài khoản của tôi</span></a>
                                     <a href="${basePath}profile.html#wishlist" onclick="handleWishlistLink()"><i class="fa-solid fa-heart"></i> <span>Sản phẩm yêu thích</span></a>
-                                    <a href="${basePath}auth.html" class="login-link"><i class="fa-solid fa-sign-in-alt"></i> <span>Đăng xuất</span></a>
+                                    <a href="${basePath}auth.html" class="login-link"><i class="fa-solid fa-sign-in-alt"></i> <span>Đăng nhập</span></a>
                                     <a href="#" class="logout-link" style="display: none;" onclick="logout()"><i class="fa-solid fa-sign-out-alt"></i> <span>Đăng xuất</span></a>
                                 </div>
                             </div>
