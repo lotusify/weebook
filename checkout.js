@@ -47,6 +47,8 @@ function loadUserInformation() {
         document.getElementById('fullName').value = currentUser.name || '';
         document.getElementById('phone').value = currentUser.phone || '';
         document.getElementById('email').value = currentUser.email || '';
+        document.getElementById('address').value = currentUser.address || '';
+        
     }
 }
 
