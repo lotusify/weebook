@@ -7241,7 +7241,7 @@ Sách phù hợp với độc giả từ 16 tuổi trở lên và được khuy�
     id: 266,
     title: "Thân Vũ Đức Kiên",
     author: "",
-    publisher: "miHoYo",
+    publisher: "PTIT",
     publishDate: "2026-01-20",
     category: "toys",
     subcategory: "dolls",
