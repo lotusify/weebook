@@ -7258,7 +7258,7 @@ Sách phù hợp với độc giả từ 16 tuổi trở lên và được khuy�
     rating: 5.0,
     reviewCount: 320,
     images: ["kien2.jpg"],
-    description: `Đừng bỏ lỡ mô hình siêu dễ thương của Ju Fufu! Là một con mèo cute trong Zenless Zone Zero, mô hình này được thiết kế nhỏ gọn, đáng yêu và sử dụng tông màu ấm rực rỡ. Đây chính là điểm nhấn lý tưởng để làm nổi bật bất kỳ góc trưng bày ZZZ nào — đối tác hoàn hảo cho fan của Ju Fufu!`,
+    description: `System ERROR 404 NOT FOUND`,
     tags: ["dolls", "chibi", "trúa hmề", "hihi", "haha", "huhu"],
     featured: true,
     newRelease: true
