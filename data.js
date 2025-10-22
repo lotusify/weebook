@@ -7263,6 +7263,1116 @@ Sách phù hợp với độc giả từ 16 tuổi trở lên và được khuy�
     featured: true,
     newRelease: true
 },
+267: {
+       id: 267,
+        title: "Cái Bi - Tiểu Thuyết",
+        author: "Karl Jaspers",
+        publisher: "NXB Hồng Đức",
+        publishDate: "2024-11-19",
+        category: "comics",
+        subcategory: "light-novels",
+        price: 65000,
+        originalPrice: 90000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 13 x 1.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://salt.tikicdn.com/cache/750x750/ts/product/f6/80/cc/0ac59b809e7d09190520af44970325db.jpg.webp"],
+        description: `Dịch từ bản tiếng Đức Uber Das Tragische, Cái Bi là một tác phẩm thuộc thể loại triết học của Karl Jaspers. Cái Bi cũng là một chủ đề lớn xuyên suốt, khơi gợi suy tư từ trong các chuyện thần thoại, truyền thống tôn giáo, truyền thống văn học nghệ thuật kịch nghệ, thi
+ 
+Triết học cũng không ngừng suy tư và diễn giải về Cái Bi. Xuyên qua tâm thức bi đát trong mỗi hệ hình, triết học tìm cách giải Cái Bi theo một cách riêng: không khước từ nhãn quan nguyên thủy vè sự bi đát, nhưng cũng không tuyệt đối, cố định hóa nó thành một thứ mặc định phổ quát về sự bi đát của cuộc đời hay quy nạp bản chất đời sống và bi đát.
+ 
+Một tác phẩm ngắn gọn, súc tích nhưng là chìa khóa quan trọng để hiểu về các hiện tượng thần thoại, tôn giáo, văn hóa và nghệ thuật. Ngoài ra, Karl Jaspers cũng gợi mở một cách triết lý sống, đối diện với thế giới bất định, vẫn còn nhiều bóng dáng của cái ác, khổ đ
+-----
+Cái gì thúc đẩy ta "thắp sáng hiện sinh"? Đó chính là những "hoàn cảnh ranh giới" đẩy ta ra khỏi giấc ngủ êm đềm của "giường chiếu hẹp", đặt ta vào chân tường để phải thức tỉnh, lựa chọn và quyết định. Trải nghiệm hoàn cảnh ranh giới và thắp sáng hiện sinh là đồng nghĩa với nhau. Jaspers dành nhiều trang tuyệt đẹp để mô tả, phân tích những hoàn cảnh ranh giới ấy, từ cảm nhận về cái chết - như là "việc tôi thu phục đời mình trong nỗi cô đơn tuyệt đối" - cho tới cảm nhận về tội lỗi, hạnh phúc, khổ đau, bệnh tật, xung độ
+`,
+        tags: ["sách truyện", "tiểu thuyết","viễn tưởng", "hành động"],
+        featured: false,
+        newRelease: true
+    },
+
+
+268: {
+       id: 268,
+        title: "Tiểu Thuyết Hemingway",
+        author: "Lê Đình Cúc",
+        publisher: "NXB Khoa Học Xã Hội",
+        publishDate: "2024-07-11",
+        category: "comics",
+        subcategory: "light-novels",
+        price: 61500,
+        originalPrice: 90000,
+        discount: 0,
+        isbn: "978-604-2-24356-8",
+        pages: 404,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "400g",
+        dimensions: "19 x 13 x 1.5 cm",
+        stock: 36,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://salt.tikicdn.com/cache/750x750/ts/product/9a/25/8a/f13b12492937158d1ad28eda9b171514.jpg.webp"],
+        description: `...Cho đến cuối đời mình, vấn đề làm Hemingway quan tâm lo lắng, đó là vấn đề của thời đại, vấn đề chiến tranh, vấn đề môi trường và sinh thái đang bị đe dọa nghiêm trọng và nhất là vấn đề tôn giáo và ông đã phản ánh một cách tuyệt vời trong tiểu thuyết Ông già và biển cả.
+Tuyệt tác Ông già và biển cả là đỉnh cao nhất trong sự nghiệp sáng tác của Hemingway. Với tác phẩm này, Hemingway lại thêm một lần nữa khẳng định quan niệm của ông về sống, chết: “Chết là không sống cuộc sống này nữa”. Con người có thể bị tiêu diệt chứ không thể bị đánh bại (The man may be distroyed but he cannot be defeated). Nhiều nhà nghiên cứu Hemingway cho biết tiểu thuyết Ông già và biển cả được thai nghén và được viết ngay từ năm 1935 trong bộ tiểu thuyết đồ sộ vài nghìn trang về biển cả. Chỉ với chưa đến 100 trang đã công bố thì nó cũng đã là sự cô đúc tuyệt vời! Ông già và biển cả, cũng là cuốn tiểu thuyết thể hiện những thủ pháp nghệ thuật độc đáo của Hemingway: Lý thuyết “Tảng băng trôi”, lý thuyết đồng hiện và dòng ý thức, độc thoại nội tâm với thân phận con người... nghĩa là hội tụ nhiều trào lưu mỹ học hiện đại.
+Cuốn sách Tiểu thuyết của Hemingway chỉ tập trung viết về quá trình sáng tác và bốn cuốn tiểu thuyết trong số nhiều tác phẩm của Hemingway, để làm nổi bật giá trị tư tưởng và nghệ thuật đặc sắc của ông.`,
+        tags: ["sách truyện", "tiểu thuyết","viễn tưởng", "hành động"],
+        featured: false,
+        newRelease: true
+    },
+
+
+269: {
+       id: 269,
+        title: "Những ta - Tiểu thuyết",
+        author: "Lê Minh Hà",
+        publisher: "NXB Phụ Nữ Việt Nam",
+        publishDate: "2025-07-14",
+        category: "comics",
+        subcategory: "light-novels",
+        price: 135000,
+        originalPrice: 150000,
+        discount: 0,
+        isbn: "3300000052649-qt",
+        pages: 396,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "400g",
+        dimensions: "19 x 13 x 1.9 cm",
+        stock: 39,
+        rating: 3.8,
+        reviewCount: 113,
+        images: ["https://salt.tikicdn.com/cache/750x750/ts/product/d3/8f/c1/637511eb32d12a41ff56298b97b240cd.jpg.webp"],
+        description: `Giới thiệu 03 cuốn tiểu thuyết của nhà văn Lê Minh Hà: Gió tự thời khuất mặt, Phố vẫn gió, Những ta.
+Sự khác biệt dễ nhận thấy nhất giữa Lê Minh Hà với nhiều nhà văn viết về Hà Nội khác có lẽ là cái tâm thế từ xa nhìn về. Trong tiểu thuyết của Lê Minh Hà, Hà Nội là những mảng kí ức đẹp đẽ, trong trẻo, vẹn nguyên, một Hà Nội vừa gần đây mà dường như cũng đã xưa rồi; và Hà Nội của những chuyến trở về, quan sát, chiêm nghiệm, nghĩ suy, so sánh, có những điều mới mẻ và cũng rất nhiều đã mất đi.
+ 
+Lê Minh Hà từng nói: "Cuộc sống 20 năm ở xứ người đã cho phép tôi hiểu một cách kỹ càng hơn về mảnh đất này, mảnh đất mà nói như Nguyễn Huy Tưởng là cần phải sống cùng với nó, sống mãi với Thủ đô. Mà nó lạ lắm, những nhận thức sách vở nọ kia lại không động chạm đến tôi đâu, mà là cái đời sống bên kia từng ngày từng giờ một, như một người dân rất bình thường (bên kia tôi là “osin không lương”), nhưng chính đời sống đó lại giúp tôi hiểu về những cái tôi đã từng đi qua ở Hà Nội”.
+ 
+Cuộc trở về lần này của Lê Minh Hà góp thêm vào đời sống văn chương Việt Nam hôm nay một chùm tác phẩm thuộc thể loại "nặng kí" - tiểu thuyết. Với 3 cuốn sách này, bạn đọc có lẽ sẽ cảm thấy Lê Minh Hà dường như là một người được sinh ra để viết về Hà Nội.`,
+        tags: ["sách truyện", "tiểu thuyết","viễn tưởng", "hành động"],
+        featured: false,
+        newRelease: true
+    },
+
+270: {
+       id: 270,
+        title: "Tiểu Thuyết - Tưởng Giới",
+        author: "Nhật Quang",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2024-04-29",
+        category: "comics",
+        subcategory: "light-novels",
+        price: 85000,
+        originalPrice: 100000,
+        discount: 0,
+        isbn: "8935352607909",
+        pages: 370,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "400g",
+        dimensions: "19 x 13 x 1.9 cm",
+        stock: 85,
+        rating: 3.5,
+        reviewCount: 364,
+        images: ["https://salt.tikicdn.com/cache/750x750/ts/product/b8/a8/72/673b79f07b4e2360ee205c3ba39a57b5.jpg.webp"],
+        description: `Lấy cảm hứng từ những chất liệu có mặt trong kho tàng văn hóa – lịch sử Việt Nam, tiểu thuyết Tưởng Giới là một sự sáng tạo độc đáo của tác giả Nhất Quang.
+Tiểu thuyết bao gồm 20 chương kể về một hành trình kỳ ảo của Linh, một cô bé học sinh phổ thông, sinh trưởng trong một gia đình Hà Nội, có một sự say mê vô cùng với những truyện cổ tích dân gian. Linh ngay từ bé đã được ấn định số mệnh của cô cho một nhiệm vụ thần thoại mà cô phải thực hiện trong tương lai.
+Kể từ đây, hành trình thần thoại – kỳ ảo của Linh đã bắt đầu`,
+        tags: ["sách truyện", "tiểu thuyết","viễn tưởng", "hành động"],
+        featured: false,
+        newRelease: true
+    },
+
+271: {
+       id: 271,
+        title: "Cuốn Tiểu Thuyết: Đêm Chile",
+        author: "Clamp",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2024-12-15",
+        category: "comics",
+        subcategory: "light-novels",
+        price: 27000,
+        originalPrice: 30000,
+        discount: 0,
+        isbn: "6242211950001",
+        pages: 192,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "110g",
+        dimensions: "19 x 13 x 0.5cm",
+        stock: 90,
+        rating: 4.5,
+        reviewCount: 125,
+        images: ["https://salt.tikicdn.com/cache/750x750/ts/product/85/41/b6/1f1ac3a6bc0015d46ed4b96103fceb78.jpg.webp"],
+        description: `Một đêm nọ, linh mục Sebastian lên cơn hấp hối. Ông bèn nhớ lại những dấu mốc trong cuộc đời mình nhân lúc tử thần còn chưa gõ cửa. Đó là vào thập kỷ sáu mươi. Đất nước Chile thật xinh đẹp, nhưng có một cái gì đó thật tù túng. Châu Âu là một chân trời mơ ước với những cánh chim ưng khát mát núp sau tà áo các mục sư. Đó là vào thập kỷ bảy mươi. Đất nước Chile vẫn xinh đẹp. Nhưng hết cơn bão chính trị này tiếp nối làn sóng chính trị khác khiến người Chile như vừa trải qua cơn mê. Và nên văn học Chile, như cái xã hội ngột ngạt ấy, vẫn đang bị bóp nghẹt và lên cơn hấp hối. Cơn hấp hối như chính cuộc đời Sebastian. Đêm Chile là tác phẩm đầu tiên của Robert Bolano được dịch ra tiếng Anh, mau chóng đưa tên tuổi ông trở nên nổi tiếng trên văn đàn quốc tế. Một tác phẩm ma mị và nghẹt thở, đánh dấu sự ra mắt đáng kinh ngạc của một câu bút Mỹ Latin.`,
+        tags: ["sách truyện", "truyện tranh","viễn tưởng", "hành động"],
+        featured: false,
+        newRelease: true
+    },
+
+
+272: {
+       id: 272,
+        title: "The Green Lotus Bud - Búp Sen Xanh",
+        author: "Sơn Tùng",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2024-04-15",
+        category: "comics",
+        subcategory: "light-novels",
+        price: 71000,
+        originalPrice: 95000,
+        discount: 0,
+        isbn: "978-604-2-28408-0",
+        pages: 146,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "165g",
+        dimensions: "19 x 13 x 1.9 cm",
+        stock: 85,
+        rating: 4.1,
+        reviewCount: 324,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/t/h/the-green-lotus-bud_bia.jpg"],
+        description: `The Green Lotus Bud là bản dịch tiếng Anh của tiểu thuyết Búp Sen Xanh do các dịch giả Phan Thanh Hào, Diane Fox và Kate Jellema chuyển ngữ.
+Đây là một dịch phẩm giúp bạn đọc quốc tế tiếp cận một tác phẩm văn học Việt Nam nổi tiếng nói chung, một tiểu thuyết lịch sử về Hồ Chủ tịch nói riêng. Bạn đọc Việt Nam cũng có thêm cơ hội học hỏi về tiếng Anh về dịch thuật qua cuốn sách này.`,
+        tags: ["sách truyện", "truyện tranh","viễn tưởng", "hành động"],
+        featured: false,
+        newRelease: true
+    },
+
+273: {
+       id: 273,
+        title: "The Little Doll And The Big Giant - Búp Bê Nhỏ Xíu Và Chàng Khổng Lồ",
+        author: "Dương Thụy",
+        publisher: "NXB Trẻ",
+        publishDate: "2024-04-15",
+        category: "comics",
+        subcategory: "light-novels",
+        price: 97500,
+        originalPrice: 130000,
+        discount: 0,
+        isbn: "5232216840004",
+        pages: 162,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "600g",
+        dimensions: "19 x 13 x 0.5 cm",
+        stock: 102,
+        rating: 4.9,
+        reviewCount: 56,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/8/9/8934974180616.jpg"],
+        description: `This is the English version of "Búp bê nhỏ xíu và chàng khổng lồ" of Dương Thụy, the author who has used her experiences to write a number of novels in which she has weaved both the western and the eastern cultures into works of art.
+"France, for me, was not a simple country to visit. It was a place that always emotionally touched me whenever I returned, for I was able to speak the language I had learned during my childhood years, and to hug the dear French people who saw me as a family member. I had a love for France which I could not describe. I only knew that there was an invisible cord connecting my heart to that beautiful land. And, of course, the French people I've known for decades have a deep-down dear love for me, far beyond a normal friendship." - Duong Thuy
+`,
+        tags: ["sách truyện", "truyện tranh","viễn tưởng", "hành động"],
+        featured: false,
+        newRelease: true
+    },
+
+274: {
+       id: 274,
+        title: "Người Đàn Ông Mang Tên OVE",
+        author: "Fredrik Backman",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2024-04-15",
+        category: "comics",
+        subcategory: "light-novels",
+        price: 136000,
+        originalPrice: 150000,
+        discount: 0,
+        isbn: "978-604-2-39176-4",
+        pages: 240,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "600g",
+        dimensions: "19 x 13 x 0.5 cm",
+        stock: 102,
+        rating: 5.0,
+        reviewCount: 56,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/8/9/8934974182375.jpg"],
+        description: `Bạn có tin rằng một ông lão cộc cằn, khó tính lại có thể khiến bạn rơi nước mắt vì xúc động? Bạn đã bao giờ nghĩ rằng lòng nhân ái có thể đến từ những con người tưởng chừng khô khan nhất? Một ông lão cộc cằn, một con mèo hoang, vài người hàng xóm phiền phức - tất cả có thể tạo nên một câu chuyện khiến bạn bật khóc?`,
+        tags: ["sách truyện", "truyện tranh","viễn tưởng"],
+        featured: false,
+        newRelease: true
+    },
+
+275: {
+       id: 275,
+        title: "Hai Vạn Dặm Dưới Biển",
+        author: "Jules Verne",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2005-04-15",
+        category: "comics",
+        subcategory: "light-novels",
+        price: 63000,
+        originalPrice: 100000,
+        discount: 0,
+        isbn: "6252206920001",
+        pages: 162,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "600g",
+        dimensions: "19 x 13 x 0.5 cm",
+        stock: 102,
+        rating: 4.9,
+        reviewCount: 56,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/b/i/bia_hai-van-dam-duoi-bien_tb-8-2.jpg"],
+        description: `Bằng cốt truyện hấp dẫn cùng sự trí tưởng tượng có một không hai, nhà văn – nhà bác học Jules Verne đã lôi cuốn độc giả ở mọi lứa tuổi vào hành trình khám phá thế giới đại dương sâu thẳm của mình. Cuốn sách là câu chuyện về cuộc hành trình bất đắc dĩ của nhà nghiên cứu biển Aronnax, giáo sư Viện bảo tàng Paris. Ông cùng người cộng sự Conseil và người thợ săn cá voi Ned Land đột nhiên rơi vào con tàu ngầm hình cá voi Nautilus kỳ lạ của vị thuyền trưởng Nemo bí hiểm.
+
+Đọc Hai vạn dặm dưới đáy biển, người ta như bị cuốn vào những mơ mộng nguyên sơ của một đứa trẻ trước những điều kỳ lạ, bí ẩn và mê hoặc trong một thế giới khác tận sâu trong lòng đại dương - nơi mà con người chưa thể khám phá hết. Con tàu Nautilus kỳ diệu của thuyền trưởng Nemo đưa người đọc tới với những cuộc phiêu lưu và kho báu, chiến đấu với quái vật, chinh phục những miền đất lạ.`,
+        tags: ["sách truyện", "truyện tranh", "hài hước"],
+        featured: false,
+        newRelease: true
+    },
+
+
+276: {
+       id: 276,
+        title: "Lén Nhặt Chuyện Đời",
+        author: "Mộc Trầm",
+        publisher: "NXB Kim Đồng",
+        publishDate: "2024-04-15",
+        category: "comics",
+        subcategory: "light-novels",
+        price: 45000,
+        originalPrice: 60000,
+        discount: 0,
+        isbn: "6252200610001",
+        pages: 192,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "150g",
+        dimensions: "19 x 13 x 0.5 cm",
+        stock: 102,
+        rating: 4.9,
+        reviewCount: 56,
+        images: ["https://cdn1.fahasa.com/media/flashmagazine/images/page_images/len_nhat_chuyen_doi/2023_02_01_09_29_58_1-390x510.jpg"],
+        description: `Tại vùng ngoại ô xứ Đan Mạch xưa, người thợ kim hoàn Per Enevoldsen đã cho ra mắt một món đồ trang sức lấy ý tưởng từ Pandora - người phụ nữ đầu tiên của nhân loại mang vẻ đẹp như một ngọc nữ phù dung, kiêu sa và bí ẩn trong Thần thoại Hy Lạp. Vòng Pandora được kết hợp từ một sợi dây bằng vàng, bạc hoặc bằng da cùng với những viên charm được chế tác đa dạng, tỉ mỉ. Ý tưởng của ông, mỗi viên charm như một câu chuyện, một kỷ niệm đáng nhớ của người sở hữu chiếc vòng. Khi một viên charm được thêm vào sợi Pandora là cuộc đời lại có thêm một ký ức cần lưu lại để nhớ, để thương, để trân trọng. Lén nhặt chuyện đời ra mắt trong khoảng thời gian chông chênh nhất của bản thân, hay nói cách khác là một cậu bé mới lớn, vừa bước ra khỏi cái vỏ bọc vốn an toàn của mình. Những câu chuyện trong Lén nhặt chuyện đời là những câu chuyện tôi được nghe kể lại, hoặc vô tình bắt gặp, hoặc nhặt nhạnh ở đâu đó trong miền ký ức rời rạc của quá khứ, không theo một trình tự hay một thời gian nào nhất định.
+
+Mỗi một câu chuyện là một viên charm lấp lánh, kiêu kỳ, có sức hút mạnh mẽ đối với một người trẻ như tôi luôn tò mò với những điều dung dị trong cuộc sống. Tôi âm thầm nhặt những viên charm ấy về, kết thành sợi Pandora cho chính mình. Lén ở đây không phải là một cái gì đó vụng trộm, âm thầm sợ người khác phát hiện. Mà nó là lặng lẽ. Tôi lặng lẽ nghe, lặng lẽ quan sát, lặng lẽ đi tìm và lặng lẽ viết nên quyển sách này. Tôi vẫn thích dùng từ Lén hơn, vì đơn giản, tôi thấy bản thân mình trong đó. Lén nhặt chuyện đời được chia thành năm chương: chương thứ nhất nói về tình yêu của cả giới trẻ và người tu sĩ; chương thứ hai viết về gia đình; chương thứ ba dành cho những người trẻ; chương thứ tư là những câu chuyện bên đời, những bài tâm sự của người tu sĩ; chương năm là thơ và chương cuối cùng là tâm sự của bản thân khi tôi đã về già. Nếu ai nghĩ Lén nhặt chuyện đời sẽ giảng thuyết về chân lý, định hướng cho người trẻ hay chữa lành những vết thương… thì đã tìm sai chỗ, bản thân chưa bao giờ nghĩ quyển sách này sẽ làm được điều đó.
+
+Đây chỉ là những câu chuyện, những suy nghĩ về cuộc đời của một người trẻ đang chông chênh. Đôi khi, tôi hóa thành một ông già của năm chục năm sau kể về những ký ức thời vụng dại. Chỉ mong sao, đọc Lén nhặt chuyện đời, người ta có thể tìm được đâu đó những viên charm phù hợp với bản thân mình. Quyển sách này sẽ là dấu ấn lớn nhất đối với cuộc đời của bản thân. Mỗi bài viết là một viên charm của Pandora Lén nhặt chuyện đời và Lén nhặt chuyện đời cũng sẽ là một viên charm lấp lánh trong sợi Pandora của cuộc đời tôi. Quyển sách này, xin được nhớ về những người Thầy của tôi, về Từ Quang, về gia đình, và tất cả những ai đã hiện diện trong thời thanh xuân của tôi. Để nhắc rằng, tôi đã từng có mặt trong cuộc đời của họ, và họ có mặt trong quyển sách này của tôi.
+
+Cảm ơn đã tìm đến sợi Pandora Lén nhặt chuyện đời, và nào, hãy cùng tôi bắt đầu đi tìm những viên charm, nhặt lên và xâu vào sợi Pandora của mình thôi!`,
+        tags: ["sách truyện", "truyện tranh","viễn tưởng", "hành động"],
+        featured: false,
+        newRelease: true
+    },
+
+
+
+277: {
+       id: 277,
+        title: "Đồ Chơi Mô Hình Sưu Tầm Disney 4 Inch Metalfigs Woody Figure - Dickie Toys - Woody",
+        author: "Dickie Toys",
+        publisher: "Thương Hiệu Đức",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "action-figures",
+        price: 355000,
+        originalPrice: 400000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/0/8/0801310983478-mau2.jpg"],
+        description: `Đồ Chơi Mô Hình Sưu Tầm Disney 4 Inch Metalfigs Woody Figure - Dickie Toys mang đến chàng cao bồi vui tính và trung thành của nhà Pixar – nay đã được tái hiện đầy sống động trong phiên bản mô hình đúc kim loại cao cấp. Với chiếc mũ cao bồi đặc trưng, khăn choàng đỏ, áo khoác vàng caro cùng nụ cười thân thiện, Woody cầm sẵn dây thừng sẵn sàng cho mọi cuộc phiêu lưu mới. Mỗi chi tiết nhỏ đều được chăm chút tỉ mỉ, từ đôi ủng đến chiếc phù hiệu cảnh sát trên ngực áo, mang đến cảm giác như bạn đang cầm trên tay một phần của thế giới Toy Story.`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+278: {
+       id: 278,
+        title: "Đồ Chơi Mô Hình Sưu Tầm Disney 4 Inch Metalfigs Woody Figure - Dickie Toys - Woody",
+        author: "Dickie Toys",
+        publisher: "Thương Hiệu Đức",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "action-figures",
+        price: 355000,
+        originalPrice: 400000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/0/8/0801310983478-mau2.jpg"],
+        description: `Đồ Chơi Mô Hình Sưu Tầm Disney 4 Inch Metalfigs Woody Figure - Dickie Toys mang đến chàng cao bồi vui tính và trung thành của nhà Pixar – nay đã được tái hiện đầy sống động trong phiên bản mô hình đúc kim loại cao cấp. Với chiếc mũ cao bồi đặc trưng, khăn choàng đỏ, áo khoác vàng caro cùng nụ cười thân thiện, Woody cầm sẵn dây thừng sẵn sàng cho mọi cuộc phiêu lưu mới. Mỗi chi tiết nhỏ đều được chăm chút tỉ mỉ, từ đôi ủng đến chiếc phù hiệu cảnh sát trên ngực áo, mang đến cảm giác như bạn đang cầm trên tay một phần của thế giới Toy Story.`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+279: {
+       id: 279,
+        title: "Đồ Chơi Mô Hình Sưu Tầm Disney 4 Inch Metalfigs Woody Figure - Dickie Toys - Buzz Lightyear",
+        author: "Dickie Toys",
+        publisher: "Thương Hiệu Đức",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "action-figures",
+        price: 355000,
+        originalPrice: 400000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/0/8/0801310983478-mau1_1.jpg"],
+        description: `Đồ Chơi Mô Hình Sưu Tầm Disney 4 Inch Metalfigs Woody Figure - Dickie Toys mang đến chàng cao bồi vui tính và trung thành của nhà Pixar – nay đã được tái hiện đầy sống động trong phiên bản mô hình đúc kim loại cao cấp. Với chiếc mũ cao bồi đặc trưng, khăn choàng đỏ, áo khoác vàng caro cùng nụ cười thân thiện, Woody cầm sẵn dây thừng sẵn sàng cho mọi cuộc phiêu lưu mới. Mỗi chi tiết nhỏ đều được chăm chút tỉ mỉ, từ đôi ủng đến chiếc phù hiệu cảnh sát trên ngực áo, mang đến cảm giác như bạn đang cầm trên tay một phần của thế giới Toy Story.`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+280: {
+       id: 280,
+        title: "Đồ Chơi Mô Hình Sưu Tầm Disney 4 Inch Metalfigs Woody Figure - Dickie Toys - Woody",
+        author: "Dickie Toys",
+        publisher: "Thương Hiệu Đức",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "action-figures",
+        price: 355000,
+        originalPrice: 400000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/0/8/0801310983478-mau2.jpg"],
+        description: `Đồ Chơi Mô Hình Sưu Tầm Disney 4 Inch Metalfigs Woody Figure - Dickie Toys mang đến chàng cao bồi vui tính và trung thành của nhà Pixar – nay đã được tái hiện đầy sống động trong phiên bản mô hình đúc kim loại cao cấp. Với chiếc mũ cao bồi đặc trưng, khăn choàng đỏ, áo khoác vàng caro cùng nụ cười thân thiện, Woody cầm sẵn dây thừng sẵn sàng cho mọi cuộc phiêu lưu mới. Mỗi chi tiết nhỏ đều được chăm chút tỉ mỉ, từ đôi ủng đến chiếc phù hiệu cảnh sát trên ngực áo, mang đến cảm giác như bạn đang cầm trên tay một phần của thế giới Toy Story.`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+281: {
+       id: 281,
+        title: "Đồ Chơi Buồng Đột Biến - Quái Thú Báo Lửa - MrBeast Lab 25009",
+        author: "MRBEAST LAB",
+        publisher: "Thương Hiệu Mỹ",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "action-figures",
+        price: 355000,
+        originalPrice: 400000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/8/9/8935337536613.jpg"],
+        description: `Đồ Chơi Buồng Đột Biến - Quái Thú Báo Lửa - MrBeast Lab 25009
+
+- Khám phá Bộ Đồ Chơi MrBeast Mutators - Quái thú báo lửa.
+
+- Nâng cao cảm giác hồi hộp khi thí nghiệm với mô hình Quái thú Báo lấy cảm hứng từ MrBeast.
+
+- Với chiều cao 5,5 inch(13cm) và hơn 20 điểm khớp nối, Iconic Panther được chế tác bao gồm các màu hồng và xanh đặc trưng của MrBeast.
+
+- Cách chơi: Thêm chất lỏng đột biến, nhấn máy quét dấu vân tay và quan sát con quái thú xuất hiện thật sống động.
+
+- Thu thập Iconic, Stealth và Metallic Mutators cho một cuộc phiêu lưu VĨ ĐẠI!
+
+- MrBeast Lab là dòng đồ chơi hợp tác giữa Moose Toys và YouTuber nổi tiếng MrBeast. Ra mắt vào tháng 7 năm 2024, bộ sưu tập này bao gồm các nhân vật mini sưu tập (swarms), figures vinyl và figures collector. Đặc biệt biểu tượng Chú báo xanh của MrBeast thể hiện tốc độ, sức mạnh và sự táo bạo—những yếu tố gắn liền với phong cách nội dung của Youtuber số 1 này.`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+282: {
+       id: 282,
+        title: "Đồ Chơi Buồng Đột Biến - Quái Thú Báo Trái Đất - MrBeast Lab 25008",
+        author: "MRBEAST LAB",
+        publisher: "Thương Hiệu Mỹ",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "action-figures",
+        price: 355000,
+        originalPrice: 400000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/8/9/8935337536606.jpg"],
+        description: `Đồ Chơi Buồng Đột Biến - Quái Thú Báo Trái Đất - MrBeast Lab 25008
+
+- Khám phá Bộ Đồ Chơi MrBeast Mutators - Quái thú trái đất.
+
+- Nâng cao cảm giác hồi hộp khi thí nghiệm với mô hình Quái thú Báo lấy cảm hứng từ MrBeast.
+
+- Với chiều cao 5,5 inch(13cm) và hơn 20 điểm khớp nối, Iconic Panther được chế tác bao gồm các màu hồng và xanh đặc trưng của MrBeast.
+
+- Cách chơi: Thêm chất lỏng đột biến, nhấn máy quét dấu vân tay và quan sát con quái thú xuất hiện thật sống động.
+
+- Thu thập Iconic, Stealth và Metallic Mutators cho một cuộc phiêu lưu VĨ ĐẠI!
+
+- MrBeast Lab là dòng đồ chơi hợp tác giữa Moose Toys và YouTuber nổi tiếng MrBeast. Ra mắt vào tháng 7 năm 2024, bộ sưu tập này bao gồm các nhân vật mini sưu tập (swarms), figures vinyl và figures collector. Đặc biệt biểu tượng Chú báo xanh của MrBeast thể hiện tốc độ, sức mạnh và sự táo bạo—những yếu tố gắn liền với phong cách nội dung của Youtuber số 1 này.`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+283: {
+       id: 283,
+        title: "Đồ Chơi Buồng Đột Biến - Quái Thú Báo Sấm Sét - MrBeast Lab 25007",
+        author: "MRBEAST LAB",
+        publisher: "Thương Hiệu Mỹ",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "action-figures",
+        price: 355000,
+        originalPrice: 400000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/8/9/8935337536590.jpg"],
+        description: `Đồ Chơi Buồng Đột Biến - Quái Thú Báo Sấm Sét - MrBeast Lab 25007
+
+- Khám phá Bộ Đồ Chơi MrBeast Mutators - Quái thú sấm sét.
+
+- Nâng cao cảm giác hồi hộp khi thí nghiệm với mô hình Quái thú Báo lấy cảm hứng từ MrBeast.
+
+- Với chiều cao 5,5 inch(13cm) và hơn 20 điểm khớp nối, Iconic Panther được chế tác bao gồm các màu hồng và xanh đặc trưng của MrBeast.
+
+- Cách chơi: Thêm chất lỏng đột biến, nhấn máy quét dấu vân tay và quan sát con quái thú xuất hiện thật sống động.
+
+- Thu thập Iconic, Stealth và Metallic Mutators cho một cuộc phiêu lưu VĨ ĐẠI!
+
+- MrBeast Lab là dòng đồ chơi hợp tác giữa Moose Toys và YouTuber nổi tiếng MrBeast. Ra mắt vào tháng 7 năm 2024, bộ sưu tập này bao gồm các nhân vật mini sưu tập (swarms), figures vinyl và figures collector. Đặc biệt biểu tượng Chú báo xanh của MrBeast thể hiện tốc độ, sức mạnh và sự táo bạo—những yếu tố gắn liền với phong cách nội dung của Youtuber số 1 này.`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+284: {
+       id: 284,
+        title: "Đồ Chơi Mô Hình Sưu Tầm Disney 4 Inch - Jada Toys 30025 - Steamboat Willie",
+        author: "Jada Toys",
+        publisher: "Thương Hiệu Mỹ",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "action-figures",
+        price: 355000,
+        originalPrice: 400000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/0/8/0801310982549-mau3.jpg"],
+        description: `Đồ Chơi Mô Hình Sưu Tầm Disney 4 Inch - Jada Toys
+
+- Đồ Chơi Mô Hình Sưu Tầm JADA TOYS Disney 4" Metalfigs Steamboat Willie Figure với phiên bản kỷ niệm 90 năm với thiết kế độc đáo mang sắc bạc sang trọng.
+
+- Mô hình này tái hiện lại hình ảnh Mickey cổ điển với phong cách hoạt hình đen trắng nguyên bản, tạo nên nét hoài cổ vừa thân quen vừa tinh tế. Chất liệu kim loại đúc (die-cast) cao cấp mang đến độ bền vượt trội, kết hợp với các chi tiết nhựa tinh xảo giúp nhân vật trở nên sống động và có chiều sâu.
+
+- Hộp đựng được thiết kế nổi bật với tông vàng rực rỡ và hình ảnh Mickey retro, vừa giữ gìn sản phẩm hoàn hảo, vừa là món quà trang trọng cho các fan Disney. Đây là món đồ sưu tầm không thể thiếu cho những ai yêu thích nhân vật kinh điển này – biểu tượng vượt thời gian của niềm vui, trí tưởng tượng và tuổi thơ.
+
+- Jada Toys là hãng sản xuất đồ chơi mô hình, đặc biệt là dòng xe mô hình và nhân vật sưu tầm có bản quyền. Jada Toys được thành lập từ năm 1999 tại Hoa Kỳ. Đến nay, Jada Toys đã được cấp phép bởi nhiều thương hiệu hàng đầu như DC Comics, Disney, Marvel Comics, NASCAR, NBA, WWE, Fast & Furious, Hello Kitty,... Từ năm 2019, Jada Toys thuộc sở hữu của Tập đoàn Simba Dickie Group (Đức).`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+285: {
+       id: 285,
+        title: "Đồ Chơi Mô Hình Sưu Tầm Disney 4 Inch - Jada Toys 98254 - Mickey Mouse",
+        author: "Jada Toys",
+        publisher: "Thương Hiệu Đức",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "action-figures",
+        price: 355000,
+        originalPrice: 400000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/0/8/0801310982549-mau1.jpg"],
+        description: `Đồ Chơi Mô Hình Sưu Tầm Disney 4 Inch - Jada Toys
+- Đồ Chơi Mô Hình Sưu Tầm JADA TOYS Disney 4" Metalfigs Steamboat Willie Figure với phiên bản kỷ niệm 90 năm với thiết kế độc đáo mang sắc bạc sang trọng.
+- Mô hình này tái hiện lại hình ảnh Mickey cổ điển với phong cách hoạt hình đen trắng nguyên bản, tạo nên nét hoài cổ vừa thân quen vừa tinh tế. Chất liệu kim loại đúc (die-cast) cao cấp mang đến độ bền vượt trội, kết hợp với các chi tiết nhựa tinh xảo giúp nhân vật trở nên sống động và có chiều sâu.
+- Hộp đựng được thiết kế nổi bật với tông vàng rực rỡ và hình ảnh Mickey retro, vừa giữ gìn sản phẩm hoàn hảo, vừa là món quà trang trọng cho các fan Disney. Đây là món đồ sưu tầm không thể thiếu cho những ai yêu thích nhân vật kinh điển này – biểu tượng vượt thời gian của niềm vui, trí tưởng tượng và tuổi thơ.
+- Jada Toys là hãng sản xuất đồ chơi mô hình, đặc biệt là dòng xe mô hình và nhân vật sưu tầm có bản quyền. Jada Toys được thành lập từ năm 1999 tại Hoa Kỳ. Đến nay, Jada Toys đã được cấp phép bởi nhiều thương hiệu hàng đầu như DC Comics, Disney, Marvel Comics, NASCAR, NBA, WWE, Fast & Furious, Hello Kitty,... Từ năm 2019, Jada Toys thuộc sở hữu của Tập đoàn Simba Dickie Group (Đức).`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+286: {
+       id: 286,
+        title: "Đồ Chơi Mô Hình Sưu Tầm Disney 4 Inch - Jada Toys 98255 - Minnie Mouse",
+        author: "Jada Toys",
+        publisher: "Thương Hiệu Đức",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "action-figures",
+        price: 355000,
+        originalPrice: 400000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://cdn1.fahasa.com/media/catalog/product/0/8/0801310982549-mau2.jpg"],
+        description: `Đồ Chơi Mô Hình Sưu Tầm Disney 4 Inch - Jada Toys
+
+- Đồ Chơi Mô Hình Sưu Tầm JADA TOYS Disney 4" Metalfigs Steamboat Willie Figure với phiên bản kỷ niệm 90 năm với thiết kế độc đáo mang sắc bạc sang trọng.
+
+- Mô hình này tái hiện lại hình ảnh Mickey cổ điển với phong cách hoạt hình đen trắng nguyên bản, tạo nên nét hoài cổ vừa thân quen vừa tinh tế. Chất liệu kim loại đúc (die-cast) cao cấp mang đến độ bền vượt trội, kết hợp với các chi tiết nhựa tinh xảo giúp nhân vật trở nên sống động và có chiều sâu.
+
+- Hộp đựng được thiết kế nổi bật với tông vàng rực rỡ và hình ảnh Mickey retro, vừa giữ gìn sản phẩm hoàn hảo, vừa là món quà trang trọng cho các fan Disney. Đây là món đồ sưu tầm không thể thiếu cho những ai yêu thích nhân vật kinh điển này – biểu tượng vượt thời gian của niềm vui, trí tưởng tượng và tuổi thơ.
+
+- Jada Toys là hãng sản xuất đồ chơi mô hình, đặc biệt là dòng xe mô hình và nhân vật sưu tầm có bản quyền. Jada Toys được thành lập từ năm 1999 tại Hoa Kỳ. Đến nay, Jada Toys đã được cấp phép bởi nhiều thương hiệu hàng đầu như DC Comics, Disney, Marvel Comics, NASCAR, NBA, WWE, Fast & Furious, Hello Kitty,... Từ năm 2019, Jada Toys thuộc sở hữu của Tập đoàn Simba Dickie Group (Đức).`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+287: {
+       id: 287,
+        title: "Đồ Chơi Gỗ Montessori Thông Minh Trí Tuệ Cho Bé Giáo Cụ Montessori Đồ Chơi Giáo Dục Bé",
+        author: "Kid Toys",
+        publisher: "Đang cập nhật",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "educational-toys",
+        price: 35000,
+        originalPrice: 40000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-loz3ce7et9p7d6.webp"],
+        description: `Đồ Chơi Bằng Gỗ cho bé là loại đồ chơi Thông Minh an toàn nhất. các chi tiết được mài nhẵn phủ sơn màu an toàn và bắt mắt, Kích thích Tư Duy Phát triển, ...giúp bé làm quen với thế giới xung quanh và học hỏi được nhiều điều thú vị.`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+288: {
+       id: 288,
+        title: "Bảng chữ cái điện tử thông minh treo tường nhiều chủ đề: động vật, trái cây, phương tiện cho bé học tập và phát triển",
+        author: "Kid Toys",
+        publisher: "Đang cập nhật",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "educational-toys",
+        price: 35000,
+        originalPrice: 40000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m70eu7wt1wmf82.webp"],
+        description: `Bảng chữ cái và chữ số Tiếng Việt thông minh có giọng nói.
+ Khoa học đã chứng minh, trước 6 tuổi, đại não đã phát triển tương đối hoàn thiện. Do đó, giai đoạn 0 đến 6 tuổi là tốt nhất để xây dựng cho trẻ nền tảng phát triển cả về thể chất lẫn tinh thần. Phương pháp giáo dục trẻ thông minh sớm giúp trẻ ham thích khám phá.
+ Tên sản phẩm: Bảng chữ số và chữ cái tiếng Việt thông minh.
+ Kích thước tham khảo: 42 x 55cm.
+ Nguồn: 3 pin AAA.
+ Trọng lượng: 610g..
+ TÍNH NĂNG NỔI BẬT .
+Bảng thiết kế nhỏ gọn, chắc chắn. .
+ Bảng vừa giúp bé làm quen với các chữ cái còn giúp bé tập nhớ hình dạng của những con thú như voi, sói, hươu, chó.....
+ Không những nâng cao khả năng tư duy & ghi nhớ ở trẻ mà còn rèn luyện cho bé kỹ năng nhận biết, minh họa nhân vật..
+Mỗi bảng chức năng tương ứng với 1 bài học trong đó có phần học từ mới, kiểm tra & phần nghe lại rất tiện ích..
+ Loa với âm lượng có thể điều chỉnh to nhỏ dễ dàng. Hình ảnh minh họa sinh động, chữ viết rõ ràng, các phím chức năng dễ thao tác, sử dụng.`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+289: {
+       id: 289,
+        title: "Đồ Chơi Học Tập Cho Bé",
+        author: "Kid Toys",
+        publisher: "Đang cập nhật",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "educational-toys",
+        price: 15000,
+        originalPrice: 65000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mdt3fdhiildd29.webp"],
+        description: `Đồ Chơi Học Tập Cho Bé | Bảng Chữ Cái, Học Tính Toán, Hình Khối Phát Triển Tư Duy | Tomoni Kids
+ GIÚP BÉ HỌC MÀ CHƠI – CHƠI MÀ HỌC!
+Bảng ghép hình gỗ thông minh tích hợp các chủ đề như chữ cái, số đếm, kỹ năng toán học, và hình học cơ bản giúp bé phát triển toàn diện tư duy, khả năng ngôn ngữ và phối hợp tay – mắt ngay từ giai đoạn vàng 0–3 tuổi.`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+290: {
+       id: 290,
+        title: "Đồ chơi học tập trí tuệ Montessori cao cấp loại lớn kích thước 30cm x 30cm",
+        author: "Kid Toys",
+        publisher: "Đang cập nhật",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "educational-toys",
+        price: 65000,
+        originalPrice: 80000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mfq5359dxr0o7c.webp"],
+        description: `Bạn đang tìm kiếm một món quà ý nghĩa, độc đáo và an toàn cho bé yêu? Mê Cung Montessori chính là lựa chọn hoàn hảo, mang đến những giờ phút vui chơi bổ ích và phát triển toàn diện cho bé:
+Giáo Dục Sớm Theo Phương Pháp Montessori
+Chất Liệu An Toàn Tuyệt Đối
+Màu Sắc Bắt Mắt, Thiết Kế Ngộ Nghĩnh
+Đa Dạng Cách Chơi, Không Gây Nhàm Chán
+Phát Triển Tư Duy Logic & Khả Năng Giải Quyết Vấn Đề
+Rèn Luyện Sự Tập Trung & Kiên Nhẫn
+`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+291: {
+       id: 291,
+        title: "Đồ chơi nam châm xếp hình 148 chi tiết đa dạg màu sắc hình dạng giúp phát triển tư duy sáng tạo",
+        author: "Kid Toys",
+        publisher: "Đang cập nhật",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "educational-toys",
+        price: 105000,
+        originalPrice: 130000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mfyx3cyjoyku24.webp"],
+        description: `Giới thiệu sản phẩm:
+Bộ xếp hình nam châm là một trong những đồ chơi giáo dục sáng tạo, giúp phát triển tư duy logic, khả năng sáng tạo và kỹ năng vận động tinh của trẻ em. Với các mảnh ghép đa dạng về hình dạng và màu sắc, đồ chơi nam châm xếp hình không chỉ mang lại những giờ phút vui chơi thú vị mà còn là công cụ học tập hiệu quả.
+Lợi ích của bộ xếp hình nam châm:
+1. Phát triển tư duy sáng tạo: Bộ xếp hình nam châm cho phép trẻ thỏa sức tưởng tượng và sáng tạo. Trẻ có thể xây dựng bất kỳ hình dạng nào mà chúng nghĩ ra, từ các cấu trúc đơn giản như hình vuông, tam giác đến các công trình phức tạp như nhà cửa, cây cầu hoặc thậm chí là các mô hình động vật.
+2. Phát triển kỹ năng vận động tinh: Khi lắp ráp các mảnh ghép, trẻ phải sử dụng đôi tay khéo léo để gắn kết chúng lại với nhau. Quá trình này giúp cải thiện kỹ năng vận động tinh và sự phối hợp giữa tay và mắt.
+3.Tăng cường khả năng giải quyết vấn đề: Bộ xếp hình nam châm yêu cầu trẻ phải suy nghĩ logic để có thể lắp ráp các mảnh ghép một cách chính xác. Điều này giúp trẻ phát triển khả năng giải quyết vấn đề và tư duy logic.
+4.Học tập vui nhộn: Đồ chơi nam châm xếp hình không chỉ mang lại niềm vui mà còn giúp trẻ học tập một cách tự nhiên. Trẻ có thể học về hình học, toán học, vật lý cơ bản thông qua việc chơi.`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+292: {
+       id: 292,
+        title: "Bảng Vẽ Điện Tử Thông Minh Tự Động Xóa, Bảng LCD Viết Tự Xóa - Thúc Đẩy Tư Duy Sáng Tạo Cho Bé, Đồ Chơi Giáo Dục Cho Bé",
+        author: "Kid Toys",
+        publisher: "Đang cập nhật",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "educational-toys",
+        price: 35000,
+        originalPrice: 40000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m3n31kfel8l1c5.webp"],
+        description: `Bảng Vẽ Điện Tử Thông Minh Tự Động Xóa, Bảng LCD Viết Tự Xóa - Thúc Đẩy Tư Duy Sáng Tạo Cho Bé, Đồ Chơi Giáo Dục Cho Bé
+LƯU Ý: CẦN GẠT NÚT MỞ KHÓA PHÍA SAU LƯNG BẢNG MỚI BẤM XÓA PHÍA TRƯỚC ĐƯỢC
+1. THÔNG TIN Bảng Viết tự xóa LCD, Bảng Vẽ Điện Tử Thông Minh Tự Động Xóa
+- Màn hình bảng vẽ điện tử bằng: LCD
+- Chất liệu bảng tự xóa thông minh bằng: Nhựa ABS
+- Bảng vẽ tự xóa Gồm 1 bảng viết và 1 bút
+2. Công dụng Bảng Viết tự xóa LCD, Bảng Vẽ Điện Tử Thông Minh Tự Động Xóa
+- Không có ánh sáng chói, không có ánh sáng xanh bảng tự xóa thông minh bảo vệ mắt cận thị phù hợp hơn cho trẻ em. 
+- Trình bày văn bản giống như giấy thực sự chính xác từng tuyệt vời. 
+- Bảng vẽ điện tử chỉ với Một cú nhấn để xóa ngay lập tức dấu vết của bức tranh. 
+- Dùng bảng viết tự xóa thông minh LCD Chữ viết rõ ràng và viết trơn tru rất tiện lợi. 
+- Nhiều màu sắc khác nhau để bạn lựa chọn, đáp ứng nhu cầu khác nhau của bạn. 
+- Bảng vẽ điện tử tự xóa lcd Siêu nhẹ siêu bền được thiết kế để tạo cảm giác giống như viết bằng bút trên giấy. 
+- Hình ảnh vẫn giữ nguyên bao lâu khi bạn cần và có thể xóa chỉ bằng một nút bấm. 
+- Tạo lại nhiều lần mà không cần sạc hoặc kết nối. 
+- Bảng vẽ tự xóa điện tử thông minh được thiết kế nhẹ và di động làm cho nó hoàn hảo để sử dụng tại nhà văn phòng trường học hoặc các mục đích sử dụng khác.
+3. Hướng dẫn sử dụng Bảng Viết tự xóa LCD, Bảng Vẽ Điện Tử Thông Minh Tự Động Xóa
+- Bút cảm ứng đầu nhỏ giúp viết, vẽ tự nhiên. 
+- Màn hình LCD cho cảm giác như giấy viết khi sử dụng bảng viết cho bé 
+- Xóa dễ dàng chỉ với 1 nút bấm .`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+293: {
+       id: 293,
+        title: "Tìm điểm khác biệt - Rèn luyện sự tập trung - QG Education - Đồ chơi giáo dục cho trẻ 2 đến 8 tuổi",
+        author: "Kid Toys",
+        publisher: "Đang cập nhật",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "educational-toys",
+        price: 80000,
+        originalPrice: 100000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ly21rng86dp55f.webp"],
+        description: `THÔNG TIN SẢN PHẨM:
+
+ Tên sản phẩm: Tìm điểm khác biệt - Rèn luyện sự tập trung - QG Education - Đồ chơi giáo dục cho trẻ 2 đến 8 tuổi
+
+ Chất liệu: Giấy cao cấp. An toàn cho bé
+ Kích thước:  21*15 cm
+ Độ tuổi phù hợp: Trên 2 tuổi
+ Bộ sản phẩm bao gồm: Các thẻ, bút viết kèm tảy và móc tiện dụng. 
+ CÁCH CHƠI: 
+- Trên mỗi thẻ ảnh sẽ có hai bức ảnh gần giống nhau, vì sẽ có một số điểm khác biệt giữa hai bức ảnh. Trẻ sẽ quan sát và tìm những điểm khác biệt này. 
+- Sau đó dùng bút khoanh tròn những điểm khác biệt đã nhìn thấy.
+- Bộ sưu tập nhiều hình ảnh ngộ nghĩnh dễ thương, thu hút bé dễ dàng. 
+`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+294: {
+       id: 294,
+        title: "Đồ chơi giáo dục kính hiển vi cho bé khơi dậy niềm đam mê khoa học- DC5032",
+        author: "Kid Toys",
+        publisher: "Đang cập nhật",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "educational-toys",
+        price: 200000,
+        originalPrice: 250000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m7sxd26nei4365.webp"],
+        description: `"Đồ chơi giáo dục Kính hiển vi cho bé khơi dậy niềm đam mê khoa học- DC5032
+*Ưu điểm nổi bật
+- Độ phóng đại cao, hình ảnh sắc nét:
++ Độ phóng đại lên đến 1200X, cho phép quan sát chi tiết các mẫu vật nhỏ bé.
++ Hệ thống quang học chất lượng cao, mang đến hình ảnh rõ ràng và sắc nét.
+- Thiết kế thông minh, dễ sử dụng:
++ 3 vật kính với độ phóng đại khác nhau, dễ dàng điều chỉnh.
++ Hệ thống chiếu sáng LED tích hợp, cung cấp ánh sáng đủ cho việc quan sát.
++ Núm điều chỉnh tiêu cự, giúp lấy nét chính xác.
++ Thân máy chắc chắn, bền bỉ.
+- Khám phá thế giới vi mô kỳ diệu:
+Quan sát các mẫu vật sống như tế bào, vi khuẩn, côn trùng nhỏ...
+Khám phá cấu trúc của các mẫu vật vô tri như sợi vải, tinh thể muối...
+Mở rộng kiến thức khoa học và khơi dậy niềm đam mê khám phá cho trẻ em.
+Giáo dục và giải trí:
+Thích hợp cho việc học tập, nghiên cứu và giải trí tại nhà.
+
+Dành cho cả trẻ em và người lớn.
+Món quà ý nghĩa cho những người yêu thích khoa học.`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+295: {
+       id: 295,
+        title: "Bộ Đồ Chơi Xếp Hình Khối Tetris cho Trẻ 3-6 Tuổi - Đồ Chơi Giáo Dục Phát Triển Trí Tuệ Cho Bé",
+        author: "Kid Toys",
+        publisher: "Đang cập nhật",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "educational-toys",
+        price: 180000,
+        originalPrice: 200000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-md63kvrwos6lc0.webp"],
+        description: `Bộ Đồ Chơi Xếp Hình Khối Tetris cho Trẻ 3-6 Tuổi - Đồ Chơi Giáo Dục Phát Triển Trí Tuệ Cho Bé
+ Trò chơi giúp bé vừa học vừa chơi, hạn chế tiếp xúc màn hình điện thoại!
+Bộ xếp hình Tetris với 40 miếng gỗ + kệ gỗ đi kèm, giúp bé rèn luyện khả năng tư duy logic, tưởng tượng không gian và phát triển trí não. Thay vì chơi game trên điện thoại hay iPad, bé có thể vừa vui chơi vừa học hỏi!
+ Ưu điểm nổi bật:
+ Chất liệu gỗ cao cấp, an toàn – Không góc cạnh, không gây hại cho bé
+ 40 miếng ghép đa dạng – Tạo ra vô số mô hình sáng tạo
+ Kích thước vừa vặn (20x22cm) – Bé dễ thao tác, cầm nắm
+ Hạn chế bé dùng điện thoại, phát triển tư duy logic
+Món quà tuyệt vời cho bé yêu!`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+296: {
+       id: 296,
+        title: "Đồ Chơi Mê Cung Nam Châm – Dạy Màu Sắc và Tư Duy Logic Cho Trẻ",
+        author: "Kid Toys",
+        publisher: "Đang cập nhật",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "educational-toys",
+        price: 45000,
+        originalPrice: 70000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mch6j1n702p966.webp"],
+        description: `[ĐỒ CHƠI MÊ CUNG NAM CHÂM THÔNG MINH – GIÚP BÉ HỌC MÀU SẮC, SỐ ĐẾM VÀ RÈN LUYỆN TƯ DUY]
+ MÔ TẢ SẢN PHẨM:
+Đồ chơi mê cung nam châm thông minh là món quà tuyệt vời giúp trẻ vừa học vừa chơi. Với thiết kế hấp dẫn mô phỏng thùng sơn, que kem hoặc chữ số, sản phẩm giúp bé nhận biết màu sắc, học đếm từ 1 đến 10 và phát triển khả năng tư duy logic.
+Chỉ cần sử dụng bút nam châm đi kèm, bé sẽ dẫn các viên bi màu vào đúng vị trí, kích thích sự phối hợp tay mắt và tập trung cao độ.`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+297: {
+       id: 297,
+        title: "Combo Học Liệu Bóc Dán Montessori Thông Minh 17 Chủ Đề Memocshop Đồ Chơi Giáo Dục Sớm Viết Xóa 64 Trang ChoBé",
+        author: "Kid Toys",
+        publisher: "Đang cập nhật",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "educational-toys",
+        price: 17000,
+        originalPrice: 30000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://down-vn.img.susercontent.com/file/sg-11134201-22100-lc01549juriv1c.webp"],
+        description: `- Học liệu bóc dán tổng hợp 17 chủ đề gần gũi nhất trong cuộc sống, giúp bé không chỉ có sự hiểu biết về thế giới xung quanh, rèn luyện khả năng ghi nhớ sâu thông qua hình ảnh và sự vận động thông qua quá trình bóc dán
+- Ngoài ra, bộ học liệu montessori bóc dán còn có bản hướng dẫn siêu chi tiết theo bài học 3 bước của Montessori. Bé vừa học vừa chơi vừa học, kiến thức được nạp một cách tích cực.`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+298: {
+       id: 298,
+        title: "Búp bê cho bé gái cao 30cm, búp bê barbie công chúa dễ thương đồ chơi cho bé gái quà tặng sinh nhật cho bé gái",
+        author: "Kid Toys",
+        publisher: "Đang cập nhật",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "dolls",
+        price: 110000,
+        originalPrice: 200000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-loql1tsselfvd4.webp"],
+        description: `Búp bê cho bé gái cao 30cm số lượng khớp tùy mẫu. búp bê barbie công chúa dễ thương đồ chơi cho bé gái quà tặng sinh nhật cho bé gái
+Thông tin sản phẩm:
+Đồ chơi búp bê cao 30cm, số lượng khớp tùy mẫu, khớp linh động có thể dễ dàng tạo các tư thế đứng, ngồi, giơ tay,...
+Tóc búp bê dày và dài, bé có thể thoải mải thiết kế cho búp bê những kiểu tóc khác nhau.
+Trang phục búp bê cầu kỳ, thiết kế dễ thương.
+Gương mặt búp bê thanh tú, mắt long lanh, mi vẽ.
+Búp bê đựng ở dạng túi.
+Nếu bạn đang băn khoăn không biết chọn gì để làm quà sinh nhật cho bé gái thì đồ chơi búp bê là một lựa chọn cực kỳ hợp lý. Vì hầu hết các bé gái từ nhỏ đến lớn đều rất thích búp bê, nhất là các mẫu búp bê xinh đẹp, quần áo thiết kế cầu kỳ dễ thương. Cỡ búp bê 30cm cũng là một trong những cỡ búp bê chơi vừa tay nhất đó ạ, không to quá, không nhỏ quá, mà có thể chọn lựa được đồ, phụ kiện cũng rất dễ dàng.`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
+299: {
+       id: 299,
+        title: "Tư bản đã tha hóa tôi như thế nào",
+        author: "PTIT",
+        publisher: "Ngô Lê Lộc Việt",
+        publishDate: "2024-11-19",
+        category: "vietnamese",
+        subcategory: "biography",
+        price: 110000,
+        originalPrice: 200000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["vie.png"],
+        description: `Học PTIT tôi thành nole tư bản lúc nào không hay`,
+        tags: ["tiểu thuyết","hồi kí"],
+        featured: false,
+        newRelease: true
+    },
+
+300: {
+       id: 300,
+        title: "30cm BJD Búp Bê Và Quần Áo Nhiều Khớp Di Động 3D Mô Phỏng Mắt Bé Gái Quà Tặng Sinh Nhật Đồ Chơi",
+        author: "Kid Toys",
+        publisher: "Đang cập nhật",
+        publishDate: "2024-11-19",
+        category: "toys",
+        subcategory: "dolls",
+        price: 100000,
+        originalPrice: 150000,
+        discount: 0,
+        isbn: "978-604-2-26406-8",
+        pages: 308,
+        language: "English",
+        format: "Bìa mềm",
+        weight: "438g",
+        dimensions: "19 x 18 x 4.5 cm",
+        stock: 95,
+        rating: 4.0,
+        reviewCount: 243,
+        images: ["https://down-vn.img.susercontent.com/file/sg-11134201-7rd3q-lv8pd5yrt1mfb0.webp"],
+        description: `Tên khoản mục: búp bê và quần áo
+ Kích thước: thích hợp cho búp bê 30cm
+ Chất liệu: pvc / vải
+ Đóng gói bao gồm: 1pc * búp bê / 1 bộ * quần áo
+ Lưu ý:
+ 1. Do sự khác biệt về ánh sáng và màn hình, màu sắc của mặt hàng có thể hơi khác so với hình ảnh.
+ 2. Xin vui lòng cho phép sự khác biệt 1-2 cm do đo lường thủ công.
+ Xin chào, bạn thân mến! Chào mừng đến với cửa hàng của chúng tôi!
+ Sản phẩm của chúng tôi là 100% thương hiệu mới và được kiểm tra. Hãy yên tâm rằng chúng tôi sẽ kiểm tra các sản phẩm trước khi giao hàng.
+ Phản hồi của bạn rất quan trọng đối với chúng tôi:
+ 1.Nếu bạn hài lòng với dịch vụ của chúng tôi, chúng tôi chân thành hy vọng bạn có thể để lại cho chúng tôi một nhận xét tích cực và tất cả Xếp hạng người bán chi tiết 5 sao.
+ 2.Xin vui lòng liên hệ với chúng tôi trước khi bạn để lại phản hồi tiêu cực. chúng tôi sẽ cố gắng hết sức để giải quyết bất kỳ vấn đề vui lòng với bạn và bảo vệ lợi ích của bạn trước`,
+        tags: ["đồ chơi"],
+        featured: false,
+        newRelease: true
+    },
+
 };
 
 // ========== CATEGORIES ========== //
