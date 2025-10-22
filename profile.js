@@ -153,65 +153,7 @@ function loadUserProfile() {
 }
 
 function loadUserOrders() {
-    const orders = getOrders();
-    const user = getCurrentUser();
-    const userOrders = orders.filter(order => order.customerEmail === user.email);
-    
-    const ordersList = document.getElementById('ordersList');
-    if (!ordersList) return;
-    
-    if (userOrders.length === 0) {
-        ordersList.innerHTML = `
-            <div class="empty-state">
-                <i class="fas fa-shopping-bag"></i>
-                <h3>Chưa có đơn hàng nào</h3>
-                <p>Bạn chưa có đơn hàng nào. Hãy bắt đầu mua sắm!</p>
-                <a href="index.html" class="btn btn-primary">Mua sắm ngay</a>
-            </div>
-        `;
-        return;
-    }
-    
-    ordersList.innerHTML = userOrders.map(order => {
-        const book = window.BookDatabase ? window.BookDatabase.getBookById(order.bookId) : null;
-        const bookTitle = book ? book.title : 'Sách không tồn tại';
-        
-        return `
-            <div class="order-item">
-                <div class="order-header">
-                    <div class="order-info">
-                        <h4>Đơn hàng #${order.id}</h4>
-                        <p>Ngày đặt: ${new Date(order.date).toLocaleDateString('vi-VN')}</p>
-                    </div>
-                    <div class="order-status">
-                        <span class="status-badge status-${order.status}">${getStatusText(order.status)}</span>
-                    </div>
-                </div>
-                <div class="order-content">
-                    <div class="order-product">
-                        <img src="${book ? book.images[0] : 'images/book-tlch-1.jpg'}" alt="${bookTitle}" class="order-product-image">
-                        <div class="order-product-info">
-                            <h5>${bookTitle}</h5>
-                            <p>Số lượng: ${order.quantity}</p>
-                            <p>Giá: ${formatPrice(order.total)}</p>
-                        </div>
-                    </div>
-                    <div class="order-actions">
-                        <button class="btn btn-sm btn-primary" onclick="viewOrderDetails(${order.id})">
-                            <i class="fas fa-eye"></i>
-                            Xem chi tiết
-                        </button>
-                        ${order.status === 'delivered' ? `
-                            <button class="btn btn-sm btn-secondary" onclick="rateOrder(${order.id})">
-                                <i class="fas fa-star"></i>
-                                Đánh giá
-                            </button>
-                        ` : ''}
-                    </div>
-                </div>
-            </div>
-        `;
-    }).join('');
+     window.location.href = "orders.html";
 }
 
 function loadUserWishlist() {
@@ -265,8 +207,7 @@ function loadUserWishlist() {
 }
 
 function loadUserReviews() {
-    // For demo purposes, show empty state
-    // In a real app, this would load user's reviews from database
+   
 }
 
 // ========== FORM HANDLING ========== //

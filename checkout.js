@@ -179,7 +179,8 @@ function getDistrictsByCity(city) {
             { value: 'ninhkieu', name: 'Ninh Kiều' },
             { value: 'binhthuy', name: 'Bình Thủy' },
             { value: 'catrang', name: 'Cái Răng' }
-        ]
+        ],
+       
     };
     
     return districts[city] || [];
