@@ -3,9 +3,32 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     initializeOrders();
+    
+    // Listen for real-time order updates from admin panel
+    window.addEventListener('storage', function(e) {
+        if (e.key === 'bookself-orders') {
+            // Reload orders when admin updates the orders
+            loadOrders();
+        }
+    });
 });
 
 function initializeOrders() {
+    // Auto-login test user if from test page
+    if (document.referrer.includes('test-sync.html') && !isLoggedIn()) {
+        const testAuth = {
+            isLoggedIn: true,
+            currentUser: {
+                id: 999,
+                name: 'Test User Sync',
+                email: 'testsync@weebook.com',
+                phone: '0999888777'
+            },
+            loginTime: new Date().toISOString()
+        };
+        localStorage.setItem('bookself-auth', JSON.stringify(testAuth));
+    }
+    
     // Check if user is logged in
     if (!isLoggedIn()) {
         showNotification('Vui lòng đăng nhập để xem đơn hàng!', 'error');
