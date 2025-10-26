@@ -1706,117 +1706,78 @@ function initializeProductPage() {
 }
 
 function loadProductDetails(productId) {
-    console.log('=== loadProductDetails DEBUG START ===');
-    console.log('productId:', productId);
-    
-    if (!window.BookDatabase) {
-        console.log('❌ BookDatabase not available');
-        return;
-    }
-    
-    console.log('✅ BookDatabase available');
+    if (!window.BookDatabase) return;
     
     const product = window.BookDatabase.getBookById(productId);
-    
     if (!product) {
-        console.log('❌ Product not found with ID:', productId);
         document.getElementById('productTitle').textContent = 'Sản phẩm không tồn tại';
         return;
     }
     
-    console.log('✅ Product found:', product);
-    
-    // Update page title
+    // Update basic info
     document.title = `${product.title} - BookSelf`;
-    
-    // Update breadcrumb
     document.getElementById('breadcrumb-product').textContent = product.title;
-    
-    // Update main image
-    const mainImage = document.getElementById('mainProductImage');
-    mainImage.src = product.images[0];
-    mainImage.alt = product.title;
-    
-    // Update thumbnails
-    const thumbnailsContainer = document.getElementById('imageThumbnails');
-    thumbnailsContainer.innerHTML = '';
-    product.images.forEach((image, index) => {
-        const thumbnail = document.createElement('img');
-        thumbnail.src = image;
-        thumbnail.alt = product.title;
-        thumbnail.className = `thumbnail ${index === 0 ? 'active' : ''}`;
-        thumbnail.onclick = () => changeMainImage(thumbnail);
-        thumbnailsContainer.appendChild(thumbnail);
-    });
-    
-    // Update product info
     document.getElementById('productTitle').textContent = product.title;
     document.getElementById('productAuthor').textContent = product.author;
     document.getElementById('productSku').textContent = product.id;
     
-    // Update brand (use publisher if available, otherwise default to BookSelf)
-    const brandElement = document.getElementById('productBrand');
-    if (brandElement && product.publisher) {
-        brandElement.textContent = product.publisher;
+    // Update images
+    const mainImage = document.getElementById('mainProductImage');
+    mainImage.src = product.images[0];
+    mainImage.alt = product.title;
+    
+    document.getElementById('imageThumbnails').innerHTML = product.images.map((image, index) => 
+        `<img src="${image}" alt="${product.title}" class="thumbnail ${index === 0 ? 'active' : ''}" onclick="changeMainImage(this)">`
+    ).join('');
+    
+    // Update publisher info
+    if (product.publisher) {
+        const shopUrl = `shop.html?publisher=${encodeURIComponent(product.publisher)}`;
+        ['productBrand', 'publisherLink'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.textContent = product.publisher;
+                if (el.tagName === 'A') el.href = shopUrl;
+            }
+        });
+        ['shopName', 'shopLink'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.textContent = product.publisher.toUpperCase();
+                if (el.tagName === 'A') el.href = shopUrl;
+            }
+        });
     }
     
-    // Update publisher link
-    const publisherLink = document.getElementById('publisherLink');
-    if (publisherLink && product.publisher) {
-        publisherLink.href = `shop.html?publisher=${encodeURIComponent(product.publisher)}`;
-        publisherLink.textContent = product.publisher;
-    }
-    
-    // Update shop name to match brand
-    const shopNameElement = document.getElementById('shopName');
-    if (shopNameElement && product.publisher) {
-        shopNameElement.textContent = product.publisher.toUpperCase();
-    }
-    
-    // Update shop link
-    const shopLink = document.getElementById('shopLink');
-    if (shopLink && product.publisher) {
-        shopLink.href = `shop.html?publisher=${encodeURIComponent(product.publisher)}`;
-        shopLink.textContent = product.publisher.toUpperCase();
-    }
-    
-    // Update rating
-    const ratingContainer = document.getElementById('productRating');
-    ratingContainer.innerHTML = `
+    // Update rating and price
+    document.getElementById('productRating').innerHTML = `
         <div class="stars">${renderStars(product.rating)}</div>
         <span class="rating-text">(${product.reviewCount})</span>
     `;
-    
-    // Update price
     document.getElementById('currentPrice').textContent = formatPrice(product.price);
+    
     if (product.originalPrice > product.price) {
         const originalPriceEl = document.getElementById('originalPrice');
         originalPriceEl.textContent = formatPrice(product.originalPrice);
         originalPriceEl.style.display = 'inline';
     }
     
-    // Update badges
+    // Update badges and stock
     if (product.discount > 0) {
         const discountBadge = document.getElementById('discountBadge');
         discountBadge.textContent = `-${product.discount}%`;
         discountBadge.style.display = 'block';
     }
+    if (product.newRelease) document.getElementById('newBadge').style.display = 'block';
     
-    if (product.newRelease) {
-        document.getElementById('newBadge').style.display = 'block';
-    }
-    
-    // Update stock status
     const stockStatus = document.getElementById('stockStatus');
-    if (product.stock > 0) {
-        stockStatus.className = 'stock-status in-stock';
-        stockStatus.innerHTML = `<i class="fas fa-check-circle"></i><span>Còn hàng (${product.stock} sản phẩm)</span>`;
-    } else {
-        stockStatus.className = 'stock-status out-of-stock';
-        stockStatus.innerHTML = `<i class="fas fa-times-circle"></i><span>Hết hàng</span>`;
-    }
+    const isInStock = product.stock > 0;
+    stockStatus.className = `stock-status ${isInStock ? 'in-stock' : 'out-of-stock'}`;
+    stockStatus.innerHTML = isInStock 
+        ? `<i class="fas fa-check-circle"></i><span>Còn hàng (${product.stock} sản phẩm)</span>`
+        : `<i class="fas fa-times-circle"></i><span>Hết hàng</span>`;
     
-    // Update description
+    // Update tabs
     document.getElementById('productDescription').innerHTML = `
         <p>${product.description}</p>
         <div class="product-tags">
@@ -1825,21 +1786,17 @@ function loadProductDetails(productId) {
         </div>
     `;
     
-    // Update specifications
+    const specs = [
+        ['ISBN', product.isbn], ['Số trang', product.pages], ['Ngôn ngữ', product.language],
+        ['Định dạng', product.format], ['Trọng lượng', product.weight], ['Kích thước', product.dimensions],
+        ['Nhà xuất bản', product.publisher], ['Ngày phát hành', product.publishDate]
+    ];
     document.getElementById('productSpecifications').innerHTML = `
         <table class="specs-table">
-            <tr><td>ISBN:</td><td>${product.isbn}</td></tr>
-            <tr><td>Số trang:</td><td>${product.pages}</td></tr>
-            <tr><td>Ngôn ngữ:</td><td>${product.language}</td></tr>
-            <tr><td>Định dạng:</td><td>${product.format}</td></tr>
-            <tr><td>Trọng lượng:</td><td>${product.weight}</td></tr>
-            <tr><td>Kích thước:</td><td>${product.dimensions}</td></tr>
-            <tr><td>Nhà xuất bản:</td><td>${product.publisher}</td></tr>
-            <tr><td>Ngày phát hành:</td><td>${product.publishDate}</td></tr>
+            ${specs.map(([label, value]) => `<tr><td>${label}:</td><td>${value}</td></tr>`).join('')}
         </table>
     `;
     
-    // Update reviews (placeholder)
     document.getElementById('productReviews').innerHTML = `
         <div class="reviews-summary">
             <div class="rating-overview">
@@ -1851,32 +1808,9 @@ function loadProductDetails(productId) {
         <p>Chức năng đánh giá sẽ được phát triển trong phiên bản tiếp theo.</p>
     `;
     
-    // Load related products
-    console.log('About to call loadRelatedProducts with productId:', productId);
-    try {
-        loadRelatedProducts(productId);
-        console.log('✅ loadRelatedProducts completed successfully');
-    } catch (error) {
-        console.error('❌ Error in loadRelatedProducts:', error);
-    }
-    
-    // Initialize wishlist button
-    try {
-        initializeWishlistButton(productId);
-        console.log('✅ initializeWishlistButton completed successfully');
-    } catch (error) {
-        console.error('❌ Error in initializeWishlistButton:', error);
-    }
-    
-    // Initialize add to cart functionality
-    try {
-        initializeAddToCart(productId);
-        console.log('✅ initializeAddToCart completed successfully');
-    } catch (error) {
-        console.error('❌ Error in initializeAddToCart:', error);
-    }
-    
-    console.log('=== loadProductDetails DEBUG END ===');
+    // Initialize features
+    [() => loadRelatedProducts(productId), () => initializeWishlistButton(productId), () => initializeAddToCart(productId)]
+        .forEach(fn => { try { fn(); } catch(e) { console.error(e); } });
 }
 
 function loadRelatedProducts(productId) {
