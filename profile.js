@@ -197,7 +197,7 @@ function loadUserWishlist() {
                     <span class="current-price">${formatPrice(book.price)}</span>
                     ${book.originalPrice && book.originalPrice > book.price ? `<span class="original-price">${formatPrice(book.originalPrice)}</span>` : ''}
                 </div>
-                <button class="btn btn-primary wishlist-add-to-cart-btn" onclick="addToCartFromWishlist(${book.id})">
+                <button class="btn btn-primary wishlist-add-to-cart-btn" onclick="event.preventDefault(); event.stopPropagation(); addToCartFromWishlist(${book.id})">
                     <i class="fas fa-shopping-cart"></i>
                     Thêm vào giỏ hàng
                 </button>
@@ -422,7 +422,6 @@ if (typeof window !== 'undefined') {
     window.viewOrderDetails = viewOrderDetails;
     window.rateOrder = rateOrder;
     window.removeFromWishlist = removeFromWishlist;
-    window.addToCart = addToCart;
     window.addToCartFromWishlist = addToCartFromWishlist;
     window.viewProduct = viewProduct;
 }
