@@ -9,7 +9,7 @@ function initializeOrderSuccess() {
     // Get order ID from URL
     const urlParams = new URLSearchParams(window.location.search);
     const orderId = urlParams.get('id');
-    
+
     if (!orderId) {
         showNotification('Không tìm thấy thông tin đơn hàng!', 'error');
         setTimeout(() => {
@@ -17,7 +17,7 @@ function initializeOrderSuccess() {
         }, 1500);
         return;
     }
-    
+
     // Load order details
     loadOrderDetails(orderId);
 }
@@ -25,7 +25,7 @@ function initializeOrderSuccess() {
 function loadOrderDetails(orderId) {
     const orders = JSON.parse(localStorage.getItem('bookself-orders')) || [];
     const order = orders.find(o => o.id == orderId);
-    
+
     if (!order) {
         showNotification('Không tìm thấy đơn hàng!', 'error');
         setTimeout(() => {
@@ -33,14 +33,14 @@ function loadOrderDetails(orderId) {
         }, 1500);
         return;
     }
-    
+
     // Display order details
     displayOrderDetails(order);
 }
 
 function displayOrderDetails(order) {
     const orderDetailsContainer = document.getElementById('orderDetails');
-    
+
     let itemsHtml = '';
     order.items.forEach(item => {
         itemsHtml += `
@@ -58,10 +58,10 @@ function displayOrderDetails(order) {
             </div>
         `;
     });
-    
+
     const deliveryMethod = order.deliveryMethod === 'express' ? 'Giao hàng nhanh (1-2 ngày)' : 'Giao hàng tiêu chuẩn (3-5 ngày)';
     const paymentMethod = getPaymentMethodText(order.paymentMethod);
-    
+
     orderDetailsContainer.innerHTML = `
         <div class="order-summary">
             <div class="summary-row">
@@ -85,24 +85,24 @@ function displayOrderDetails(order) {
                 <span class="value">${paymentMethod}</span>
             </div>
         </div>
-        
+
         <div class="delivery-info">
             <h4>Thông tin giao hàng</h4>
             <div class="address-details">
                 <p><strong>${order.customerInfo.fullName}</strong></p>
                 <p>${order.customerInfo.phone}</p>
                 <p>${order.customerInfo.address}</p>
-                <p>${getCityText(order.customerInfo.city)}, ${getDistrictText(order.customerInfo.district)}</p>
+                <p>${getDistrictText(order.customerInfo.district)}, ${getCityText(order.customerInfo.city)}</p>
             </div>
         </div>
-        
+
         <div class="order-items-section">
             <h4>Sản phẩm đã đặt</h4>
             <div class="order-items-list">
                 ${itemsHtml}
             </div>
         </div>
-        
+
         <div class="order-totals">
             <div class="total-row">
                 <span>Tạm tính:</span>
@@ -151,9 +151,37 @@ function getCityText(city) {
     return cityMap[city] || city;
 }
 
-function getDistrictText(district) {
-    // This would normally be a more comprehensive mapping
-    return district;
+function getDistrictText(districtValue) {
+    const districtMap = {
+        // Hà Nội
+        'baidinh': 'Ba Đình',
+        'hoankiem': 'Hoàn Kiếm',
+        'dongda': 'Đống Đa',
+        'haibatrung': 'Hai Bà Trưng',
+        'hoangmai': 'Hoàng Mai',
+        'thanhxuan': 'Thanh Xuân',
+        // TP. Hồ Chí Minh
+        'quan1': 'Quận 1',
+        'quan2': 'Quận 2',
+        'quan3': 'Quận 3',
+        'quan4': 'Quận 4',
+        'quan5': 'Quận 5',
+        'quan6': 'Quận 6',
+        // Đà Nẵng
+        'haichau': 'Hải Châu',
+        'thanhkhe': 'Thanh Khê',
+        'son tra': 'Sơn Trà',
+        'nguhanhson': 'Ngũ Hành Sơn',
+        // Hải Phòng
+        'hongbang': 'Hồng Bàng',
+        'ngoquyen': 'Ngô Quyền',
+        'lechan': 'Lê Chân',
+        // Cần Thơ
+        'ninhkieu': 'Ninh Kiều',
+        'binhthuy': 'Bình Thủy',
+        'catrang': 'Cái Răng'
+    };
+    return districtMap[districtValue] || districtValue;
 }
 
 function formatDate(dateString) {

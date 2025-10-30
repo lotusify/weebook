@@ -14,21 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializeOrders() {
-    // Auto-login test user if from test page
-    if (document.referrer.includes('test-sync.html') && !isLoggedIn()) {
-        const testAuth = {
-            isLoggedIn: true,
-            currentUser: {
-                id: 999,
-                name: 'Test User Sync',
-                email: 'testsync@weebook.com',
-                phone: '0999888777'
-            },
-            loginTime: new Date().toISOString()
-        };
-        localStorage.setItem('bookself-auth', JSON.stringify(testAuth));
-    }
-    
     // Check if user is logged in
     if (!isLoggedIn()) {
         showNotification('Vui lòng đăng nhập để xem đơn hàng!', 'error');
@@ -171,7 +156,7 @@ function renderOrders(orders) {
                         </div>
                         <div class="detail-item">
                             <span class="label">Địa chỉ giao hàng:</span>
-                            <span class="value">${order.customerInfo.address}, ${getCityText(order.customerInfo.city)}</span>
+                            <span class="value">${order.customerInfo.address}, ${getDistrictText(order.customerInfo.district)}, ${getCityText(order.customerInfo.city)}</span>
                         </div>
                     </div>
                     
@@ -346,6 +331,39 @@ function getCityText(city) {
         'cantho': 'Cần Thơ'
     };
     return cityMap[city] || city;
+}
+
+function getDistrictText(districtValue) {
+    const districtMap = {
+        // Hà Nội
+        'baidinh': 'Ba Đình',
+        'hoankiem': 'Hoàn Kiếm',
+        'dongda': 'Đống Đa',
+        'haibatrung': 'Hai Bà Trưng',
+        'hoangmai': 'Hoàng Mai',
+        'thanhxuan': 'Thanh Xuân',
+        // TP. Hồ Chí Minh
+        'quan1': 'Quận 1',
+        'quan2': 'Quận 2',
+        'quan3': 'Quận 3',
+        'quan4': 'Quận 4',
+        'quan5': 'Quận 5',
+        'quan6': 'Quận 6',
+        // Đà Nẵng
+        'haichau': 'Hải Châu',
+        'thanhkhe': 'Thanh Khê',
+        'son tra': 'Sơn Trà',
+        'nguhanhson': 'Ngũ Hành Sơn',
+        // Hải Phòng
+        'hongbang': 'Hồng Bàng',
+        'ngoquyen': 'Ngô Quyền',
+        'lechan': 'Lê Chân',
+        // Cần Thơ
+        'ninhkieu': 'Ninh Kiều',
+        'binhthuy': 'Bình Thủy',
+        'catrang': 'Cái Răng'
+    };
+    return districtMap[districtValue] || districtValue;
 }
 
 function formatDate(dateString) {
