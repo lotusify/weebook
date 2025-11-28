@@ -82,28 +82,20 @@ function initializeNavigation() {
 
 function setActiveNavigationItem() {
     const currentPage = getCurrentPage();
-    console.log('Setting active nav for page:', currentPage);
-    
     const navLinks = document.querySelectorAll('.nav-links a');
-    console.log('Found nav links:', navLinks.length);
     
     navLinks.forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href');
-        console.log('Checking link:', href, 'for page:', currentPage);
         
         if (currentPage === 'index' && href.includes('index.html')) {
             link.classList.add('active');
-            console.log('Set active for index page');
         } else if (currentPage === 'category' && href.includes('category.html')) {
             link.classList.add('active');
-            console.log('Set active for category page');
         } else if (currentPage === 'product' && href.includes('category.html')) {
             link.classList.add('active');
-            console.log('Set active for product page (using category link)');
         } else if (currentPage === 'about' && href.includes('about.html')) {
             link.classList.add('active');
-            console.log('Set active for about page');
         }
     });
 }

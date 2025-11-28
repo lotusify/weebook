@@ -12,8 +12,7 @@
     // Load component modules
     const componentModules = [
         'js/header.js',
-        'js/footer.js',
-        'js/chatbot.js'
+        'js/footer.js'
     ];
     
     componentModules.forEach(src => {

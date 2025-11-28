@@ -61,7 +61,6 @@ function loadHeader() {
                                 </div>
                             </div>
                             <a href="#" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i> <span>Giỏ hàng</span> <span class="cart-count">0</span></a>
-                            <a href="${basePath}admin.html" class="admin-link" style="display: none;"><i class="fa-solid fa-cog"></i> <span>Admin</span></a>
                         </div>
                     </div>
                 </div>
@@ -176,12 +175,9 @@ function loadHeader() {
 
 // Function to update account menu based on login status
 function updateAccountMenu() {
-    // Use the isLoggedIn function from auth.js if available, otherwise check localStorage
     const isLoggedIn = (typeof window.isLoggedIn === 'function') ? window.isLoggedIn() : (localStorage.getItem('isLoggedIn') === 'true');
     const loginLink = document.querySelector('.login-link');
     const logoutLink = document.querySelector('.logout-link');
-    
-    console.log('Login status:', isLoggedIn); // Debug log
     
     if (isLoggedIn) {
         if (loginLink) loginLink.style.display = 'none';

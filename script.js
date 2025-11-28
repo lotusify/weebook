@@ -7,7 +7,6 @@ const modules = [
     'js/cart.js',
     'js/wishlist.js',
     'js/auth.js',
-    'js/chatbot.js',
     'js/product.js',
     'js/category.js',
     'js/home.js'
@@ -42,9 +41,6 @@ const waitForData = () => {
 document.addEventListener('DOMContentLoaded', function() {
     loadModules().then(() => {
         setTimeout(() => {
-            if (typeof initializeChatbotTimestamp === 'function') initializeChatbotTimestamp();
-            setTimeout(() => { if (typeof initializeChatbotEnterKey === 'function') initializeChatbotEnterKey(); }, 100);
-            
             if (typeof initializeNavigation === 'function') initializeNavigation();
             if (typeof initializeSearch === 'function') initializeSearch();
             if (typeof initializeCart === 'function') initializeCart();
