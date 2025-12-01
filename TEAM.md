@@ -4,16 +4,18 @@
 
 ### **1. Danh - Tìm kiếm và Lọc**
 **Files làm việc:**
-- `js/navigation.js` (phần search)
+- `js/search.js` ⭐ (Search & Filter)
 - `css/header.css` (search styling)
 
 **Chức năng:**
 1. ✅ Search bar với autocomplete
-2. ✅ Search suggestions dropdown
-3. ✅ Perform search và display results
-4. ✅ Search history (optional)
+2. ✅ Search suggestions dropdown (top 5 results)
+3. ✅ Perform search và redirect
+4. ✅ Filter modal (giá, danh mục, sắp xếp)
+5. ✅ Quick filters
+6. ✅ View all products
 
-**Dòng code:** ~80 dòng
+**Dòng code:** ~200 dòng
 
 ---
 
@@ -115,7 +117,8 @@ weebook/
 │   ├── utils.js           (Shared utilities)
 │   ├── header.js          (Header component)
 │   ├── footer.js          (Footer component)
-│   ├── navigation.js      (Danh - Search & Nav)
+│   ├── navigation.js      (Nav menu & category hover)
+│   ├── search.js          (Danh - Search & Filter) ⭐
 │   ├── product.js         (Kiên - Product details)
 │   ├── cart.js            (Trung - Cart)
 │   ├── category.js        (Dũng - Category & Filter)

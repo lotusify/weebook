@@ -4,6 +4,7 @@ const modules = [
     'js/header.js',
     'js/footer.js',
     'js/navigation.js',
+    'js/search.js',
     'js/cart.js',
     'js/wishlist.js',
     'js/auth.js',
